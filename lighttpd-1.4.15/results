@@ -1,0 +1,61 @@
+
+ Forbidden:
+Time: 00:00:08
+
+ __errno_location    fwrite       strftime
+ abort               getenv       localtime
+ exit                gmtime       mktime
+ fprintf             puts         perror
+ fputc               setlocale    time
+ fputs               signal
+
+
+ Recursive:
+ Time: 00:00:09
+
+
+ array_init           sub_12091
+ array_insert_uniq    sub_14d5
+ data_string_init     sub_1eee0
+ proc_open_b          sub_1eee7
+ sub_1163c            sub_bf08
+
+ Complex:
+ Time: 00:00:12
+
+ connection_handle_read_state
+ sub_12091
+ sub_121be
+ sub_18774
+ sub_74e9
+ sub_97a2
+
+ Non-structured:
+ Time: 00:00:11
+
+ fdevent_poll_event_get_revent
+
+ Null:
+ Time: 00:15:12
+
+  splaytree_insert                0x1F220
+  splaytree_insert                0x1F1CC
+  array_init_array                0x192F7
+  array_init_array                0x19327
+  array_init_array                0x19339
+  array_init_array                0x192D1
+  splaytree_delete                0x1F2F8
+  network_server_init             0xCF86
+  stat_cache_get_entry            0x17306
+  config_parse.constprop.5        0xE999
+  network_write_chunkqueue_writev 0x1E95B
+  network_write_chunkqueue_writev 0x1E991
+
+  Unused:
+   calloc  0x159DA
+   close   0x17633
+   fprintf 0x1168B
+   fprintf 0x116E4
+   fwrite  0x19561
+   memmove 0x19646
+   write   0x1517B

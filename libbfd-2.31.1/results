@@ -1,0 +1,158 @@
+Forbidden:
+Time: 00:00:55
+
+__errno_location  fflush       getenv
+abort             fprintf      printf
+ctime             fputc        sprintf
+exit              fputs        sscanf
+fclose            fread        time
+ferror            fwrite       vfprintf
+
+
+Recursive:
+ Time: 00:00:56
+
+  _bfd_archive_64_bit_slurp_armap          elf_gc_propagate_vtable_entries_used     sub_9f530
+  _bfd_coff_final_link                     elf_i386_finish_dynamic_symbol           sub_ac1f8
+  _bfd_coff_gc_mark.part.11.constprop.14   elf_x86_64_finish_dynamic_symbol         sub_ac220
+  _bfd_elf_adjust_dynamic_symbol           eval_symbol                              sub_ad7b6
+  _bfd_elf_compute_section_file_positions  find_abstract_instance.isra.29           sub_afb62
+  _bfd_elf_gc_mark                         higher_prime_index                       sub_b14eb
+  _bfd_elf_get_property                    internal_cplus_demangle                  sub_b3ac0
+  _bfd_elf_make_section_from_shdr          on_needed_list                           sub_b4000
+  _bfd_elf_write_object_contents           qualifier_string read_attribute_value    sub_b473f
+  _bfd_get_elt_at_filepos                  rsrc_compute_region_sizes                sub_b49b8
+  bfd_cache_lookup_worker                  rsrc_count_directory                     sub_b4b35
+  bfd_compress_section_contents            rsrc_parse_directory                     sub_b545e
+  bfd_elf_string_from_elf_section          rsrc_print_resource_directory            sub_b9fe7
+  bfd_errmsg                               rsrc_sort_entries.part.8                 sub_bc4d6
+  bfd_section_from_shdr                    rsrc_write_directory                     sub_c4618
+  bfd_set_error                            string_need                              sub_c4640
+  cplus_demangle                           sub_4c446                                sub_c5bd6
+  cplus_demangle_mangled_name              sub_577b0                                sub_c7f22
+  cplus_demangle_type                      sub_5b7a1                                sub_c987b
+  d_bare_function_type                     sub_5cb38                                sub_d1cd8
+  d_encoding                               sub_5f9a0                                sub_e9bb1
+  d_expression_1                           sub_73e65
+  d_exprlist                               sub_73fc3
+  d_find_pack                              sub_758d0
+  d_name                                   sub_7b6e8
+  d_print_array_type.isra.10               sub_7b718
+  d_print_mod_list                         sub_81dcb
+  d_template_args_1                        sub_81e0a
+  demangle_qualified                       sub_92288
+  demangle_template_template_parm          sub_96fd0
+  demangle_template_value_parm             sub_97009
+  dlang_identifier                         sub_970a0
+  dlang_parse_mangle                       sub_970e9
+  dlang_parse_qualified                    sub_9bd4b
+
+Complex:
+ Time: 00:01:24
+
+  _bfd_dwarf2_find_nearest_line              sub_42252      sub_a52c9
+  _bfd_elf_discard_section_eh_frame          sub_5aa32      sub_a60d9
+  _bfd_elf_map_sections_to_segments          sub_5cb38      sub_a7ab2
+  _bfd_elf_merge_symbol                      sub_5f9a0      sub_a9de9
+  _bfd_elf_slurp_version_tables              sub_6175a      sub_aa792
+  _bfd_generic_link_output_symbols           sub_631cc      sub_ac4d0
+  _bfd_link_section_stabs                    sub_67479      sub_b0b07
+  _bfd_merge_sections                        sub_682b9      sub_b272d
+  _bfd_stab_section_find_nearest_line        sub_6b212      sub_b5baf
+  _bfd_x86_elf_finish_dynamic_sections       sub_6c157      sub_b6dc9
+  _bfd_x86_elf_link_setup_gnu_properties     sub_6d6fb      sub_bb34a
+  bfd_elf_final_link                         sub_6f331      sub_bcb04
+  bfd_elf_link_add_symbols                   sub_6fcb9      sub_be4c2
+  bfd_elf_size_dynamic_sections              sub_70e55      sub_c21d9
+  coff_slurp_symbol_table.part.12            sub_72d7b      sub_c2b82
+  coff_slurp_symbol_table.part.6             sub_740da      sub_c48f0
+  d_expression_1                             sub_775d2      sub_caadd
+  d_exprlist                                 sub_79efa      sub_cd959
+  decode_line_info                           sub_81fe3      sub_d1682
+  demangle_arm_hp_template                   sub_8549b      sub_dc4a6
+  demangle_template                          sub_86bf6      sub_e4b5b
+  elf_i386_check_relocs                      sub_8870a
+  error_handler_internal                     sub_90fd6
+  eval_symbol                                sub_923e1
+  gnu_special                                sub_94948
+  internal_cplus_demangle                    sub_9a8fa
+  pex64_bfd_print_pdata_section              sub_9bd4b
+  read_attribute_value                       sub_9d5d2
+  scan_unit_for_symbols                      sub_9f530
+
+Non-structured:
+ Time: 00:01:17
+
+_bfd_abort
+sub_bbcc1
+sub_e2b51
+
+Null:
+ string_need                              0xCD0E7
+ nacl_modify_segment_map                  0x6546A
+ elf_x86_64_finish_dynamic_symbol         0x5AFF8
+ elf_i386_finish_dynamic_symbol           0x9DB30
+ bfd_elf_link_add_symbols                 0x82440
+ elf_link_input_bfd                       0x88CD3
+ elf_link_input_bfd                       0x8889C
+ do_type                                  0xCF4A8
+ dlang_parse_qualified                    0xDF4B4
+ sec_merge_hash_lookup                    0x4DFA2
+ elf_merge_gnu_properties                 0x90B40
+ _bfd_construct_extended_name_table       0x422CC
+
+
+Unused:
+close   0x4F8A7  fprintf 0xB08A3  fprintf 0xC8F23  memcpy  0xABFB2  sprintf 0xA7941
+close   0x4F9BD  fprintf 0xB0B83  fprintf 0xC90CC  memcpy  0xC3E24  sprintf 0xAC1B1
+fclose  0x4F222  fprintf 0xB0D2E  fprintf 0xC9361  memcpy  0xC3EC1  sprintf 0xACB3A
+fclose  0x5050E  fprintf 0xB1515  fprintf 0xC938B  memcpy  0xC43D2  sprintf 0xACBB7
+fclose  0x5087E  fprintf 0xB15AC  fprintf 0xC93B0  memcpy  0xCD25C  sprintf 0xACC6D
+fprintf 0x451EC  fprintf 0xB160D  fprintf 0xC93D5  memcpy  0xD3D9E  sprintf 0xACCD2
+fprintf 0x4A4AC  fprintf 0xB1651  fprintf 0xC96B9  memcpy  0xDE0EC  sprintf 0xBE351
+fprintf 0x75621  fprintf 0xB1908  fprintf 0xC98A5  memcpy  0xDE442  sprintf 0xC45D1
+fprintf 0x7568D  fprintf 0xBBCE3  fprintf 0xC993B  memcpy  0xDE47E  sprintf 0xC4F5A
+fprintf 0x7595C  fprintf 0xBF8B9  fprintf 0xC999C  memcpy  0xE33D0  sprintf 0xC4FD7
+fprintf 0x75A4F  fprintf 0xBF8DE  fprintf 0xC99E0  memcpy  0xE41A2  sprintf 0xC508D
+fprintf 0x75AA6  fprintf 0xBF96C  fprintf 0xC9CBB  memcpy  0xE438D  sprintf 0xC50F2
+fprintf 0x75ADC  fprintf 0xBF9C2  fprintf 0xC9D4A  memcpy  0xE43B4  sprintf 0xCD287
+fprintf 0x75C7A  fprintf 0xBFA0E  fprintf 0xCA0CF  memcpy  0xE43F1  sprintf 0xD3E63
+fprintf 0x75CC5  fprintf 0xC5A2C  fprintf 0xE07D6  memcpy  0xE4721  sprintf 0xD8E68
+fprintf 0x75D10  fprintf 0xC5AF0  fprintf 0xE2BA4  memcpy  0xE51EE  sprintf 0xE2D30
+fprintf 0x75EE6  fprintf 0xC5C8F  fputc   0x45271  memcpy  0xE5241  strcpy  0xD0EC7
+fprintf 0xAD60C  fprintf 0xC5D1D  fputc   0x457C8  memcpy  0xE640D  strncat 0xD0CD3
+fprintf 0xAD6D0  fprintf 0xC5D6F  fputc   0x75995  memcpy  0xE6421  strncpy 0x5A2CF
+fprintf 0xAD86F  fprintf 0xC5DAB  fputc   0x75CE2  memcpy  0xE6438  strncpy 0x5A2E0
+fprintf 0xAD8FD  fprintf 0xC5E37  fputc   0x75D27  memcpy  0xE6449  strncpy 0x5A475
+fprintf 0xAD94F  fprintf 0xC5E67  fputc   0xB14E1  memcpy  0xE659C  strncpy 0x5A486
+fprintf 0xAD98B  fprintf 0xC5E9B  fputc   0xB1819  memcpy  0xE65FE  strncpy 0x7827A
+fprintf 0xADA17  fprintf 0xC5F32  fputc   0xC9871  memcpy  0xE6645  strncpy 0x7828C
+fprintf 0xADA47  fprintf 0xC5FB4  fputc   0xC9BBE  memcpy  0xE86BD  strncpy 0x782E3
+fprintf 0xADA7B  fprintf 0xC7DFE  fputs   0x6AFCC  memmove 0x4087E  strncpy 0x782F5
+fprintf 0xADB12  fprintf 0xC7E5C  fwrite  0x6AFF4  memmove 0x408AB  strncpy 0x783D9
+fprintf 0xADB94  fprintf 0xC7E99  fwrite  0x75975  memmove 0x52933  strncpy 0x783EC
+fprintf 0xAFA3E  fprintf 0xC7F8E  fwrite  0xAD634  memmove 0x65767  strncpy 0x7849F
+fprintf 0xAFA9C  fprintf 0xC80D6  fwrite  0xB04CB  memmove 0x94A28  strncpy 0x784B2
+fprintf 0xAFAD9  fprintf 0xC8103  fwrite  0xC5A54  memmove 0x94AC3  strncpy 0x7859C
+fprintf 0xAFBCE  fprintf 0xC8136  fwrite  0xC888B  memmove 0x94CAE  strncpy 0x785AF
+fprintf 0xAFD16  fprintf 0xC8726  fwrite  0xC8CE1  memmove 0x94CC3  strncpy 0x7865F
+fprintf 0xAFD43  fprintf 0xC87C1  getgid  0x4344F  memset  0x469BB  strncpy 0x78672
+fprintf 0xAFD76  fprintf 0xC87FA  getuid  0x43446  memset  0x52970  strncpy 0xB8D16
+fprintf 0xB0401  fprintf 0xC8812  memcpy  0x4110D  memset  0xE0D9D  strncpy 0xB8E59
+fprintf 0xB043A  fprintf 0xC882A  memcpy  0x46A2F  memset  0xE3499  strncpy 0xB8EE1
+fprintf 0xB0452  fprintf 0xC8842  memcpy  0x52853  printf  0xCBB9B  strtol  0x42AA2
+fprintf 0xB046A  fprintf 0xC885A  memcpy  0x56D95  snprintf0x40FF8  strtol  0x42AC1
+fprintf 0xB0482  fprintf 0xC8872  memcpy  0x576FF  snprintf0x410B2  strtol  0x42ADF
+fprintf 0xB049A  fprintf 0xC8A7B  memcpy  0x5AB95  sprintf 0x5239D  strtol  0x42AFD
+fprintf 0xB04B2  fprintf 0xC8AB3  memcpy  0x64001  sprintf 0x564A3  strtol  0x76E28
+fprintf 0xB06E3  fprintf 0xC8AD3  memcpy  0x76579  sprintf 0x57EB1  strtoul 0x7BF7E
+fprintf 0xB071B  fprintf 0xC8AFB  memcpy  0x781A6  sprintf 0x6988F
+fprintf 0xB073B  fprintf 0xC8B23  memcpy  0x846B8  sprintf 0x6D1D1
+fprintf 0xB0763  fprintf 0xC8B4B  memcpy  0x85761  sprintf 0x6D323
+fprintf 0xB078B  fprintf 0xC8B73  memcpy  0x85774  sprintf 0x759C2
+fprintf 0xB07B3  fprintf 0xC8B9B  memcpy  0x892E2  sprintf 0x75EA1
+fprintf 0xB07DB  fprintf 0xC8BC3  memcpy  0x8F208  sprintf 0x768A4
+fprintf 0xB0803  fprintf 0xC8BEB  memcpy  0x9315B  sprintf 0x76AD9
+fprintf 0xB082B  fprintf 0xC8C13  memcpy  0x9D732  sprintf 0x77EFE
+fprintf 0xB0853  fprintf 0xC8C3B  memcpy  0xABA04  sprintf 0x77FC4
+fprintf 0xB087B  fprintf 0xC8CC8  memcpy  0xABAA1  sprintf 0x96CA0

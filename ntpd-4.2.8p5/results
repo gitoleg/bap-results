@@ -1,0 +1,123 @@
+Forbidden:
+Time: 00:00:29
+
+  Total / False positive / False negative / Unclassified
+__errno_location  fprintf      mktime     strftime
+abort             fputc        perror     system
+ctime             fputs        printf     time
+exit              fread        putchar    vfprintf
+fclose            freopen      puts
+ferror            fscanf       rename
+fflush            fwrite       rewind
+fgetc             getenv       setvbuf
+fgets             gmtime       sprintf
+fopen             localtime    sscanf
+
+
+Recursive:
+ Time: 00:00:31
+
+addArgListEntry               maintain_activefds           sub_1a9e5
+adj_systime                   modem_control                sub_1ae49
+ao_malloc.part.30             mprintf_event                sub_1eea9
+ao_strdup.part.29             optionUsage                  sub_22fd9
+change_logfile                peer_config                  sub_2aae6
+check_gen_fifo_consistency    print_one_paragraph.part.49  sub_2b1bd
+copy_addrinfo_list_impl       print_ver.part.56            sub_2bdb0
+ctl_putuint                   prt_extd_usage               sub_2bde1
+ctl_putunqstr                 prt_opt_usage                sub_2be29
+destroy_address_node          set_timer_or_die             sub_394c9
+dump_config_tree              step_systime                 sub_436e8
+env_presets                   sub_11deb                    sub_577b4
+ereallocz                     sub_11f00                    sub_5a708
+free_res                      sub_120a1                    sub_5d3d4
+freesymkey                    sub_120df                    sub_62073
+genshelloptUsage              sub_1214c                    sub_622e8
+get_systime                   sub_12313                    sub_6c094
+hack_restrict                 sub_12b28                    sub_6d1f9
+initialize_action             sub_12b46                    teljjy_control
+isc__strerror                 sub_12c37                    unload_arg_list
+isc_error_runtimecheck        sub_12e0a                    update_interfaces
+isc_log_doit                  sub_12e2f
+isc_log_write                 sub_12eed
+isc_msgcat_get                sub_1333a
+isc_sha1_update               sub_133a2
+json_token_skip.part.2        sub_1350f
+list_restrict4                sub_136c5
+list_restrict6                sub_197d8
+
+Complex:
+ Time: 00:00:45
+
+acts_receive                        sub_1246f      sub_622e8
+arc_receive                         sub_1376d      sub_6c098
+clock_select                        sub_15056      sub_6d1f9
+free_all_config_trees               sub_199e8      sub_71589
+getCmdOpts                          sub_1ae49      sub_72ad3
+gpsd_receive                        sub_1da6d      sub_73522
+hack_restrict                       sub_2499e      sub_f7a6
+jsmn_parse                          sub_3e072      timer
+opt_find_long optionSetMembers      sub_436e8      update_interfaces
+read_network_packet                 sub_49b86      yylex
+
+Non-structured:
+ Time: 00:00:45
+
+findexistingpeer        start_blo
+getCmdOpts              sub_11deb
+local_clock             sub_1da6d
+normal_dtoa             sub_55f6f
+optionRestore           sub_69208
+option_exits            sub_6d1f9
+cking_thread_internal
+
+Null:
+optionParseShell      0x6F4FB
+option_parse_duration 0x6C348
+sockporttoa           0x5F888
+socktoa               0x5F6EE
+decode_bitflags       0x5F9D2
+option_parse_duration 0x6C089
+
+Unused:
+close    0x16E51  fprintf  0x5BC80  fprintf  0x72F10  fputc    0xFBED   fwrite   0xFB8B   printf   0x42546   printf   0x6F4ED   snprintf 0x590EE
+close    0x32055  fprintf  0x60C9D  fprintf  0x72F66  fputc    0xFC89   fwrite   0xFD82   printf   0x4259D   printf   0x6F5FC   snprintf 0x5964E
+close    0x32069  fprintf  0x60CF5  fprintf  0x72F9F  fputc    0xFD49   fwrite   0xFE0B   printf   0x425FD   printf   0x6FC5E   snprintf 0x5B475
+close    0x4D6B0  fprintf  0x60D35  fprintf  0x735A0  fputc    0xFDD2   memcpy   0x51EE3  printf   0x4265D   puts     0x40A35   snprintf 0x5EBE0
+close    0x52311  fprintf  0x60D81  fprintf  0x738DD  fputc    0xFE5C   memcpy   0x6A1A5  printf   0x426BD   puts     0x41023   snprintf 0x5EE15
+close    0x596F0  fprintf  0x60DB6  fprintf  0x73A5C  fputs    0x6A5D3  memcpy   0x6DC3C  printf   0x4271D   puts     0x4D940   snprintf 0x5F4FC
+close    0x63BEE  fprintf  0x60F71  fprintf  0xE99A   fputs    0x6A61B  memcpy   0x6F02E  printf   0x4D2FE   puts     0x4E2C4   snprintf 0x5F76E
+close    0x6AE26  fprintf  0x60FFC  fprintf  0xF854   fputs    0x6AC68  memcpy   0x721BB  printf   0x520EA   puts     0x4E870   snprintf 0x5F912
+close    0x6AF00  fprintf  0x61DC7  fprintf  0xF88B   fputs    0x6AC96  memcpy   0x729EC  printf   0x59121   puts     0x51272   snprintf 0x5FB98
+close    0x713C4  fprintf  0x62679  fprintf  0xF8EA   fputs    0x6C969  memcpy   0x72AA0  printf   0x59379   puts     0x512F2   snprintf 0x5FF27
+close    0x71441  fprintf  0x67167  fprintf  0xF91F   fputs    0x737FC  memcpy   0x73138  printf   0x593F4   snprintf 0x1F99B   snprintf 0x62413
+close    0x71561  fprintf  0x671C3  fprintf  0xF975   fputs    0xFC5B   memcpy   0x73154  printf   0x59525   snprintf 0x1FA74   snprintf 0x6469A
+dup2     0x6AEE9  fprintf  0x67BE6  fprintf  0xF9E9   fwrite   0x10178  memset   0x59AEB  printf   0x5962E   snprintf 0x1FF0F   snprintf 0x64715
+dup2     0x6AEF7  fprintf  0x67C0F  fprintf  0xFA2E   fwrite   0x101D6  printf   0x31BC4  printf   0x5967A   snprintf 0x1FFCC   snprintf 0x64AAD
+fclose   0x1CB02  fprintf  0x67DCB  fprintf  0xFA5D   fwrite   0x10939  printf   0x31F63  printf   0x59718   snprintf 0x23DB6   snprintf 0x64AE4
+fclose   0x23E63  fprintf  0x6807A  fprintf  0xFADD   fwrite   0x1A8C9  printf   0x3FCB6  printf   0x5973A   snprintf 0x23DFE   snprintf 0x66248
+fclose   0x4C320  fprintf  0x680D9  fprintf  0xFB28   fwrite   0x1B44A  printf   0x3FD6A  printf   0x59762   snprintf 0x23ED9   snprintf 0x697D1
+fclose   0x594A6  fprintf  0x682DB  fprintf  0xFB4A   fwrite   0x1B708  printf   0x400B2  printf   0x5977E   snprintf 0x23FD1   snprintf 0x6F5E7
+fclose   0x62719  fprintf  0x683F8  fprintf  0xFB9A   fwrite   0x66AC4  printf   0x40393  printf   0x5979A   snprintf 0x40C00   snprintf 0x6F8E5
+fclose   0x6AF53  fprintf  0x6843B  fprintf  0xFBD7   fwrite   0x681F8  printf   0x4064A  printf   0x597F6   snprintf 0x41406   snprintf 0xEB51
+fclose   0x70DB0  fprintf  0x68760  fprintf  0xFCF1   fwrite   0x68267  printf   0x406FC  printf   0x59888   snprintf 0x41584   sprintf  0x520D5
+fprintf  0x104AD  fprintf  0x691F0  fprintf  0xFD33   fwrite   0x68C54  printf   0x4078E  printf   0x598EE   snprintf 0x415F9   sprintf  0x5256A
+fprintf  0x1094F  fprintf  0x695CF  fprintf  0xFDBC   fwrite   0x68F03  printf   0x40A16  printf   0x5995C   snprintf 0x4169D   sprintf  0x69722
+fprintf  0x10965  fprintf  0x69744  fputc    0x101FE  fwrite   0x68FC5  printf   0x40E1A  printf   0x599D0   snprintf 0x417A4   sprintf  0x6F134
+fprintf  0x1097B  fprintf  0x6982E  fputc    0x1B49B  fwrite   0x6A5F0  printf   0x40EBC  printf   0x59A20   snprintf 0x4184D   sprintf  0x717E4
+fprintf  0x109E7  fprintf  0x69854  fputc    0x1B55D  fwrite   0x6AF70  printf   0x40FF2  printf   0x59A48   snprintf 0x41A52   strcpy   0x40133
+fprintf  0x1A8EB  fprintf  0x69887  fputc    0x1B5C1  fwrite   0x6AFCC  printf   0x4146A  printf   0x59A7B   snprintf 0x4C293   strcpy   0x6A1D6
+fprintf  0x1A943  fprintf  0x698A1  fputc    0x1C6C9  fwrite   0x6F701  printf   0x41709  printf   0x59AC0   snprintf 0x4CA24   strcpy   0x6A2B7
+fprintf  0x1A996  fprintf  0x69CC2  fputc    0x1C79E  fwrite   0x6F71E  printf   0x41BC5  printf   0x6713E   snprintf 0x4D0B4   strcpy   0x6A355
+fprintf  0x1B15B  fprintf  0x69F34  fputc    0x60F94  fwrite   0x6FA78  printf   0x41D45  printf   0x68A6D   snprintf 0x4D913   strcpy   0x6A424
+fprintf  0x1B47C  fprintf  0x6A5B8  fputc    0x6101F  fwrite   0x6FA95  printf   0x41DA5  printf   0x68A83   snprintf 0x4DD82   strcpy   0x6F1E7
+fprintf  0x1B4D3  fprintf  0x6AD1D  fputc    0x6AC87  fwrite   0x6FAB2  printf   0x4215D  printf   0x68AA7   snprintf 0x4DDB7   strncpy  0x73B55
+fprintf  0x1B532  fprintf  0x6BDA6  fputc    0x6AD05  fwrite   0x6FB58  printf   0x421BD  printf   0x68AE1   snprintf 0x4E29E   strtol   0x6DE55
+fprintf  0x1B592  fprintf  0x6BE1F  fputc    0x6AEAC  fwrite   0x6FB75  printf   0x4224C  printf   0x68B11   snprintf 0x4E671   strtoul  0x68958
+fprintf  0x1C6AA  fprintf  0x6BF5D  fputc    0x6AEC1  fwrite   0x6FB92  printf   0x42296  printf   0x68BD0   snprintf 0x4E847   unlink   0x69596
+fprintf  0x1C777  fprintf  0x6BFD6  fputc    0x6AFAC  fwrite   0x6FC03  printf   0x422ED  printf   0x68BFE   snprintf 0x510D6
+fprintf  0x4C2F5  fprintf  0x70D59  fputc    0x6BF9C  fwrite   0x70CFF  printf   0x4234D  printf   0x68CAB   snprintf 0x5120C
+fprintf  0x5BB20  fprintf  0x710B7  fputc    0xF900   fwrite   0x70D31  printf   0x423AD  printf   0x68DEE   snprintf 0x517D4
+fprintf  0x5BB61  fprintf  0x72E5C  fputc    0xF98B   fwrite   0xF8CD   printf   0x4240D  printf   0x68E6C   snprintf 0x51D68
+fprintf  0x5BC1B  fprintf  0x72EC2  fputc    0xFA73   fwrite   0xF955   printf   0x4246D  printf   0x68FA8   snprintf 0x56C92
+fprintf  0x5BC44  fprintf  0x72EEC  fputc    0xFAF3   fwrite   0xFAB9   printf   0x424FC  printf   0x6F4DB   snprintf 0x590CE

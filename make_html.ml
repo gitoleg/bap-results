@@ -1,39 +1,29 @@
 open Core_kernel
 
 type check =
-  | Forbidden
   | Unused
-  | Recursive
-  | Non_structured
   | Null
-  | Complex [@@deriving sexp]
+  | Forbidden
+  | Complex
+  | Non_structural
+  | Recursive
+[@@deriving bin_io, compare, sexp]
 
+type info =
+  | Time of string
+  | Total of int
+  | Confirmed of int
+  | False_pos of int
+  | Text of string list
+[@@deriving sexp]
 
-
-type result = {
+type stat = {
     total   : int;
     false_p : int;
     confirm : int;
     unknown : int;
+    time    : string;
   }
-
-type stat = check * result
-
-let chop_suffix str suffix =
-  match String.chop_suffix str ~suffix with
-  | Some s -> s
-  | None -> str
-
-let check_of_string s =
-  match chop_suffix s ":" with
-  | "Forbidden" -> Some Forbidden
-  | "Unused" -> Some Unused
-  | "Complex" -> Some Complex
-  | "Recursive" -> Some Recursive
-  | "Non-structured" -> Some Non_structured
-  | "Null" -> Some Null
-  | _ -> None
-
 
 let html_header =  {|
 <!DOCTYPE html>
@@ -58,146 +48,248 @@ let html_finish = {|
 </html>
 |}
 
+let create_stat total confirm false_p time=
+  let unknown = total - confirm - false_p in
+  {total; false_p; confirm; unknown; time}
 
-let check_id arti check =
-  sprintf "%s+%s" arti @@ Sexp.to_string (sexp_of_check check)
+let no_incidents = function
+  | ["not found"] -> true
+  | _ -> false
 
-let map_checkname = function
-  | Forbidden -> "Forbidden functions"
-  | Unused ->  "Unused return value"
-  | Complex -> "Functions with cyclomatic complexity > 50"
-  | Recursive -> "Recursive functions"
-  | Non_structured -> "Functions with non-structural cfg"
-  | Null -> "Null pointer dereference"
+module Parse = struct
 
-let name_of_check arti check =
-  let id = check_id arti check in
-  sprintf "<b id=\"%s\">%s</b>" id (map_checkname check)
+  let parse_check name =
+    try
+      Some (check_of_sexp (Sexp.of_string name))
+    with _ ->
+          if name = "Non-structured" then Some Non_structural
+          else None
 
-let make_overview sum =
-  let digit x = sprintf "<td align=\"center\">%d</td>" x in
-  let hdr = {|
-  <table id="top" style="width:50%">
-      <tr>
-        <th>artifact</th>
-        <th>check</th>
-        <th>Total</th>
-        <th>Confirmed</th>
-        <th>False positive</th>
-        <th>Unclassified</th>
-     </tr>|} in
-  let data = List.fold sum ~init:[] ~f:(fun acc (file, stat) ->
-                 let stat = List.map ~f:(fun (x, y) -> file, x, y) stat in
-                 acc @ stat) in
-  let data = List.rev data in
-  let data =
-    List.fold data ~init:[hdr] ~f:(fun acc (arti, check, res) ->
-        let id = check_id arti check in
-        let name  =
-          sprintf "<td><a href=\"#%s\">%s</a></td>" arti arti in
-        let check =
-          sprintf "<td><a href=\"#%s\">%s</a></td>"
-            id (map_checkname check) in
-        let totl = digit res.total in
-        let conf = digit res.confirm in
-        let fals = digit res.false_p in
-        let unkn = digit res.unknown in
-        "</tr>" :: unkn :: fals :: conf :: totl :: check :: name :: "<tr>" :: acc) in
-  List.rev ("</br>" :: "</table>" :: data)
+  let int_of_str x =
+    try
+      Some (int_of_string (String.strip x))
+    with _ -> None
 
-let create_result total confirm false_p unknown =
-  {total; confirm; false_p; unknown}
+  let with_num x f =
+    Option.value_map ~default:None (int_of_str x)
+      ~f:(fun x -> Some (f x))
 
-let add_summary doc r =
-  sprintf
-    "<pre>Total/Confirmed/False positive/Unclassified: %d/%d/%d/%d</pre>"
-    r.total r.confirm r.false_p r.unknown :: doc
+  let check_of_string s =
+    match String.split ~on:':' s with
+    | s' :: _ when String.(s = s') -> None
+    | name :: _ -> parse_check name
+    | _ -> None
 
-let make_summary check text =
-  if String.is_prefix text ~prefix:"not found" then
-    create_result 0 0 0 0
-  else
-    let words =
-      String.split_on_chars ~on:[' '; '\n'] text |>
-        List.filter ~f:(fun x -> x <> "") in
-    let wc = List.length words in
-    match check with
-    | Null | Unused ->
-       let wc = wc / 2 in
-       create_result wc 0 0 wc
-    | Forbidden -> create_result wc wc 0 0
-    | _ -> create_result wc 0 0 wc
+  let info_of_string s =
+    match String.split ~on:':' s with
+    | [_; ""] -> None
+    | ["Total"; x] -> with_num x (fun x -> Total x)
+    | ["Confirmed"; x] -> with_num x (fun x -> Confirmed x)
+    | ["False_pos"; x] -> with_num x (fun x -> False_pos x)
+    | "Time" :: xs ->
+       let tm = String.concat xs ~sep:":" |> String.strip in
+       Some (Time tm)
+    | _ -> None
 
-let parse_stat s =
-  let words = String.split_on_chars s ~on:[':'; '/'] in
-  let words =
-    List.filter_map words
-      ~f:(fun s ->
-        let s = String.strip s in
-        if s = "" then None
-        else
-          try Some (int_of_string s)
-          with _ -> None) in
-  match words with
-  | [a;b;c;d] -> Some (create_result a b c d)
-  | _ -> None
+  let normalize data =
+    List.fold data ~init:[] ~f:(fun acc (check, infos) ->
+        let infos = List.fold infos ~init:[]
+          ~f:(fun acc -> function
+              | Text text -> Text (List.rev text) :: acc
+              | info -> info :: acc) in
+        (check, infos) :: acc)
 
-let close_previous_artifact = function
-  | [] -> []
-  | doc -> "</tr>" :: "</td>" :: doc
+  let process file =
+    let lines = In_channel.with_file file ~f:In_channel.input_lines in
+    let add_check data infos = function
+      | None -> data
+      | Some name -> (name, infos) :: data in
+    let rec loop data check acc = function
+      | [] ->
+         add_check data acc check
+      | line :: lines ->
+         let line = String.strip line in
+         if line = "" then loop data check acc lines
+         else if String.get line 0 = '#' then loop data check acc lines
+         else
+           match check_of_string line with
+           | Some check' ->
+              let data = add_check data acc check in
+              loop data (Some check') [] lines
+           | None ->
+              match info_of_string line with
+              | Some info ->
+                 loop data check (info :: acc) lines
+              | None ->
+                 let acc = match acc with
+                   | Text text :: acc -> Text (line :: text) :: acc
+                   | _ -> Text [line] :: acc in
+                 loop data check acc lines in
+    loop [] None [] lines |> normalize
 
-let start_artifact doc name =
-  let doc = close_previous_artifact doc in
-  "<td>" :: sprintf "<td><h3>%s</h3></td>" name :: "<tr>" :: doc
+end
 
-let filter_out_stat text =
-  let is_stat = String.is_prefix ~prefix:"Stat:" in
-  List.find text ~f:is_stat |> function
-  | None -> text, None
-  | Some line ->
-     List.filter text ~f:(Fn.non is_stat), parse_stat line
+module Template = struct
 
-let process_text doc check text =
-  let text, sum = filter_out_stat text in
-  let text = String.concat (List.rev text) ~sep:"\n" in
-  let sum = match sum with
-    | Some _ -> sum
-    | None ->
+  let map_checkname = function
+    | Forbidden -> "Forbidden functions"
+    | Unused ->  "Unused return value"
+    | Complex -> "Functions with cyclomatic complexity > 50"
+    | Recursive -> "Recursive functions"
+    | Non_structural -> "Functions with non-structural cfg"
+    | Null -> "Null pointer dereference"
+
+  let ref_to_top = {|<p><a href="#top">Top</a></p>|}
+
+  let check_id arti check =
+    sprintf "%s+%s" arti @@ Sexp.to_string (sexp_of_check check)
+
+  let render_check arti check =
+    let id = check_id arti check in
+    sprintf "<b id=\"%s\">%s</b>" id (map_checkname check)
+
+  let render_text text =
+    let text = if no_incidents text then "no incidents found"
+               else String.concat text ~sep:"\n" in
+    sprintf "<pre>\n%s\n</pre>" text
+
+  let find_text infos =
+    let rec loop = function
+      | [] -> None
+      | Text t :: _ -> Some t
+      | _ :: infos -> loop infos in
+    loop infos
+
+  let render_stat infos stat =
+    let render =
+      sprintf
+        "<pre>Total/Confirmed/False positive/Unclassified: %d/%d/%d/%d</pre>"
+        stat.total stat.confirm stat.false_p stat.unknown in
+    if stat.total <> 0 then render
+    else
+      match find_text infos with
+         | Some text when no_incidents text -> ""
+         | _ -> render
+
+  let render_check arti check stat infos =
+    let doc =
+      List.fold infos ~init:[] ~f:(fun doc -> function
+          | Text text -> render_text text :: doc
+          | Time time -> sprintf "<pre>Time: %s</pre>" time :: doc
+          | _ -> doc) in
+    render_check arti check :: render_stat infos stat :: List.rev doc
+
+  let get_stat check stat =
+    List.find stat ~f:(fun (check',s) -> check = check') |> function
+    | None -> create_stat 0 0 0 ""
+    | Some (_,s) -> s
+
+  let render_artifact name data stat =
+    let init = [
+        "<tr>";
+        sprintf "<td><h3>%s</h3></td>" name;
+        "<td>";
+        sprintf "<p id=\"%s\"> </p>" name;
+        ref_to_top;
+      ] in
+    let doc =
+      List.fold data ~init ~f:(fun  doc (check, infos) ->
+          let stat = get_stat check stat in
+          let doc' = render_check name check stat infos in
+          doc @ doc') in
+    doc @ ["</tr>"; "</td>"]
+
+  let render_summary sum =
+    let cell x = sprintf "<td align=\"center\">%s</td>" x in
+    let digit x = cell (string_of_int x) in
+    let hdr = {|
+               <table id="top" style="width:50%">
+               <tr>
+               <th>artifact</th>
+               <th>check</th>
+               <th>Total</th>
+               <th>Confirmed</th>
+               <th>False positive</th>
+               <th>Unclassified</th>
+               <th>Time</th>
+               </tr>|} in
+    let data = List.fold sum ~init:[] ~f:(fun acc (file, stat) ->
+                   let stat = List.map ~f:(fun (x, y) -> file, x, y) stat in
+                   acc @ stat) in
+    let data =
+      List.fold data ~init:[hdr] ~f:(fun acc (arti, check, res) ->
+          let id = check_id arti check in
+          let name  =
+            sprintf "<td><a href=\"#%s\">%s</a></td>" arti arti in
+          let check =
+            sprintf "<td><a href=\"#%s\">%s</a></td>"
+              id (map_checkname check) in
+          let totl = digit res.total in
+          let conf = digit res.confirm in
+          let fals = digit res.false_p in
+          let unkn = digit res.unknown in
+          let time = cell  res.time in
+          "</tr>" :: time :: unkn :: fals :: conf :: totl :: check :: name :: "<tr>" :: acc) in
+    List.rev ("</br>" :: "</table>" :: data)
+end
+
+module Stat = struct
+  let words_count text =
+    List.fold text ~init:0 ~f:(fun num line ->
+        num +
+          (String.split_on_chars ~on:[' '; '\n'] line |>
+             List.filter ~f:(fun s -> s <> "") |>
+             List.length))
+
+  let infer_total check infos =
+    let rec loop = function
+      | [] -> None
+      | Text text :: _  -> Some (words_count text)
+      | _ :: infos -> loop infos in
+    match loop infos with
+    | None -> None
+    | Some num ->
        match check with
-       | None -> None
-       | Some check -> Some (make_summary check text) in
-  let doc = match sum with
-    | None -> doc
-    | Some sum -> add_summary doc sum in
-  sprintf "<pre>\n%s\n</pre>" text :: doc, sum
+       | Null | Unused -> Some (num / 2)
+       | _ -> Some num
 
-let is_artifact line = line = "Name:"
+  let find_time infos =
+    let rec loop = function
+      | [] -> "-"
+      | Time t :: _ -> t
+      | _ :: xs -> loop xs in
+    loop infos
 
-let ref_to_top = {|<p><a href="#top">Top</a></p>|}
+  let infer_stat time = function
+    | None, Some cnf, Some fp -> create_stat (fp + cnf) cnf fp time
+    | Some total, None, None -> create_stat total 0 0 time
+    | Some total, Some cnf, None -> create_stat total cnf 0 time
+    | Some total, None, Some fp -> create_stat total 0 fp time
+    | _ -> create_stat 0 0 0 time
 
-let parse_file doc arti file =
-  let lines = In_channel.with_file file ~f:In_channel.input_lines in
-  let doc,check,text,stat =
-  List.fold lines ~init:(ref_to_top :: doc, None, [], [])
-    ~f:(fun ((doc,check,text,stat) as acc) line ->
-      let line = String.strip line in
-      if line = "" then acc
-      else
-      match check_of_string line with
-      | None -> doc, check, line :: text, stat
-      | Some name ->
-         let doc,sum = process_text doc check text in
-         let stat = match check,sum with
-           | Some check, Some sum -> (check,sum) :: stat
-           | _ -> stat in
-         name_of_check arti name :: doc, Some name, [], stat) in
-  let doc, sum = process_text doc check text in
-  let doc = close_previous_artifact doc in
-  let stat =
-    match check, sum with
-    | None, _ | _, None -> stat
-    | Some check, Some sum -> (check, sum) :: stat in
-  doc, stat
+  let get_stat check infos =
+    let rec loop ((total,confirmed,false_pos) as r) = function
+      | Total x :: infos -> loop (Some x,confirmed,false_pos) infos
+      | False_pos x :: infos -> loop (total,confirmed,Some x) infos
+      | Confirmed x :: infos -> loop (total,Some x,false_pos) infos
+      | Text text :: _ when no_incidents text -> Some 0, Some 0, Some 0
+      | _ :: infos -> loop r infos
+      | [] -> r in
+    let time = find_time infos in
+    let stat =
+      match loop (None, None, None) infos with
+      | (Some total, _, _) as r -> infer_stat time r
+      | None, cnf, fp -> infer_stat time (infer_total check infos,cnf,fp) in
+    match check with
+    | Forbidden -> {stat with unknown = 0; confirm = stat.total}
+    | _ -> stat
+
+  let of_data data =
+    List.fold data ~init:[]
+      ~f:(fun acc (check,infos) -> (check, get_stat check infos) :: acc)
+    |> List.rev
+end
+
 
 let (/) = Filename.concat
 
@@ -215,40 +307,54 @@ let start_table = {|
        </tr>
 |}
 
+let debug_print_data = function
+  | [] -> printf "EMPTY!\n"
+  | data ->
+  List.iter data ~f:(fun (check, infos) ->
+      printf "%s\n" (Sexp.to_string (sexp_of_check check));
+      List.iter infos ~f:(function
+          | Time s -> printf "  Time %s\n" s
+          | Total x -> printf "  Total %d\n" x
+          | Confirmed x -> printf "  Confirmed %d\n" x
+          | False_pos x -> printf "  False_pos %d\n" x
+          | Text text ->
+             printf "  Text: \n";
+             List.iter text ~f:(printf "   %s\n")))
+
 let () =
   let files = FileUtil.ls "." in
-  let doc,sum =
-    List.fold files ~init:([],[]) ~f:(fun (doc,sum) file ->
-        let r = file / "results" in
+  let docs,sum =
+    List.fold files ~init:([],[]) ~f:(fun (docs,sum) dir ->
+        let r = dir / "results" in
         if file_exists r then
-          let arti = Filename.basename file in
-          let doc = start_artifact doc arti in
-          let anchor = sprintf "<p id=\"%s\"> </p>" arti in
-          let doc, stat = parse_file (anchor :: doc) arti r in
-          doc, (arti, stat) :: sum
-        else doc, sum) in
-  let doc = List.rev doc in
-  let sum = make_overview sum in
+          let arti = Filename.basename dir in
+          let data = Parse.process r in
+          let stat = Stat.of_data data in
+          let doc  = Template.render_artifact arti data stat in
+          doc::docs, (arti, stat) :: sum
+        else docs, sum) in
+  let sum = Template.render_summary (List.rev sum) in
   Out_channel.with_file "results.html" ~f:(fun ch ->
       Out_channel.output_string ch html_header;
       Out_channel.output_lines ch sum;
       Out_channel.output_string ch start_table;
-      Out_channel.output_lines ch doc;
+      List.iter (List.rev docs) ~f:(Out_channel.output_lines ch);
       Out_channel.output_string ch "</table>";
       Out_channel.output_string ch html_finish)
 
 
+(*  Timing null-ptr-deref:
+    httpd  01:36:00
+    samba 00:00:40
+    lighttpd  00:15:12
+    openssl  00:46:44
+    ntpd   01:35:31
+    nginx  04:47:01
+    smtpd  01:08:20
+    ntpdc 00:25:22
+    sshd 01:53:16
+    swfcombine 00:18:13
 
-(* TODO:
-refactoring needed
-add a keywords type
-add a _silent keyword
-
-*)
-
-
-(*  Timing:
-   httpd Null 1.36
 
 defective-symbol
 httpd-2.4.18 Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.16

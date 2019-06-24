@@ -1,0 +1,65 @@
+ Forbidden:
+Time: 00:00:08
+
+__errno_location   fread     puts
+ctime              fseek     rename
+exit               ftell     sprintf
+fclose             fwrite    time
+fflush             getenv
+fopen              perror
+fprintf            printf
+fputc              putchar
+
+ Recursive:
+ Time: 00:00:08
+
+ args_callback_longoption    sub_dbee
+ enumerateUsedIDs            swf4_scan_bytes
+ input                       swf4restart
+ sub_11494                   swf5_scan_bytes
+ sub_13d39                   swf5restart
+ sub_caa3                    swf_WriteTag
+ sub_db7e
+
+ Complex:
+ Time: 00:00:11
+
+ enumerateUsedIDs
+
+ Non-structured:
+ Time: 00:00:10
+
+ zlib_error
+
+ Null:
+  zlib_error             0x1AFD6
+  swf_ReadABCfile        0x8963
+  swf_Optimize           0xB919
+  swf_Relocate           0xB1E9
+  swf5_load_buffer_state 0xF081
+  swf4_load_buffer_state 0xD1BD
+
+ Unused:
+ close    0x1ADA6   fwrite   0x1B15D
+ close    0x8FED    fwrite   0x1B17F
+ fclose   0x1A1DC   fwrite   0x1B1E2
+ fprintf  0x1AF4D   fwrite   0x1B214
+ fprintf  0x1AFCC   fwrite   0x1B2BC
+ fprintf  0x1C7C2   fwrite   0x6CC1
+ fprintf  0x1C82A   fwrite   0x6D0E
+ fprintf  0x1C876   fwrite   0x724F
+ fprintf  0x6159    fwrite   0x7D25
+ fprintf  0x61A7    fwrite   0x7D83
+ fprintf  0x6218    fwrite   0x80FF
+ fprintf  0x6294    fwrite   0x8129
+ fprintf  0x64E5    fwrite   0x8153
+ fprintf  0x65FB    fwrite   0x8AAF
+ fprintf  0x6640    fwrite   0x8F35
+ fprintf  0x8F0F    memcpy   0x1AE33
+ fprintf  0x9024    memcpy   0x1AECB
+ fprintf  0x986D    memcpy   0x62DE
+ fprintf  0xBB55    memcpy   0x6327
+ fputc    0x665D    printf   0x1A1C0
+ fwrite   0x1A1AC   printf   0x1A21C
+ fwrite   0x1A1D4   strcpy   0xD31C
+ fwrite   0x1AEFB

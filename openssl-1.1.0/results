@@ -1,0 +1,68 @@
+ Forbidden:
+Time: 00:00:19
+
+ __errno_location  fprintf    perror    setbuf
+ exit              fputc      printf    signal
+ fclose            fputs      putchar   time
+ fflush            fwrite     puts
+ fgets             getenv     rename
+
+
+ Recursive:
+ Time: 00:00:20
+
+ app_malloc                   sub_4ffd0
+ do_revoke                    sub_50078
+ dump_certs_pkeys_bag         sub_5636d
+ generate_cookie_callback     sub_58d90
+ print_ssl_summary            sub_5d3b3
+ sub_45bed                    sub_5d818
+ sub_45f45                    sub_5f053
+ sub_473b0                    sub_67160
+ sub_4ffb6                    sub_671a5
+
+
+ Complex:
+ Time: 00:00:29
+
+ ca_main             smime_main    sub_58d90
+ dgst_main           srp_main      sub_5d3b3
+ do_body enc_main    sub_38c7c     sub_671b2
+ engine_main         sub_3fdef     sub_6968c
+ ocsp_main           sub_4b5a8     sub_715b6
+ req_main            sub_4e510     www_body
+ s_server_main       sub_51459     x509_main
+
+
+ Non-structured:
+ Time: 00:00:25
+
+ main
+
+ Null:
+ Time: 00:46:44
+ not found
+
+ Unused:
+alarm 0x69925  alarm 0x6C4DC  alarm   0x6E1F6  fputc    0x6F3E3   printf   0x680F6   printf   0x6C027
+alarm 0x69E1A  alarm 0x6C7F7  alarm   0x6E23A  fputc    0x6F439   printf   0x681AF   printf   0x6C085
+alarm 0x69E8E  alarm 0x6CA95  alarm   0x6E69E  fputc    0x6F522   printf   0x681FC   printf   0x6C0E5
+alarm 0x6A053  alarm 0x6CC11  alarm   0x6E6E6  fwrite   0x52140   printf   0x68353   printf   0x6C109
+alarm 0x6A5D7  alarm 0x6CCB7  alarm   0x6E7CE  fwrite   0x5216E   printf   0x68370   putchar  0x67E05
+alarm 0x6A704  alarm 0x6CD68  alarm   0x6E812  fwrite   0x525CF   printf   0x683DB   putchar  0x6964F
+alarm 0x6A7FE  alarm 0x6CE44  alarm   0x6E982  memcpy   0x2FAFD   printf   0x68453   puts     0x69502
+alarm 0x6A886  alarm 0x6CEF2  alarm   0x6E9C2  memcpy   0x36153   printf   0x69522   puts     0x69514
+alarm 0x6AA18  alarm 0x6D00D  alarm   0x6EB5B  memcpy   0x362E0   printf   0x69538   puts     0x6966C
+alarm 0x6AB6E  alarm 0x6D0B7  alarm   0x6EC3D  memcpy   0x5773F   printf   0x6954E   sleep    0x5E61D
+alarm 0x6ACC6  alarm 0x6D218  alarm   0x6EDAC  memcpy   0x57914   printf   0x69564   sleep    0x5F2F1
+alarm 0x6AE1E  alarm 0x6D2BF  alarm   0x6EED1  memcpy   0x5F997   printf   0x6957A   snprintf 0x5012C
+alarm 0x6AF76  alarm 0x6D41A  alarm   0x6EF11  memset   0x6E33A   printf   0x69590   snprintf 0x50216
+alarm 0x6B0D0  alarm 0x6D4C7  alarm   0x6EFF3  memset   0x6E585   printf   0x695A6   snprintf 0x502B7
+alarm 0x6B22E  alarm 0x6D61D  alarm   0x6F124  memset   0x6E90F   printf   0x695C1   strncpy  0x4784E
+alarm 0x6B386  alarm 0x6D6CA  alarm   0x6F2AE  memset   0x6EAF7   printf   0x695E9   strncpy  0x478DA
+alarm 0x6B4DE  alarm 0x6D838  alarm   0x6F653  printf   0x5E007   printf   0x69631   sysconf  0x32FF5
+alarm 0x6B636  alarm 0x6D8DA  close   0x33353  printf   0x67937   printf   0x6967A   unlink   0x62F41
+alarm 0x6B78E  alarm 0x6DA47  fclose  0x3324F  printf   0x67971   printf   0x69F3B   write    0x330CF
+alarm 0x6B8F0  alarm 0x6DAEF  fprintf 0x6F402  printf   0x67EC7   printf   0x6BEFD
+alarm 0x6BA46  alarm 0x6E0C8  fprintf 0x6F53C  printf   0x67F28   printf   0x6BF5D
+alarm 0x6BBEE  alarm 0x6E110  fputc   0x5217F  printf   0x680A7   printf   0x6BF81

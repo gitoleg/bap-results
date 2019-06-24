@@ -1,0 +1,117 @@
+ Forbidden:
+Time: 00:00:22
+
+ __errno_location   fprintf      perror
+ ctime exit         fputc        printf
+ fclose             fread        rename
+ feof               fseek        time
+ ferror             fwrite       vfprintf
+ fflush             getenv
+ fopen              localtime
+
+ Recursive:
+ Time: 00:00:22
+
+  _rs_stir                                    sub_11b9d    sub_37ae8
+  bounce_delivery                             sub_12a23    sub_3e6c0
+  ca                                          sub_12a83    sub_3e6c4
+  ca_init                                     sub_19384    sub_40210
+  child_add                                   sub_1d4df    sub_40214
+  expandtree_RB_INSERT_COLOR                  sub_1e5f8    sub_414ac
+  fatal                                       sub_1e5fc    sub_41efe
+  filter_extend_chain                         sub_1eaa0    sub_471c8
+  fsqueue_envelope_path.constprop.4           sub_1eaa4    sub_47221
+  fsqueue_message_incoming_path.constprop.7   sub_1efe0    sub_47ad0
+  fsqueue_message_path.constprop.8            sub_1efe4    sub_47ad4
+  io_dispatch                                 sub_1f6b0    sub_47bcd
+  io_frame_leave                              sub_1f6b4    sub_48773
+  m_add                                       sub_1fba0    sub_487d3
+  m_get_data                                  sub_1fba4    sub_7ebf
+  m_get_evpid                                 sub_21020    sub_94f1
+  mta_connect                                 sub_21024    sub_af10
+  mta_drain                                   sub_22408    sub_af14
+  offline_enqueue                             sub_22694    sub_c247
+  parse_sockaddr                              sub_227d0    sub_e5a0
+  post_fork                                   sub_22c45    sub_e5a4
+  queue                                       sub_22da9
+  queue_proc_end                              sub_24818
+  queue_shutdown                              sub_28bdb
+  rsae_priv_dec                               sub_2efef
+  scheduler_proc_end                          sub_2f078
+  set_local                                   sub_2fc28
+  smtp_reply                                  sub_30968
+  ssl_setup                                   sub_31cbf
+  stats_tree_RB_INSERT_COLOR                  sub_31dd3
+
+ Complex:
+ Time: 00:00:30
+
+ envelope_ascii_dump     sub_40eb2
+ envelope_load_buffer    sub_410c2
+ mta_connect             sub_49e34
+ sub_18014               yylex
+ sub_1a9b6
+
+
+ Non-structured:
+ Time: 00:00:28
+
+ queue_proc_call             sub_40eb2
+ queue_proc_envelope_walk    sub_410c2
+ scheduler_proc_call         table_proc_call
+
+
+ Null:
+nanosleep              0x494BF
+mailaddr_line          0x1D353
+dict_iter              0xE65E
+waitqtree_SPLAY_MINMAX 0x402A0
+valid_localpart        0x3F60F
+strlcat                0x4B9B9
+text_to_relayhost      0x3D060
+queue_bounce           0x2C61F
+
+
+Unused:
+close    0x14498  fclose   0x2E7CE    memmove  0x1AFCC   memset   0x4AFB0   snprintf 0x2283F
+close    0x144A1  fclose   0x2E7D6    memmove  0x1C79B   memset   0x4B0A4   snprintf 0x22AE7
+close    0x1BBD5  fclose   0x39AC8    memmove  0x1D115   memset   0xE979    snprintf 0x22BF0
+close    0x1BC66  fclose   0x39B23    memmove  0x24F44   memset   0xF9FE    snprintf 0x22DB2
+close    0x1BCA1  fclose   0x3F3F0    memmove  0x377AF   open     0x2E8F7   snprintf 0x2C4AC
+close    0x1BE18  fclose   0x3F415    memmove  0x41E75   printf   0x151C4   snprintf 0x30FDF
+close    0x1BFE6  fclose   0x3FE11    memmove  0x43D46   printf   0x1521C   snprintf 0x320EB
+close    0x2E730  fclose   0x42676    memmove  0x44E36   printf   0x15263   snprintf 0x3889E
+close    0x2E804  fclose   0x42921    memmove  0xCA56    printf   0x152A5   snprintf 0x3999F
+close    0x2E8A9  fclose   0x42B5C    memmove  0xCAD6    printf   0x15777   snprintf 0x39B04
+close    0x38142  fclose   0x4488F    memmove  0xE861    printf   0x1580D   snprintf 0x3B57A
+close    0x38169  fclose   0x44AE0    memset   0x1065A   printf   0x15BF4   snprintf 0x3C704
+close    0x38232  fclose   0x4B538    memset   0x127C8   printf   0x15D1C   snprintf 0x3C733
+close    0x382B8  fclose   0x4B570    memset   0x127FE   printf   0x15D40   snprintf 0x3C764
+close    0x382C1  fclose   0x9A16     memset   0x1BD34   printf   0x16563   snprintf 0x3C79C
+close    0x3974A  fclose   0xA55F     memset   0x1D317   printf   0x165BC   snprintf 0x3F29F
+close    0x39785  fclose   0xA84A     memset   0x1D34E   printf   0x1661C   snprintf 0x4125B
+close    0x419BD  fprintf  0x37EC1    memset   0x283A8   rmdir    0x37E0D   snprintf 0x41338
+close    0x41A18  fprintf  0x3FF51    memset   0x31DFE   snprintf 0x12B75   snprintf 0x42C5B
+close    0x41A47  fprintf  0x40F7F    memset   0x331B0   snprintf 0x12BF0   snprintf 0x439EA
+close    0x448C5  fprintf  0x4A495    memset   0x33456   snprintf 0x12D42   snprintf 0x45A69
+close    0x44934  fputc    0x19975    memset   0x3350F   snprintf 0x134DB   snprintf 0x45AB0
+close    0x49313  ftruncate 0x40FFA   memset   0x33710   snprintf 0x134FC   snprintf 0x49D45
+close    0x49366  fwrite   0x3FE5B    memset   0x339A6   snprintf 0x13945   snprintf 0x49DF8
+close    0x4A5A3  fwrite   0x3FEDD    memset   0x33A5F   snprintf 0x1501B   snprintf 0x9AD8
+close    0x4A818  fwrite   0x3FF97    memset   0x33B45   snprintf 0x1542D   snprintf 0x9B43
+close    0x4AF0E  fwrite   0x419FE    memset   0x3C2C5   snprintf 0x154C9   snprintf 0x9BAA
+close    0x4B182  getpid   0x49036    memset   0x3CF47   snprintf 0x1A42D   snprintf 0x9C09
+close    0x9D90   getpid   0x49114    memset   0x3D8C4   snprintf 0x1A650   snprintf 0xC04A
+close    0xC6FD   lseek    0x2E7E2    memset   0x3DA66   snprintf 0x1A690   snprintf 0xF978
+dup2     0x382D1  lseek    0x4489A    memset   0x3DC26   snprintf 0x1A819   strtoull 0x3D454
+execl    0x382F4  memcpy   0x2F209    memset   0x3DC56   snprintf 0x1B07F   unlink   0x2E428
+execle   0x414C7  memcpy   0x3EA93    memset   0x3DC6E   snprintf 0x1B11B   unlink   0x2E539
+execle   0x4154E  memcpy   0x445DF    memset   0x3DF06   snprintf 0x1B18B   unlink   0x2E65A
+fclose   0x1AD29  memcpy   0x447A2    memset   0x3E013   snprintf 0x1D9D6   unlink   0x37A6C
+fclose   0x24DD9  memcpy   0x491D1    memset   0x40492   snprintf 0x1DD86   unlink   0x37DFC
+fclose   0x25A27  memcpy   0x4ADB9    memset   0x4194B   snprintf 0x1E121   unlink   0x412E3
+fclose   0x278FE  memcpy   0x4C315    memset   0x46212   snprintf 0x1E6DE   unlink   0x4B586
+fclose   0x279A1  memcpy   0xE120     memset   0x48F17   snprintf 0x1E70D   unlink   0xDB37
+fclose   0x2E51B  memcpy   0xE547     memset   0x49095   snprintf 0x2241A
+fclose   0x2E5E5  memmove  0x1492F    memset   0x491DE   snprintf 0x2268F
+fclose   0x2E752  memmove  0x14B12    memset   0x495B8   snprintf 0x22733

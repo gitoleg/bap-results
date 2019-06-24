@@ -1,0 +1,77 @@
+ Forbidden:
+ Time: 00:00:30
+
+  __errno_location  freopen
+  abort             getenv
+  atoi              printf
+  atol              putchar
+  exit              puts
+  fprintf           sscanf
+
+ Recursive:
+ Time: 00:00:33
+
+  ap_abort_on_oom           parse_errorlog_item
+  ap_add_module_commands    process_resource_config_fnmatch
+  ap_die                    process_resource_config_nofnmatch
+  ap_rgetline_core          sub_43e8ec
+  ap_rxplus_exec            sub_4404b0
+  ap_soak_end_container     sub_45aa86
+  ap_strcasecmp_match       sub_45da01
+  ap_strcmp_match           sub_478d3d
+  child_main                sub_48384a
+  clean_child_exit          sub_483ce2
+  count_directives_sub      sub_486162
+
+ Complex:
+ Time: 00:00:49
+
+  ap_core_output_filter                  ap_select_protocol
+  ap_directory_walk                      ap_set_byterange
+  ap_get_mime_headers_core               ap_setup_client_block
+  ap_http_filter                         basic_http_header
+  ap_process_async_request               default_handler event_check_config
+  ap_process_request_internal            log_error_core
+  ap_read_request                        sub_483ce2
+  ap_scan_script_header_err_core_ex
+
+ Non-structured:
+ Time: 00:00:51
+
+  not found
+
+ Null:
+ Time: 01:36:00
+
+  alloc_listener               0x468D30   ap_get_sload             0x434D51   ap_varbuf_cfg_getline 0x431192
+  ap_add_file_conf             0x441F5A   ap_getword_conf          0x430851   basic_http_header     0x47C437
+  ap_add_module                0x45AD1D   ap_http_filter           0x479AD4   cfg_trim_line         0x431073
+  ap_add_per_dir_conf          0x441E94   ap_if_walk               0x4514CC   close_handle_in_child 0x45F6D6
+  ap_byterange_filter          0x48053D   ap_make_dirstr_parent    0x4303AA   close_handle_in_child 0x45F6EA
+  ap_byterange_filter          0x480831   ap_make_method_list      0x4766D6   dummy_connection      0x46BC5C
+  ap_cfg_getline_core          0x430F6F   ap_os_escape_path        0x4327DE   extract_cookie_line   0x46D460
+  ap_copy_scoreboard_worker    0x439FEF   ap_read_request          0x43CA31   find_accf_name        0x468A05
+  ap_core_child_status         0x436933   ap_read_request          0x43CBF2   find_module           0x446260
+  ap_escape_html2              0x432C43   ap_read_request          0x43D37A   form_header_field     0x47B994
+  ap_expr_eval                 0x4566BE   ap_reopen_scoreboard     0x43954A   load_module           0x472E74
+  ap_expr_parse                0x45605B   ap_response_code_string  0x4424D1   prep_walk_cache       0x44E371
+  ap_expr_yy_init_buffer       0x471B22   ap_rxplus_compile        0x46DF26   register_filter       0x437257
+  ap_expr_yy_load_buffer_state 0x471983   ap_send_http_trace       0x47D39B   regsub_core           0x42FB09
+  ap_get_server_protocol       0x4468DF   ap_send_interim_response 0x43F3C0   regsub_core           0x42FCD4
+
+
+ Unused:
+  atoi    0x4734E2  memcpy  0x432C43
+  atoi    0x48958D  memcpy  0x434632
+  atoi    0x4895DC  memcpy  0x471318
+  atoi    0x48962B  memset  0x4491C6
+  atoi    0x489789  memset  0x45CE3F
+  atoi    0x4897D8  memset  0x471F30
+  atoi    0x489827  memset  0x47269E
+  atoi    0x489876  memset  0x48235C
+  fprintf 0x42BE42  memset  0x4853DB
+  fprintf 0x4723E5  printf  0x45A8EE
+  memcpy  0x432B17  strlen  0x447001
+  memcpy  0x432B53  strlen  0x45605B
+  memcpy  0x432B8F  strtod  0x4898CC
+  memcpy  0x432BCB

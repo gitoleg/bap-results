@@ -1,0 +1,76 @@
+Forbidden:
+Time: 00:00:30
+
+__errno_location   fopen       ftell     puts
+ctime              fprintf     fwrite    rename
+exit               fputc       getenv    sprintf
+fclose             fputs       perror    time
+feof               fread       printf
+fflush             fseek       putchar
+
+Recursive:
+ Time: 00:00:28
+
+_trie_dump                  free_lines       sub_6e5a4          swf_WriteTag
+_trie_put                   input            sub_72f95          use_asset
+args_callback_longoption    registry_find    sub_7583a          write_asset
+callcode                    registry_use     swf4_scan_bytes
+cut_last_push               sub_43254        swf4restart
+dump_asset                  sub_46594        swf5_scan_bytes
+dump_method                 sub_55177        swf5restart
+enumerateUsedIDs            sub_551a3        swf_ShapeSetLine
+
+Complex:
+ Time: 00:00:44
+
+enumerateUsedIDs
+extractTag
+main
+png_load
+png_write_palette_based2
+writeABC
+
+Non-structured:
+ Time: 00:00:34
+
+zlib_error
+
+Null:
+zlib_error                   0x80F44
+dict_put                     0x7B7FB
+varinfo_register_onclass     0x5C69B
+swf_Shape2ToShape            0x528E1
+swf_ReadABCfile              0x4BA0B
+swf_GetTagID                 0x491B7
+swf_Optimize                 0x48ED8
+swf_FontReduce_swfc          0x437BF
+swf_Relocate                 0x487A8
+png_write_palette_based2     0x7F952
+png_write_palette_based2     0x7F90C
+png_write_palette_based2     0x7F8CC
+png_write_palette_based2     0x7F48A
+png_load                     0x7E373
+png_read_header              0x7C8E9
+code_free                    0x5B4E2
+
+Unused:
+ calloc   0x79E81    fwrite   0x4B1D1
+ close    0x80D14    fwrite   0x4B1FB
+ fprintf  0x4766F    fwrite   0x4BB57
+ fprintf  0x4924F    fwrite   0x4BFDD
+ fprintf  0x492C0    fwrite   0x5056A
+ fprintf  0x4933C    fwrite   0x507D1
+ fprintf  0x496A3    fwrite   0x7AB98
+ fprintf  0x496E8    fwrite   0x80E69
+ fprintf  0x4BFB7    fwrite   0x810CB
+ fprintf  0x5042D    fwrite   0x810ED
+ fprintf  0x80EBB    fwrite   0x81150
+ fprintf  0x80F3A    fwrite   0x81182
+ fprintf  0x82730    fwrite   0x8122A
+ fprintf  0x82798    memcpy   0x493CF
+ fprintf  0x827E4    memcpy   0x52267
+ fputc    0x49705    memcpy   0x80DA1
+ fwrite   0x43C86    memcpy   0x80E39
+ fwrite   0x453C2    printf   0x7AAF5
+ fwrite   0x4A2F7    strcpy   0x6EE1D
+ fwrite   0x4B1A7

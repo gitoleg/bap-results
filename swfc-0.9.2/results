@@ -1,0 +1,125 @@
+Forbidden:
+Time: 00:00:47
+
+__errno_location  fopen     getenv
+clearerr          fprintf   perror
+ctime             fputc     printf
+exit              fputs     putchar
+fclose            fread     puts
+feof              fseek     rename
+ferror            ftell     sprintf
+fflush            fwrite    time
+
+
+Recursive:
+ Time: 00:00:46
+
+_trie_dump                   free_lines             sub_67b07             swf5restart
+_trie_put                    input                  sub_67dfe             swf_ShapeSetLine
+add_parent                   insert_unresolved      sub_6ac1c             swf_WriteTag
+args_callback_longoption     node_dump2             sub_6ac48             use_asset
+as3__scan_bytes              node_free              sub_8589b             write_asset
+as3_ensure_buffer_stack      registry_find          sub_898cd             yy_scan_bytes
+callcode                     registry_use           sub_8a9a8             yyensure_buffer_stack
+cut_last_push                state_free             sub_8e2be
+dump_asset                   sub_42928              sub_90b63
+dump_method                  sub_4b335              sub_9c24a
+enter_file                   sub_5134b              swf4_scan_bytes
+enumerateUsedIDs             sub_5e73a              swf4restart
+filterState_free             sub_61a7a              swf5_scan_bytes
+
+Complex:
+ Time: 00:01:09
+
+enumerateUsedIDs
+png_load
+png_write_palette_based2
+writeABC
+
+Non-structured:
+ Time: 00:00:58
+
+zlib_error
+
+Null:
+png_read_header           0xA97ED
+node_free                 0xA63C2
+enter_file2               0x95334
+handleInclude             0x9603C
+get_path                  0x94E2B
+texture2                  0x4EBF4
+s_font                    0x486F4
+dict_free_all             0xA8CDA
+reshuffle_array           0x6BFFE
+handleLabel               0x95C40
+add_dependencies          0x88355
+traits_free               0x69528
+dict_put                  0xA854E
+varinfo_register_onclass  0x72140
+swf_Shape2ToShape         0x5CB56
+swf_ReadABCfile           0x66EF1
+swf_Relocate              0x63C8E
+as3__load_buffer_state    0x955B1
+png_write_palette_based2  0xAC856
+png_write_palette_based2  0xAC810
+png_write_palette_based2  0xAC7D0
+png_write_palette_based2  0xAC38E
+
+Unused:
+calloc  0xA6BD4    fprintf 0x68D03  fputc   0x58C13  fwrite  0xA9F42  memset  0xAEA14
+close   0x66E58    fprintf 0x68D37  fputc   0x64BEB  fwrite  0xA9F84  memset  0xAF721
+close   0x6757B    fprintf 0x68E8B  fputc   0x68BA9  fwrite  0xA9FC6  printf  0x554F9
+close   0xAE80D    fprintf 0x6A697  fputc   0x68C78  fwrite  0xACA6D  printf  0x55C4A
+close   0xAEA84    fprintf 0x6A73F  fputc   0x68CA5  fwrite  0xACAB5  printf  0x55C9D
+close   0xAEBC0    fprintf 0x6AB55  fputc   0x7172B  fwrite  0xACB48  printf  0x55D28
+fclose  0xAA459    fprintf 0x6AD1F  fputs   0x68ACB  fwrite  0xACB86  printf  0x55D6D
+fclose  0xADA87    fprintf 0x6C5B2  fread   0xA970A  fwrite  0xACBC4  printf  0x58D44
+fprintf 0x42A25    fprintf 0x6D1A9  fwrite  0x57E71  fwrite  0xACC02  printf  0x58D59
+fprintf 0x5105F    fprintf 0x6D60A  fwrite  0x57F6D  fwrite  0xACCFF  printf  0x58D6E
+fprintf 0x51172    fprintf 0x6D64E  fwrite  0x5838F  fwrite  0xACD91  printf  0x58DE4
+fprintf 0x57268    fprintf 0x6D696  fwrite  0x59477  fwrite  0xAD914  printf  0x58E22
+fprintf 0x572E9    fprintf 0x6DFF5  fwrite  0x5A03A  fwrite  0xAD952  printf  0x58E85
+fprintf 0x5747C    fprintf 0x6E065  fwrite  0x5A7DF  fwrite  0xAD96B  printf  0x59455
+fprintf 0x57636    fprintf 0x6E158  fwrite  0x5AA46  fwrite  0xADA0A  printf  0x68848
+fprintf 0x57B36    fprintf 0x6E1F2  fwrite  0x5CC07  fwrite  0xADA23  printf  0x714C1
+fprintf 0x57B7D    fprintf 0x6E275  fwrite  0x5CF48  fwrite  0xADA57  printf  0x7251D
+fprintf 0x57BB4    fprintf 0x6E2F8  fwrite  0x5CF76  fwrite  0xADA7F  printf  0x72D6E
+fprintf 0x57C87    fprintf 0x701F0  fwrite  0x5CFA4  fwrite  0xAEC7A  printf  0x72DEB
+fprintf 0x57F9D    fprintf 0x7021B  fwrite  0x5F16C  fwrite  0xAED15  printf  0x72E03
+fprintf 0x58989    fprintf 0x70314  fwrite  0x5F7B5  fwrite  0xAEF77  printf  0x84A3F
+fprintf 0x589B4    fprintf 0x7045F  fwrite  0x608A8  fwrite  0xAEF99  printf  0x95B73
+fprintf 0x589DA    fprintf 0x7058E  fwrite  0x62055  fwrite  0xAEFFC  printf  0xA7848
+fprintf 0x589F8    fprintf 0x7067C  fwrite  0x63B3B  fwrite  0xAF02E  printf  0xADA6B
+fprintf 0x58A10    fprintf 0x706BF  fwrite  0x63C6E  fwrite  0xAF0D6  printf  0xADAC7
+fprintf 0x58A83    fprintf 0x706F5  fwrite  0x63DE9  fwrite  0xAF801  putchar 0x55BAC
+fprintf 0x58ACE    fprintf 0x7130A  fwrite  0x63FF5  fwrite  0xAF846  putchar 0x55C65
+fprintf 0x58AE8    fprintf 0x71386  fwrite  0x6524F  fwrite  0xAF8B4  putchar 0x72D7D
+fprintf 0x58B2A    fprintf 0x713B0  fwrite  0x6529C  fwrite  0xAF8D6  puts    0x55CAE
+fprintf 0x58B74    fprintf 0x71498  fwrite  0x657DD  lseek   0xAEA9B  puts    0x58D2F
+fprintf 0x58BEA    fprintf 0x7157D  fwrite  0x662B3  malloc  0xAC62E  puts    0x95B7D
+fprintf 0x59B2A    fprintf 0x716BB  fwrite  0x66311  malloc  0xACC71  puts    0xA6766
+fprintf 0x59B56    fprintf 0x7170A  fwrite  0x6668D  malloc  0xAD36D  realloc 0x95E22
+fprintf 0x5A36A    fprintf 0x71756  fwrite  0x666B7  memcpy  0x5600D  sprintf 0x68CC3
+fprintf 0x5A6A2    fprintf 0x71851  fwrite  0x666E1  memcpy  0x56036  sprintf 0x6D0BC
+fprintf 0x5BAF2    fprintf 0x87823  fwrite  0x6693E  memcpy  0x5C377  sprintf 0x6D0E5
+fprintf 0x5BD3D    fprintf 0x87841  fwrite  0x66A1C  memcpy  0x5C39E  sprintf 0x6D108
+fprintf 0x5D892    fprintf 0x87967  fwrite  0x66AED  memcpy  0x5C4B6  sprintf 0x82B48
+fprintf 0x5DA74    fprintf 0x88413  fwrite  0x6703D  memcpy  0x5C4DC  sprintf 0x96CB3
+fprintf 0x62312    fprintf 0x88796  fwrite  0x674C3  memcpy  0x5C956  strcat  0x51F54
+fprintf 0x626EB    fprintf 0x8A119  fwrite  0x68DC1  memcpy  0x5C982  strcat  0x52012
+fprintf 0x62B55    fprintf 0x8C05A  fwrite  0x68DE3  memcpy  0x6321A  strcat  0x6CA18
+fprintf 0x63D6F    fprintf 0x95A46  fwrite  0x68E05  memcpy  0x648B5  strcat  0x6CA4D
+fprintf 0x645FA    fprintf 0xA654B  fwrite  0x68E27  memcpy  0x96C9A  strcat  0x6CBD2
+fprintf 0x646E7    fprintf 0xA667D  fwrite  0x68E49  memcpy  0xA6181  strcat  0x88A74
+fprintf 0x64735    fprintf 0xA81C3  fwrite  0x68E6B  memcpy  0xA69AD  strcat  0xAE64C
+fprintf 0x647A6    fprintf 0xA8619  fwrite  0x7195B  memcpy  0xA6A79  strcpy  0x8A146
+fprintf 0x64822    fprintf 0xA9018  fwrite  0x71BCD  memcpy  0xA70C8  strtol  0xA5FA9
+fprintf 0x64B89    fprintf 0xA9062  fwrite  0xA78EB  memcpy  0xA70F3
+fprintf 0x64BCE    fprintf 0xA986A  fwrite  0xA9CC3  memcpy  0xA71B3
+fprintf 0x6749D    fprintf 0xAA43B  fwrite  0xA9D05  memcpy  0xA71EA
+fprintf 0x675B2    fprintf 0xAED67  fwrite  0xA9D67  memcpy  0xA7202
+fprintf 0x68866    fprintf 0xAEDE6  fwrite  0xA9DA9  memcpy  0xA9EB8
+fprintf 0x6899D    fprintf 0xB05DC  fwrite  0xA9DEB  memcpy  0xAEC4D
+fprintf 0x68AE5    fprintf 0xB0644  fwrite  0xA9E29  memcpy  0xAECE5
+fprintf 0x68B05    fprintf 0xB0690  fwrite  0xA9EDA  memset  0x63AF1
+fprintf 0x68C98    fputc   0x58C04  fwrite  0xA9F00  memset  0xAC6B4

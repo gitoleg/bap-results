@@ -1,0 +1,41 @@
+Forbidden:
+Time: 00:00:34
+
+__errno_location abort exit getenv localtime mktime raise rename strftime time
+
+Recursive:
+ Time: 00:00:34
+
+sub_4077f4 sub_409103 sub_409250 sub_4093A0 sub_409FA0 sub_40A7A0 sub_40A8D0 sub_40AEA0
+sub_40DAB0 sub_40DEC0 sub_411970 sub_412273 sub_418500 sub_41c0a4 sub_41c0ab sub_41c100
+sub_41d0b4 sub_4288e1 sub_42AC50 sub_4305E0 sub_430830 sub_430990 sub_430B70 sub_430DC0
+sub_434890 sub_434B20 sub_435890 sub_436e1d sub_437d02 sub_43C5E0 sub_43CE70 sub_4403b4
+sub_442be3 sub_4456f9 sub_44F360 sub_451940 sub_4532C0 sub_454f11 sub_458F80 sub_45c76c
+sub_45f060 sub_460da8 sub_460f83 sub_460fd8 sub_4621a1 sub_469a11 sub_46eecc sub_471B10
+sub_472b16 sub_47339a sub_473895 sub_479753 sub_47A870 sub_47ecd0 sub_48E510
+
+Complex:
+ Time: 00:00:51
+
+sub_40FD90 sub_40c042 sub_416590 sub_418500 sub_41e7be sub_422BB0 sub_427A00 sub_430f6c
+sub_433710 sub_435da0 sub_43C5E0 sub_441D50 sub_443a40 sub_44A180 sub_44f36a sub_450E90
+sub_455df8 sub_45D180 sub_45a6a4 sub_46249d sub_463428 sub_46784a sub_469E70 sub_46BB70
+sub_46cda9 sub_472990 sub_475F70 sub_477310 sub_479DF0 sub_47C540 sub_480440 sub_4812B0
+sub_482960 sub_483C60 sub_4856B0 sub_486860 sub_48bc90 sub_48f567 sub_490470 sub_491F80
+sub_493797
+
+Non-structured:
+ Time: 00:00:46
+
+sub_41B810    sub_4273F0
+sub_425800    sub_427A00
+sub_426600    sub_47ecd0
+sub_426D00
+
+Null:
+0x49168F    0x48E539
+0x4969CC    0x48DFFB
+0x409FB0    0x48E0B0
+
+Unused:
+write 0x409358

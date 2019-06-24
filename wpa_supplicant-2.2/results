@@ -1,0 +1,59 @@
+Forbidden:
+Time: 00:00:45
+
+__errno_location abort atoi exit fclose fgets fopen fprintf fputc fread fseek ftell
+fwrite gmtime localtime mktime perror printf putchar puts signal vprintf
+
+Recursive:
+ Time: 00:00:45
+
+eapol_sm_step sub_88c42 wpa_driver_nl80211_scan wpas_set_pkcs11_engine_and_module_path
+
+Complex:
+ Time: 00:01:07
+
+nl80211_connect_common print_bss_info wpa_config_get_cred_no_key wpa_config_set_cred
+wpa_config_write_global wpa_driver_nl80211_set_ap wpa_sm_rx_eapol
+wpa_supplicant_ctrl_iface_process wpa_supplicant_req_sched_scan wpa_supplicant_scan
+wpas_start_assoc_cb
+
+Non-structured:
+ Time: 00:00:53
+
+not found
+
+Null:
+eloop_cancel_timeout   0x17C6D
+dl_list_del            0x17310
+dl_list_add            0x17289
+wpa_config_get_line    0x18B5C
+dl_list_add            0x21C36
+
+Unused:
+ close   0x94379  fprintf 0x1B039   fputc   0x1AD4B
+ fclose  0x1B974  fprintf 0x1B08B   fputc   0x1B48E
+ fprintf 0x1A3AF  fprintf 0x1B0BE   fputc   0x1B542
+ fprintf 0x1A3DC  fprintf 0x1B0F1   fputc   0x1B63E
+ fprintf 0x1A409  fprintf 0x1B122   fwrite  0x1B408
+ fprintf 0x1A470  fprintf 0x1B152   fwrite  0x1B4F2
+ fprintf 0x1A49D  fprintf 0x1B185   fwrite  0x1B5B8
+ fprintf 0x1A4CA  fprintf 0x1B1B5   fwrite  0x1B81D
+ fprintf 0x1A4F7  fprintf 0x1B1E5   fwrite  0x1B84D
+ fprintf 0x1A524  fprintf 0x1B227   fwrite  0x1B8D9
+ fprintf 0x1ACDF  fprintf 0x1B2B4   fwrite  0x1B909
+ fprintf 0x1AD23  fprintf 0x1B2E7   memcpy  0x16195
+ fprintf 0x1AD8D  fprintf 0x1B317   memcpy  0x217C0
+ fprintf 0x1ADBA  fprintf 0x1B347   memcpy  0x68DA6
+ fprintf 0x1ADE5  fprintf 0x1B377   memset  0x1672E
+ fprintf 0x1AE10  fprintf 0x1B3A7   memset  0x227A1
+ fprintf 0x1AE3A  fprintf 0x1B3D7   memset  0x3B5E6
+ fprintf 0x1AE65  fprintf 0x1B45B   memset  0x5CF97
+ fprintf 0x1AE92  fprintf 0x1B525   memset  0x5D0A7
+ fprintf 0x1AEBF  fprintf 0x1B572   memset  0x5D137
+ fprintf 0x1AEEC  fprintf 0x1B60B   printf  0x15294
+ fprintf 0x1AF19  fprintf 0x1B66E   printf  0x153F0
+ fprintf 0x1AF46  fprintf 0x1B69E   printf  0x15412
+ fprintf 0x1AF79  fprintf 0x1B6C8   putchar 0x15354
+ fprintf 0x1AFA9  fprintf 0x1B6F8   putchar 0x1541C
+ fprintf 0x1AFD9  fprintf 0x1B72B
+ fprintf 0x1B009  fprintf 0x1B72B

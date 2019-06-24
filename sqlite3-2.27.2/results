@@ -1,0 +1,123 @@
+Forbidden:
+Time: 00:00:56
+
+__errno_location  fprintf   getenv       setvbuf
+atoi              fputc     localtime    signal
+exit              fputs     printf       system
+fclose            fread     putchar      time
+fflush            fseek     puts
+fgetc             ftell     raise
+fgets             fwrite    rewind
+
+Recursive:
+ Time: 00:00:54
+
+SortByDimension                    setJoinExpr                       sub_5a631
+SortByDistance                     shell_out_of_memory               sub_5b423
+btreeOverwriteContent              sqlite3BitvecDestroy              sub_5b4fc
+btreePrevious                      sqlite3BitvecSet                  sub_62ac0
+btreeRestoreCursorPosition         sqlite3BtreeNext                  sub_62b49
+checkTreePage                      sqlite3BtreeTripAllCursors        sub_630dc
+clearDatabasePage                  sqlite3CodeSubselect              sub_6f115
+columnTypeImpl                     sqlite3CreateFunc                 sub_6f6cc
+deleteCell                         sqlite3DeleteTable                sub_6fd6b
+do_meta_command                    sqlite3ExprCode                   sub_728cf
+dupedExprSize                      sqlite3ExprCodeTarget             sub_793a8
+eqp_render_level                   sqlite3ExprCompare                sub_88120
+execSql                            sqlite3ExprDelete                 sub_88c5b
+exprAnalyze                        sqlite3ExprDeleteNN               sub_891d4
+exprCodeBetween                    sqlite3ExprDup                    sub_8928a
+exprCodeVector                     sqlite3ExprIfFalse                sub_8a0d5
+exprDup                            sqlite3ExprIfTrue                 sub_8a296
+exprSelectUsage                    sqlite3ExprImpliesExpr            sub_8edf0
+findConstInWhere                   sqlite3ExprIsInteger              sub_8ef40
+fixBoundingBox                     sqlite3FixExpr                    sub_91913
+fts3EvalAllocateReaders            sqlite3FixSelect                  sub_9192f
+fts3EvalNextRow                    sqlite3FixSrcList                 sub_96e93
+fts3EvalRestart                    sqlite3Fts5ParseNodeFree          sub_96f79
+fts3EvalStartReaders               sqlite3GenerateConstraintChecks   sub_9b9ef
+fts3EvalTestExpr                   sqlite3PcacheFetchFini            sub_9cac9
+fts3EvalTokenCosts                 sqlite3Select                     sub_9cb00
+fts3EvalUpdateCounts               sqlite3SelectDelete               sub_a2286
+fts3ExprBalance                    sqlite3SelectDup                  sub_a2347
+fts3ExprCheckDepth                 sqlite3SrcListAssignCursors       sub_a2364
+fts3ExprIterate2                   sqlite3VdbeAddOp3                 sub_a2788
+fts3ExprLHitGather                 sqlite3VdbeChangeP4               sub_a30f3
+fts3NodeAddTerm.constprop.590      sqlite3VdbeMemShallowCopy         sub_a3311
+fts3NodeFree                       sqlite3WalkExpr                   sub_a337a
+fts3SegmentMerge                   sqlite3WalkSelect                 sub_a33e2
+fts3SelectLeaf                     sqlite3WhereBegin                 sub_a7370
+fts5DlidxIterNextR                 sqlite3WhereClauseClear           sub_a739e
+fts5DlidxIterPrevR                 sqlite3WhereExprAnalyze           sub_a7637
+fts5ExprCheckPoslists              sqlite3WhereExprListUsage         sub_a7642
+fts5ExprClearPoslists              sqlite3WhereExprUsageNN           sub_a7694
+fts5ExprNodeFirst                  sqlite3WhereSplit                 sub_a7706
+fts5ExprNodeZeroPoslist            sqlite3_initialize                sub_ae05c
+fts5ExprPrint                      sub_10083                         substExpr
+fts5ExprPrintTcl                   sub_11acc                         substSelect
+fts5ExprSetEof                     sub_1aeaa                         testcase_glob
+fts5ParseSetColset                 sub_1b081                         unsetJoinExpr
+getRowTrigger                      sub_24942                         valueFromExpr.constprop.626
+isConsonant                        sub_2c353                         vdbeMergeEngineFree
+jsonEachComputePath                sub_2cffa                         vdbeMergeEngineInit.isra.301
+jsonLookupStep                     sub_34aed                         vdbePmaReadBlob
+jsonMergePatch                     sub_3a571                         vdbePmaReaderNext
+jsonParseAddNode                   sub_3b634                         walkExpr
+jsonParseFillInParentage           sub_3bc87                         whereLoopAddBtreeIndex
+jsonParseValue                     sub_3fe9f                         whereLoopAddOr
+jsonRemoveAllNulls                 sub_485f9                         whereUsablePartialIndex
+multiSelectCollSeq                 sub_4b49a
+nodeRelease                        sub_4dc64
+patternCompare                     sub_4dca6
+pushDownWhereTerms                 sub_4dcb5
+resolveExprStep                    sub_502b2
+rowSetNDeepTree                    sub_504b0
+rowSetTreeToList                   sub_5480f
+rtreeCheckNode                     sub_548c8
+rtreeInsertCell                    sub_5a17a
+
+
+Complex:
+ Time: 00:01:20
+
+allocateBtreePage    sqlite3CreateIndex                sub_58179     sub_a538a
+do_meta_command      sqlite3ExprCodeTarget             sub_5a17a     sub_a6f32
+exprAnalyze          sqlite3Fts5UnicodeCatParse        sub_5eed8     sub_a993b
+fts3InitVtab         sqlite3Insert                     sub_5fccb     sub_aafb1
+fts3SnippetFunc      sqlite3ParseUri                   sub_61c44     unixOpen
+fts5MultiIterNew     sqlite3WhereBegin                 sub_68590     whereLoopAddBtree
+fts5PorterCb         sqlite3WhereCodeOneLoopStart      sub_6b05b     wherePathSatisfiesOrderBy
+openDatabase         sqlite3_step                      sub_6bf45
+pagerWalFrames       sub_108f3                         sub_6cfd9
+porterNext           sub_1a0f5                         sub_6e922
+process_input        sub_4174a                         sub_82bf7
+selectExpander       sub_4c02e                         sub_a160d
+sqlite3BtreeOpen     sub_4ccd8                         sub_a417c
+
+Non-structured:
+ Time: 00:01:10
+
+sub_4de4e
+sub_62b49
+sub_83d0a
+sub_852fe
+sub_8f005
+sub_9192f
+sub_ae05c
+
+Null:
+ False_pos: 2
+ getIntArg            0x2B591
+ sqlite3VdbeMemSetStr 0x3D25A
+
+Unused:
+ memmove  0x3D25A
+ fsync    0x44205
+ getpid   0x43F7A
+ getpid   0x5CFEF
+ memmove  0x46471
+ fputs    0x14E64
+ fprintf  0x158DD
+ fprintf  0x15AE1
+ printf   0x1595F
+ fprintf  0x15A7F

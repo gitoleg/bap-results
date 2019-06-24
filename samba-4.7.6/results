@@ -1,0 +1,37 @@
+Forbidden:
+Time: 00:00:03
+
+__errno_location   printf
+exit               puts
+fprintf            signal
+fwrite             time
+
+Recursive:
+ Time: 00:00:03
+
+recursive_delete
+sig_term
+
+Complex:
+ Time: 00:00:04
+
+binary_smbd_main
+
+Non-structured:
+ Time: 00:00:04
+
+not found
+
+Null:
+Time: 00:00:40
+ binary_smbd_main 0x4DD0
+ binary_smbd_main 0x4D6D
+
+Unused:
+ fprintf 0x380D
+ fprintf 0x4919
+ fwrite  0x499B
+ printf  0x361F
+ printf  0x44FF
+ printf  0x455C
+ puts    0x450B

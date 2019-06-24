@@ -1,0 +1,129 @@
+Forbidden:
+Time: 00:00:33
+
+__errno_location abort ctime exit fclose feof fflush fgetc fgets fopen fputc fputs fscanf
+fwrite getenv localtime perror putchar puts raise rename rewind sscanf strftime time
+
+Recursive:
+ Time: 00:00:33
+
+ BSDgetopt                                        mm_terminate                         sub_407b1
+ Blowfish_expand0state                            mm_xmalloc                           sub_408e5
+ _rs_stir                                         mmtree_RB_INSERT_COLOR               sub_40972
+ a2tun                                            monitor_read                         sub_481d3
+ addr_match_list                                  packet_set_connection                sub_49c7e
+ atomicio                                         parse_server_config                  sub_4a36a
+ auth2_challenge                                  process_do_stat                      sub_4ad50
+ auth2_update_methods_lists                       read_mux                             sub_531ef
+ auth_debug_add                                   send_attrib                          sub_58318
+ auth_openfile                                    send_data_or_handle                  sub_5e05c
+ auth_rhosts                                      send_msg                             sub_5f98d
+ authorized_principals_file                       send_names                           sub_5fe7d
+ barrett_reduce                                   send_status                          sub_603a3
+ bcrypt_pbkdf                                     send_statvfs                         sub_606e0
+ buffer_consume                                   server_loop2                         sub_606ed
+ buffer_consume_end_ret                           session_destroy_all                  sub_615a7
+ buffer_get_cstring_ret                           session_new                          sub_615b4
+ buffer_get_string                                session_pty_cleanup                  sub_61920
+ buffer_get_string_ptr_ret                        session_unused                       sub_6192d
+ cert_free                                        sftp_server_main                     sub_61dd6
+ channel_decode_socks4.isra.10                    ssh_digest_memory                    sub_61f56
+ channel_decode_socks5.isra.11                    ssh_dispatch_run_fatal               sub_61f71
+ channel_free                                     ssh_krl_revoke_cert_by_key_id        sub_61fcc
+ channel_handle_efd                               ssh_krl_revoke_cert_by_serial_range  sub_624c4
+ channel_new                                      ssh_krl_revoke_key_sha1              sub_624c7
+ channel_setup_fwd_listener_streamlocal           ssh_packet_read_poll_seqnr           sub_62530
+ child_set_env                                    ssh_packet_read_seqnr                sub_6d180
+ cleanup_exit                                     ssh_packet_send2                     sub_9b20
+ collect_children                                 sshbuf_free                          sub_9bdd
+ compress_buffer.isra.4                           sshbuf_get_cstring                   sub_9c0a
+ connect_next.isra.5                              sshbuf_get_string_direct             sub_9c55
+ crypto_sign_ed25519_ref_fe25519_mul              sshbuf_put                           sub_9d66
+ crypto_sign_ed25519_ref_fe25519_sub              sshbuf_put_cstring                   sub_9dc7
+ crypto_sign_ed25519_ref_sc25519_from32bytes      sshbuf_put_ec                        sub_a1b1
+ crypto_sign_ed25519_ref_sc25519_mul              sshbuf_putf                          sub_a4aa
+ do_child                                         sshkey_check_revoked                 sub_b0cf
+ do_cleanup                                       sshkey_fingerprint_raw               sub_b171
+ do_exec_no_pty                                   sshkey_from_blob_internal            sub_b2a9
+ do_exec_pty                                      sshkey_load_file                     sub_b424
+ do_log                                           sshkey_load_private_cert             sub_bbf7
+ do_motd.part.11                                  sshkey_parse_private2.isra.9         sub_bc05
+ error                                            sshpkt_disconnect                    sub_d0c0
+ fatal                                            sshpkt_send
+ fatal_on_fatal_errors.part.0                     sshpkt_start
+ get_handle                                       store_lastlog_message.isra.0
+ get_socket_address                               subprocess.isra.1.part.2
+ host_hash                                        userauth_finish
+ hostbased_key_allowed                            xstrdup
+ kex_derive_keys                                  sub_1b8e8
+ key_to_blob                                      sub_1b9c8
+ lastlog_get_entry                                sub_1ba06
+ load_hostkeys                                    sub_20240
+ logdie                                           sub_205d1
+ login_alloc_entry                                sub_20950
+ login_get_lastlog                                sub_20953
+ login_write                                      sub_21438
+ logit                                            sub_21bbd
+ mac_compute                                      sub_224a3
+ match_pattern                                    sub_22503
+ mkstemp                                          sub_22ff8
+ mm_auth2_read_banner                             sub_230cd
+ mm_create                                        sub_2310b
+ mm_free                                          sub_2334a
+ mm_get_keystate                                  sub_2e9a0
+ mm_getpwnamallow                                 sub_2e9c5
+ mm_inform_authserv                               sub_31afb
+ mm_key_allowed                                   sub_31b50
+ mm_make_entry                                    sub_31b69
+ mm_memvalid                                      sub_32504
+ mm_request_receive_expect                        sub_32520
+ mm_session_pty_cleanup2                          sub_3d268
+
+
+Complex:
+ Time: 00:00:48
+
+auth_parse_options copy_set_server_options fill_default_server_options hostkeys_foreach
+monitor_child_postauth session_input_channel_req sftp_server_main ssh_krl_from_blob
+sub_48db6 sub_60bcf sub_8e7f sub_a5bf
+
+Non-structured:
+ Time: 00:00:42
+
+grace_alarm_handler log_init monitor_child_postauth server_input_channel_open
+session_input_channel_req sub_497ec sub_5f830 sub_5fd20 userauth_pubkey
+
+Null:
+False_pos: 3
+sshbuf_put_u8              0x3524C
+sshkey_try_load_public     0x371D0
+mktemp_internal            0x6C41E
+
+Unused:
+  close  0x167FB    close    0x3C4B4    dup2     0xBD93      memcpy   0x3530E
+  close  0x17525    close    0x4075F    execl    0x1BEBC     memcpy   0x3554A
+  close  0x195EC    close    0x40787    fclose   0x19EC7     memcpy   0x412D4
+  close  0x19627    close    0x4080E    fclose   0x1A514     memcpy   0x41DCA
+  close  0x1963A    close    0x40CC8    fclose   0x1C588     memcpy   0x5291F
+  close  0x1C8C8    close    0x40CD9    fclose   0x20E7F     memcpy   0x533A9
+  close  0x1C8D1    close    0x51EEB    fclose   0x54303     memcpy   0x54DDC
+  close  0x1C923    close    0x51F69    fclose   0x5436B     memcpy   0x54E23
+  close  0x1CA54    close    0x698D3    fclose   0x54393     memcpy   0x55FCC
+  close  0x1CA87    close    0x69942    fputc    0x344E3     memcpy   0x56013
+  close  0x1CB0F    close    0x6E20D    fputc    0x357BB     memcpy   0x57844
+  close  0x1CB18    close    0x9D48     fputc    0x357E1     memcpy   0x5E441
+  close  0x1CB1F    close    0xBA4E     fputc    0x42D35     memcpy   0x5EC74
+  close  0x1CC48    close    0xBD35     fputs    0x19EAA     memcpy   0x696A9
+  close  0x1CC4F    close    0xBD81     fputs    0x1C356     memcpy   0x6DBE9
+  close  0x1CC57    close    0xCABB     fwrite   0x1BEA5     memset   0x63925
+  close  0x25086    close    0xD585     fwrite   0x1C390     memset   0x63F16
+  close  0x25509    close    0xD5C0     fwrite   0x344C3     memset   0x696B6
+  close  0x25705    close    0xD602     fwrite   0x3457C     strncpy  0x27E1F
+  close  0x2570D    memmove  0x2CE09    fwrite   0x345D8     strncpy  0x27E74
+  close  0x271FF    memmove  0x50332    fwrite   0x35739     strtol   0x389B0
+  close  0x27DF2    memmove  0x533D2    getpid   0x27E5C     unlink   0x28F55
+  close  0x3651A    memmove  0x53635    getpid   0x694C4     unlink   0x51F71
+  close  0x3653D    strlen   0x178BD    getpid   0x695C4     write    0x13092
+  close  0x3B4C7    strlen   0x4516D    getpid   0x6972E     write    0x444A7
+  close  0x3B5CE    strlen   0x1A22C    memcpy   0x230F4
+  close  0x3C062    dup      0xBA3E     memcpy   0x2E0AC
