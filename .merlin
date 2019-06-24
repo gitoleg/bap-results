@@ -1,0 +1,4 @@
+PKG core_kernel
+PKG fileutils
+PKG ppx_jane
+PKG regular
