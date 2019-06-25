@@ -107,8 +107,24 @@ sub_ae05c
 
 Null:
  False_pos: 2
- getIntArg            0x2B591
- sqlite3VdbeMemSetStr 0x3D25A
+ getIntArg                       0x2B591
+ sqlite3VdbeMemSetStr            0x3D25A
+ sqlite3_str_vappendf            0x3FE0F
+ sqlite3PagerOpenWal             0xD32F
+ sqlite3ExprCodeTarget           0x70581
+ output_quoted_escaped_string    0x16097
+ sqlite3LocateTableItem          0x8198B
+ sqlite3StrICmp                  0x2261C
+ sqlite3Fts5Dequote              0x27117
+ output_c_string                 0x16253
+ pcache1FetchStage2              0x37739
+ sqlite3OsUnfetch                0x223EC
+ sqlite3Fts5StorageIndexInsert   0xA1267
+ sqlite3Fts5StorageContentInsert 0x95FFF
+ fts5SegIterNext                 0x9B9A4
+ fts3EvalSelectDeferred          0xA831E
+ sqlite3Fts3OpenTokenizer        0x26334
+ setDateTimeToCurrent            0x2A2D5
 
 Unused:
  memmove  0x3D25A
