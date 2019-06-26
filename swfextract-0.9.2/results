@@ -30,12 +30,14 @@ png_load
 png_write_palette_based2
 writeABC
 
-Non-structured:
+Non-structural:
  Time: 00:00:34
 
 zlib_error
 
 Null:
+ Time: 01:30:19
+
 zlib_error                   0x80F44
 dict_put                     0x7B7FB
 varinfo_register_onclass     0x5C69B
@@ -74,3 +76,17 @@ Unused:
  fwrite   0x453C2    printf   0x7AAF5
  fwrite   0x4A2F7    strcpy   0x6EE1D
  fwrite   0x4B1A7
+
+ memcheck-out-of-bound:
+ Time: 00:33:14
+ Total: 19
+
+ memcheck-use-after-release:
+ Time: 00:33:14
+ Total: 178
+
+ value-was-used-before-check:
+ Time: 00:33:14
+ Total: 1925
+
+# null-pointer-dereference:      525 incidents

@@ -60,7 +60,7 @@ jsmn_parse                          sub_3e072      timer
 opt_find_long optionSetMembers      sub_436e8      update_interfaces
 read_network_packet                 sub_49b86      yylex
 
-Non-structured:
+Non-structural:
  Time: 00:00:45
 
 findexistingpeer        start_blo
@@ -72,6 +72,8 @@ option_exits            sub_6d1f9
 cking_thread_internal
 
 Null:
+ Time: 01:35:31
+
 optionParseShell      0x6F4FB
 option_parse_duration 0x6C348
 sockporttoa           0x5F888
@@ -121,3 +123,18 @@ fprintf  0x5BB20  fprintf  0x710B7  fputc    0xF900   fwrite   0x70D31  printf  
 fprintf  0x5BB61  fprintf  0x72E5C  fputc    0xF98B   fwrite   0xF8CD   printf   0x4240D  printf   0x68E6C   snprintf 0x51D68
 fprintf  0x5BC1B  fprintf  0x72EC2  fputc    0xFA73   fwrite   0xF955   printf   0x4246D  printf   0x68FA8   snprintf 0x56C92
 fprintf  0x5BC44  fprintf  0x72EEC  fputc    0xFAF3   fwrite   0xFAB9   printf   0x424FC  printf   0x6F4DB   snprintf 0x590CE
+
+
+ hardcoded-socket-address:
+ Time: 01:08:15
+ Total: 3
+
+ memcheck-out-of-bound:
+ Time: 01:08:15
+ Total: 9
+
+ value-was-used-before-check:
+ Time: 01:08:15
+ Total: 254
+
+# null-pointer-dereference:    1582 incidents

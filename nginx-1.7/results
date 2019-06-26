@@ -24,7 +24,7 @@ sub_46cda9 sub_472990 sub_475F70 sub_477310 sub_479DF0 sub_47C540 sub_480440 sub
 sub_482960 sub_483C60 sub_4856B0 sub_486860 sub_48bc90 sub_48f567 sub_490470 sub_491F80
 sub_493797
 
-Non-structured:
+Non-structural:
  Time: 00:00:46
 
 sub_41B810    sub_4273F0
@@ -33,9 +33,25 @@ sub_426600    sub_47ecd0
 sub_426D00
 
 Null:
+ Time: 04:47:01
+
 0x49168F    0x48E539
 0x4969CC    0x48DFFB
 0x409FB0    0x48E0B0
 
 Unused:
 write 0x409358
+
+Memcheck-out-of-bound:
+Time: 03:27:01
+Total: 34
+
+Memcheck-use-after-release:
+Time: 03:27:01
+Total: 392
+
+Value-was-used-before-check:
+Time: 03:27:01
+Total: 346
+
+# null-pointer-dereference:    1689 incidents

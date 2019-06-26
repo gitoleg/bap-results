@@ -30,7 +30,7 @@ Time: 00:00:08
  sub_74e9
  sub_97a2
 
- Non-structured:
+ Non-structural:
  Time: 00:00:11
 
  fdevent_poll_event_get_revent
@@ -52,6 +52,7 @@ Time: 00:00:08
   network_write_chunkqueue_writev 0x1E991
 
   Unused:
+  Time: 01:28:39
    calloc  0x159DA
    close   0x17633
    fprintf 0x1168B
@@ -59,3 +60,18 @@ Time: 00:00:08
    fwrite  0x19561
    memmove 0x19646
    write   0x1517B
+
+
+ Hardcoded-socket-address:
+ Time: 03:03:45
+ Total 4
+
+ Memcheck-out-of-bound:
+ Time: 03:03:45
+ Total 3
+
+ Value-was-used-before-check:
+ Time: 03:03:45
+ Total 629
+
+# null-pointer-dereference:     357 incidents

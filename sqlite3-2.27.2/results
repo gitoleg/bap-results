@@ -94,7 +94,7 @@ process_input        sub_4174a                         sub_82bf7
 selectExpander       sub_4c02e                         sub_a160d
 sqlite3BtreeOpen     sub_4ccd8                         sub_a417c
 
-Non-structured:
+Non-structural:
  Time: 00:01:10
 
 sub_4de4e
@@ -106,6 +106,8 @@ sub_9192f
 sub_ae05c
 
 Null:
+ Time: 5:55:46
+
  False_pos: 2
  getIntArg                       0x2B591
  sqlite3VdbeMemSetStr            0x3D25A

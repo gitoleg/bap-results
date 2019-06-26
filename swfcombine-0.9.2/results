@@ -14,12 +14,14 @@ Time: 00:00:07
 
  enumerateUsedIDs main normalcombine write_master
 
- Non-structured:
+ Non-structural:
  Time: 00:00:07
 
  main zlib_error
 
 Null:
+ Time: 00:18:13
+
 zlib_error                 0xE596
 swf_SetLosslessBitsIndexed 0x5DDD
 swf_ReadABCfile            0xCD21
@@ -29,6 +31,8 @@ swf_Relocate               0x9ABE
 
 
 Unused:
+ Time: 01:24:01
+
 close   0x5057   fprintf 0x6C21   fwrite  0x6903   fwrite  0xF07C   puts    0x290A
 close   0x563A   fprintf 0x6C97   fwrite  0x7524   fwrite  0xF134   puts    0x2916
 close   0x58FE   fprintf 0x7C0A   fwrite  0x78DA   fwrite  0xF159   puts    0x2922
@@ -63,3 +67,17 @@ fprintf 0x6B30   fputc   0xAA1B   fwrite  0xE87C   puts    0x28DA
 fprintf 0x6B7B   fwrite  0x2322   fwrite  0xEFA7   puts    0x28E6
 fprintf 0x6B95   fwrite  0x2509   fwrite  0xEFEC   puts    0x28F2
 fprintf 0x6BD7   fwrite  0x6807   fwrite  0xF05A   puts    0x28FE
+
+memcheck-out-of-bound:
+Time: 00:08:21
+Total: 9
+
+memcheck-use-after-release:
+Time: 00:08:21
+Total: 792
+
+value-was-used-before-check:
+Time: 00:08:21
+Total: 309
+
+# null-pointer-dereference:      262 incidents

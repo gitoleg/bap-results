@@ -80,7 +80,7 @@ Complex:
   read_attribute_value                       sub_9d5d2
   scan_unit_for_symbols                      sub_9f530
 
-Non-structured:
+Non-structural:
  Time: 00:01:17
 
 _bfd_abort
@@ -88,6 +88,8 @@ sub_bbcc1
 sub_e2b51
 
 Null:
+ Time: 3:02:02
+
  string_need                              0xCD0E7
  nacl_modify_segment_map                  0x6546A
  elf_x86_64_finish_dynamic_symbol         0x5AFF8

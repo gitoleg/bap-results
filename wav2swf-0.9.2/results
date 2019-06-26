@@ -26,12 +26,14 @@ fputc              putchar
 
  enumerateUsedIDs
 
- Non-structured:
+ Non-structural:
  Time: 00:00:10
 
  zlib_error
 
  Null:
+ Time: 00:20:07
+
   zlib_error             0x1AFD6
   swf_ReadABCfile        0x8963
   swf_Optimize           0xB919
@@ -63,3 +65,18 @@ fputc              putchar
  fwrite   0x1A1AC   printf   0x1A21C
  fwrite   0x1A1D4   strcpy   0xD31C
  fwrite   0x1AEFB
+
+ memcheck-out-of-bound:
+ Time: 00:11:03
+ Total: 11
+
+ memcheck-use-after-release:
+ Time: 00:11:03
+ Total: 6
+
+ value-was-used-before-check:
+ Time: 00:11:03
+ Total: 574
+
+
+# null-pointer-dereference:      292 incidents

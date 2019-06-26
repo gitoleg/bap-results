@@ -17,17 +17,21 @@ Complex:
 
 binary_smbd_main
 
-Non-structured:
+Non-structural:
  Time: 00:00:04
 
 not found
 
 Null:
 Time: 00:00:40
+False_pos: 2
  binary_smbd_main 0x4DD0
  binary_smbd_main 0x4D6D
 
 Unused:
+ Time: 00:00:40
+
+Confirmed: 7
  fprintf 0x380D
  fprintf 0x4919
  fwrite  0x499B
@@ -36,7 +40,14 @@ Unused:
  printf  0x455C
  puts    0x450B
 
+Hardcoded-socket-address:
+ Time: 00:00:40
+ not found
 
-# Primus-checks:
-# Time: 00:00:40
-# not found
+Memcheck-use-after-release:
+ Time: 00:00:40
+ not found
+
+Value-was-used-before-check:
+ Time: 00:00:40
+ not found

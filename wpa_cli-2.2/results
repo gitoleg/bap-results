@@ -23,12 +23,14 @@ Complex:
 
 not found
 
-Non-structured:
+Non-structural:
  Time: 00:00:06
 
 not found
 
 Null:
+ Time: 00:12:49
+
 wpa_ctrl_request          0x9730
 dl_list_del               0xCB7F
 eloop_cancel_timeout      0xD4DC
@@ -36,6 +38,8 @@ eloop_destroy             0xDF9C
 eloop_cancel_timeout_one  0xD5DA
 
 Unused:
+ Time: 00:17:55
+
 alarm     0xD910    printf    0x7A71     puts  0x5822    puts      0x8493
 alarm     0xD9A8    printf    0x7AB6     puts  0x5A17    puts      0x84CB
 close     0x94B8    printf    0x8463     puts  0x5A34    puts      0x85FA
@@ -74,3 +78,20 @@ printf    0x7235    puts      0x5641     puts  0x6DC7
 printf    0x7268    puts      0x5664     puts  0x72AD
 printf    0x776A    puts      0x5745     puts  0x81D1
 printf    0x7A1A    puts      0x57D0     puts  0x837A
+
+
+
+
+hardcoded-socket-address:
+Time: 00:20:33
+Total: 6
+
+memcheck-use-after-release:
+Time: 00:20:33
+Total: 12
+
+value-was-used-before-check:
+Time: 00:20:33
+Total: 324
+
+# null-pointer-dereference:     105 incidents

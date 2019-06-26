@@ -7,6 +7,11 @@ type check =
   | Complex
   | Non_structural
   | Recursive
+  | Hardcoded_socket_address
+  | Memcheck_double_release
+  | Memcheck_out_of_bound
+  | Memcheck_use_after_free
+  | Value_was_used_before_check
 [@@deriving bin_io, compare, sexp]
 
 type info =
@@ -60,10 +65,10 @@ module Parse = struct
 
   let parse_check name =
     try
+      let name = String.map ~f:(fun c -> if c = '-' then '_' else c) name in
+      let name = String.capitalize name in
       Some (check_of_sexp (Sexp.of_string name))
-    with _ ->
-          if name = "Non-structured" then Some Non_structural
-          else None
+    with _ -> None
 
   let int_of_str x =
     try
@@ -86,6 +91,7 @@ module Parse = struct
     | ["Total"; x] -> with_num x (fun x -> Total x)
     | ["Confirmed"; x] -> with_num x (fun x -> Confirmed x)
     | ["False_pos"; x] -> with_num x (fun x -> False_pos x)
+
     | "Time" :: xs ->
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
@@ -138,6 +144,11 @@ module Template = struct
     | Recursive -> "Recursive functions"
     | Non_structural -> "Functions with non-structural cfg"
     | Null -> "Null pointer dereference"
+    | Hardcoded_socket_address -> "Hardcoded socket address"
+    | Memcheck_double_release -> "Double free"
+    | Memcheck_out_of_bound -> "Out of bound"
+    | Memcheck_use_after_free -> "Use after free"
+    | Value_was_used_before_check -> "Value was used before check"
 
   let ref_to_top = {|<p><a href="#top">Top</a></p>|}
 

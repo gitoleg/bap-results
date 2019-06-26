@@ -53,7 +53,7 @@ Time: 00:00:22
  sub_1a9b6
 
 
- Non-structured:
+ Non-structural:
  Time: 00:00:28
 
  queue_proc_call             sub_40eb2
@@ -62,6 +62,8 @@ Time: 00:00:22
 
 
  Null:
+ Time: 01:08:20
+
 nanosleep              0x494BF
 mailaddr_line          0x1D353
 dict_iter              0xE65E
@@ -115,3 +117,21 @@ fclose   0x279A1  memcpy   0xE120     memset   0x48F17   snprintf 0x1E70D   unli
 fclose   0x2E51B  memcpy   0xE547     memset   0x49095   snprintf 0x2241A
 fclose   0x2E5E5  memmove  0x1492F    memset   0x491DE   snprintf 0x2268F
 fclose   0x2E752  memmove  0x14B12    memset   0x495B8   snprintf 0x22733
+
+ memcheck-double-release:
+ Time: 04:26:32
+ Total: 79
+
+ memcheck-out-of-bound:
+ Time: 04:26:32
+ Total: 1
+
+ memcheck-use-after-release:
+ Time: 04:26:32
+ Total:  8219
+
+ value-was-used-before-check:
+ Time: 04:26:32
+ Total: 425
+
+# null-pointer-dereference:     273 incidents

@@ -87,13 +87,15 @@ auth_parse_options copy_set_server_options fill_default_server_options hostkeys_
 monitor_child_postauth session_input_channel_req sftp_server_main ssh_krl_from_blob
 sub_48db6 sub_60bcf sub_8e7f sub_a5bf
 
-Non-structured:
+Non-structural:
  Time: 00:00:42
 
 grace_alarm_handler log_init monitor_child_postauth server_input_channel_open
 session_input_channel_req sub_497ec sub_5f830 sub_5fd20 userauth_pubkey
 
 Null:
+ Time: 01:53:16
+
 False_pos: 3
 sshbuf_put_u8              0x3524C
 sshkey_try_load_public     0x371D0
@@ -127,3 +129,18 @@ Unused:
   close  0x3B4C7    strlen   0x4516D    getpid   0x6972E     write    0x444A7
   close  0x3B5CE    strlen   0x1A22C    memcpy   0x230F4
   close  0x3C062    dup      0xBA3E     memcpy   0x2E0AC
+
+
+hardcoded-socket-address:
+ Time: 01:16:19
+ Total: 1
+
+memcheck-use-after-release:
+ Time: 01:16:19
+ Total: 24
+
+value-was-used-before-check:
+ Time: 01:16:19
+ Total: 1074
+
+# null-pointer-dereference:     2760 incidents

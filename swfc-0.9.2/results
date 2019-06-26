@@ -36,12 +36,14 @@ png_load
 png_write_palette_based2
 writeABC
 
-Non-structured:
+Non-structural:
  Time: 00:00:58
 
 zlib_error
 
 Null:
+ Time: 02:30:08
+
 png_read_header           0xA97ED
 node_free                 0xA63C2
 enter_file2               0x95334
@@ -123,3 +125,25 @@ fprintf 0x6899D    fprintf 0xB05DC  fwrite  0xA9DEB  memcpy  0xAEC4D
 fprintf 0x68AE5    fprintf 0xB0644  fwrite  0xA9E29  memcpy  0xAECE5
 fprintf 0x68B05    fprintf 0xB0690  fwrite  0xA9EDA  memset  0x63AF1
 fprintf 0x68C98    fputc   0x58C04  fwrite  0xA9F00  memset  0xAC6B4
+
+
+
+
+
+memcheck-double-release:
+Time: 01:04:34
+Total: 12
+
+memcheck-out-of-bound:
+Time: 01:04:34
+Total: 19
+
+memcheck-use-after-release:
+Time: 01:04:34
+Total: 605
+
+value-was-used-before-check:
+Time: 01:04:34
+Total: 2771
+
+# null-pointer-dereference:      561 incidents

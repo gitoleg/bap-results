@@ -34,7 +34,7 @@ Time: 00:00:19
  s_server_main       sub_51459     x509_main
 
 
- Non-structured:
+ Non-structural:
  Time: 00:00:25
 
  main
@@ -66,3 +66,11 @@ alarm 0x6B78E  alarm 0x6DA47  fclose  0x3324F  printf   0x67971   printf   0x69F
 alarm 0x6B8F0  alarm 0x6DAEF  fprintf 0x6F402  printf   0x67EC7   printf   0x6BEFD
 alarm 0x6BA46  alarm 0x6E0C8  fprintf 0x6F53C  printf   0x67F28   printf   0x6BF5D
 alarm 0x6BBEE  alarm 0x6E110  fputc   0x5217F  printf   0x680A7   printf   0x6BF81
+
+
+
+Value-was-used-before-check:
+Time: 00:27:22
+Total: 10
+
+# null-pointer-dereference:     534 incidents

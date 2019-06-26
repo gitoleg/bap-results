@@ -17,12 +17,14 @@ wpa_config_write_global wpa_driver_nl80211_set_ap wpa_sm_rx_eapol
 wpa_supplicant_ctrl_iface_process wpa_supplicant_req_sched_scan wpa_supplicant_scan
 wpas_start_assoc_cb
 
-Non-structured:
+Non-structural:
  Time: 00:00:53
 
 not found
 
 Null:
+ Time: 02:41:31
+
 clean_survey_results  0x8FBF4   eloop_cancel_timeout    0x17C6D   radio_remove_works                0x6022A
 dl_list_add           0x17289   eloop_destroy           0x1872D   wpa_config_get_line               0x18B5C
 dl_list_add           0x21C36   nl80211_cmd             0x76136   wpa_supplicant_ctrl_iface_detach  0x52F4A
@@ -61,3 +63,22 @@ Unused:
  fprintf 0x1AFA9  fprintf 0x1B6F8   putchar 0x1541C
  fprintf 0x1AFD9  fprintf 0x1B72B
  fprintf 0x1B009  fprintf 0x1B72B
+
+
+ hardcoded-socket-address:
+ Time: 00:01:28
+ Total: 7
+
+ memcheck-out-of-bound:
+ Time: 00:01:28
+ Total: 6
+
+ memcheck-use-after-release:
+ Time: 00:01:28
+ Total: 569
+
+ value-was-used-before-check:
+ Time: 00:01:28
+ Total: 495
+
+# null-pointer-dereference:     285 incidents

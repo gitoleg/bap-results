@@ -35,7 +35,7 @@
   ap_read_request                        sub_483ce2
   ap_scan_script_header_err_core_ex
 
- Non-structured:
+ Non-structural:
  Time: 00:00:51
 
   not found
@@ -61,17 +61,38 @@
 
 
  Unused:
-  atoi    0x4734E2  memcpy  0x432C43
-  atoi    0x48958D  memcpy  0x434632
-  atoi    0x4895DC  memcpy  0x471318
-  atoi    0x48962B  memset  0x4491C6
-  atoi    0x489789  memset  0x45CE3F
-  atoi    0x4897D8  memset  0x471F30
-  atoi    0x489827  memset  0x47269E
-  atoi    0x489876  memset  0x48235C
-  fprintf 0x42BE42  memset  0x4853DB
-  fprintf 0x4723E5  printf  0x45A8EE
-  memcpy  0x432B17  strlen  0x447001
-  memcpy  0x432B53  strlen  0x45605B
-  memcpy  0x432B8F  strtod  0x4898CC
-  memcpy  0x432BCB
+ Time: 14:57:00
+  atoi    0x4360B9   memcpy  0x4348FB   memset 0x4491C6   printf  0x45F316  strlen   0x46BC5C
+  atoi    0x436157   memcpy  0x436DB7   memset 0x44E4CE   printf  0x45F340  strlen   0x47C437
+  atoi    0x436353   memcpy  0x439FEF   memset 0x45CE3F   printf  0x45F34F  strlen   0x47C467
+  atoi    0x4364F5   memcpy  0x43A744   memset 0x462448   printf  0x45F379  strncpy  0x466987
+  atoi    0x4734E2   memcpy  0x43A786   memset 0x471F30   printf  0x45F388  strrchr  0x46D87A
+  atoi    0x48958D   memcpy  0x43AA49   memset 0x47269E   printf  0x45F3B2  strrchr  0x46D89C
+  atoi    0x4895DC   memcpy  0x43AA71   memset 0x47275E   printf  0x45F3C1  strstr   0x46D8C1
+  atoi    0x48962B   memcpy  0x43BF9E   memset 0x48235C   printf  0x45F460  strstr   0x46D8E6
+  atoi    0x489789   memcpy  0x43BFC8   memset 0x4853DB   printf  0x45F510  strtod   0x4898CC
+  atoi    0x4897D8   memcpy  0x44E5D7   memset 0x487F2B   putchar 0x45F3CB
+  atoi    0x489827   memcpy  0x44E6D4   memset 0x488104   puts    0x42BB76
+  atoi    0x489876   memcpy  0x44F4A2   memset 0x488319   puts    0x42BD26
+  fprintf 0x42BE42   memcpy  0x44FA4C   printf 0x42BB1B   puts    0x42BD30
+  fprintf 0x4723E5   memcpy  0x44FABD   printf 0x42BB44   puts    0x42BD3A
+  getenv  0x457424   memcpy  0x4520F9   printf 0x42BB9F   puts    0x45F4DA
+  getenv  0x457446   memcpy  0x463F50   printf 0x42BBF3   puts    0x46BF4B
+  getpid  0x44B118   memcpy  0x463FAA   printf 0x42BC0A   puts    0x46BF7F
+  getpid  0x46C386   memcpy  0x4671F4   printf 0x42BC23   puts    0x46BFC2
+  getpid  0x485A2D   memcpy  0x46725A   printf 0x42BC45   puts    0x46C00D
+  memcpy  0x42FE8C   memcpy  0x4672C2   printf 0x42BC5E   puts    0x46C057
+  memcpy  0x432B17   memcpy  0x46E478   printf 0x42BC72   strcat  0x46289B
+  memcpy  0x432B53   memcpy  0x46E49D   printf 0x42BCF4   strchr  0x46D836
+  memcpy  0x432B8F   memcpy  0x471318   printf 0x45A8EE   strchr  0x46D858
+  memcpy  0x432BCB   memcpy  0x487950   printf 0x45F1BA   strcmp  0x43F506
+  memcpy  0x432C43   memmove 0x431108   printf 0x45F227   strcmp  0x45D5BD
+  memcpy  0x433263   memset  0x42D734   printf 0x45F251   strcpy  0x46E4C2
+  memcpy  0x4332AB   memset  0x439630   printf 0x45F2CE   strlen  0x43A3E4
+  memcpy  0x434632   memset  0x439677   printf 0x45F2DD   strlen  0x447001
+  memcpy  0x434868   memset  0x4396F6   printf 0x45F307   strlen  0x45605B
+
+
+ Value-was-used-before-check:
+ Time: 01:04:41
+ Total: 67

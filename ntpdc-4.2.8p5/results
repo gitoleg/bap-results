@@ -38,7 +38,7 @@ opt_find_long   sub_1cce3
 sub_162a8       sub_1d732
 sub_17409       sub_226b8
 
-Non-structured:
+Non-structural:
  Time: 00:00:14
 
 optionRestore
@@ -48,6 +48,8 @@ sub_13418
 sub_17409
 
 Null:
+ Time: 00:25:22
+
 socktoa                      0x20A2E
 ntpdcmain                    0x9607
 option_parse_duration        0x16558
@@ -121,3 +123,19 @@ fprintf  0x13F99   fprintf  0x9118    fprintf  0xDF6C  fputc    0x12060  fwrite 
 fprintf  0x14144   fprintf  0x9181    fprintf  0xE1B4  fputc    0x120AA  fwrite  0x10DDD  fwrite   0xCFB2   printf   0x8162
 fprintf  0x147C8   fprintf  0x9201    fprintf  0xE3C3  fputc    0x120F8  fwrite  0x10DF2  fwrite   0xD210   puts     0x2047B
 fprintf  0x14F2D   fprintf  0xAD91    fprintf  0xE490  fputc    0x12351  fwrite  0x10FF5  fwrite   0xD67B   recv     0x9AA8
+
+
+
+memcheck-double-release:
+Time: 00:18:00
+Total: 22
+
+memcheck-use-after-release:
+Time: 00:18:00
+Total: 96
+
+value-was-used-before-check:
+Time: 00:18:00
+Total: 314
+
+#null-pointer-dereference:     634 incidents

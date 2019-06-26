@@ -25,18 +25,21 @@ Time: 00:00:12
  sub_101fd
  sub_2e750
 
- Non-structured:
+ Non-structural:
  Time: 00:00:15
 
  not found
 
  Null:
+ Time: 00:32:20
+
  False_pos: 2
 
  register_tap_listener          0x2955B
  display_dissector_table_names  0x2FB0C
 
  Unused:
+ Time: 03:36:38
  close  0x14E43     fwrite 0x18B8E     fwrite 0x191EB   putchar 0x27510   puts 0x28EBC
  close  0x1B96F     fwrite 0x18BA7     fwrite 0x19204   putchar 0x277E8   puts 0x29431
  close  0x1B978     fwrite 0x18BDD     fwrite 0x1921D   putchar 0x277F6   puts 0x29AFB
@@ -101,3 +104,10 @@ Time: 00:00:12
  fwrite 0x18B43     fwrite 0x191A0     putchar 0x25180  puts 0x25396
  fwrite 0x18B5C     fwrite 0x191B9     putchar 0x26F57  puts 0x27520
  fwrite 0x18B75     fwrite 0x191D2     putchar 0x26F6F  puts 0x2766B
+
+
+ value-was-used-before-check:
+ Time: 00:17:10
+ Total: 27
+
+# null-pointer-dereference:      219 incidents
