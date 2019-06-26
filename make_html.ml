@@ -15,6 +15,7 @@ type check =
 [@@deriving bin_io, compare, sexp]
 
 type info =
+  | Size of string
   | Time of string
   | Total of int
   | Confirmed of int
@@ -43,6 +44,7 @@ let html_header =  {|
    table#top tr:nth-child(even) {
      background-color: #f2f2f2;
    }
+
   </style>
   </head>
   <body>
@@ -91,10 +93,10 @@ module Parse = struct
     | ["Total"; x] -> with_num x (fun x -> Total x)
     | ["Confirmed"; x] -> with_num x (fun x -> Confirmed x)
     | ["False_pos"; x] -> with_num x (fun x -> False_pos x)
-
     | "Time" :: xs ->
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
+    | "Size" :: s :: _ -> Some (Size s)
     | _ -> None
 
   let normalize data =
@@ -110,28 +112,28 @@ module Parse = struct
     let add_check data infos = function
       | None -> data
       | Some name -> (name, infos) :: data in
-    let rec loop data check acc = function
-      | [] ->
-         add_check data acc check
+    let rec loop ((size,data) as data') check acc = function
+      | [] -> size, add_check data acc check
       | line :: lines ->
          let line = String.strip line in
-         if line = "" then loop data check acc lines
-         else if String.get line 0 = '#' then loop data check acc lines
+         if line = "" then loop data' check acc lines
+         else if String.get line 0 = '#' then loop data' check acc lines
          else
            match check_of_string line with
            | Some check' ->
               let data = add_check data acc check in
-              loop data (Some check') [] lines
+              loop (size,data) (Some check') [] lines
            | None ->
               match info_of_string line with
-              | Some info ->
-                 loop data check (info :: acc) lines
+              | Some (Size s) -> loop (Some s,data) check acc lines
+              | Some info -> loop (size,data) check (info :: acc) lines
               | None ->
                  let acc = match acc with
                    | Text text :: acc -> Text (line :: text) :: acc
                    | _ -> Text [line] :: acc in
-                 loop data check acc lines in
-    loop [] None [] lines |> normalize
+                 loop (size,data) check acc lines in
+    let size, data = loop (None,[]) None [] lines in
+    size, normalize data
 
 end
 
@@ -224,23 +226,29 @@ module Template = struct
                <th>Unclassified</th>
                <th>Time</th>
                </tr>|} in
-    let data = List.fold sum ~init:[] ~f:(fun acc (file, stat) ->
-                   let stat = List.map ~f:(fun (x, y) -> file, x, y) stat in
-                   acc @ stat) in
     let data =
-      List.fold data ~init:[hdr] ~f:(fun acc (arti, check, res) ->
-          let id = check_id arti check in
+      List.fold sum ~init:[hdr] ~f:(fun acc (arti, size, data) ->
+          let size = match size with
+            | None -> ""
+            | Some s -> sprintf "\nsize: %s" s in
           let name  =
-            sprintf "<td><a href=\"#%s\">%s</a></td>" arti arti in
-          let check =
-            sprintf "<td><a href=\"#%s\">%s</a></td>"
-              id (map_checkname check) in
-          let totl = digit res.total in
-          let conf = digit res.confirm in
-          let fals = digit res.false_p in
-          let unkn = digit res.unknown in
-          let time = cell  res.time in
-          "</tr>" :: time :: unkn :: fals :: conf :: totl :: check :: name :: "<tr>" :: acc) in
+            sprintf "<td bgcolor=\"white\" rowspan=\"%d\" >
+                         <pre><a href=\"#%s\">%s</a>%s</pre>
+                     </td>"
+              (List.length data) arti arti size in
+          fst @@
+          List.fold data ~init:(name :: "<tr>" :: acc, true) ~f:(fun (acc,has_tr) (check, res) ->
+              let check =
+                sprintf "<td><a href=\"#%s\">%s</a></td>"
+                  (check_id arti check) (map_checkname check) in
+              let totl = digit res.total in
+              let conf = digit res.confirm in
+              let fals = digit res.false_p in
+              let unkn = digit res.unknown in
+              let time = cell  res.time in
+              let tr = if has_tr then "" else "<tr>" in
+              "</tr>" :: time :: unkn :: fals :: conf :: totl :: check
+              :: tr :: acc, false)) in
     List.rev ("</br>" :: "</table>" :: data)
 end
 
@@ -324,6 +332,7 @@ let debug_print_data = function
   List.iter data ~f:(fun (check, infos) ->
       printf "%s\n" (Sexp.to_string (sexp_of_check check));
       List.iter infos ~f:(function
+          | Size s -> printf "  Size %s\n" s
           | Time s -> printf "  Time %s\n" s
           | Total x -> printf "  Total %d\n" x
           | Confirmed x -> printf "  Confirmed %d\n" x
@@ -339,10 +348,10 @@ let () =
         let r = dir / "results" in
         if file_exists r then
           let arti = Filename.basename dir in
-          let data = Parse.process r in
+          let size, data = Parse.process r in
           let stat = Stat.of_data data in
           let doc  = Template.render_artifact arti data stat in
-          doc::docs, (arti, stat) :: sum
+          doc::docs, (arti, size, stat) :: sum
         else docs, sum) in
   let sum = Template.render_summary (List.rev sum) in
   Out_channel.with_file "results.html" ~f:(fun ch ->
