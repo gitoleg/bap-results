@@ -32,15 +32,16 @@ False_pos: 2
 
 Unused:
  Time: 00:00:40
-
-Confirmed: 7
- fprintf 0x380D
- fprintf 0x4919
- fwrite  0x499B
- printf  0x361F
- printf  0x44FF
- printf  0x455C
- puts    0x450B
+ Confirmed: 9
+  fprintf 0x380D
+  fprintf 0x4919
+  fwrite  0x499B
+  printf  0x361F
+  printf  0x44DB
+  printf  0x44FF
+  printf  0x455C
+  puts    0x44E7
+  puts    0x450B
 
 Hardcoded-socket-address:
  Time: 00:00:40
