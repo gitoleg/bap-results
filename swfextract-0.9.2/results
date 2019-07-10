@@ -142,14 +142,12 @@ fprintf  0x52EF8  fprintf  0x7D537  fwrite   0x4BB57  memcpy   0x52129  printf  
 
  memcheck-out-of-bound:
  Time: 00:33:14
- Total: 19
+ Total: 10
 
  memcheck-use-after-release:
  Time: 00:33:14
- Total: 178
+ Total: 32
 
  value-was-used-before-check:
  Time: 00:33:14
- Total: 1925
-
-# null-pointer-dereference:      525 incidents
+ Total: 224

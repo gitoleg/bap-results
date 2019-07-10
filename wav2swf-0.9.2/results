@@ -84,14 +84,12 @@ fprintf 0x19FA4  fwrite  0x18A54  fwrite  0x6CC1   printf  0x1823C  puts    0x18
 
  memcheck-out-of-bound:
  Time: 00:11:03
- Total: 11
+ Total: 4
 
  memcheck-use-after-release:
  Time: 00:11:03
- Total: 6
+ Total: 4
 
  value-was-used-before-check:
  Time: 00:11:03
- Total: 574
-
-# null-pointer-dereference:      292 incidents
+ Total: 65

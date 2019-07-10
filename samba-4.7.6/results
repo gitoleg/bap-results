@@ -43,6 +43,7 @@ Unused:
   puts    0x44E7
   puts    0x450B
 
+
 Hardcoded-socket-address:
  Time: 00:00:40
  not found
@@ -51,6 +52,6 @@ Memcheck-use-after-release:
  Time: 00:00:40
  not found
 
-Value-was-used-before-check:
+Memcheck-out-of-bound:
  Time: 00:00:40
  not found

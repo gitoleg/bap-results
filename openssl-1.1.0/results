@@ -87,5 +87,3 @@ alarm    0x6D2BF  fprintf  0x6F53C  printf   0x639A3  printf   0x6C0E5  puts    
 Value-was-used-before-check:
 Time: 00:27:22
 Total: 10
-
-# null-pointer-dereference:     534 incidents

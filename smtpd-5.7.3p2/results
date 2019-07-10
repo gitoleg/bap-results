@@ -133,7 +133,7 @@ dup2    0x382D1  fwrite    0x419FE  memset      0x33456  snprintf 0x12B75   snpr
 
 memcheck-double-release:
  Time: 04:26:32
- Total: 79
+ Total: 1
 
  memcheck-out-of-bound:
  Time: 04:26:32
@@ -141,10 +141,8 @@ memcheck-double-release:
 
  memcheck-use-after-release:
  Time: 04:26:32
- Total:  8219
+ Total:  14
 
  value-was-used-before-check:
  Time: 04:26:32
- Total: 425
-
-# null-pointer-dereference:     273 incidents
+ Total: 82

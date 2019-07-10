@@ -42,7 +42,7 @@ Null:
 0x409FB0    0x48E0B0
 
 Unused:
-Time: 3:40:16
+Time: 03:40:16
 close   0x4205DD  memcpy  0x4398E3  memcpy  0x462DB0  memcpy  0x48233F  memset  0x429DE9
 memcpy  0x40B93B  memcpy  0x439A9D  memcpy  0x468258  memcpy  0x48256A  memset  0x439154
 memcpy  0x40BA42  memcpy  0x43AEF4  memcpy  0x46E20F  memcpy  0x483A02  memset  0x439340
@@ -63,14 +63,12 @@ memcpy  0x430A4B  memcpy  0x462BE2  memcpy  0x4822C5  memset  0x41A86D
 
 Memcheck-out-of-bound:
 Time: 03:27:01
-Total: 34
+Total: 4
 
 Memcheck-use-after-release:
 Time: 03:27:01
-Total: 392
+Total: 6
 
 Value-was-used-before-check:
 Time: 03:27:01
-Total: 346
-
-# null-pointer-dereference:    1689 incidents
+Total: 51

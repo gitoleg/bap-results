@@ -104,6 +104,4 @@ fputs   0xEC2A   fwrite  0x18DD1  fwrite  0x194B1  putchar 0x29419  puts    0x24
 
  value-was-used-before-check:
  Time: 00:17:10
- Total: 27
-
-# null-pointer-dereference:      219 incidents
+ Total: 19

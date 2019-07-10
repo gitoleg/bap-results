@@ -67,14 +67,12 @@ fprintf 0x6B30  fprintf 0xFE36  fwrite  0xC84C  printf  0x2540  puts    0x290A
 
 memcheck-out-of-bound:
 Time: 00:08:21
-Total: 9
+Total: 3
 
 memcheck-use-after-release:
 Time: 00:08:21
-Total: 792
+Total: 27
 
 value-was-used-before-check:
 Time: 00:08:21
-Total: 309
-
-# null-pointer-dereference:      262 incidents
+Total: 59

@@ -167,14 +167,13 @@ fprintf  0x1FF8B  fprintf  0xDF4E   fputc    0x1105C  fwrite   0x1992E  memcpy  
 
 memcheck-double-release:
 Time: 00:18:00
-Total: 22
+Total: 1
 
 memcheck-use-after-release:
 Time: 00:18:00
-Total: 96
+Total: 1
+False_pos: 1
 
 value-was-used-before-check:
 Time: 00:18:00
-Total: 314
-
-#null-pointer-dereference:     634 incidents
+Total: 87

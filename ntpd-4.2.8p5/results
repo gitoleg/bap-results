@@ -245,10 +245,8 @@ hardcoded-socket-address:
 
  memcheck-out-of-bound:
  Time: 01:08:15
- Total: 9
+ Total: 3
 
  value-was-used-before-check:
  Time: 01:08:15
- Total: 254
-
-# null-pointer-dereference:    1582 incidents
+ Total: 92

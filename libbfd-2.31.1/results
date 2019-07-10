@@ -90,7 +90,7 @@ sub_bbcc1
 sub_e2b51
 
 Null:
- Time: 3:02:02
+ Time: 03:02:02
 
  string_need                              0xCD0E7
  nacl_modify_segment_map                  0x6546A

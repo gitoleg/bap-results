@@ -151,10 +151,9 @@ hardcoded-socket-address:
 
 memcheck-use-after-release:
  Time: 01:16:19
- Total: 24
+ Total: 3
+ False_pos: 3
 
 value-was-used-before-check:
  Time: 01:16:19
- Total: 1074
-
-# null-pointer-dereference:     2760 incidents
+ Total: 174

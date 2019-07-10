@@ -163,18 +163,16 @@ fprintf 0x63D6F  fprintf 0x87823  fwrite  0x65DF8  malloc  0x46471  printf  0x72
 
 memcheck-double-release:
 Time: 01:04:34
-Total: 12
+Total: 2
 
 memcheck-out-of-bound:
 Time: 01:04:34
-Total: 19
+Total: 10
 
 memcheck-use-after-release:
 Time: 01:04:34
-Total: 605
+Total: 24
 
 value-was-used-before-check:
 Time: 01:04:34
-Total: 2771
-
-# null-pointer-dereference:      561 incidents
+Total: 276

@@ -135,19 +135,17 @@ fprintf  0x1B039  memcpy   0x2E989  memcpy   0x8D5AC  memset   0x5AE9B  memset  
 fprintf  0x1B08B  memcpy   0x2F8A2  memcpy   0x8D737  memset   0x5C403  memset   0x7DF55
 
  hardcoded-socket-address:
- Time: 00:01:28
- Total: 7
+ Time: 01:28:51
+ Total: 4
 
  memcheck-out-of-bound:
- Time: 00:01:28
- Total: 6
+ Time: 01:28:51
+ Total: 5
 
  memcheck-use-after-release:
- Time: 00:01:28
- Total: 569
+ Time: 01:28:51
+ Total: 25
 
  value-was-used-before-check:
- Time: 00:01:28
- Total: 495
-
-# null-pointer-dereference:     285 incidents
+ Time: 01:28:51
+ Total: 138

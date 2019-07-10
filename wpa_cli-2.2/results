@@ -70,14 +70,12 @@ memcpy   0xC6E1  printf  0x9EC3  puts     0x5397  puts 0x63AC  puts 0x917B
 
 hardcoded-socket-address:
 Time: 00:20:33
-Total: 6
+Total: 2
 
 memcheck-use-after-release:
 Time: 00:20:33
-Total: 12
+Total: 5
 
 value-was-used-before-check:
 Time: 00:20:33
-Total: 324
-
-# null-pointer-dereference:     105 incidents
+Total: 60

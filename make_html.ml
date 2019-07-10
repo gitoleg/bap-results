@@ -1,7 +1,7 @@
 open Core_kernel
 
 type check =
-  | Test
+  | Test of string
   | Unused
   | Null
   | Forbidden
@@ -11,11 +11,12 @@ type check =
   | Hardcoded_socket_address
   | Memcheck_double_release
   | Memcheck_out_of_bound
-  | Memcheck_use_after_free
+  | Memcheck_use_after_release
   | Value_was_used_before_check
 [@@deriving bin_io, compare, sexp]
 
 type info =
+  | Descr of string
   | Size of string
   | Time of string
   | Total of int
@@ -33,6 +34,12 @@ type stat = {
     unknown : int;
     time    : string;
   }
+
+
+module Check = struct
+  type t = check [@@deriving bin_io,compare, sexp]
+  let hash = Hashtbl.hash
+end
 
 let html_header =  {|
 <!DOCTYPE html>
@@ -67,6 +74,32 @@ let html_header =  {|
      display: table-cell;
    }
 
+   .tooltip {
+     position: relative;
+     display: inline-block;
+     border-bottom: 1px dotted black;
+     transition: 0s background-color;
+   }
+
+   .tooltip .tooltiptext {
+     visibility: hidden;
+     background-color: black;
+     color: #fff;
+     border-radius: 10px;
+     padding: 5px 0;
+     position: absolute;
+     z-index: 1;
+     top: -5px;
+     left: 110%;
+
+   }
+
+   .tooltip:hover .tooltiptext {
+     visibility: visible;
+     transition-delay: 1s;
+   }
+
+
   </style>
   </head>
   <body>
@@ -87,13 +120,62 @@ let is_no_incidents = function
 
 let no_incidents_stmt = "no incidents found"
 
+
+let descr_forbidden = {|
+The next functions shall not be used:
+ - errno shall not be used as an error indicator
+ - &lt;locale.h&gt; and the setlocale function
+ - setjmp and longjmp
+ - signal handling facilities of &lt;signal.h&gt;
+ - The input/output library &lt;stdio.h&gt;
+ - atof, atoi, and atol
+ - abort, exit, getenv and system
+ - the &lt;time.h&gt; interface
+|}
+
+let descr_of_check = function
+  | Test _ -> `Absent
+  | Unused -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-14/descr"
+  | Null ->  `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-174/descr"
+  | Forbidden -> `Ready descr_forbidden
+  | Complex -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
+  | Non_structural -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
+  | Recursive  -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
+  | Hardcoded_socket_address -> `Absent
+  | Memcheck_double_release -> `Absent
+  | Memcheck_out_of_bound -> `Absent
+  | Memcheck_use_after_release  -> `Absent
+  | Value_was_used_before_check  -> `Absent
+
+let descr = Hashtbl.create (module Check)
+
+let get_descr check =
+  match Hashtbl.find descr check with
+  | Some data -> data
+  | None ->
+     match descr_of_check check with
+     | `Absent -> ""
+     | `Ready x -> x
+     | `Link url ->
+        let p = Unix.open_process_in (sprintf "wget %s" url) in
+        let _ = Unix.close_process_in p in
+        let name = Filename.basename url in
+        let data = In_channel.with_file name ~f:In_channel.input_lines in
+        Sys.remove name;
+        let data = String.concat ~sep:"\n" data in
+        Hashtbl.set descr check data;
+        data
+
+
 module Parse = struct
 
-  let parse_check name =
+  let parse_check name data =
     try
       let name = String.map ~f:(fun c -> if c = '-' then '_' else c) name in
       let name = String.capitalize name in
-      Some (check_of_sexp (Sexp.of_string name))
+      match data with
+      | "" -> Some (check_of_sexp (Sexp.of_string name))
+      | s -> Some (check_of_sexp (Sexp.(List [Atom name; Atom data])))
     with _ -> None
 
   let int_of_str x =
@@ -108,7 +190,7 @@ module Parse = struct
   let check_of_string s =
     match String.split ~on:':' s with
     | s' :: _ when String.(s = s') -> None
-    | name :: _ -> parse_check name
+    | name :: data -> parse_check name (String.(strip (concat data)))
     | _ -> None
 
   let info_of_string s =
@@ -122,8 +204,8 @@ module Parse = struct
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
     | "Size" :: s :: _ -> Some (Size s)
+    | "Descr" :: xs -> Some (Descr (String.concat xs))
     | _ -> None
-
 
   let normalize data =
     List.fold data ~init:[] ~f:(fun acc (check, infos) ->
@@ -165,8 +247,8 @@ end
 
 module Template = struct
 
-  let map_checkname = function
-    | Test -> "Testcase"
+  let string_of_check = function
+    | Test s -> sprintf  "Testcase: %s" s
     | Forbidden -> "Forbidden functions"
     | Unused ->  "Unused return value"
     | Complex -> "Functions with cyclomatic complexity > 50"
@@ -176,7 +258,7 @@ module Template = struct
     | Hardcoded_socket_address -> "Hardcoded socket address"
     | Memcheck_double_release -> "Memory check: double free"
     | Memcheck_out_of_bound -> "Memory check: out of bound"
-    | Memcheck_use_after_free -> "Memory check: use after free"
+    | Memcheck_use_after_release -> "Use after free"
     | Value_was_used_before_check -> "Value was used before check"
 
   let ref_to_top = {|<p><a href="#top">Top</a></p>|}
@@ -186,7 +268,7 @@ module Template = struct
 
   let render_checkname arti check =
     let id = check_id arti check in
-    sprintf "<b id=\"%s\">%s</b>" id (map_checkname check)
+    sprintf "<b id=\"%s\">%s</b>" id (string_of_check check)
 
   let render_text text =
     let text = if is_no_incidents text then no_incidents_stmt
@@ -239,7 +321,6 @@ module Template = struct
              let acc' = reformat [] [] ws in
              acc @ acc') in
     let data = List.sort data ~compare:list_compare in
-
     let data = if is_no_incidents lines then [ [no_incidents_stmt] ]
                else data in
     let len = List.length data in
@@ -261,7 +342,6 @@ module Template = struct
     let acc = "</div>" :: close_tab tab :: acc in
     List.rev acc |> String.concat
 
-
   let render_stat infos stat =
     let render =
       sprintf
@@ -282,7 +362,7 @@ module Template = struct
         | "pass" -> pass_color
         | "fail" -> fail_color
         | _ -> stub_color in
-      sprintf "<td bgcolor=\"%s\">%s</td>" color name in
+      sprintf "<td bgcolor=\"%s\">&nbsp%s&nbsp</td>" color name in
     let legend = sprintf {|
     <table>
       <tr>
@@ -293,10 +373,10 @@ module Template = struct
       <td bgcolor=%s></td>
       <td bgcolor="#f2f2f2"> false negative </td>
       </tr>
-    </table></br>|} pass_color fail_color in
+     </table></br>|} pass_color fail_color in
     let cols = 3 in
     let doc,_ =
-      List.fold data ~init:(["<table>"; legend],0) ~f:(fun (doc,col_i) line ->
+      List.fold data ~init:(["<table id=\"data\">"; legend],0) ~f:(fun (doc,col_i) line ->
           match String.split ~on:' ' line with
           | name :: status :: _ ->
              let doc = render_cell name status :: doc  in
@@ -308,16 +388,17 @@ module Template = struct
 
   let render_check arti check stat infos =
     let doc =
-      List.fold infos ~init:["<div>"] ~f:(fun doc -> function
-          | Text text when check = Test -> render_testdata text :: doc
-          | Text text when check = Forbidden -> render_data 1 text :: doc
-          | Text text when check = Complex -> render_data 1 text :: doc
-          | Text text when check = Recursive -> render_data 1 text :: doc
-          | Text text when check = Non_structural -> render_data 1 text :: doc
-          | Text text when check = Unused -> render_data 2 text :: doc
-          | Text text when check = Null ->  render_data 2 text :: doc
-          | Text text -> render_text text :: doc
-          | Time time -> sprintf "<pre>Time: %s</pre>" time :: doc
+      List.fold infos ~init:["<div>"] ~f:(fun doc info ->
+          match info, check with
+          | Text text, Test _ -> render_testdata text :: doc
+          | Text text, Forbidden -> render_data 1 text :: doc
+          | Text text, Complex -> render_data 1 text :: doc
+          | Text text, Recursive -> render_data 1 text :: doc
+          | Text text, Non_structural -> render_data 1 text :: doc
+          | Text text, Unused -> render_data 2 text :: doc
+          | Text text, Null ->  render_data 2 text :: doc
+          | Text text, _ -> render_text text :: doc
+          | Time time, _ -> sprintf "<pre>Time: %s</pre>" time :: doc
           | _ -> doc) in
     "</div>"  ::
     render_checkname arti check :: render_stat infos stat :: List.rev doc
@@ -344,6 +425,14 @@ module Template = struct
           let doc' = render_check name check stat infos in
           doc @ "</br>" :: doc') in
     doc @ ["</tr>"; "</td>"]
+
+  let hover_check arti check =
+    let descr = get_descr check in
+    let id = check_id arti check in
+    let name = string_of_check check in
+    sprintf "<td><div class=\"tooltip\"><a href=\"#%s\">%s</a>
+           <span class=\"tooltiptext\"><pre>%s</pre></span>
+           </div></td>" id name descr
 
   let render_summary sum =
     let cell x = sprintf "<td align=\"center\">%s</td>" x in
@@ -373,18 +462,16 @@ module Template = struct
           fst @@
             List.fold data ~init:(name :: "<tr>" :: acc, true) ~f:
               (fun (acc,has_tr) (check, res) ->
-              let check =
-                sprintf "<td><a href=\"#%s\">%s</a></td>"
-                  (check_id arti check) (map_checkname check) in
-              let totl = digit res.total in
-              let conf = digit res.confirm in
-              let falp = digit res.false_p in
-              let faln = digit res.false_n in
-              let unkn = digit res.unknown in
-              let time = cell  res.time in
-              let tr = if has_tr then "" else "<tr>" in
-              "</tr>" :: time :: unkn :: faln :: falp :: conf :: totl :: check
-              :: tr :: acc, false)) in
+                let check = hover_check arti check in
+                let totl = digit res.total in
+                let conf = digit res.confirm in
+                let falp = digit res.false_p in
+                let faln = digit res.false_n in
+                let unkn = digit res.unknown in
+                let time = cell  res.time in
+                let tr = if has_tr then "" else "<tr>" in
+                "</tr>" :: time :: unkn :: faln :: falp :: conf :: totl :: check
+                :: tr :: acc, false)) in
     List.rev ("</br>" :: "</table>" :: data)
 
 end
@@ -434,6 +521,10 @@ module Stat = struct
       | Some total -> total in
     create_stat total cnf fp fn time
 
+  let is_test = function
+    | Test _ -> true
+    | _ -> false
+
   let get_stat check infos =
     let rec loop ((total,confirmed,false_pos,false_neg) as r) = function
       | Total x :: infos -> loop (Some x,confirmed,false_pos,false_neg) infos
@@ -441,7 +532,7 @@ module Stat = struct
       | False_neg x :: infos -> loop (total,confirmed,false_pos,Some x) infos
       | Confirmed x :: infos -> loop (total,Some x,false_pos,false_neg) infos
       | Text text :: _ when is_no_incidents text -> Some 0, Some 0, Some 0, Some 0
-      | Text text :: _ when check = Test ->
+      | Text text :: _ when is_test check ->
          let total, pass, fail =
            List.fold text ~init:(0,0,0) ~f:(fun (total,pass,fail) line ->
                if String.is_substring line ~substring:"pass" then
@@ -479,24 +570,7 @@ let file_exists file =
 
 let start_table = {|
      <table id="Results" style="width:100%" frame=void rules=rows >
-
 |}
-
-let debug_print_data = function
-  | [] -> printf "EMPTY!\n"
-  | data ->
-  List.iter data ~f:(fun (check, infos) ->
-      printf "%s\n" (Sexp.to_string (sexp_of_check check));
-      List.iter infos ~f:(function
-          | Size s -> printf "  Size %s\n" s
-          | Time s -> printf "  Time %s\n" s
-          | Total x -> printf "  Total %d\n" x
-          | Confirmed x -> printf "  Confirmed %d\n" x
-          | False_pos x -> printf "  False_pos %d\n" x
-          | False_neg x -> printf "  False_neg %d\n" x
-          | Text text ->
-             printf "  Text: \n";
-             List.iter text ~f:(printf "   %s\n")))
 
 let () =
   let files = FileUtil.ls "." in
