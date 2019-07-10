@@ -1,4 +1,4 @@
-Test: NULL Pointer Dereference
+Test: Null
 Size: 280K
 Time: 00:07:20
 CWE476_NULL_Pointer_Dereference__binary_if_01_bad pass

@@ -1,4 +1,4 @@
-Test: Unchecked Return Value
+Test: Unused
 Size: 249K
 Time: 00:06:02
 CWE252_Unchecked_Return_Value__char_fgets_01_bad pass

@@ -1,7 +1,7 @@
 open Core_kernel
 
 type check =
-  | Test of string
+  | Test of check
   | Unused
   | Null
   | Forbidden
@@ -16,7 +16,6 @@ type check =
 [@@deriving bin_io, compare, sexp]
 
 type info =
-  | Descr of string
   | Size of string
   | Time of string
   | Total of int
@@ -87,11 +86,12 @@ let html_header =  {|
      color: #fff;
      border-radius: 10px;
      padding: 5px 0;
+
      position: absolute;
      z-index: 1;
      top: -5px;
      left: 110%;
-
+     margin-left: -60px;
    }
 
    .tooltip:hover .tooltiptext {
@@ -134,18 +134,16 @@ The next functions shall not be used:
 |}
 
 let descr_of_check = function
-  | Test _ -> `Absent
-  | Unused -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-14/descr"
-  | Null ->  `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-174/descr"
+  | Test Null -> `Link "https://cwe.mitre.org/data/definitions/476.html"
+  | Test Unused -> `Link "https://cwe.mitre.org/data/definitions/252.html"
+  | Unused -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-14/descr"
+  | Null ->  `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-174/descr"
   | Forbidden -> `Ready descr_forbidden
-  | Complex -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
-  | Non_structural -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
-  | Recursive  -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
-  | Hardcoded_socket_address -> `Absent
-  | Memcheck_double_release -> `Absent
-  | Memcheck_out_of_bound -> `Absent
-  | Memcheck_use_after_release  -> `Absent
-  | Value_was_used_before_check  -> `Absent
+  | Complex -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
+  | Non_structural -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
+  | Recursive  -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
+  | Memcheck_use_after_release  -> `Link "https://cwe.mitre.org/data/definitions/416.html"
+  | _ -> `Absent
 
 let descr = Hashtbl.create (module Check)
 
@@ -156,7 +154,7 @@ let get_descr check =
      match descr_of_check check with
      | `Absent -> ""
      | `Ready x -> x
-     | `Link url ->
+     | `Url url ->
         let p = Unix.open_process_in (sprintf "wget %s" url) in
         let _ = Unix.close_process_in p in
         let name = Filename.basename url in
@@ -165,6 +163,7 @@ let get_descr check =
         let data = String.concat ~sep:"\n" data in
         Hashtbl.set descr check data;
         data
+     | `Link s -> sprintf "<a href=%s style=\"color:white\">description</a>" s
 
 
 module Parse = struct
@@ -204,7 +203,6 @@ module Parse = struct
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
     | "Size" :: s :: _ -> Some (Size s)
-    | "Descr" :: xs -> Some (Descr (String.concat xs))
     | _ -> None
 
   let normalize data =
@@ -247,8 +245,8 @@ end
 
 module Template = struct
 
-  let string_of_check = function
-    | Test s -> sprintf  "Testcase: %s" s
+  let rec string_of_check = function
+    | Test c -> sprintf  "Testcase: %s" (string_of_check c)
     | Forbidden -> "Forbidden functions"
     | Unused ->  "Unused return value"
     | Complex -> "Functions with cyclomatic complexity > 50"
