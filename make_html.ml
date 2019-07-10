@@ -136,34 +136,20 @@ The next functions shall not be used:
 let descr_of_check = function
   | Test Null -> `Link "https://cwe.mitre.org/data/definitions/476.html"
   | Test Unused -> `Link "https://cwe.mitre.org/data/definitions/252.html"
-  | Unused -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-14/descr"
-  | Null ->  `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-174/descr"
-  | Forbidden -> `Ready descr_forbidden
-  | Complex -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
-  | Non_structural -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
-  | Recursive  -> `Url "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
+  | Unused -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-14/descr"
+  | Null ->  `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-174/descr"
+  | Complex -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
+  | Non_structural -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
+  | Recursive  -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
   | Memcheck_use_after_release  -> `Link "https://cwe.mitre.org/data/definitions/416.html"
   | _ -> `Absent
 
-let descr = Hashtbl.create (module Check)
+
 
 let get_descr check =
-  match Hashtbl.find descr check with
-  | Some data -> data
-  | None ->
-     match descr_of_check check with
-     | `Absent -> ""
-     | `Ready x -> x
-     | `Url url ->
-        let p = Unix.open_process_in (sprintf "wget %s" url) in
-        let _ = Unix.close_process_in p in
-        let name = Filename.basename url in
-        let data = In_channel.with_file name ~f:In_channel.input_lines in
-        Sys.remove name;
-        let data = String.concat ~sep:"\n" data in
-        Hashtbl.set descr check data;
-        data
-     | `Link s -> sprintf "<a href=%s style=\"color:white\">description</a>" s
+  match descr_of_check check with
+  | `Absent -> ""
+  | `Link s -> s
 
 
 module Parse = struct
@@ -426,11 +412,8 @@ module Template = struct
 
   let hover_check arti check =
     let descr = get_descr check in
-    let id = check_id arti check in
     let name = string_of_check check in
-    sprintf "<td><div class=\"tooltip\"><a href=\"#%s\">%s</a>
-           <span class=\"tooltiptext\"><pre>%s</pre></span>
-           </div></td>" id name descr
+    sprintf "<td><a href=\"%s\">%s</a></td>" descr name
 
   let render_summary sum =
     let cell x = sprintf "<td align=\"center\">%s</td>" x in
