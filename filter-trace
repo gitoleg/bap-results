@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import string
+from sets import Set
+
+def parse_machine(kind, line):
+    if line.find('machine-' + kind) != -1:
+        words = line.split()
+        if len(words) == 3:
+            par = words[1].lstrip('(')
+            chd = words[2].rstrip(')')
+            return string.atoi(par),string.atoi(chd)
+        else: return None
+    else: return None
+
+
+def parse_fork(line):
+    return parse_machine('fork', line)
+
+
+def parse_switch(line):
+    return parse_machine('switch', line)
+
+
+# fork_history returns a dictionary of trace numbers (child -> parent)
+def fork_history(fname):
+    f = open(fname)
+    data = {}
+    for line in f.readlines():
+        x = parse_fork(line)
+        if x:
+            par = x[0]
+            chd = x[1]
+            data[chd] = par
+    f.close()
+    return data
+
+# find_all_ancestors returns a list of all ancestors for the trace
+def find_all_ancestors(trace, hist):
+    data = []
+    if not trace in hist:
+        return data
+    par = hist[trace]
+    while par:
+        data.append(par)
+        if par in hist:
+            par = hist[par]
+        else:
+            par = None
+    return data
+
+# collect_ancestors returns a dict from a traget trace to a list of its ancestors
+def collect_ancestors(traces, hist):
+    data = {}
+    for trace in traces:
+        data[trace] = find_all_ancestors(trace, hist)
+    return data
+
+# every time we frok we need to find a trace for which previous
+# ancestor is in history and next is not to infer taht we still
+# need to record previous
+def drop_ancestor(ancestors, prev, next):
+    for trace in ancestors:
+        if prev in ancestors[trace] and next not in ancestors[trace] \
+           and next != trace:
+            return False
+    return prev not in ancestors
+
+# learn_history returns the set of all traces we need
+def learn_history(traces, forks):
+    hist = Set([])
+    for num in traces:
+        hist.add(num)
+        while(1):
+            if forks.has_key(num):
+                par = forks[num]
+                num = par
+                hist.add(num)
+            else: break
+    return hist
+
+def filter(fname, traces):
+    traces = map(lambda t: string.atoi(t), traces)
+    forks = fork_history(fname)
+    ancestors = collect_ancestors(traces, forks)
+    hist = learn_history(traces, forks)
+    only = len(hist) == 2
+    fin = open(fname)
+    fout = open('filtered.incidents', "w")
+    record = False
+    for line in fin.readlines():
+        line = string.strip(line)
+        fork = parse_fork(line)
+        switch = parse_switch(line)
+        if fork != None:
+            if drop_ancestor(ancestors, fork[0], fork[1]) and fork[0] in hist:
+                hist.remove(fork[0])
+            record = fork[1] in hist
+        if switch != None:
+            record = switch[1] in hist and switch[1] != 0
+        pr = record
+        if pr:
+            fout.write("%s\n" % line)
+    fout.close()
+    fin.close()
+
+
+if __name__ == '__main__':
+    args = sys.argv
+    args.pop(0)
+    nargs = len(args)
+    if nargs < 2:
+        print "file with incidents and trace numbers are expected"
+        exit(1)
+    else:
+        traces = args[1:]
+        filter(args[0], traces)

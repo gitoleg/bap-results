@@ -120,19 +120,6 @@ let is_no_incidents = function
 
 let no_incidents_stmt = "no incidents found"
 
-
-let descr_forbidden = {|
-The next functions shall not be used:
- - errno shall not be used as an error indicator
- - &lt;locale.h&gt; and the setlocale function
- - setjmp and longjmp
- - signal handling facilities of &lt;signal.h&gt;
- - The input/output library &lt;stdio.h&gt;
- - atof, atoi, and atol
- - abort, exit, getenv and system
- - the &lt;time.h&gt; interface
-|}
-
 let descr_of_check = function
   | Test Null -> `Link "https://cwe.mitre.org/data/definitions/476.html"
   | Test Unused -> `Link "https://cwe.mitre.org/data/definitions/252.html"
@@ -141,7 +128,9 @@ let descr_of_check = function
   | Complex -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-3/descr"
   | Non_structural -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/av-rule-189/descr"
   | Recursive  -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/jpl-rule-4/descr"
-  | Memcheck_use_after_release  -> `Link "https://cwe.mitre.org/data/definitions/416.html"
+  | Memcheck_use_after_release -> `Link "https://cwe.mitre.org/data/definitions/416.html"
+  | Memcheck_double_release -> `Link "https://cwe.mitre.org/data/definitions/415.html"
+  | Forbidden -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/forbidden-symbol/descr"
   | _ -> `Absent
 
 
