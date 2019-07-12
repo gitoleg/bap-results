@@ -1,4 +1,6 @@
 open Core_kernel
+open Bap.Std
+include Self ()
 
 
 let incident_of_string line =
@@ -46,12 +48,7 @@ let rec read ?(prev="") ch =
      if opened <> closed then read ~prev:line ch
      else Some line
 
-let () =
-  if Array.length Sys.argv < 2 then
-    let () = eprintf "file expected!\n" in
-    exit 1;
-  else
-  let file = Sys.argv.(1)  in
+let main file traces_only addrs_only =
   let ch = In_channel.create file in
   let rec loop acc loc =
     match read ch with
@@ -69,12 +66,40 @@ let () =
              loop acc None in
   let acc = loop (Map.empty (module String)) None in
 
-  (* Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
-   *     (\* printf "%s: %d cases \n" name (Map.length locs); *\)
-   *     Map.iteri ~f:(fun ~key:addr ~data:trace -> printf "0x%s " addr) locs;
-   *     printf "\n\n"
-   *   ); *)
-
-  Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
-      printf "%s:  %d incidents\n" name (Map.length locs));
+  if traces_only then
+    Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
+        Map.iteri ~f:(fun ~key:addr ~data:trace -> printf "%s " trace) locs;
+        printf "\n\n")
+  else if addrs_only then
+    Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
+        Map.iteri ~f:(fun ~key:addr ~data:trace -> printf "0x%s " addr) locs;
+        printf "\n\n")
+  else
+    Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
+        printf "%s:  %d incidents\n" name (Map.length locs));
   In_channel.close ch
+
+
+open Cmdliner
+
+let filename : string Term.t =
+  let doc = "Input filename." in
+  Arg.(required & pos 0 (some non_dir_file) None &
+       info [] ~doc ~docv:"FILE")
+
+let traces_only : bool Term.t =
+  let doc = "Print only trace numbers" in
+  Arg.(value & flag & info ["traces-only"] ~doc)
+
+let addrs_only : bool Term.t =
+  let doc = "Print only addresses" in
+  Arg.(value & flag & info ["addrs-only"] ~doc)
+
+
+
+let () =
+  let x = Term.(const main $(filename) $(traces_only) $(addrs_only)) in
+  let info = Term.info "list_incidents" ~version:Config.version ~doc~man:[] in
+  match Cmdliner.Term.eval ~argv ~catch:false (x,info) with
+  | `Ok x -> ()
+  | _ -> ()

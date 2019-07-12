@@ -237,13 +237,17 @@ fprintf  0x669C1  fputs    0x6B97C  printf   0x400B2  printf   0x68AE1  snprintf
 
 
 hardcoded-socket-address:
- Time: 01:08:15
+ Time: 01:34:15
  Total: 3
 
  memcheck-out-of-bound:
- Time: 01:08:15
- Total: 3
+ Time: 01:34:15
+ Total: 1
 
  value-was-used-before-check:
- Time: 01:08:15
+ Time: 01:34:15
  Total: 92
+
+ memcheck-use-after-release:
+ Time: 01:34:15
+ Total: 2
