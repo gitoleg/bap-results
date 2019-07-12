@@ -35,12 +35,12 @@ fputc              putchar
 
  Null:
  Time: 00:20:07
-  zlib_error             0x1AFD6
-  swf_ReadABCfile        0x8963
-  swf_Optimize           0xB919
-  swf_Relocate           0xB1E9
-  swf5_load_buffer_state 0xF081
-  swf4_load_buffer_state 0xD1BD
+
+swf_ReadABCfile 0x8963
+swf_Relocate 0xB1E9
+swf_Optimize 0xB919
+swf4_load_buffer_state 0xD1BD
+swf5_load_buffer_state 0xF081
 
  Unused:
 Time: 00:09:24

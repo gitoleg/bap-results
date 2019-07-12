@@ -76,12 +76,9 @@ cking_thread_internal
 Null:
  Time: 01:35:31
 
-optionParseShell      0x6F4FB
-option_parse_duration 0x6C348
-sockporttoa           0x5F888
-socktoa               0x5F6EE
-decode_bitflags       0x5F9D2
-option_parse_duration 0x6C089
+decodenetnum 0x5AF95
+optionReset 0x667C8
+
 
 Unused:
 Time: 01:14:59

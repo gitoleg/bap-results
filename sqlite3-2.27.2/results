@@ -110,25 +110,25 @@ sub_ae05c
 Null:
  Time: 05:55:46
 
- False_pos: 2
- getIntArg                       0x2B591
- sqlite3VdbeMemSetStr            0x3D25A
- sqlite3_str_vappendf            0x3FE0F
- sqlite3PagerOpenWal             0xD32F
- sqlite3ExprCodeTarget           0x70581
- output_quoted_escaped_string    0x16097
- sqlite3LocateTableItem          0x8198B
- sqlite3StrICmp                  0x2261C
- sqlite3Fts5Dequote              0x27117
- output_c_string                 0x16253
- pcache1FetchStage2              0x37739
- sqlite3OsUnfetch                0x223EC
- sqlite3Fts5StorageIndexInsert   0xA1267
- sqlite3Fts5StorageContentInsert 0x95FFF
- fts5SegIterNext                 0x9B9A4
- fts3EvalSelectDeferred          0xA831E
- sqlite3Fts3OpenTokenizer        0x26334
- setDateTimeToCurrent            0x2A2D5
+completionFilter 0x13F42
+output_quoted_escaped_string 0x16097
+output_c_string 0x16253
+do_meta_command 0x1C521
+sqlite3StrICmp 0x2261C
+sqlite3Fts3OpenTokenizer 0x26334
+setDateTimeToCurrent 0x2A2D5
+getIntArg 0x2B591
+pcache1FetchStage2 0x37739
+sqlite3_str_vappendf 0x3FE0F
+sqlite3Fts5GetTokenizer 0x59FA2
+sqlite3Fts5GetTokenizer 0x59FBB
+sqlite3Select 0x6C6FF
+sqlite3ExprCodeTarget 0x70581
+sqlite3Fts5StorageContentInsert 0x95FFF
+fts5DataRead 0x9B55C
+fts5SegIterNext 0x9B9A4
+fts3EvalSelectDeferred 0xA831E
+sqlite3PagerOpenWal 0xD32F
 
 Unused:
 Time: 04:41:07

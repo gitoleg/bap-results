@@ -27,14 +27,17 @@ not found
 Null:
  Time: 02:41:31
 
-clean_survey_results  0x8FBF4   eloop_cancel_timeout    0x17C6D   radio_remove_works                0x6022A
-dl_list_add           0x17289   eloop_destroy           0x1872D   wpa_config_get_line               0x18B5C
-dl_list_add           0x21C36   nl80211_cmd             0x76136   wpa_supplicant_ctrl_iface_detach  0x52F4A
-dl_list_add           0x52DAE   nl80211_find_drv        0x76FDC   wpa_supplicant_send_2_of_2        0x1ED4A
-dl_list_del           0x5A147   nl80211_remove_iface    0x87F90
-dl_list_del           0x17310   pmksa_candidate_free    0x21E0F
-dl_list_del           0x751D0   qca_nl80211_avoid_freq  0x7B91A
-eap_sm_processNotify  0x3AE95   qca_nl80211_avoid_freq  0x7B964
+dl_list_del 0x17310
+eloop_cancel_timeout 0x17C6D
+wpa_config_get_line 0x18B5C
+wpa_config_read 0x19533
+dl_list_add 0x21C36
+pmksa_candidate_free 0x21E0F
+eap_sm_processNotify 0x3AE95
+dl_list_del 0x751D0
+qca_nl80211_avoid_freq 0x7B91A
+qca_nl80211_avoid_freq 0x7B964
+clean_survey_results 0x8FBF4
 
 
 Unused:

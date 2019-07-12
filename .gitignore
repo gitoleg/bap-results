@@ -9,3 +9,6 @@ _build/*
 *.id1
 *.id2
 *.nam
+*.til
+*.i64
+*.bir

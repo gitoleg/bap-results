@@ -24,12 +24,10 @@ Time: 00:00:07
 Null:
  Time: 00:18:13
 
-zlib_error                 0xE596
 swf_SetLosslessBitsIndexed 0x5DDD
-swf_ReadABCfile            0xCD21
-swf_Optimize               0xA1EE
-swf_Relocate               0x9ABE
-
+swf_Relocate 0x9ABE
+swf_Optimize 0xA1EE
+swf_ReadABCfile 0xCD21
 
 Unused:
 Time: 00:06:55

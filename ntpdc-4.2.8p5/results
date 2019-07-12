@@ -52,17 +52,9 @@ sub_17409
 Null:
  Time: 00:25:22
 
-socktoa                      0x20A2E
-ntpdcmain                    0x9607
-option_parse_duration        0x16558
-passwd                       0x8ABB
-option_parse_duration        0x16299
-optionReset                  0x109D8
-optionParseShell             0x1970B
-optionUsage                  0x1DB4E
-decodenetnum                 0x1F4FB
-decodenetnum                 0x1F5B5
+optionReset 0x109D8
 option_pathfind.constprop.66 0x14424
+decodenetnum 0x1F5B5
 
 Unused:
 Time: 00:14:30

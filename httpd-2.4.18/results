@@ -44,33 +44,35 @@ Size: 873K
 
  Null:
  Time: 01:36:00
-ap_expr_yy_load_buffer_state 0x471983
-ap_varbuf_cfg_getline 0x431192
-ap_getword_conf 0x430851
-ap_reopen_scoreboard 0x43954A
-ap_get_server_protocol 0x4468DF
-find_accf_name 0x468A05
-prep_walk_cache 0x44E371
-ap_make_dirstr_parent 0x4303AA
+
 regsub_core 0x42FB09
 regsub_core 0x42FCD4
-ap_rxplus_compile 0x46DF26
-ap_relieve_child_processes 0x46B238
-ap_reclaim_child_processes 0x46B0CF
-basic_http_header 0x47C437
-send_all_header_fields 0x47BCF4
-ap_http_filter 0x479AD4
+ap_make_dirstr_parent 0x4303AA
+ap_getword_conf 0x430851
+ap_cfg_getline_core 0x430F6F
+ap_varbuf_cfg_getline 0x431192
 ap_get_sload 0x434D51
+ap_core_child_status 0x436933
+ap_reopen_scoreboard 0x43954A
+ap_copy_scoreboard_worker 0x439FEF
+ap_get_server_protocol 0x4468DF
+prep_walk_cache 0x44E371
+ap_expr_eval_word 0x45511F
+ap_expr_eval 0x4566BE
+find_accf_name 0x468A05
+ap_reclaim_child_processes 0x46B0CF
+ap_relieve_child_processes 0x46B238
+ap_rxplus_compile 0x46DF26
 ap_expr_yylex 0x46FC25
 ap_expr_yylex 0x46FD1E
-ap_cfg_getline_core 0x430F6F
-ap_expr_eval 0x4566BE
-ap_expr_eval_word 0x45511F
-ap_core_child_status 0x436933
-ap_copy_scoreboard_worker 0x439FEF
+ap_expr_yy_load_buffer_state 0x471983
+ap_http_filter 0x479AD4
+send_all_header_fields 0x47BCF4
+basic_http_header 0x47C437
 ap_byterange_filter 0x48053D
 
- Unused:
+
+Unused:
  Time: 00:54:43
   atoi    0x4360B9  memcpy  0x4348FB  memset  0x4491C6  printf  0x45F2DD  puts    0x42BD3A
   atoi    0x436157  memcpy  0x436DB7  memset  0x44E4CE  printf  0x45F307  puts    0x45F4DA

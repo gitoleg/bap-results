@@ -40,22 +40,26 @@ zlib_error
 Null:
  Time: 01:30:19
 
-zlib_error                   0x80F44
-dict_put                     0x7B7FB
-varinfo_register_onclass     0x5C69B
-swf_Shape2ToShape            0x528E1
-swf_ReadABCfile              0x4BA0B
-swf_GetTagID                 0x491B7
-swf_Optimize                 0x48ED8
-swf_FontReduce_swfc          0x437BF
-swf_Relocate                 0x487A8
-png_write_palette_based2     0x7F952
-png_write_palette_based2     0x7F90C
-png_write_palette_based2     0x7F8CC
-png_write_palette_based2     0x7F48A
-png_load                     0x7E373
-png_read_header              0x7C8E9
-code_free                    0x5B4E2
+swf_FontReduce_swfc 0x437BF
+swf_Relocate 0x487A8
+swf_Optimize 0x48ED8
+swf_ReadABCfile 0x4BA0B
+swf_Shape2ToShape 0x528E1
+traits_free 0x53A83
+abc_file_free 0x55C06
+abc_file_free 0x55D02
+callcode 0x5A718
+callcode 0x5A959
+varinfo_register_onclass 0x5C69B
+add_dependencies 0x6D02C
+dict_put 0x7B7FB
+dict_free_all 0x7BF87
+png_read_header 0x7C8E9
+png_write_palette_based2 0x7F8CC
+png_write_palette_based2 0x7F90C
+png_write_palette_based2 0x7F952
+
+
 
 Unused:
 Time: 00:33:24

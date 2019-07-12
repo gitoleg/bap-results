@@ -46,28 +46,22 @@ zlib_error
 Null:
  Time: 02:30:08
 
-png_read_header           0xA97ED
-node_free                 0xA63C2
-enter_file2               0x95334
-handleInclude             0x9603C
-get_path                  0x94E2B
-texture2                  0x4EBF4
-s_font                    0x486F4
-dict_free_all             0xA8CDA
-reshuffle_array           0x6BFFE
-handleLabel               0x95C40
-add_dependencies          0x88355
-traits_free               0x69528
-dict_put                  0xA854E
-varinfo_register_onclass  0x72140
-swf_Shape2ToShape         0x5CB56
-swf_ReadABCfile           0x66EF1
-swf_Relocate              0x63C8E
-as3__load_buffer_state    0x955B1
-png_write_palette_based2  0xAC856
-png_write_palette_based2  0xAC810
-png_write_palette_based2  0xAC7D0
-png_write_palette_based2  0xAC38E
+s_font 0x486F4
+texture2 0x4EBF4
+swf_Shape2ToShape 0x5CB56
+swf_Relocate 0x63C8E
+swf_ReadABCfile 0x66EF1
+varinfo_register_onclass 0x72140
+get_path 0x94E2B
+enter_file2 0x95334
+as3__load_buffer_state 0x955B1
+handleLabel 0x95C40
+handleInclude 0x9603C
+as3_lex 0x97D4A
+node_plus_eval 0xA6144
+node_plus_eval 0xA6181
+dict_put 0xA854E
+png_read_header 0xA97ED
 
 Unused:
 Time: 01:09:32

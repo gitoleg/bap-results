@@ -92,18 +92,17 @@ sub_e2b51
 Null:
  Time: 03:02:02
 
- string_need                              0xCD0E7
- nacl_modify_segment_map                  0x6546A
- elf_x86_64_finish_dynamic_symbol         0x5AFF8
- elf_i386_finish_dynamic_symbol           0x9DB30
- bfd_elf_link_add_symbols                 0x82440
- elf_link_input_bfd                       0x88CD3
- elf_link_input_bfd                       0x8889C
- do_type                                  0xCF4A8
- dlang_parse_qualified                    0xDF4B4
- sec_merge_hash_lookup                    0x4DFA2
- elf_merge_gnu_properties                 0x90B40
- _bfd_construct_extended_name_table       0x422CC
+_bfd_construct_extended_name_table 0x422CC
+bfd_elf_link_add_symbols 0x82440
+dlang_parse_qualified 0xDF4B4
+do_type 0xCF4A8
+elf_i386_finish_dynamic_symbol 0x9DB30
+elf_link_input_bfd 0x8889C
+elf_link_input_bfd 0x88CD3
+elf_merge_gnu_properties 0x90B40
+elf_x86_64_finish_dynamic_symbol 0x5AFF8
+nacl_modify_segment_map 0x6546A
+sec_merge_hash_lookup 0x4DFA2
 
 
 Unused:

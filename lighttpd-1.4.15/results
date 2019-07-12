@@ -40,18 +40,15 @@ Time: 00:00:08
  Null:
  Time: 00:15:12
 
-  splaytree_insert                0x1F220
-  splaytree_insert                0x1F1CC
-  array_init_array                0x192F7
-  array_init_array                0x19327
-  array_init_array                0x19339
-  array_init_array                0x192D1
-  splaytree_delete                0x1F2F8
-  network_server_init             0xCF86
-  stat_cache_get_entry            0x17306
-  config_parse.constprop.5        0xE999
-  network_write_chunkqueue_writev 0x1E95B
-  network_write_chunkqueue_writev 0x1E991
+stat_cache_tag_old_entries 0x1713D
+stat_cache_get_entry 0x17306
+stat_cache_trigger_cleanup 0x176FB
+array_init_array 0x192D1
+array_init_array 0x192F7
+array_init_array 0x19327
+network_write_chunkqueue_writev 0x1E95B
+network_write_chunkqueue_writev 0x1E991
+network_server_init 0xCF86
 
 
   Unused:

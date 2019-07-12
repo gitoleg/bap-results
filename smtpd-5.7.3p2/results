@@ -66,14 +66,10 @@ Time: 00:00:22
  Null:
  Time: 01:08:20
 
-nanosleep              0x494BF
-mailaddr_line          0x1D353
-dict_iter              0xE65E
-waitqtree_SPLAY_MINMAX 0x402A0
-valid_localpart        0x3F60F
-strlcat                0x4B9B9
-text_to_relayhost      0x3D060
-queue_bounce           0x2C61F
+queue_bounce 0x2C61F
+strlcat 0x4B9B9
+dict_iter 0xE65E
+
 
 
 Unused:

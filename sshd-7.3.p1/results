@@ -102,6 +102,7 @@ False_pos: 3
 sshbuf_put_u8              0x3524C
 sshkey_try_load_public     0x371D0
 mktemp_internal            0x6C41E
+match_pattern_list         0x44CA2
 
 Unused:
 Time: 01:23:37

@@ -69,11 +69,12 @@ let () =
              loop acc None in
   let acc = loop (Map.empty (module String)) None in
 
-  Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
-      printf "%s: %d cases \n" name (Map.length locs);
-      Map.iteri ~f:(fun ~key:addr ~data:trace -> printf "%s " trace) locs;
-      printf "\n\n");
-
   (* Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
-   *     printf "%s:  %d incidents\n" name (Map.length locs)); *)
+   *     (\* printf "%s: %d cases \n" name (Map.length locs); *\)
+   *     Map.iteri ~f:(fun ~key:addr ~data:trace -> printf "0x%s " addr) locs;
+   *     printf "\n\n"
+   *   ); *)
+
+  Map.iteri acc ~f:(fun ~key:name ~data:locs  ->
+      printf "%s:  %d incidents\n" name (Map.length locs));
   In_channel.close ch
