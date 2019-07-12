@@ -23,6 +23,7 @@ type info =
   | False_pos of int
   | False_neg of int
   | Text of string list
+  | Format of int (* words per data record: e.g. Format 2 if record is function-name addr *)
 [@@deriving sexp]
 
 type stat = {
@@ -178,6 +179,7 @@ module Parse = struct
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
     | "Size" :: s :: _ -> Some (Size s)
+    | "Format" :: s :: _ -> with_num s (fun x -> Format x)
     | _ -> None
 
   let normalize data =
@@ -359,19 +361,31 @@ module Template = struct
           | _ -> doc, col_i) in
     List.rev ("</br>"::"</table>" :: doc) |> String.concat
 
+
+  let words_per_record infos check =
+    match List.find_map infos ~f:(function
+              | Format x -> Some x
+              | _ -> None) with
+    | Some x -> Some x
+    | None ->
+       match check with
+       | Unused -> Some 2
+       | Null -> Some 2
+       | Forbidden -> Some 1
+       | Complex ->   Some 1
+       | Recursive -> Some 1
+       | Non_structural -> Some 1
+       | _ -> None
+
   let render_check arti check stat infos =
+    let words = words_per_record infos check in
     let doc =
       List.fold infos ~init:["<div>"] ~f:(fun doc info ->
-          match info, check with
-          | Text text, Test _ -> render_testdata text :: doc
-          | Text text, Forbidden -> render_data 1 text :: doc
-          | Text text, Complex -> render_data 1 text :: doc
-          | Text text, Recursive -> render_data 1 text :: doc
-          | Text text, Non_structural -> render_data 1 text :: doc
-          | Text text, Unused -> render_data 2 text :: doc
-          | Text text, Null ->  render_data 2 text :: doc
-          | Text text, _ -> render_text text :: doc
-          | Time time, _ -> sprintf "<pre>Time: %s</pre>" time :: doc
+          match info, check, words with
+          | Text text, Test _, _ -> render_testdata text :: doc
+          | Text text, _, Some w -> render_data w text :: doc
+          | Text text, _, _  -> render_text text :: doc
+          | Time time, _,_ -> sprintf "<pre>Time: %s</pre>" time :: doc
           | _ -> doc) in
     "</div>"  ::
     render_checkname arti check :: render_stat infos stat :: List.rev doc
