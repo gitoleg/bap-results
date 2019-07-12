@@ -1,6 +1,11 @@
 *log*
 */artifact
-*incidents
+*.incidents
 *.html
 _build/*
 *.native
+*/incidents
+*.id0
+*.id1
+*.id2
+*.nam
