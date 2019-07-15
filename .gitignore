@@ -1,6 +1,5 @@
 *log*
 */artifact
-*.incidents
 *.html
 _build/*
 *.native
