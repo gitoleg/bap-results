@@ -389,7 +389,7 @@ fprintf 0x180CE Confirmed
 fprintf 0x1EDAA Confirmed
 fputs 0x10F32 Confirmed
 fputs 0x1F8A4 Confirmed
-putchar 0x22060 Undecided
+putchar 0x22060 Confirmed
 fprintf 0x1166E Confirmed
 fprintf 0x18288 Confirmed
 fprintf 0x1EE99 Confirmed

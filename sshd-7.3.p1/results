@@ -257,13 +257,13 @@ match_pattern_list 0x44CA2 False_pos
 
 Unused:
 Time: 01:23:37
-alarm 0x9E2D Undecided
+alarm 0x9E2D Confirmed
 close 0x1CB07 Confirmed
 close 0x40CD9 Confirmed
 fclose 0x19EC7 Confirmed
 getpid 0x27E5C Undecided
 setsockopt 0x50202 Undecided
-alarm 0xA4AC Undecided
+alarm 0xA4AC Confirmed
 close 0x1CB0F Confirmed
 close 0x43CB0 Confirmed
 fclose 0x1A514 Confirmed

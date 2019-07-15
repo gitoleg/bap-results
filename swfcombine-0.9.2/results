@@ -198,13 +198,13 @@ fprintf 0x661D Confirmed
 fprintf 0xDC4C Confirmed
 fwrite 0xBC95 Confirmed
 memcpy 0xA6E5 Confirmed
-putchar 0x2868 Undecided
+putchar 0x2868 Confirmed
 strtod 0x22CC Undecided
 fprintf 0x6933 Confirmed
 fprintf 0xE50D Confirmed
 fwrite 0xC0E3 Confirmed
 memcpy 0xE3F3 Confirmed
-putchar 0x28C2 Undecided
+putchar 0x28C2 Confirmed
 strtol 0x2294 Undecided
 fprintf 0x6A36 Confirmed
 fprintf 0xE58C Confirmed

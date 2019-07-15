@@ -72,13 +72,13 @@ clean_survey_results 0x8FBF4 Undecided
 
 Unused:
 Time: 01:27:04
-alarm 0x180A1 Undecided
+alarm 0x180A1 Confirmed
 fprintf 0x1B0BE Confirmed
 memcpy 0x31703 Confirmed
 memcpy 0x8D79E Confirmed
 memset 0x5CF97 Confirmed
 memset 0x7E907 Confirmed
-alarm 0x18139 Undecided
+alarm 0x18139 Confirmed
 fprintf 0x1B0F1 Confirmed
 memcpy 0x317A3 Confirmed
 memcpy 0x8D930 Confirmed
@@ -407,31 +407,31 @@ memcpy 0x20F30 Confirmed
 memcpy 0x72C8D Confirmed
 memset 0x2E8A5 Confirmed
 memset 0x74904 Confirmed
-putchar 0x15354 Undecided
+putchar 0x15354 Confirmed
 fprintf 0x19999 Confirmed
 memcpy 0x20F95 Confirmed
 memcpy 0x7314A Confirmed
 memset 0x2E9C9 Confirmed
 memset 0x749C9 Confirmed
-putchar 0x1541C Undecided
+putchar 0x1541C Confirmed
 fprintf 0x19A0E Confirmed
 memcpy 0x211FE Confirmed
 memcpy 0x73BCF Confirmed
 memset 0x2ECAC Confirmed
 memset 0x75284 Confirmed
-putchar 0x15635 Undecided
+putchar 0x15635 Confirmed
 fprintf 0x19A83 Confirmed
 memcpy 0x216AB Confirmed
 memcpy 0x73D26 Confirmed
 memset 0x2F2AF Confirmed
 memset 0x7530A Confirmed
-putchar 0x15658 Undecided
+putchar 0x15658 Confirmed
 fprintf 0x19AF8 Confirmed
 memcpy 0x217C0 Confirmed
 memcpy 0x73EDF Confirmed
 memset 0x2F5F8 Confirmed
 memset 0x75376 Confirmed
-putchar 0x15671 Undecided
+putchar 0x15671 Confirmed
 fprintf 0x19B6F Confirmed
 memcpy 0x218D2 Confirmed
 memcpy 0x74360 Confirmed

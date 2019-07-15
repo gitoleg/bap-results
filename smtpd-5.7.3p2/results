@@ -145,7 +145,7 @@ dict_iter 0xE65E Undecided
 
 Unused:
 Time: 00:46:10
-alarm 0x3936B Undecided
+alarm 0x3936B Confirmed
 execl 0x382F4 Undecided
 fwrite 0x8211 Confirmed
 memset 0x3350F Confirmed
