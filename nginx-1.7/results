@@ -3,93 +3,252 @@ Size: 859K
 Forbidden:
 Time: 00:00:34
 
-__errno_location abort exit getenv localtime mktime raise rename strftime time
+__errno_location Confirmed
+abort Confirmed
+exit Confirmed
+getenv Confirmed
+localtime Confirmed
+mktime Confirmed
+raise Confirmed
+rename Confirmed
+strftime Confirmed
+time Confirmed
 
 Recursive:
  Time: 00:00:34
 
-sub_4077f4 sub_409103 sub_409250 sub_4093A0 sub_409FA0 sub_40A7A0 sub_40A8D0 sub_40AEA0
-sub_40DAB0 sub_40DEC0 sub_411970 sub_412273 sub_418500 sub_41c0a4 sub_41c0ab sub_41c100
-sub_41d0b4 sub_4288e1 sub_42AC50 sub_4305E0 sub_430830 sub_430990 sub_430B70 sub_430DC0
-sub_434890 sub_434B20 sub_435890 sub_436e1d sub_437d02 sub_43C5E0 sub_43CE70 sub_4403b4
-sub_442be3 sub_4456f9 sub_44F360 sub_451940 sub_4532C0 sub_454f11 sub_458F80 sub_45c76c
-sub_45f060 sub_460da8 sub_460f83 sub_460fd8 sub_4621a1 sub_469a11 sub_46eecc sub_471B10
-sub_472b16 sub_47339a sub_473895 sub_479753 sub_47A870 sub_47ecd0 sub_48E510
+sub_4077f4 Undecided
+sub_409103 Undecided
+sub_409250 Undecided
+sub_4093A0 Undecided
+sub_409FA0 Undecided
+sub_40A7A0 Undecided
+sub_40A8D0 Undecided
+sub_40AEA0 Undecided
+sub_40DAB0 Undecided
+sub_40DEC0 Undecided
+sub_411970 Undecided
+sub_412273 Undecided
+sub_418500 Undecided
+sub_41c0a4 Undecided
+sub_41c0ab Undecided
+sub_41c100 Undecided
+sub_41d0b4 Undecided
+sub_4288e1 Undecided
+sub_42AC50 Undecided
+sub_4305E0 Undecided
+sub_430830 Undecided
+sub_430990 Undecided
+sub_430B70 Undecided
+sub_430DC0 Undecided
+sub_434890 Undecided
+sub_434B20 Undecided
+sub_435890 Undecided
+sub_436e1d Undecided
+sub_437d02 Undecided
+sub_43C5E0 Undecided
+sub_43CE70 Undecided
+sub_4403b4 Undecided
+sub_442be3 Undecided
+sub_4456f9 Undecided
+sub_44F360 Undecided
+sub_451940 Undecided
+sub_4532C0 Undecided
+sub_454f11 Undecided
+sub_458F80 Undecided
+sub_45c76c Undecided
+sub_45f060 Undecided
+sub_460da8 Undecided
+sub_460f83 Undecided
+sub_460fd8 Undecided
+sub_4621a1 Undecided
+sub_469a11 Undecided
+sub_46eecc Undecided
+sub_471B10 Undecided
+sub_472b16 Undecided
+sub_47339a Undecided
+sub_473895 Undecided
+sub_479753 Undecided
+sub_47A870 Undecided
+sub_47ecd0 Undecided
+sub_48E510 Undecided
 
 Complex:
  Time: 00:00:51
 
-sub_40FD90 sub_40c042 sub_416590 sub_418500 sub_41e7be sub_422BB0 sub_427A00 sub_430f6c
-sub_433710 sub_435da0 sub_43C5E0 sub_441D50 sub_443a40 sub_44A180 sub_44f36a sub_450E90
-sub_455df8 sub_45D180 sub_45a6a4 sub_46249d sub_463428 sub_46784a sub_469E70 sub_46BB70
-sub_46cda9 sub_472990 sub_475F70 sub_477310 sub_479DF0 sub_47C540 sub_480440 sub_4812B0
-sub_482960 sub_483C60 sub_4856B0 sub_486860 sub_48bc90 sub_48f567 sub_490470 sub_491F80
-sub_493797
+sub_40FD90 Undecided
+sub_40c042 Undecided
+sub_416590 Undecided
+sub_418500 Undecided
+sub_41e7be Undecided
+sub_422BB0 Undecided
+sub_427A00 Undecided
+sub_430f6c Undecided
+sub_433710 Undecided
+sub_435da0 Undecided
+sub_43C5E0 Undecided
+sub_441D50 Undecided
+sub_443a40 Undecided
+sub_44A180 Undecided
+sub_44f36a Undecided
+sub_450E90 Undecided
+sub_455df8 Undecided
+sub_45D180 Undecided
+sub_45a6a4 Undecided
+sub_46249d Undecided
+sub_463428 Undecided
+sub_46784a Undecided
+sub_469E70 Undecided
+sub_46BB70 Undecided
+sub_46cda9 Undecided
+sub_472990 Undecided
+sub_475F70 Undecided
+sub_477310 Undecided
+sub_479DF0 Undecided
+sub_47C540 Undecided
+sub_480440 Undecided
+sub_4812B0 Undecided
+sub_482960 Undecided
+sub_483C60 Undecided
+sub_4856B0 Undecided
+sub_486860 Undecided
+sub_48bc90 Undecided
+sub_48f567 Undecided
+sub_490470 Undecided
+sub_491F80 Undecided
+sub_493797 Undecided
 
 Non-structural:
  Time: 00:00:46
 
-sub_41B810    sub_4273F0
-sub_425800    sub_427A00
-sub_426600    sub_47ecd0
-sub_426D00
+sub_41B810 Undecided
+sub_4273F0 Undecided
+sub_425800 Undecided
+sub_427A00 Undecided
+sub_426600 Undecided
+sub_47ecd0 Undecided
+sub_426D00 Undecided
 
 Null:
  Time: 04:47:01
 Format: 1
-0x408F28
-0x409FB0
-0x41472C
-0x418E07
-0x419C58
-0x41B795
-0x41D322
-0x41FB9F
-0x42302C
-0x42666A
-0x42ADE0
-0x4349C1
-0x4396D5
-0x4399DD
-0x439BCF
-0x443B83
-0x4498BE
-0x453342
-0x453380
-0x454F2D
-0x454F40
-0x45E4C4
-0x45E547
-0x45E759
-0x4650C8
-0x47ABDB
-0x47EA29
-0x47EF07
-0x482B29
-0x482C1C
-0x4859FC
-0x48E539
-0x49168F
+0x408F28 Undecided
+0x409FB0 Undecided
+0x41472C Undecided
+0x418E07 Undecided
+0x419C58 Undecided
+0x41B795 Undecided
+0x41D322 Undecided
+0x41FB9F Undecided
+0x42302C Undecided
+0x42666A Undecided
+0x42ADE0 Undecided
+0x4349C1 Undecided
+0x4396D5 Undecided
+0x4399DD Undecided
+0x439BCF Undecided
+0x443B83 Undecided
+0x4498BE Undecided
+0x453342 Undecided
+0x453380 Undecided
+0x454F2D Undecided
+0x454F40 Undecided
+0x45E4C4 Undecided
+0x45E547 Undecided
+0x45E759 Undecided
+0x4650C8 Undecided
+0x47ABDB Undecided
+0x47EA29 Undecided
+0x47EF07 Undecided
+0x482B29 Undecided
+0x482C1C Undecided
+0x4859FC Undecided
+0x48E539 Undecided
+0x49168F Undecided
 
 Unused:
 Time: 03:40:16
-close   0x4205DD  memcpy  0x4398E3  memcpy  0x462DB0  memcpy  0x48233F  memset  0x429DE9
-memcpy  0x40B93B  memcpy  0x439A9D  memcpy  0x468258  memcpy  0x48256A  memset  0x439154
-memcpy  0x40BA42  memcpy  0x43AEF4  memcpy  0x46E20F  memcpy  0x483A02  memset  0x439340
-memcpy  0x40C304  memcpy  0x43E566  memcpy  0x470C4D  memcpy  0x48530A  memset  0x43A714
-memcpy  0x40EC19  memcpy  0x444B13  memcpy  0x471A5A  memcpy  0x48B282  memset  0x47DF2D
-memcpy  0x40EC44  memcpy  0x447A22  memcpy  0x478F15  memcpy  0x48F078  memset  0x47F38C
-memcpy  0x410229  memcpy  0x447AA2  memcpy  0x478F35  memcpy  0x4954B1  memset  0x47F3B8
-memcpy  0x411A8F  memcpy  0x448103  memcpy  0x478FB7  memmove 0x4187CA  strlen  0x42DA01
-memcpy  0x414A08  memcpy  0x457088  memcpy  0x47922A  memmove 0x439A43  strtod  0x48C20E
-memcpy  0x423959  memcpy  0x459A4D  memcpy  0x47BD63  memmove 0x462A2C  strtod  0x48CF08
-memcpy  0x42A44A  memcpy  0x459C05  memcpy  0x47E42A  memmove 0x47344B  unlink  0x423CA8
-memcpy  0x42AA4D  memcpy  0x45CC4A  memcpy  0x480806  memmove 0x4735B2  unlink  0x457BCA
-memcpy  0x42B845  memcpy  0x461509  memcpy  0x480826  memmove 0x4737C5  write   0x409358
-memcpy  0x42DCFC  memcpy  0x4615F0  memcpy  0x4809E9  memmove 0x47B1CA
-memcpy  0x42DDEC  memcpy  0x46173C  memcpy  0x481052  memset  0x40F2EB
-memcpy  0x42ED33  memcpy  0x462B9A  memcpy  0x4822A5  memset  0x4130EB
-memcpy  0x430A4B  memcpy  0x462BE2  memcpy  0x4822C5  memset  0x41A86D
+close 0x4205DD Undecided
+memcpy 0x4398E3 Undecided
+memcpy 0x462DB0 Undecided
+memcpy 0x48233F Undecided
+memset 0x429DE9 Undecided
+memcpy 0x40B93B Undecided
+memcpy 0x439A9D Undecided
+memcpy 0x468258 Undecided
+memcpy 0x48256A Undecided
+memset 0x439154 Undecided
+memcpy 0x40BA42 Undecided
+memcpy 0x43AEF4 Undecided
+memcpy 0x46E20F Undecided
+memcpy 0x483A02 Undecided
+memset 0x439340 Undecided
+memcpy 0x40C304 Undecided
+memcpy 0x43E566 Undecided
+memcpy 0x470C4D Undecided
+memcpy 0x48530A Undecided
+memset 0x43A714 Undecided
+memcpy 0x40EC19 Undecided
+memcpy 0x444B13 Undecided
+memcpy 0x471A5A Undecided
+memcpy 0x48B282 Undecided
+memset 0x47DF2D Undecided
+memcpy 0x40EC44 Undecided
+memcpy 0x447A22 Undecided
+memcpy 0x478F15 Undecided
+memcpy 0x48F078 Undecided
+memset 0x47F38C Undecided
+memcpy 0x410229 Undecided
+memcpy 0x447AA2 Undecided
+memcpy 0x478F35 Undecided
+memcpy 0x4954B1 Undecided
+memset 0x47F3B8 Undecided
+memcpy 0x411A8F Undecided
+memcpy 0x448103 Undecided
+memcpy 0x478FB7 Undecided
+memmove 0x4187CA Undecided
+strlen 0x42DA01 Undecided
+memcpy 0x414A08 Undecided
+memcpy 0x457088 Undecided
+memcpy 0x47922A Undecided
+memmove 0x439A43 Undecided
+strtod 0x48C20E Undecided
+memcpy 0x423959 Undecided
+memcpy 0x459A4D Undecided
+memcpy 0x47BD63 Undecided
+memmove 0x462A2C Undecided
+strtod 0x48CF08 Undecided
+memcpy 0x42A44A Undecided
+memcpy 0x459C05 Undecided
+memcpy 0x47E42A Undecided
+memmove 0x47344B Undecided
+unlink 0x423CA8 Undecided
+memcpy 0x42AA4D Undecided
+memcpy 0x45CC4A Undecided
+memcpy 0x480806 Undecided
+memmove 0x4735B2 Undecided
+unlink 0x457BCA Undecided
+memcpy 0x42B845 Undecided
+memcpy 0x461509 Undecided
+memcpy 0x480826 Undecided
+memmove 0x4737C5 Undecided
+write 0x409358 Undecided
+memcpy 0x42DCFC Undecided
+memcpy 0x4615F0 Undecided
+memcpy 0x4809E9 Undecided
+memmove 0x47B1CA Undecided
+memcpy 0x42DDEC Undecided
+memcpy 0x46173C Undecided
+memcpy 0x481052 Undecided
+memset 0x40F2EB Undecided
+memcpy 0x42ED33 Undecided
+memcpy 0x462B9A Undecided
+memcpy 0x4822A5 Undecided
+memset 0x4130EB Undecided
+memcpy 0x430A4B Undecided
+memcpy 0x462BE2 Undecided
+memcpy 0x4822C5 Undecided
+memset 0x41A86D Undecided
 
 Memcheck-out-of-bound:
 Time: 03:27:01

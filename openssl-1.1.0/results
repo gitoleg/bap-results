@@ -3,86 +3,290 @@ Size: 745K
  Forbidden:
 Time: 00:00:19
 
- __errno_location  fprintf    perror    setbuf
- exit              fputc      printf    signal
- fclose            fputs      putchar   time
- fflush            fwrite     puts
- fgets             getenv     rename
+__errno_location Confirmed
+fprintf Confirmed
+perror Confirmed
+setbuf Confirmed
+exit Confirmed
+fputc Confirmed
+printf Confirmed
+signal Confirmed
+fclose Confirmed
+fputs Confirmed
+putchar Confirmed
+time Confirmed
+fflush Confirmed
+fwrite Confirmed
+puts Confirmed
+fgets Confirmed
+getenv Confirmed
+rename Confirmed
 
 
  Recursive:
  Time: 00:00:20
 
- app_malloc                   sub_4ffd0
- do_revoke                    sub_50078
- dump_certs_pkeys_bag         sub_5636d
- generate_cookie_callback     sub_58d90
- print_ssl_summary            sub_5d3b3
- sub_45bed                    sub_5d818
- sub_45f45                    sub_5f053
- sub_473b0                    sub_67160
- sub_4ffb6                    sub_671a5
+app_malloc Undecided
+sub_4ffd0 Undecided
+do_revoke Undecided
+sub_50078 Undecided
+dump_certs_pkeys_bag Undecided
+sub_5636d Undecided
+generate_cookie_callback Undecided
+sub_58d90 Undecided
+print_ssl_summary Undecided
+sub_5d3b3 Undecided
+sub_45bed Undecided
+sub_5d818 Undecided
+sub_45f45 Undecided
+sub_5f053 Undecided
+sub_473b0 Undecided
+sub_67160 Undecided
+sub_4ffb6 Undecided
+sub_671a5 Undecided
 
 
  Complex:
  Time: 00:00:29
 
- ca_main             smime_main    sub_58d90
- dgst_main           srp_main      sub_5d3b3
- do_body enc_main    sub_38c7c     sub_671b2
- engine_main         sub_3fdef     sub_6968c
- ocsp_main           sub_4b5a8     sub_715b6
- req_main            sub_4e510     www_body
- s_server_main       sub_51459     x509_main
+ca_main Undecided
+smime_main Undecided
+sub_58d90 Undecided
+dgst_main Undecided
+srp_main Undecided
+sub_5d3b3 Undecided
+do_body Undecided
+enc_main Undecided
+sub_38c7c Undecided
+sub_671b2 Undecided
+engine_main Undecided
+sub_3fdef Undecided
+sub_6968c Undecided
+ocsp_main Undecided
+sub_4b5a8 Undecided
+sub_715b6 Undecided
+req_main Undecided
+sub_4e510 Undecided
+www_body Undecided
+s_server_main Undecided
+sub_51459 Undecided
+x509_main Undecided
 
 
  Non-structural:
  Time: 00:00:25
 
- main
+main Undecided
 
  Null:
  Time: 00:46:44
- False_pos: 1
- srp_verify_user 0x6FBE5
+srp_verify_user 0x6FBE5 False_pos
 
 
  Unused:
 Time: 00:32:27
-alarm    0x69925  alarm    0x6D41A  fprintf  0x6F579  printf   0x639DC  printf   0x6C109  sleep    0x5E61D
-alarm    0x69E1A  alarm    0x6D4C7  fputc    0x5217F  printf   0x63A26  printf   0x720E4  sleep    0x5F2F1
-alarm    0x69E8E  alarm    0x6D61D  fputc    0x63655  printf   0x63A5F  printf   0x7234E  snprintf 0x5012C
-alarm    0x6A053  alarm    0x6D6CA  fputc    0x63912  printf   0x67937  printf   0x72C96  snprintf 0x50216
-alarm    0x6A5D7  alarm    0x6D838  fputc    0x6F3E3  printf   0x67971  printf   0x72D45  snprintf 0x502B7
-alarm    0x6A704  alarm    0x6D8DA  fputc    0x6F439  printf   0x67EC7  printf   0x72D7D  strlen   0x4D9BF
-alarm    0x6A7FE  alarm    0x6DA47  fputc    0x6F522  printf   0x67F28  printf   0x72DA7  strlen   0x57F90
-alarm    0x6A886  alarm    0x6DAEF  fputs    0x2E899  printf   0x680A7  printf   0x72E1D  strlen   0x5CEE3
-alarm    0x6AA18  alarm    0x6E0C8  fwrite   0x52140  printf   0x680F6  printf   0x72E4E  strncpy  0x4784E
-alarm    0x6AB6E  alarm    0x6E110  fwrite   0x5216E  printf   0x681AF  printf   0x72E7C  strncpy  0x478DA
-alarm    0x6ACC6  alarm    0x6E1F6  fwrite   0x525CF  printf   0x681FC  printf   0x73658  strtok   0x50771
-alarm    0x6AE1E  alarm    0x6E23A  fwrite   0x6F39F  printf   0x68353  printf   0x73699  strtol   0x45074
-alarm    0x6AF76  alarm    0x6E69E  fwrite   0x6F4C8  printf   0x68370  printf   0x736AF  strtol   0x4536F
-alarm    0x6B0D0  alarm    0x6E6E6  fwrite   0x6F4E5  printf   0x683DB  printf   0x736C5  strtol   0x485DB
-alarm    0x6B22E  alarm    0x6E7CE  getenv   0x2E604  printf   0x68453  printf   0x736DB  strtol   0x59099
-alarm    0x6B386  alarm    0x6E812  memcpy   0x2FAFD  printf   0x6949C  printf   0x736F1  strtol   0x59360
-alarm    0x6B4DE  alarm    0x6E982  memcpy   0x36153  printf   0x69522  printf   0x73707  strtol   0x59581
-alarm    0x6B636  alarm    0x6E9C2  memcpy   0x362E0  printf   0x69538  putchar  0x67E05  strtol   0x599FF
-alarm    0x6B78E  alarm    0x6EB5B  memcpy   0x5773F  printf   0x6954E  putchar  0x6964F  strtol   0x59A49
-alarm    0x6B8F0  alarm    0x6EC3D  memcpy   0x57914  printf   0x69564  putchar  0x72DF1  strtol   0x59C95
-alarm    0x6BA46  alarm    0x6EDAC  memcpy   0x5F997  printf   0x6957A  putchar  0x73711  strtol   0x60E69
-alarm    0x6BBEE  alarm    0x6EED1  memcpy   0x72A59  printf   0x69590  puts     0x634A2  strtol   0x61E38
-alarm    0x6C4DC  alarm    0x6EF11  memset   0x40BC1  printf   0x695A6  puts     0x63550  strtol   0x62037
-alarm    0x6C7F7  alarm    0x6EFF3  memset   0x6923B  printf   0x695C1  puts     0x69502  strtol   0x62057
-alarm    0x6CA95  alarm    0x6F124  memset   0x6E33A  printf   0x695E9  puts     0x69514  strtol   0x62184
-alarm    0x6CC11  alarm    0x6F2AE  memset   0x6E585  printf   0x69631  puts     0x6966C  strtol   0x621A1
-alarm    0x6CCB7  alarm    0x6F653  memset   0x6E90F  printf   0x6967A  puts     0x720FE  strtol   0x62298
-alarm    0x6CD68  close    0x33353  memset   0x6EAF7  printf   0x69F3B  puts     0x7247A  strtol   0x623B0
-alarm    0x6CE44  fclose   0x3324F  printf   0x417CB  printf   0x6BEFD  puts     0x7351D  strtoul  0x487EB
-alarm    0x6CEF2  fprintf  0x6F3B8  printf   0x41E64  printf   0x6BF5D  puts     0x7366F  sysconf  0x32FF5
-alarm    0x6D00D  fprintf  0x6F402  printf   0x41E87  printf   0x6BF81  puts     0x73686  unlink   0x62F41
-alarm    0x6D0B7  fprintf  0x6F423  printf   0x5E007  printf   0x6C027  puts     0x73728  write    0x330CF
-alarm    0x6D218  fprintf  0x6F4FE  printf   0x63825  printf   0x6C085  puts     0x7373F
-alarm    0x6D2BF  fprintf  0x6F53C  printf   0x639A3  printf   0x6C0E5  puts     0x73751
+alarm 0x69925 Undecided
+alarm 0x6D41A Undecided
+fprintf 0x6F579 Undecided
+printf 0x639DC Undecided
+printf 0x6C109 Undecided
+sleep 0x5E61D Undecided
+alarm 0x69E1A Undecided
+alarm 0x6D4C7 Undecided
+fputc 0x5217F Undecided
+printf 0x63A26 Undecided
+printf 0x720E4 Undecided
+sleep 0x5F2F1 Undecided
+alarm 0x69E8E Undecided
+alarm 0x6D61D Undecided
+fputc 0x63655 Undecided
+printf 0x63A5F Undecided
+printf 0x7234E Undecided
+snprintf 0x5012C Undecided
+alarm 0x6A053 Undecided
+alarm 0x6D6CA Undecided
+fputc 0x63912 Undecided
+printf 0x67937 Undecided
+printf 0x72C96 Undecided
+snprintf 0x50216 Undecided
+alarm 0x6A5D7 Undecided
+alarm 0x6D838 Undecided
+fputc 0x6F3E3 Undecided
+printf 0x67971 Undecided
+printf 0x72D45 Undecided
+snprintf 0x502B7 Undecided
+alarm 0x6A704 Undecided
+alarm 0x6D8DA Undecided
+fputc 0x6F439 Undecided
+printf 0x67EC7 Undecided
+printf 0x72D7D Undecided
+strlen 0x4D9BF Undecided
+alarm 0x6A7FE Undecided
+alarm 0x6DA47 Undecided
+fputc 0x6F522 Undecided
+printf 0x67F28 Undecided
+printf 0x72DA7 Undecided
+strlen 0x57F90 Undecided
+alarm 0x6A886 Undecided
+alarm 0x6DAEF Undecided
+fputs 0x2E899 Undecided
+printf 0x680A7 Undecided
+printf 0x72E1D Undecided
+strlen 0x5CEE3 Undecided
+alarm 0x6AA18 Undecided
+alarm 0x6E0C8 Undecided
+fwrite 0x52140 Undecided
+printf 0x680F6 Undecided
+printf 0x72E4E Undecided
+strncpy 0x4784E Undecided
+alarm 0x6AB6E Undecided
+alarm 0x6E110 Undecided
+fwrite 0x5216E Undecided
+printf 0x681AF Undecided
+printf 0x72E7C Undecided
+strncpy 0x478DA Undecided
+alarm 0x6ACC6 Undecided
+alarm 0x6E1F6 Undecided
+fwrite 0x525CF Undecided
+printf 0x681FC Undecided
+printf 0x73658 Undecided
+strtok 0x50771 Undecided
+alarm 0x6AE1E Undecided
+alarm 0x6E23A Undecided
+fwrite 0x6F39F Undecided
+printf 0x68353 Undecided
+printf 0x73699 Undecided
+strtol 0x45074 Undecided
+alarm 0x6AF76 Undecided
+alarm 0x6E69E Undecided
+fwrite 0x6F4C8 Undecided
+printf 0x68370 Undecided
+printf 0x736AF Undecided
+strtol 0x4536F Undecided
+alarm 0x6B0D0 Undecided
+alarm 0x6E6E6 Undecided
+fwrite 0x6F4E5 Undecided
+printf 0x683DB Undecided
+printf 0x736C5 Undecided
+strtol 0x485DB Undecided
+alarm 0x6B22E Undecided
+alarm 0x6E7CE Undecided
+getenv 0x2E604 Undecided
+printf 0x68453 Undecided
+printf 0x736DB Undecided
+strtol 0x59099 Undecided
+alarm 0x6B386 Undecided
+alarm 0x6E812 Undecided
+memcpy 0x2FAFD Undecided
+printf 0x6949C Undecided
+printf 0x736F1 Undecided
+strtol 0x59360 Undecided
+alarm 0x6B4DE Undecided
+alarm 0x6E982 Undecided
+memcpy 0x36153 Undecided
+printf 0x69522 Undecided
+printf 0x73707 Undecided
+strtol 0x59581 Undecided
+alarm 0x6B636 Undecided
+alarm 0x6E9C2 Undecided
+memcpy 0x362E0 Undecided
+printf 0x69538 Undecided
+putchar 0x67E05 Undecided
+strtol 0x599FF Undecided
+alarm 0x6B78E Undecided
+alarm 0x6EB5B Undecided
+memcpy 0x5773F Undecided
+printf 0x6954E Undecided
+putchar 0x6964F Undecided
+strtol 0x59A49 Undecided
+alarm 0x6B8F0 Undecided
+alarm 0x6EC3D Undecided
+memcpy 0x57914 Undecided
+printf 0x69564 Undecided
+putchar 0x72DF1 Undecided
+strtol 0x59C95 Undecided
+alarm 0x6BA46 Undecided
+alarm 0x6EDAC Undecided
+memcpy 0x5F997 Undecided
+printf 0x6957A Undecided
+putchar 0x73711 Undecided
+strtol 0x60E69 Undecided
+alarm 0x6BBEE Undecided
+alarm 0x6EED1 Undecided
+memcpy 0x72A59 Undecided
+printf 0x69590 Undecided
+puts 0x634A2 Undecided
+strtol 0x61E38 Undecided
+alarm 0x6C4DC Undecided
+alarm 0x6EF11 Undecided
+memset 0x40BC1 Undecided
+printf 0x695A6 Undecided
+puts 0x63550 Undecided
+strtol 0x62037 Undecided
+alarm 0x6C7F7 Undecided
+alarm 0x6EFF3 Undecided
+memset 0x6923B Undecided
+printf 0x695C1 Undecided
+puts 0x69502 Undecided
+strtol 0x62057 Undecided
+alarm 0x6CA95 Undecided
+alarm 0x6F124 Undecided
+memset 0x6E33A Undecided
+printf 0x695E9 Undecided
+puts 0x69514 Undecided
+strtol 0x62184 Undecided
+alarm 0x6CC11 Undecided
+alarm 0x6F2AE Undecided
+memset 0x6E585 Undecided
+printf 0x69631 Undecided
+puts 0x6966C Undecided
+strtol 0x621A1 Undecided
+alarm 0x6CCB7 Undecided
+alarm 0x6F653 Undecided
+memset 0x6E90F Undecided
+printf 0x6967A Undecided
+puts 0x720FE Undecided
+strtol 0x62298 Undecided
+alarm 0x6CD68 Undecided
+close 0x33353 Undecided
+memset 0x6EAF7 Undecided
+printf 0x69F3B Undecided
+puts 0x7247A Undecided
+strtol 0x623B0 Undecided
+alarm 0x6CE44 Undecided
+fclose 0x3324F Undecided
+printf 0x417CB Undecided
+printf 0x6BEFD Undecided
+puts 0x7351D Undecided
+strtoul 0x487EB Undecided
+alarm 0x6CEF2 Undecided
+fprintf 0x6F3B8 Undecided
+printf 0x41E64 Undecided
+printf 0x6BF5D Undecided
+puts 0x7366F Undecided
+sysconf 0x32FF5 Undecided
+alarm 0x6D00D Undecided
+fprintf 0x6F402 Undecided
+printf 0x41E87 Undecided
+printf 0x6BF81 Undecided
+puts 0x73686 Undecided
+unlink 0x62F41 Undecided
+alarm 0x6D0B7 Undecided
+fprintf 0x6F423 Undecided
+printf 0x5E007 Undecided
+printf 0x6C027 Undecided
+puts 0x73728 Undecided
+write 0x330CF Undecided
+alarm 0x6D218 Undecided
+fprintf 0x6F4FE Undecided
+printf 0x63825 Undecided
+printf 0x6C085 Undecided
+puts 0x7373F Undecided
+alarm 0x6D2BF Undecided
+fprintf 0x6F53C Undecided
+printf 0x639A3 Undecided
+printf 0x6C0E5 Undecided
+puts 0x73751 Undecided
 
 
 

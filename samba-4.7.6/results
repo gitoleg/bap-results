@@ -3,21 +3,25 @@ Size: 46K
 Forbidden:
 Time: 00:00:03
 
-__errno_location   printf
-exit               puts
-fprintf            signal
-fwrite             time
+__errno_location Confirmed
+printf Confirmed
+exit Confirmed
+puts Confirmed
+fprintf Confirmed
+signal Confirmed
+fwrite Confirmed
+time Confirmed
 
 Recursive:
  Time: 00:00:03
 
-recursive_delete
-sig_term
+recursive_delete Undecided
+sig_term Undecided
 
 Complex:
  Time: 00:00:04
 
-binary_smbd_main
+binary_smbd_main Undecided
 
 Non-structural:
  Time: 00:00:04
@@ -27,31 +31,31 @@ not found
 Null:
 Time: 00:00:40
 False_pos: 2
- binary_smbd_main 0x4DD0
- binary_smbd_main 0x4D6D
+binary_smbd_main 0x4DD0 Undecided
+binary_smbd_main 0x4D6D Undecided
 
 Unused:
  Time: 00:00:40
  Confirmed: 9
-  fprintf 0x380D
-  fprintf 0x4919
-  fwrite  0x499B
-  printf  0x361F
-  printf  0x44DB
-  printf  0x44FF
-  printf  0x455C
-  puts    0x44E7
-  puts    0x450B
+fprintf 0x380D Undecided
+fprintf 0x4919 Undecided
+fwrite 0x499B Undecided
+printf 0x361F Undecided
+printf 0x44DB Undecided
+printf 0x44FF Undecided
+printf 0x455C Undecided
+puts 0x44E7 Undecided
+puts 0x450B Undecided
 
 
 Hardcoded-socket-address:
  Time: 00:00:40
- not found
+not found
 
 Memcheck-use-after-release:
  Time: 00:00:40
- not found
+not found
 
 Memcheck-out-of-bound:
  Time: 00:00:40
- not found
+not found

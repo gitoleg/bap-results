@@ -3,129 +3,454 @@ Size: 2.2M
  Forbidden:
 Time: 00:00:22
 
- __errno_location   fprintf      perror
- ctime exit         fputc        printf
- fclose             fread        rename
- feof               fseek        time
- ferror             fwrite       vfprintf
- fflush             getenv
- fopen              localtime
+__errno_location Confirmed
+fprintf Confirmed
+perror Confirmed
+ctime Confirmed
+exit Confirmed
+fputc Confirmed
+printf Confirmed
+fclose Confirmed
+fread Confirmed
+rename Confirmed
+feof Confirmed
+fseek Confirmed
+time Confirmed
+ferror Confirmed
+fwrite Confirmed
+vfprintf Confirmed
+fflush Confirmed
+getenv Confirmed
+fopen Confirmed
+localtime Confirmed
 
  Recursive:
  Time: 00:00:22
 
-  _rs_stir                                    sub_11b9d    sub_37ae8
-  bounce_delivery                             sub_12a23    sub_3e6c0
-  ca                                          sub_12a83    sub_3e6c4
-  ca_init                                     sub_19384    sub_40210
-  child_add                                   sub_1d4df    sub_40214
-  expandtree_RB_INSERT_COLOR                  sub_1e5f8    sub_414ac
-  fatal                                       sub_1e5fc    sub_41efe
-  filter_extend_chain                         sub_1eaa0    sub_471c8
-  fsqueue_envelope_path.constprop.4           sub_1eaa4    sub_47221
-  fsqueue_message_incoming_path.constprop.7   sub_1efe0    sub_47ad0
-  fsqueue_message_path.constprop.8            sub_1efe4    sub_47ad4
-  io_dispatch                                 sub_1f6b0    sub_47bcd
-  io_frame_leave                              sub_1f6b4    sub_48773
-  m_add                                       sub_1fba0    sub_487d3
-  m_get_data                                  sub_1fba4    sub_7ebf
-  m_get_evpid                                 sub_21020    sub_94f1
-  mta_connect                                 sub_21024    sub_af10
-  mta_drain                                   sub_22408    sub_af14
-  offline_enqueue                             sub_22694    sub_c247
-  parse_sockaddr                              sub_227d0    sub_e5a0
-  post_fork                                   sub_22c45    sub_e5a4
-  queue                                       sub_22da9
-  queue_proc_end                              sub_24818
-  queue_shutdown                              sub_28bdb
-  rsae_priv_dec                               sub_2efef
-  scheduler_proc_end                          sub_2f078
-  set_local                                   sub_2fc28
-  smtp_reply                                  sub_30968
-  ssl_setup                                   sub_31cbf
-  stats_tree_RB_INSERT_COLOR                  sub_31dd3
+_rs_stir Undecided
+sub_11b9d Undecided
+sub_37ae8 Undecided
+bounce_delivery Undecided
+sub_12a23 Undecided
+sub_3e6c0 Undecided
+ca Undecided
+sub_12a83 Undecided
+sub_3e6c4 Undecided
+ca_init Undecided
+sub_19384 Undecided
+sub_40210 Undecided
+child_add Undecided
+sub_1d4df Undecided
+sub_40214 Undecided
+expandtree_RB_INSERT_COLOR Undecided
+sub_1e5f8 Undecided
+sub_414ac Undecided
+fatal Undecided
+sub_1e5fc Undecided
+sub_41efe Undecided
+filter_extend_chain Undecided
+sub_1eaa0 Undecided
+sub_471c8 Undecided
+fsqueue_envelope_path.constprop.4 Undecided
+sub_1eaa4 Undecided
+sub_47221 Undecided
+fsqueue_message_incoming_path.constprop.7 Undecided
+sub_1efe0 Undecided
+sub_47ad0 Undecided
+fsqueue_message_path.constprop.8 Undecided
+sub_1efe4 Undecided
+sub_47ad4 Undecided
+io_dispatch Undecided
+sub_1f6b0 Undecided
+sub_47bcd Undecided
+io_frame_leave Undecided
+sub_1f6b4 Undecided
+sub_48773 Undecided
+m_add Undecided
+sub_1fba0 Undecided
+sub_487d3 Undecided
+m_get_data Undecided
+sub_1fba4 Undecided
+sub_7ebf Undecided
+m_get_evpid Undecided
+sub_21020 Undecided
+sub_94f1 Undecided
+mta_connect Undecided
+sub_21024 Undecided
+sub_af10 Undecided
+mta_drain Undecided
+sub_22408 Undecided
+sub_af14 Undecided
+offline_enqueue Undecided
+sub_22694 Undecided
+sub_c247 Undecided
+parse_sockaddr Undecided
+sub_227d0 Undecided
+sub_e5a0 Undecided
+post_fork Undecided
+sub_22c45 Undecided
+sub_e5a4 Undecided
+queue Undecided
+sub_22da9 Undecided
+queue_proc_end Undecided
+sub_24818 Undecided
+queue_shutdown Undecided
+sub_28bdb Undecided
+rsae_priv_dec Undecided
+sub_2efef Undecided
+scheduler_proc_end Undecided
+sub_2f078 Undecided
+set_local Undecided
+sub_2fc28 Undecided
+smtp_reply Undecided
+sub_30968 Undecided
+ssl_setup Undecided
+sub_31cbf Undecided
+stats_tree_RB_INSERT_COLOR Undecided
+sub_31dd3 Undecided
 
  Complex:
  Time: 00:00:30
 
- envelope_ascii_dump     sub_40eb2
- envelope_load_buffer    sub_410c2
- mta_connect             sub_49e34
- sub_18014               yylex
- sub_1a9b6
+envelope_ascii_dump Undecided
+sub_40eb2 Undecided
+envelope_load_buffer Undecided
+sub_410c2 Undecided
+mta_connect Undecided
+sub_49e34 Undecided
+sub_18014 Undecided
+yylex Undecided
+sub_1a9b6 Undecided
 
 
  Non-structural:
  Time: 00:00:28
 
- queue_proc_call             sub_40eb2
- queue_proc_envelope_walk    sub_410c2
- scheduler_proc_call         table_proc_call
+queue_proc_call Undecided
+sub_40eb2 Undecided
+queue_proc_envelope_walk Undecided
+sub_410c2 Undecided
+scheduler_proc_call Undecided
+table_proc_call Undecided
 
 
  Null:
  Time: 01:08:20
 
-queue_bounce 0x2C61F
-strlcat 0x4B9B9
-dict_iter 0xE65E
+queue_bounce 0x2C61F Undecided
+strlcat 0x4B9B9 Undecided
+dict_iter 0xE65E Undecided
 
 
 
 Unused:
 Time: 00:46:10
-alarm   0x3936B  execl     0x382F4  fwrite      0x8211   memset   0x3350F   snprintf  0x12BF0  snprintf    0x3C764
-calloc  0x2B8F4  execle    0x414C7  getpid      0x49036  memset   0x33710   snprintf  0x12D42  snprintf    0x3C79C
-close   0x14498  execle    0x4154E  getpid      0x4A623  memset   0x339A6   snprintf  0x134DB  snprintf    0x3D296
-close   0x144A1  fclose    0x1337B  getsockname 0x32A6F  memset   0x33A5F   snprintf  0x134FC  snprintf    0x3F29F
-close   0x15951  fclose    0x1457F  listen      0x316F6  memset   0x3C152   snprintf  0x13945  snprintf    0x4125B
-close   0x15F2B  fclose    0x1A152  listen      0xDD5C   memset   0x3C2C5   snprintf  0x1501B  snprintf    0x41338
-close   0x15F63  fclose    0x1A912  lseek       0x1AC8D  memset   0x3C82B   snprintf  0x1542D  snprintf    0x42C5B
-close   0x1BBD5  fclose    0x1AD29  lseek       0x2E7E2  memset   0x3D8C4   snprintf  0x1547C  snprintf    0x439EA
-close   0x1BC66  fclose    0x24ABC  lseek       0x2E87D  memset   0x3DA66   snprintf  0x154C9  snprintf    0x45A69
-close   0x1BCA1  fclose    0x24DD9  lseek       0x4489A  memset   0x3DC26   snprintf  0x15594  snprintf    0x45AB0
-close   0x1BE18  fclose    0x25A27  memcpy      0x18A1E  memset   0x3DC56   snprintf  0x1A42D  snprintf    0x45B13
-close   0x1BF40  fclose    0x278FE  memcpy      0x28E5F  memset   0x3DC6E   snprintf  0x1A58F  snprintf    0x49D45
-close   0x1BF80  fclose    0x279A1  memcpy      0x2F209  memset   0x3DF06   snprintf  0x1A650  snprintf    0x49DF8
-close   0x1BF89  fclose    0x2E51B  memcpy      0x39C15  memset   0x3E013   snprintf  0x1A690  snprintf    0x7D97
-close   0x2E730  fclose    0x2E5DD  memcpy      0x3EA93  memset   0x40492   snprintf  0x1A745  snprintf    0x9AD8
-close   0x2E738  fclose    0x2E5E5  memcpy      0x3FDD6  memset   0x40ADD   snprintf  0x1A819  snprintf    0x9B43
-close   0x2E804  fclose    0x2E626  memcpy      0x445DF  memset   0x4194B   snprintf  0x1AE02  snprintf    0x9BAA
-close   0x2E8A9  fclose    0x2E62E  memcpy      0x447A2  memset   0x46212   snprintf  0x1B07F  snprintf    0x9C09
-close   0x310D4  fclose    0x2E752  memcpy      0x491D1  memset   0x48EEA   snprintf  0x1B11B  snprintf    0xA113
-close   0x310DD  fclose    0x2E7CE  memcpy      0x4A0BC  memset   0x48EF9   snprintf  0x1B18B  snprintf    0xAC6D
-close   0x38142  fclose    0x2E7D6  memcpy      0x4AB81  memset   0x48F17   snprintf  0x1B47B  snprintf    0xAE64
-close   0x38169  fclose    0x2E869  memcpy      0x4ADB9  memset   0x49008   snprintf  0x1B860  snprintf    0xC04A
-close   0x38232  fclose    0x2E871  memcpy      0x4C315  memset   0x49095   snprintf  0x1D9D6  snprintf    0xF978
-close   0x382B8  fclose    0x39AC8  memcpy      0xB467   memset   0x490E0   snprintf  0x1DD86  strcasecmp  0x18C65
-close   0x382C1  fclose    0x39B23  memcpy      0xE547   memset   0x491DE   snprintf  0x1DF8D  strcasecmp  0x18CCD
-close   0x39234  fclose    0x3F3F0  memmove     0x1492F  memset   0x495B8   snprintf  0x1E121  strchr      0x4112B
-close   0x3923D  fclose    0x3F415  memmove     0x14B12  memset   0x4AFB0   snprintf  0x1E6DE  strcmp      0xE38D
-close   0x3942C  fclose    0x3FE11  memmove     0x1AFCC  memset   0x4B0A4   snprintf  0x1E70D  strcmp      0xE3FA
-close   0x39435  fclose    0x42676  memmove     0x1C79B  memset   0x9153    snprintf  0x1E75C  strlen      0x3BDFD
-close   0x3943D  fclose    0x42921  memmove     0x24F44  memset   0xDCF9    snprintf  0x2241A  strncasecmp 0x3DB6D
-close   0x394D5  fclose    0x42B5C  memmove     0x377AF  memset   0xE979    snprintf  0x2268F  strncasecmp 0x3DBEE
-close   0x3974A  fclose    0x4488F  memmove     0x41E75  memset   0xF9FE    snprintf  0x22733  strtoll     0x4BE32
-close   0x39785  fclose    0x44AE0  memmove     0x43D46  open     0x2E8F7   snprintf  0x2283F  strtoull    0x3D454
-close   0x419BD  fclose    0x4B538  memmove     0x44E36  open     0x40EE1   snprintf  0x22AE7  strtoull    0x3D4C4
-close   0x41A18  fclose    0x4B570  memmove     0x4ABD6  printf   0x151C4   snprintf  0x22BF0  unlink      0x2E428
-close   0x41A47  fclose    0x8EFC   memmove     0xCA56   printf   0x1521C   snprintf  0x22DB2  unlink      0x2E539
-close   0x42A01  fclose    0x9A16   memmove     0xCAD6   printf   0x15263   snprintf  0x23B9D  unlink      0x2E65A
-close   0x448C5  fclose    0xA55F   memmove     0xCB59   printf   0x152A5   snprintf  0x24936  unlink      0x37A6C
-close   0x44934  fclose    0xA84A   memmove     0xE861   printf   0x15777   snprintf  0x2879D  unlink      0x37DFC
-close   0x49313  ferror    0x258E7  memset      0x1065A  printf   0x1580D   snprintf  0x287CB  unlink      0x38FD7
-close   0x49366  ferror    0xA4F4   memset      0x127C8  printf   0x15BF4   snprintf  0x2C4AC  unlink      0x3F353
-close   0x4A5A3  fork      0x87E3   memset      0x127FE  printf   0x15D1C   snprintf  0x30FDF  unlink      0x412E3
-close   0x4A818  fprintf   0x2BCF3  memset      0x19615  printf   0x15D40   snprintf  0x320EB  unlink      0x429A3
-close   0x4AC7A  fprintf   0x37EC1  memset      0x1BD34  printf   0x1633F   snprintf  0x3889E  unlink      0x4B586
-close   0x4AF0E  fprintf   0x40F7F  memset      0x1D317  printf   0x164EB   snprintf  0x39108  unlink      0x4B5C8
-close   0x4B182  fprintf   0x4A495  memset      0x1D34E  printf   0x16523   snprintf  0x391EF  unlink      0xDB37
-close   0x9D90   fputc     0x19975  memset      0x25273  printf   0x16563   snprintf  0x393E7
-close   0xA128   ftruncate 0x40FFA  memset      0x283A8  printf   0x165BC   snprintf  0x3999F
-close   0xC6FD   fwrite    0x3FE5B  memset      0x2F1F4  printf   0x1661C   snprintf  0x39B04
-close   0xCD92   fwrite    0x3FEDD  memset      0x31DFE  realloc  0x1C773   snprintf  0x3B57A
-dup2    0x1BF98  fwrite    0x4058E  memset      0x331B0  rmdir    0x37E0D   snprintf  0x3C704
-dup2    0x382D1  fwrite    0x419FE  memset      0x33456  snprintf 0x12B75   snprintf  0x3C733
+alarm 0x3936B Undecided
+execl 0x382F4 Undecided
+fwrite 0x8211 Undecided
+memset 0x3350F Undecided
+snprintf 0x12BF0 Undecided
+snprintf 0x3C764 Undecided
+calloc 0x2B8F4 Undecided
+execle 0x414C7 Undecided
+getpid 0x49036 Undecided
+memset 0x33710 Undecided
+snprintf 0x12D42 Undecided
+snprintf 0x3C79C Undecided
+close 0x14498 Undecided
+execle 0x4154E Undecided
+getpid 0x4A623 Undecided
+memset 0x339A6 Undecided
+snprintf 0x134DB Undecided
+snprintf 0x3D296 Undecided
+close 0x144A1 Undecided
+fclose 0x1337B Undecided
+getsockname 0x32A6F Undecided
+memset 0x33A5F Undecided
+snprintf 0x134FC Undecided
+snprintf 0x3F29F Undecided
+close 0x15951 Undecided
+fclose 0x1457F Undecided
+listen 0x316F6 Undecided
+memset 0x3C152 Undecided
+snprintf 0x13945 Undecided
+snprintf 0x4125B Undecided
+close 0x15F2B Undecided
+fclose 0x1A152 Undecided
+listen 0xDD5C Undecided
+memset 0x3C2C5 Undecided
+snprintf 0x1501B Undecided
+snprintf 0x41338 Undecided
+close 0x15F63 Undecided
+fclose 0x1A912 Undecided
+lseek 0x1AC8D Undecided
+memset 0x3C82B Undecided
+snprintf 0x1542D Undecided
+snprintf 0x42C5B Undecided
+close 0x1BBD5 Undecided
+fclose 0x1AD29 Undecided
+lseek 0x2E7E2 Undecided
+memset 0x3D8C4 Undecided
+snprintf 0x1547C Undecided
+snprintf 0x439EA Undecided
+close 0x1BC66 Undecided
+fclose 0x24ABC Undecided
+lseek 0x2E87D Undecided
+memset 0x3DA66 Undecided
+snprintf 0x154C9 Undecided
+snprintf 0x45A69 Undecided
+close 0x1BCA1 Undecided
+fclose 0x24DD9 Undecided
+lseek 0x4489A Undecided
+memset 0x3DC26 Undecided
+snprintf 0x15594 Undecided
+snprintf 0x45AB0 Undecided
+close 0x1BE18 Undecided
+fclose 0x25A27 Undecided
+memcpy 0x18A1E Undecided
+memset 0x3DC56 Undecided
+snprintf 0x1A42D Undecided
+snprintf 0x45B13 Undecided
+close 0x1BF40 Undecided
+fclose 0x278FE Undecided
+memcpy 0x28E5F Undecided
+memset 0x3DC6E Undecided
+snprintf 0x1A58F Undecided
+snprintf 0x49D45 Undecided
+close 0x1BF80 Undecided
+fclose 0x279A1 Undecided
+memcpy 0x2F209 Undecided
+memset 0x3DF06 Undecided
+snprintf 0x1A650 Undecided
+snprintf 0x49DF8 Undecided
+close 0x1BF89 Undecided
+fclose 0x2E51B Undecided
+memcpy 0x39C15 Undecided
+memset 0x3E013 Undecided
+snprintf 0x1A690 Undecided
+snprintf 0x7D97 Undecided
+close 0x2E730 Undecided
+fclose 0x2E5DD Undecided
+memcpy 0x3EA93 Undecided
+memset 0x40492 Undecided
+snprintf 0x1A745 Undecided
+snprintf 0x9AD8 Undecided
+close 0x2E738 Undecided
+fclose 0x2E5E5 Undecided
+memcpy 0x3FDD6 Undecided
+memset 0x40ADD Undecided
+snprintf 0x1A819 Undecided
+snprintf 0x9B43 Undecided
+close 0x2E804 Undecided
+fclose 0x2E626 Undecided
+memcpy 0x445DF Undecided
+memset 0x4194B Undecided
+snprintf 0x1AE02 Undecided
+snprintf 0x9BAA Undecided
+close 0x2E8A9 Undecided
+fclose 0x2E62E Undecided
+memcpy 0x447A2 Undecided
+memset 0x46212 Undecided
+snprintf 0x1B07F Undecided
+snprintf 0x9C09 Undecided
+close 0x310D4 Undecided
+fclose 0x2E752 Undecided
+memcpy 0x491D1 Undecided
+memset 0x48EEA Undecided
+snprintf 0x1B11B Undecided
+snprintf 0xA113 Undecided
+close 0x310DD Undecided
+fclose 0x2E7CE Undecided
+memcpy 0x4A0BC Undecided
+memset 0x48EF9 Undecided
+snprintf 0x1B18B Undecided
+snprintf 0xAC6D Undecided
+close 0x38142 Undecided
+fclose 0x2E7D6 Undecided
+memcpy 0x4AB81 Undecided
+memset 0x48F17 Undecided
+snprintf 0x1B47B Undecided
+snprintf 0xAE64 Undecided
+close 0x38169 Undecided
+fclose 0x2E869 Undecided
+memcpy 0x4ADB9 Undecided
+memset 0x49008 Undecided
+snprintf 0x1B860 Undecided
+snprintf 0xC04A Undecided
+close 0x38232 Undecided
+fclose 0x2E871 Undecided
+memcpy 0x4C315 Undecided
+memset 0x49095 Undecided
+snprintf 0x1D9D6 Undecided
+snprintf 0xF978 Undecided
+close 0x382B8 Undecided
+fclose 0x39AC8 Undecided
+memcpy 0xB467 Undecided
+memset 0x490E0 Undecided
+snprintf 0x1DD86 Undecided
+strcasecmp 0x18C65 Undecided
+close 0x382C1 Undecided
+fclose 0x39B23 Undecided
+memcpy 0xE547 Undecided
+memset 0x491DE Undecided
+snprintf 0x1DF8D Undecided
+strcasecmp 0x18CCD Undecided
+close 0x39234 Undecided
+fclose 0x3F3F0 Undecided
+memmove 0x1492F Undecided
+memset 0x495B8 Undecided
+snprintf 0x1E121 Undecided
+strchr 0x4112B Undecided
+close 0x3923D Undecided
+fclose 0x3F415 Undecided
+memmove 0x14B12 Undecided
+memset 0x4AFB0 Undecided
+snprintf 0x1E6DE Undecided
+strcmp 0xE38D Undecided
+close 0x3942C Undecided
+fclose 0x3FE11 Undecided
+memmove 0x1AFCC Undecided
+memset 0x4B0A4 Undecided
+snprintf 0x1E70D Undecided
+strcmp 0xE3FA Undecided
+close 0x39435 Undecided
+fclose 0x42676 Undecided
+memmove 0x1C79B Undecided
+memset 0x9153 Undecided
+snprintf 0x1E75C Undecided
+strlen 0x3BDFD Undecided
+close 0x3943D Undecided
+fclose 0x42921 Undecided
+memmove 0x24F44 Undecided
+memset 0xDCF9 Undecided
+snprintf 0x2241A Undecided
+strncasecmp 0x3DB6D Undecided
+close 0x394D5 Undecided
+fclose 0x42B5C Undecided
+memmove 0x377AF Undecided
+memset 0xE979 Undecided
+snprintf 0x2268F Undecided
+strncasecmp 0x3DBEE Undecided
+close 0x3974A Undecided
+fclose 0x4488F Undecided
+memmove 0x41E75 Undecided
+memset 0xF9FE Undecided
+snprintf 0x22733 Undecided
+strtoll 0x4BE32 Undecided
+close 0x39785 Undecided
+fclose 0x44AE0 Undecided
+memmove 0x43D46 Undecided
+open 0x2E8F7 Undecided
+snprintf 0x2283F Undecided
+strtoull 0x3D454 Undecided
+close 0x419BD Undecided
+fclose 0x4B538 Undecided
+memmove 0x44E36 Undecided
+open 0x40EE1 Undecided
+snprintf 0x22AE7 Undecided
+strtoull 0x3D4C4 Undecided
+close 0x41A18 Undecided
+fclose 0x4B570 Undecided
+memmove 0x4ABD6 Undecided
+printf 0x151C4 Undecided
+snprintf 0x22BF0 Undecided
+unlink 0x2E428 Undecided
+close 0x41A47 Undecided
+fclose 0x8EFC Undecided
+memmove 0xCA56 Undecided
+printf 0x1521C Undecided
+snprintf 0x22DB2 Undecided
+unlink 0x2E539 Undecided
+close 0x42A01 Undecided
+fclose 0x9A16 Undecided
+memmove 0xCAD6 Undecided
+printf 0x15263 Undecided
+snprintf 0x23B9D Undecided
+unlink 0x2E65A Undecided
+close 0x448C5 Undecided
+fclose 0xA55F Undecided
+memmove 0xCB59 Undecided
+printf 0x152A5 Undecided
+snprintf 0x24936 Undecided
+unlink 0x37A6C Undecided
+close 0x44934 Undecided
+fclose 0xA84A Undecided
+memmove 0xE861 Undecided
+printf 0x15777 Undecided
+snprintf 0x2879D Undecided
+unlink 0x37DFC Undecided
+close 0x49313 Undecided
+ferror 0x258E7 Undecided
+memset 0x1065A Undecided
+printf 0x1580D Undecided
+snprintf 0x287CB Undecided
+unlink 0x38FD7 Undecided
+close 0x49366 Undecided
+ferror 0xA4F4 Undecided
+memset 0x127C8 Undecided
+printf 0x15BF4 Undecided
+snprintf 0x2C4AC Undecided
+unlink 0x3F353 Undecided
+close 0x4A5A3 Undecided
+fork 0x87E3 Undecided
+memset 0x127FE Undecided
+printf 0x15D1C Undecided
+snprintf 0x30FDF Undecided
+unlink 0x412E3 Undecided
+close 0x4A818 Undecided
+fprintf 0x2BCF3 Undecided
+memset 0x19615 Undecided
+printf 0x15D40 Undecided
+snprintf 0x320EB Undecided
+unlink 0x429A3 Undecided
+close 0x4AC7A Undecided
+fprintf 0x37EC1 Undecided
+memset 0x1BD34 Undecided
+printf 0x1633F Undecided
+snprintf 0x3889E Undecided
+unlink 0x4B586 Undecided
+close 0x4AF0E Undecided
+fprintf 0x40F7F Undecided
+memset 0x1D317 Undecided
+printf 0x164EB Undecided
+snprintf 0x39108 Undecided
+unlink 0x4B5C8 Undecided
+close 0x4B182 Undecided
+fprintf 0x4A495 Undecided
+memset 0x1D34E Undecided
+printf 0x16523 Undecided
+snprintf 0x391EF Undecided
+unlink 0xDB37 Undecided
+close 0x9D90 Undecided
+fputc 0x19975 Undecided
+memset 0x25273 Undecided
+printf 0x16563 Undecided
+snprintf 0x393E7 Undecided
+close 0xA128 Undecided
+ftruncate 0x40FFA Undecided
+memset 0x283A8 Undecided
+printf 0x165BC Undecided
+snprintf 0x3999F Undecided
+close 0xC6FD Undecided
+fwrite 0x3FE5B Undecided
+memset 0x2F1F4 Undecided
+printf 0x1661C Undecided
+snprintf 0x39B04 Undecided
+close 0xCD92 Undecided
+fwrite 0x3FEDD Undecided
+memset 0x31DFE Undecided
+realloc 0x1C773 Undecided
+snprintf 0x3B57A Undecided
+dup2 0x1BF98 Undecided
+fwrite 0x4058E Undecided
+memset 0x331B0 Undecided
+rmdir 0x37E0D Undecided
+snprintf 0x3C704 Undecided
+dup2 0x382D1 Undecided
+fwrite 0x419FE Undecided
+memset 0x33456 Undecided
+snprintf 0x12B75 Undecided
+snprintf 0x3C733 Undecided
 
 memcheck-double-release:
  Time: 04:26:32

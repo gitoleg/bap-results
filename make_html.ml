@@ -15,26 +15,38 @@ type check =
   | Value_was_used_before_check
 [@@deriving bin_io, compare, sexp]
 
+type name = string [@@deriving sexp]
+type addr = string [@@deriving sexp]
+
+type check_record =
+  | Function of name
+  | Location of (name * addr)
+  | Text of string list
+[@@deriving sexp]
+
+type status =
+  | Confirmed
+  | False_pos
+  | False_neg
+  | Undecided
+[@@deriving sexp]
+
 type info =
   | Size of string
   | Time of string
-  | Total of int
-  | Confirmed of int
-  | False_pos of int
-  | False_neg of int
-  | Text of string list
-  | Format of int (* words per data record: e.g. Format 2 if record is function-name addr *)
+  | Data of (check_record * status) list
 [@@deriving sexp]
 
 type stat = {
-    total   : int;
-    false_p : int;
-    false_n : int;
-    confirm : int;
-    unknown : int;
-    time    : string;
+    false_pos : int;
+    false_neg : int;
+    confirmed : int;
+    undecided : int;
+    total     : int;
+    time      : string;
   }
 
+type result = check * stat * info list
 
 module Check = struct
   type t = check [@@deriving bin_io,compare, sexp]
@@ -111,16 +123,6 @@ let html_finish = {|
 </html>
 |}
 
-let create_stat total confirm false_p false_n time =
-  let unknown = total - confirm - false_p - false_n in
-  {total; false_p; confirm; unknown; time; false_n; }
-
-let is_no_incidents = function
-  | [x] -> x = "not found"
-  | _ -> false
-
-let no_incidents_stmt = "no incidents found"
-
 let descr_of_check = function
   | Test Null -> `Link "https://cwe.mitre.org/data/definitions/476.html"
   | Test Unused -> `Link "https://cwe.mitre.org/data/definitions/252.html"
@@ -170,27 +172,74 @@ module Parse = struct
 
   let info_of_string s =
     match String.split ~on:':' s with
-    | [_; ""] -> None
-    | ["Total"; x] -> with_num x (fun x -> Total x)
-    | ["Confirmed"; x] -> with_num x (fun x -> Confirmed x)
-    | ["False_pos"; x] -> with_num x (fun x -> False_pos x)
-    | ["False_neg"; x] -> with_num x (fun x -> False_neg x)
     | "Time" :: xs ->
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
     | "Size" :: s :: _ -> Some (Size s)
-    | "Format" :: s :: _ -> with_num s (fun x -> Format x)
     | _ -> None
 
-  let normalize data =
-    List.fold data ~init:[] ~f:(fun acc (check, infos) ->
-        let infos = List.fold infos ~init:[]
-          ~f:(fun acc -> function
-              | Text text -> Text (List.rev text) :: acc
-              | info -> info :: acc) in
-        (check, infos) :: acc)
+  let parse_plain_line line =
+    try
+      let words = String.split ~on:' ' line in
+      match List.filter words ~f:(fun s -> s <> "")  with
+      | [name; status] ->
+         Function name, status_of_sexp (Sexp.of_string status)
+      | [name; addr; status] ->
+         Location (name, addr), status_of_sexp (Sexp.of_string status)
+      |  _ -> Text [line], Undecided
+    with _ -> Text [line], Undecided
 
-  let process file =
+
+  let find_time infos =
+    let rec loop = function
+      | [] -> "-"
+      | Time t :: _ -> t
+      | _ :: xs -> loop xs in
+    loop infos
+
+  let check_status s (_, s') = s = s'
+
+  let is_false_pos = check_status False_pos
+  let is_false_neg = check_status False_neg
+  let is_confirmed = check_status Confirmed
+  let is_undecided = check_status Undecided
+
+  let stub_stat time = {
+      total = 0; false_pos = 0; false_neg = 0;
+      confirmed = 0; undecided = 0; time
+    }
+
+  let create_stat time data =
+    match data with
+    | [ Text ["not found"],_ ] -> stub_stat time
+    | _ -> {
+      total = List.length data;
+      false_pos = List.count data ~f:is_false_pos;
+      false_neg = List.count data ~f:is_false_neg;
+      confirmed = List.count data ~f:is_confirmed;
+      undecided = List.count data ~f:is_undecided;
+      time;
+    }
+
+  let normalize_data data =
+    let data, text =
+    List.fold data ~init:([],[]) ~f:(fun (acc,text) -> function
+        | Text [t] -> acc, t :: text
+        | x -> x :: acc, text) in
+    Text text :: data
+
+  let normalize xs =
+    List.rev_map xs ~f:(fun (check, info) ->
+        let info = List.rev info in
+        let time = find_time info in
+        match
+        List.find_map info ~f:(function
+           | Data d -> Some (create_stat time d)
+           | _ -> None) with
+        | None  -> check, stub_stat time, info
+        | Some s -> check, s, info)
+
+  let process file : string option * result list =
     let lines = In_channel.with_file file ~f:In_channel.input_lines in
     let add_check data infos = function
       | None -> data
@@ -211,9 +260,10 @@ module Parse = struct
               | Some (Size s) -> loop (Some s,data) check acc lines
               | Some info -> loop (size,data) check (info :: acc) lines
               | None ->
+                 let res = parse_plain_line line in
                  let acc = match acc with
-                   | Text text :: acc -> Text (line :: text) :: acc
-                   | _ -> Text [line] :: acc in
+                   | Data data :: acc -> Data (res :: data) :: acc
+                   | _ -> Data [res] :: acc in
                  loop (size,data) check acc lines in
     let size, data = loop (None,[]) None [] lines in
     size, normalize data
@@ -221,6 +271,39 @@ module Parse = struct
 end
 
 module Template = struct
+
+  let color_of_status = function
+    | Confirmed -> "#D4EFE2"
+    | False_neg -> "#F7D3CE"
+    | False_pos -> "#add8e6"
+    | Undecided -> "#F2F2F2"
+
+  let stub_color = "#FFFFFF"
+
+  let legend = sprintf {|
+    <table>
+      <tr>
+      <td bgcolor=%s>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td bgcolor="#f2f2f2"> confirmed </td>
+      </tr>
+      <tr>
+      <td bgcolor=%s></td>
+      <td bgcolor="#f2f2f2"> false negative </td>
+      </tr>
+      <tr>
+      <td bgcolor=%s></td>
+      <td bgcolor="#f2f2f2"> false positive </td>
+      </tr>
+      <tr>
+      <td bgcolor=%s></td>
+      <td bgcolor="#f2f2f2"> undecided </td>
+      </tr>
+    </table></br>|}
+      (color_of_status Confirmed)
+      (color_of_status False_neg)
+      (color_of_status False_pos)
+      (color_of_status Undecided)
+
 
   let rec string_of_check = function
     | Test c -> sprintf  "Testcase: %s" (string_of_check c)
@@ -245,69 +328,66 @@ module Template = struct
     let id = check_id arti check in
     sprintf "<b id=\"%s\">%s</b>" id (string_of_check check)
 
-  let render_text text =
-    let text = if is_no_incidents text then no_incidents_stmt
-               else String.concat text ~sep:"\n" in
-    sprintf "<pre>\n%s\n</pre>" text
+  let is_no_incidents stat = stat.total = 0
 
-  let find_text infos =
+  let find_check_text infos =
     let rec loop = function
       | [] -> None
-      | Text t :: _ -> Some t
+      | Data d :: _ -> Some d
       | _ :: infos -> loop infos in
     loop infos
 
-  let rec list_compare xs ys =
-    match xs,ys with
-    | [], [] -> 0
-    | x :: [], y :: [] -> String.compare x y
-    | x :: xs, y :: ys ->
-       let r = String.compare x y  in
-       if r <> 0 then r
-       else compare xs ys
-    | _ ->
-       assert false
+  let render_functions data =
+    let data =
+      List.sort data ~compare:(fun x y -> String.compare (fst x) (fst y)) in
+    let render_cell (name,s) =
+      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s&nbsp</td></tr>"
+        (color_of_status s) name in
+    List.map data ~f:render_cell
 
-  let render_data words_per_record lines =
-    let words_of_line line =
-      String.split ~on:' ' line |>
-        List.map ~f:String.strip |>
-        List.filter ~f:(fun x -> x <> "") in
+  let render_locations data =
+    let render_cell maxlen (name,addr,s) =
+      let spaces = String.init (maxlen - String.length name)  ~f:(fun _ -> ' ') in
+      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s%s%s&nbsp</td></tr>"
+        (color_of_status s) name spaces addr in
+    let data = List.sort data
+        ~compare:(fun (x,xa,_) (y,ya,_) ->
+            match String.compare x y with
+            | 0 -> String.compare xa ya
+            | x -> x) in
+    let data = List.sort data ~compare in
+    let max_len = List.max_elt data ~compare:(fun (x,_,_) (y,_,_) ->
+        Int.compare (String.length x) (String.length y)) in
+    match max_len with
+    | None -> []
+    | Some (s,_,_) ->
+       List.map data ~f:(render_cell (String.length s + 1))
+
+  let render_text text = match text with
+    | [] -> ""
+    | text ->
+    let text = List.concat text in
+    let text = String.concat text ~sep:"\n" in
+    sprintf "<pre>\n%s\n</pre>" text
+
+  let render_table data =
+    match data with
+    | [] -> ""
+    | data ->
     let empty_tab = ["<table id=\"data\">"; "<div class=\"line-elt\">"] in
     let space_elt = "<div class=\"line-elt\">&nbsp&nbsp</div>" in
     let close_tab tab =
       List.rev (space_elt :: "</div>" :: "</table>" :: tab) |> String.concat in
-    let add_row tab words =
-      let tab = List.fold words ~init:("<tr>" :: tab)
-                  ~f:(fun tab x -> "</td>" :: "&nbsp" :: x
-                                :: "&nbsp" :: "<td>" :: tab ) in
-      "</tr>" :: tab in
-    let rec reformat acc row = function
-      | [] -> List.filter ~f:(fun x -> x <> []) (List.rev row :: acc)
-      | x :: words when List.length row < words_per_record ->
-         reformat acc (x :: row) words
-      | x :: words ->
-         reformat (List.rev row :: acc) [x]  words in
-    let data =
-      List.fold lines ~init:[] ~f:(fun acc line ->
-          match words_of_line line with
-          | [] -> acc
-          | ws ->
-             let acc' = reformat [] [] ws in
-             acc @ acc') in
-    let data = List.sort data ~compare:list_compare in
-    let data = if is_no_incidents lines then [ [no_incidents_stmt] ]
-               else data in
+    let add_row tab row = row :: tab in
     let len = List.length data in
-    let tabs = match len with
+    let cols = match len with
       | n when n < 10 -> 1
       | n when n < 30 -> 2
       | n when n < 60 -> 3
       | n when n < 400 -> 5
       | _ -> 7 in
-    let rows = len / tabs  in
-    (* for a case of a hangling single column  *)
-    let rows = if len - rows * tabs = 1 then len / (tabs + 1)
+    let rows = len / cols  in
+    let rows = if len - rows * cols = 1 then len / (cols + 1)
                else rows in
     let acc, tab, _ =
       List.fold data ~init:(["<div class=\"start-line\">"],empty_tab,0) ~f:(fun (acc,tab,i) ws ->
@@ -317,85 +397,59 @@ module Template = struct
     let acc = "</div>" :: close_tab tab :: acc in
     List.rev acc |> String.concat
 
+
+  let print_info arti check info =
+    let pr = function
+      | Function name, _ -> printf "func %s\n" name
+      | Location (name,addr),_ -> printf "func %s at %s\n" name addr
+      | Text text,_ ->
+         printf "text:\n";
+         List.iter text ~f:(printf " %s\n") in
+    printf "%s-%s:\n" arti (Sexp.to_string (sexp_of_check check));
+    List.iter info ~f:(function
+        | Time s -> printf "Time %s\n" s
+        | Data d -> List.iter d ~f:pr;
+        | Size s -> printf "Size %s\n" s);
+    printf "\n\n"
+
+  let render_data stat data =
+    if is_no_incidents stat then
+      "<table><tr><td>no incidents found</td></tr></table>"
+    else
+      let funcs,locs,text =
+        List.fold data ~init:([],[],[])
+          ~f:(fun (funcs,locs,text) -> function
+            | Function f,s -> (f,s) :: funcs, locs, text
+            | Location (x,a),s -> funcs, (x,a,s) :: locs, text
+            | Text t,s -> funcs, locs, t :: text)  in
+      let t1 = render_functions funcs |> render_table in
+      let t2 = render_locations locs  |> render_table in
+      let text = render_text text in
+      t1 ^ t2 ^ text
+
   let render_stat infos stat =
     let render =
       sprintf
         "<pre>Total/Confirmed/False positive/False negative/Unclassified: %d/%d/%d/%d/%d</pre>"
-        stat.total stat.confirm stat.false_p stat.false_n stat.unknown in
+        stat.total stat.confirmed stat.false_pos stat.false_neg stat.undecided in
     if stat.total <> 0 then render
     else
-      match find_text infos with
-      | Some text when is_no_incidents text -> ""
+      match find_check_text infos with
+      | Some d when stat.total = 0 -> ""
       | _ -> render
 
-  let render_testdata data =
-    let pass_color = "#D4EFE2" in
-    let fail_color = "#F7D3CE" in
-    let stub_color = "#FFFFFF" in
-    let render_cell name status =
-      let color = match status with
-        | "pass" -> pass_color
-        | "fail" -> fail_color
-        | _ -> stub_color in
-      sprintf "<td bgcolor=\"%s\">&nbsp%s&nbsp</td>" color name in
-    let legend = sprintf {|
-    <table>
-      <tr>
-      <td bgcolor=%s>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td bgcolor="#f2f2f2"> confirmed </td>
-      </tr>
-      <tr>
-      <td bgcolor=%s></td>
-      <td bgcolor="#f2f2f2"> false negative </td>
-      </tr>
-     </table></br>|} pass_color fail_color in
-    let cols = 3 in
-    let doc,_ =
-      List.fold data ~init:(["<table id=\"data\">"; legend],0) ~f:(fun (doc,col_i) line ->
-          match String.split ~on:' ' line with
-          | name :: status :: _ ->
-             let doc = render_cell name status :: doc  in
-             let col_i = col_i + 1 in
-             if col_i = cols then "<tr></tr>" :: doc, 0
-             else doc, col_i
-          | _ -> doc, col_i) in
-    List.rev ("</br>"::"</table>" :: doc) |> String.concat
-
-
-  let words_per_record infos check =
-    match List.find_map infos ~f:(function
-              | Format x -> Some x
-              | _ -> None) with
-    | Some x -> Some x
-    | None ->
-       match check with
-       | Unused -> Some 2
-       | Null -> Some 2
-       | Forbidden -> Some 1
-       | Complex ->   Some 1
-       | Recursive -> Some 1
-       | Non_structural -> Some 1
-       | _ -> None
-
   let render_check arti check stat infos =
-    let words = words_per_record infos check in
     let doc =
       List.fold infos ~init:["<div>"] ~f:(fun doc info ->
-          match info, check, words with
-          | Text text, Test _, _ -> render_testdata text :: doc
-          | Text text, _, Some w -> render_data w text :: doc
-          | Text text, _, _  -> render_text text :: doc
-          | Time time, _,_ -> sprintf "<pre>Time: %s</pre>" time :: doc
+          match info with
+          | Time time -> sprintf "<pre>Time: %s</pre>" time :: doc
+          | Data d ->
+             render_data stat d :: doc
           | _ -> doc) in
     "</div>"  ::
     render_checkname arti check :: render_stat infos stat :: List.rev doc
 
-  let get_stat check stat =
-    List.find stat ~f:(fun (check',s) -> check = check') |> function
-    | None -> create_stat 0 0 0 0 ""
-    | Some (_,s) -> s
-
-  let render_artifact name size data stat =
+  let render_artifact name size (data : result list) =
     let size = match size with
       | None -> ""
       | Some s -> sprintf "size: %s" s in
@@ -405,10 +459,10 @@ module Template = struct
         "<td>";
         sprintf "<p id=\"%s\"> </p>" name;
         ref_to_top;
+        legend;
       ] in
     let doc =
-      List.fold data ~init ~f:(fun  doc (check, infos) ->
-          let stat = get_stat check stat in
+      List.fold data ~init ~f:(fun  doc (check, stat, infos) ->
           let doc' = render_check name check stat infos in
           doc @ "</br>" :: doc') in
     doc @ ["</tr>"; "</td>"]
@@ -445,102 +499,19 @@ module Template = struct
               (List.length data) arti arti size in
           fst @@
             List.fold data ~init:(name :: "<tr>" :: acc, true) ~f:
-              (fun (acc,has_tr) (check, res) ->
+              (fun (acc,has_tr) (check, res,_) ->
                 let check = hover_check arti check in
                 let totl = digit res.total in
-                let conf = digit res.confirm in
-                let falp = digit res.false_p in
-                let faln = digit res.false_n in
-                let unkn = digit res.unknown in
+                let conf = digit res.confirmed in
+                let falp = digit res.false_pos in
+                let faln = digit res.false_neg in
+                let unkn = digit res.undecided in
                 let time = cell  res.time in
                 let tr = if has_tr then "" else "<tr>" in
                 "</tr>" :: time :: unkn :: faln :: falp :: conf :: totl :: check
                 :: tr :: acc, false)) in
     List.rev ("</br>" :: "</table>" :: data)
 
-end
-
-module Stat = struct
-  let words_count text =
-    List.fold text ~init:0 ~f:(fun num line ->
-        num +
-          (String.split_on_chars ~on:[' '; '\n'] line |>
-             List.filter ~f:(fun s -> s <> "") |>
-             List.length))
-
-  let infer_total check infos =
-    let rec loop = function
-      | [] -> None
-      | Text text :: _  -> Some (words_count text)
-      | _ :: infos -> loop infos in
-    match loop infos with
-    | None -> None
-    | Some num ->
-       match check with
-       | Null | Unused -> Some (num / 2)
-       | _ -> Some num
-
-  let find_time infos =
-    let rec loop = function
-      | [] -> "-"
-      | Time t :: _ -> t
-      | _ :: xs -> loop xs in
-    loop infos
-
-  let infer_stat time = function
-    | None, Some cnf, Some fp, Some fn ->
-       create_stat (fp + fn + cnf) cnf fp fn time
-    | Some total, None, None, None -> create_stat total 0 0 0 time
-    | Some total, Some cnf, None, None -> create_stat total cnf 0 0 time
-    | Some total, None, Some fp, None -> create_stat total 0 fp 0 time
-    | _ -> create_stat 0 0 0 0 time
-
-  let infer_stat time (total, cnf, fp, fn) =
-    let with_default x = Option.value ~default:0 x in
-    let cnf = with_default cnf in
-    let fp  = with_default fp in
-    let fn  = with_default fn in
-    let total = match total with
-      | None -> cnf + fp + fn
-      | Some total -> total in
-    create_stat total cnf fp fn time
-
-  let is_test = function
-    | Test _ -> true
-    | _ -> false
-
-  let get_stat check infos =
-    let rec loop ((total,confirmed,false_pos,false_neg) as r) = function
-      | Total x :: infos -> loop (Some x,confirmed,false_pos,false_neg) infos
-      | False_pos x :: infos -> loop (total,confirmed,Some x,false_neg) infos
-      | False_neg x :: infos -> loop (total,confirmed,false_pos,Some x) infos
-      | Confirmed x :: infos -> loop (total,Some x,false_pos,false_neg) infos
-      | Text text :: _ when is_no_incidents text -> Some 0, Some 0, Some 0, Some 0
-      | Text text :: _ when is_test check ->
-         let total, pass, fail =
-           List.fold text ~init:(0,0,0) ~f:(fun (total,pass,fail) line ->
-               if String.is_substring line ~substring:"pass" then
-                 total + 1, pass + 1, fail
-               else if String.is_substring line ~substring:"fail" then
-                 total + 1, pass, fail + 1
-               else
-                 total + 1, pass, fail) in
-         Some total, Some pass, Some 0, Some fail
-      | _ :: infos -> loop r infos
-      | [] -> r in
-    let time = find_time infos in
-    let stat =
-      match loop (None, None, None, None) infos with
-      | (Some total, _, _, _) as r -> infer_stat time r
-      | None, cnf, fp, fn -> infer_stat time (infer_total check infos,cnf,fp,fn) in
-    match check with
-    | Forbidden -> {stat with unknown = 0; confirm = stat.total}
-    | _ -> stat
-
-  let of_data data =
-    List.fold data ~init:[]
-      ~f:(fun acc (check,infos) -> (check, get_stat check infos) :: acc)
-    |> List.rev
 end
 
 
@@ -564,9 +535,8 @@ let () =
         if file_exists r then
           let arti = Filename.basename dir in
           let size, data = Parse.process r in
-          let stat = Stat.of_data data in
-          let doc = Template.render_artifact arti size data stat in
-          let sum = arti, size, stat in
+          let doc = Template.render_artifact arti size data in
+          let sum = arti, size, data in
           if String.is_substring arti ~substring:"juliet" then
             (doc,sum) :: tests, artis
           else tests, (doc,sum)::artis

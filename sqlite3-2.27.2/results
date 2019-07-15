@@ -3,157 +3,449 @@ Size: 1.1M
 Forbidden:
 Time: 00:00:56
 
-__errno_location  fprintf   getenv       setvbuf
-atoi              fputc     localtime    signal
-exit              fputs     printf       system
-fclose            fread     putchar      time
-fflush            fseek     puts
-fgetc             ftell     raise
-fgets             fwrite    rewind
+__errno_location Confirmed
+fprintf Confirmed
+getenv Confirmed
+setvbuf Confirmed
+atoi Confirmed
+fputc Confirmed
+localtime Confirmed
+signal Confirmed
+exit Confirmed
+fputs Confirmed
+printf Confirmed
+system Confirmed
+fclose Confirmed
+fread Confirmed
+putchar Confirmed
+time Confirmed
+fflush Confirmed
+fseek Confirmed
+puts Confirmed
+fgetc Confirmed
+ftell Confirmed
+raise Confirmed
+fgets Confirmed
+fwrite Confirmed
+rewind Confirmed
 
 Recursive:
  Time: 00:00:54
 
-SortByDimension                    setJoinExpr                       sub_5a631
-SortByDistance                     shell_out_of_memory               sub_5b423
-btreeOverwriteContent              sqlite3BitvecDestroy              sub_5b4fc
-btreePrevious                      sqlite3BitvecSet                  sub_62ac0
-btreeRestoreCursorPosition         sqlite3BtreeNext                  sub_62b49
-checkTreePage                      sqlite3BtreeTripAllCursors        sub_630dc
-clearDatabasePage                  sqlite3CodeSubselect              sub_6f115
-columnTypeImpl                     sqlite3CreateFunc                 sub_6f6cc
-deleteCell                         sqlite3DeleteTable                sub_6fd6b
-do_meta_command                    sqlite3ExprCode                   sub_728cf
-dupedExprSize                      sqlite3ExprCodeTarget             sub_793a8
-eqp_render_level                   sqlite3ExprCompare                sub_88120
-execSql                            sqlite3ExprDelete                 sub_88c5b
-exprAnalyze                        sqlite3ExprDeleteNN               sub_891d4
-exprCodeBetween                    sqlite3ExprDup                    sub_8928a
-exprCodeVector                     sqlite3ExprIfFalse                sub_8a0d5
-exprDup                            sqlite3ExprIfTrue                 sub_8a296
-exprSelectUsage                    sqlite3ExprImpliesExpr            sub_8edf0
-findConstInWhere                   sqlite3ExprIsInteger              sub_8ef40
-fixBoundingBox                     sqlite3FixExpr                    sub_91913
-fts3EvalAllocateReaders            sqlite3FixSelect                  sub_9192f
-fts3EvalNextRow                    sqlite3FixSrcList                 sub_96e93
-fts3EvalRestart                    sqlite3Fts5ParseNodeFree          sub_96f79
-fts3EvalStartReaders               sqlite3GenerateConstraintChecks   sub_9b9ef
-fts3EvalTestExpr                   sqlite3PcacheFetchFini            sub_9cac9
-fts3EvalTokenCosts                 sqlite3Select                     sub_9cb00
-fts3EvalUpdateCounts               sqlite3SelectDelete               sub_a2286
-fts3ExprBalance                    sqlite3SelectDup                  sub_a2347
-fts3ExprCheckDepth                 sqlite3SrcListAssignCursors       sub_a2364
-fts3ExprIterate2                   sqlite3VdbeAddOp3                 sub_a2788
-fts3ExprLHitGather                 sqlite3VdbeChangeP4               sub_a30f3
-fts3NodeAddTerm.constprop.590      sqlite3VdbeMemShallowCopy         sub_a3311
-fts3NodeFree                       sqlite3WalkExpr                   sub_a337a
-fts3SegmentMerge                   sqlite3WalkSelect                 sub_a33e2
-fts3SelectLeaf                     sqlite3WhereBegin                 sub_a7370
-fts5DlidxIterNextR                 sqlite3WhereClauseClear           sub_a739e
-fts5DlidxIterPrevR                 sqlite3WhereExprAnalyze           sub_a7637
-fts5ExprCheckPoslists              sqlite3WhereExprListUsage         sub_a7642
-fts5ExprClearPoslists              sqlite3WhereExprUsageNN           sub_a7694
-fts5ExprNodeFirst                  sqlite3WhereSplit                 sub_a7706
-fts5ExprNodeZeroPoslist            sqlite3_initialize                sub_ae05c
-fts5ExprPrint                      sub_10083                         substExpr
-fts5ExprPrintTcl                   sub_11acc                         substSelect
-fts5ExprSetEof                     sub_1aeaa                         testcase_glob
-fts5ParseSetColset                 sub_1b081                         unsetJoinExpr
-getRowTrigger                      sub_24942                         valueFromExpr.constprop.626
-isConsonant                        sub_2c353                         vdbeMergeEngineFree
-jsonEachComputePath                sub_2cffa                         vdbeMergeEngineInit.isra.301
-jsonLookupStep                     sub_34aed                         vdbePmaReadBlob
-jsonMergePatch                     sub_3a571                         vdbePmaReaderNext
-jsonParseAddNode                   sub_3b634                         walkExpr
-jsonParseFillInParentage           sub_3bc87                         whereLoopAddBtreeIndex
-jsonParseValue                     sub_3fe9f                         whereLoopAddOr
-jsonRemoveAllNulls                 sub_485f9                         whereUsablePartialIndex
-multiSelectCollSeq                 sub_4b49a
-nodeRelease                        sub_4dc64
-patternCompare                     sub_4dca6
-pushDownWhereTerms                 sub_4dcb5
-resolveExprStep                    sub_502b2
-rowSetNDeepTree                    sub_504b0
-rowSetTreeToList                   sub_5480f
-rtreeCheckNode                     sub_548c8
-rtreeInsertCell                    sub_5a17a
+SortByDimension Undecided
+setJoinExpr Undecided
+sub_5a631 Undecided
+SortByDistance Undecided
+shell_out_of_memory Undecided
+sub_5b423 Undecided
+btreeOverwriteContent Undecided
+sqlite3BitvecDestroy Undecided
+sub_5b4fc Undecided
+btreePrevious Undecided
+sqlite3BitvecSet Undecided
+sub_62ac0 Undecided
+btreeRestoreCursorPosition Undecided
+sqlite3BtreeNext Undecided
+sub_62b49 Undecided
+checkTreePage Undecided
+sqlite3BtreeTripAllCursors Undecided
+sub_630dc Undecided
+clearDatabasePage Undecided
+sqlite3CodeSubselect Undecided
+sub_6f115 Undecided
+columnTypeImpl Undecided
+sqlite3CreateFunc Undecided
+sub_6f6cc Undecided
+deleteCell Undecided
+sqlite3DeleteTable Undecided
+sub_6fd6b Undecided
+do_meta_command Undecided
+sqlite3ExprCode Undecided
+sub_728cf Undecided
+dupedExprSize Undecided
+sqlite3ExprCodeTarget Undecided
+sub_793a8 Undecided
+eqp_render_level Undecided
+sqlite3ExprCompare Undecided
+sub_88120 Undecided
+execSql Undecided
+sqlite3ExprDelete Undecided
+sub_88c5b Undecided
+exprAnalyze Undecided
+sqlite3ExprDeleteNN Undecided
+sub_891d4 Undecided
+exprCodeBetween Undecided
+sqlite3ExprDup Undecided
+sub_8928a Undecided
+exprCodeVector Undecided
+sqlite3ExprIfFalse Undecided
+sub_8a0d5 Undecided
+exprDup Undecided
+sqlite3ExprIfTrue Undecided
+sub_8a296 Undecided
+exprSelectUsage Undecided
+sqlite3ExprImpliesExpr Undecided
+sub_8edf0 Undecided
+findConstInWhere Undecided
+sqlite3ExprIsInteger Undecided
+sub_8ef40 Undecided
+fixBoundingBox Undecided
+sqlite3FixExpr Undecided
+sub_91913 Undecided
+fts3EvalAllocateReaders Undecided
+sqlite3FixSelect Undecided
+sub_9192f Undecided
+fts3EvalNextRow Undecided
+sqlite3FixSrcList Undecided
+sub_96e93 Undecided
+fts3EvalRestart Undecided
+sqlite3Fts5ParseNodeFree Undecided
+sub_96f79 Undecided
+fts3EvalStartReaders Undecided
+sqlite3GenerateConstraintChecks Undecided
+sub_9b9ef Undecided
+fts3EvalTestExpr Undecided
+sqlite3PcacheFetchFini Undecided
+sub_9cac9 Undecided
+fts3EvalTokenCosts Undecided
+sqlite3Select Undecided
+sub_9cb00 Undecided
+fts3EvalUpdateCounts Undecided
+sqlite3SelectDelete Undecided
+sub_a2286 Undecided
+fts3ExprBalance Undecided
+sqlite3SelectDup Undecided
+sub_a2347 Undecided
+fts3ExprCheckDepth Undecided
+sqlite3SrcListAssignCursors Undecided
+sub_a2364 Undecided
+fts3ExprIterate2 Undecided
+sqlite3VdbeAddOp3 Undecided
+sub_a2788 Undecided
+fts3ExprLHitGather Undecided
+sqlite3VdbeChangeP4 Undecided
+sub_a30f3 Undecided
+fts3NodeAddTerm.constprop.590 Undecided
+sqlite3VdbeMemShallowCopy Undecided
+sub_a3311 Undecided
+fts3NodeFree Undecided
+sqlite3WalkExpr Undecided
+sub_a337a Undecided
+fts3SegmentMerge Undecided
+sqlite3WalkSelect Undecided
+sub_a33e2 Undecided
+fts3SelectLeaf Undecided
+sqlite3WhereBegin Undecided
+sub_a7370 Undecided
+fts5DlidxIterNextR Undecided
+sqlite3WhereClauseClear Undecided
+sub_a739e Undecided
+fts5DlidxIterPrevR Undecided
+sqlite3WhereExprAnalyze Undecided
+sub_a7637 Undecided
+fts5ExprCheckPoslists Undecided
+sqlite3WhereExprListUsage Undecided
+sub_a7642 Undecided
+fts5ExprClearPoslists Undecided
+sqlite3WhereExprUsageNN Undecided
+sub_a7694 Undecided
+fts5ExprNodeFirst Undecided
+sqlite3WhereSplit Undecided
+sub_a7706 Undecided
+fts5ExprNodeZeroPoslist Undecided
+sqlite3_initialize Undecided
+sub_ae05c Undecided
+fts5ExprPrint Undecided
+sub_10083 Undecided
+substExpr Undecided
+fts5ExprPrintTcl Undecided
+sub_11acc Undecided
+substSelect Undecided
+fts5ExprSetEof Undecided
+sub_1aeaa Undecided
+testcase_glob Undecided
+fts5ParseSetColset Undecided
+sub_1b081 Undecided
+unsetJoinExpr Undecided
+getRowTrigger Undecided
+sub_24942 Undecided
+valueFromExpr.constprop.626 Undecided
+isConsonant Undecided
+sub_2c353 Undecided
+vdbeMergeEngineFree Undecided
+jsonEachComputePath Undecided
+sub_2cffa Undecided
+vdbeMergeEngineInit.isra.301 Undecided
+jsonLookupStep Undecided
+sub_34aed Undecided
+vdbePmaReadBlob Undecided
+jsonMergePatch Undecided
+sub_3a571 Undecided
+vdbePmaReaderNext Undecided
+jsonParseAddNode Undecided
+sub_3b634 Undecided
+walkExpr Undecided
+jsonParseFillInParentage Undecided
+sub_3bc87 Undecided
+whereLoopAddBtreeIndex Undecided
+jsonParseValue Undecided
+sub_3fe9f Undecided
+whereLoopAddOr Undecided
+jsonRemoveAllNulls Undecided
+sub_485f9 Undecided
+whereUsablePartialIndex Undecided
+multiSelectCollSeq Undecided
+sub_4b49a Undecided
+nodeRelease Undecided
+sub_4dc64 Undecided
+patternCompare Undecided
+sub_4dca6 Undecided
+pushDownWhereTerms Undecided
+sub_4dcb5 Undecided
+resolveExprStep Undecided
+sub_502b2 Undecided
+rowSetNDeepTree Undecided
+sub_504b0 Undecided
+rowSetTreeToList Undecided
+sub_5480f Undecided
+rtreeCheckNode Undecided
+sub_548c8 Undecided
+rtreeInsertCell Undecided
+sub_5a17a Undecided
 
 
 Complex:
  Time: 00:01:20
 
-allocateBtreePage    sqlite3CreateIndex                sub_58179     sub_a538a
-do_meta_command      sqlite3ExprCodeTarget             sub_5a17a     sub_a6f32
-exprAnalyze          sqlite3Fts5UnicodeCatParse        sub_5eed8     sub_a993b
-fts3InitVtab         sqlite3Insert                     sub_5fccb     sub_aafb1
-fts3SnippetFunc      sqlite3ParseUri                   sub_61c44     unixOpen
-fts5MultiIterNew     sqlite3WhereBegin                 sub_68590     whereLoopAddBtree
-fts5PorterCb         sqlite3WhereCodeOneLoopStart      sub_6b05b     wherePathSatisfiesOrderBy
-openDatabase         sqlite3_step                      sub_6bf45
-pagerWalFrames       sub_108f3                         sub_6cfd9
-porterNext           sub_1a0f5                         sub_6e922
-process_input        sub_4174a                         sub_82bf7
-selectExpander       sub_4c02e                         sub_a160d
-sqlite3BtreeOpen     sub_4ccd8                         sub_a417c
+allocateBtreePage Undecided
+sqlite3CreateIndex Undecided
+sub_58179 Undecided
+sub_a538a Undecided
+do_meta_command Undecided
+sqlite3ExprCodeTarget Undecided
+sub_5a17a Undecided
+sub_a6f32 Undecided
+exprAnalyze Undecided
+sqlite3Fts5UnicodeCatParse Undecided
+sub_5eed8 Undecided
+sub_a993b Undecided
+fts3InitVtab Undecided
+sqlite3Insert Undecided
+sub_5fccb Undecided
+sub_aafb1 Undecided
+fts3SnippetFunc Undecided
+sqlite3ParseUri Undecided
+sub_61c44 Undecided
+unixOpen Undecided
+fts5MultiIterNew Undecided
+sqlite3WhereBegin Undecided
+sub_68590 Undecided
+whereLoopAddBtree Undecided
+fts5PorterCb Undecided
+sqlite3WhereCodeOneLoopStart Undecided
+sub_6b05b Undecided
+wherePathSatisfiesOrderBy Undecided
+openDatabase Undecided
+sqlite3_step Undecided
+sub_6bf45 Undecided
+pagerWalFrames Undecided
+sub_108f3 Undecided
+sub_6cfd9 Undecided
+porterNext Undecided
+sub_1a0f5 Undecided
+sub_6e922 Undecided
+process_input Undecided
+sub_4174a Undecided
+sub_82bf7 Undecided
+selectExpander Undecided
+sub_4c02e Undecided
+sub_a160d Undecided
+sqlite3BtreeOpen Undecided
+sub_4ccd8 Undecided
+sub_a417c Undecided
 
 Non-structural:
  Time: 00:01:10
 
-sub_4de4e
-sub_62b49
-sub_83d0a
-sub_852fe
-sub_8f005
-sub_9192f
-sub_ae05c
+sub_4de4e Undecided
+sub_62b49 Undecided
+sub_83d0a Undecided
+sub_852fe Undecided
+sub_8f005 Undecided
+sub_9192f Undecided
+sub_ae05c Undecided
 
 Null:
  Time: 05:55:46
 
-completionFilter 0x13F42
-output_quoted_escaped_string 0x16097
-output_c_string 0x16253
-do_meta_command 0x1C521
-sqlite3StrICmp 0x2261C
-sqlite3Fts3OpenTokenizer 0x26334
-setDateTimeToCurrent 0x2A2D5
-getIntArg 0x2B591
-pcache1FetchStage2 0x37739
-sqlite3_str_vappendf 0x3FE0F
-sqlite3Fts5GetTokenizer 0x59FA2
-sqlite3Fts5GetTokenizer 0x59FBB
-sqlite3Select 0x6C6FF
-sqlite3ExprCodeTarget 0x70581
-sqlite3Fts5StorageContentInsert 0x95FFF
-fts5DataRead 0x9B55C
-fts5SegIterNext 0x9B9A4
-fts3EvalSelectDeferred 0xA831E
-sqlite3PagerOpenWal 0xD32F
+completionFilter 0x13F42 Undecided
+output_quoted_escaped_string 0x16097 Undecided
+output_c_string 0x16253 Undecided
+do_meta_command 0x1C521 Undecided
+sqlite3StrICmp 0x2261C Undecided
+sqlite3Fts3OpenTokenizer 0x26334 Undecided
+setDateTimeToCurrent 0x2A2D5 Undecided
+getIntArg 0x2B591 Undecided
+pcache1FetchStage2 0x37739 Undecided
+sqlite3_str_vappendf 0x3FE0F Undecided
+sqlite3Fts5GetTokenizer 0x59FA2 Undecided
+sqlite3Fts5GetTokenizer 0x59FBB Undecided
+sqlite3Select 0x6C6FF Undecided
+sqlite3ExprCodeTarget 0x70581 Undecided
+sqlite3Fts5StorageContentInsert 0x95FFF Undecided
+fts5DataRead 0x9B55C Undecided
+fts5SegIterNext 0x9B9A4 Undecided
+fts3EvalSelectDeferred 0xA831E Undecided
+sqlite3PagerOpenWal 0xD32F Undecided
 
 Unused:
 Time: 04:41:07
-access  0x10EE8  fprintf 0x15579  fprintf 0x1B426  fprintf 0xCBE1   fputs   0x18AD6  memmove 0x53EE2
-fclose  0x1333A  fprintf 0x15658  fprintf 0x1B5FC  fprintf 0xCCCE   fputs   0x1B37F  memmove 0x56FCD
-fclose  0x167BA  fprintf 0x15743  fprintf 0x1BA39  fprintf 0xCF83   fputs   0x1B9B4  memmove 0x62C93
-fclose  0x16894  fprintf 0x1575B  fprintf 0x1C46D  fputc   0x16125  fputs   0x1BA03  memmove 0x62D67
-fclose  0x168B9  fprintf 0x15801  fprintf 0x1C7AA  fputc   0x161A4  fputs   0x1BD30  memmove 0xA012A
-fclose  0x188C8  fprintf 0x158DD  fprintf 0x1CCFC  fputc   0x161C9  fputs   0x1C800  memmove 0xAAC07
-fclose  0x1CBA9  fprintf 0x15A7F  fprintf 0x1CEE0  fputc   0x161E8  fputs   0x1CB4A  popen   0x1DEE2
-fclose  0x1CBCC  fprintf 0x15AE1  fprintf 0x1CFE5  fputc   0x16207  fputs   0x1D1D7  printf  0x116AB
-fgetc   0x10985  fprintf 0x160E6  fprintf 0x1D01B  fputc   0x16223  fputs   0x1D517  printf  0x116BE
-fgetc   0x1500E  fprintf 0x1613E  fprintf 0x1D15A  fputc   0x1623F  fputs   0x1D527  printf  0x116D3
-fgetc   0x15025  fprintf 0x16163  fprintf 0x1D17B  fputc   0x162EB  fputs   0x1D5EA  printf  0x1595F
-fprintf 0x10979  fprintf 0x162DD  fprintf 0x1D19C  fputc   0x16322  fputs   0x1DBE6  printf  0x1E818
-fprintf 0x10E8C  fprintf 0x17A25  fprintf 0x1D1BD  fputc   0x1809C  fputs   0x1DE41  printf  0xC94F
-fprintf 0x10FC0  fprintf 0x17F55  fprintf 0x1D63E  fputc   0x1F890  fputs   0x1F2E8  printf  0xCA81
-fprintf 0x1164D  fprintf 0x180CE  fprintf 0x1EDAA  fputs   0x10F32  fputs   0x1F8A4  putchar 0x22060
-fprintf 0x1166E  fprintf 0x18288  fprintf 0x1EE99  fputs   0x14E64  fputs   0xC7E1   puts    0x116DF
-fprintf 0x14782  fprintf 0x1830A  fprintf 0x1F4EA  fputs   0x153D4  fputs   0xCE82   puts    0xC9C1
-fprintf 0x147B7  fprintf 0x1835E  fprintf 0x1F786  fputs   0x154AB  fsync   0x44205  strcmp  0x1BA68
-fprintf 0x1480E  fprintf 0x1839E  fprintf 0x1FC81  fputs   0x154C0  fwrite  0x13311  strcmp  0xCB6A
-fprintf 0x14858  fprintf 0x184A6  fprintf 0x2042A  fputs   0x155B2  fwrite  0x16765  strcmp  0xCBA0
-fprintf 0x14892  fprintf 0x18566  fprintf 0x21AEB  fputs   0x156DD  getpid  0x5CFEF  strncmp 0x18892
-fprintf 0x14BB8  fprintf 0x18810  fprintf 0x21DEF  fputs   0x1601B  isatty  0x10933  symlink 0x1324A
-fprintf 0x14FAD  fprintf 0x18A26  fprintf 0xC77C   fputs   0x16054  memmove 0x1467B  system  0x1563C
-fprintf 0x14FD4  fprintf 0x18AB1  fprintf 0xC991   fputs   0x16097  memmove 0x3D25A  unlink  0x16955
-fprintf 0x15168  fprintf 0x1B3FC  fprintf 0xCA4A   fputs   0x1630A  memmove 0x46471
+access 0x10EE8 Undecided
+fprintf 0x15579 Undecided
+fprintf 0x1B426 Undecided
+fprintf 0xCBE1 Undecided
+fputs 0x18AD6 Undecided
+memmove 0x53EE2 Undecided
+fclose 0x1333A Undecided
+fprintf 0x15658 Undecided
+fprintf 0x1B5FC Undecided
+fprintf 0xCCCE Undecided
+fputs 0x1B37F Undecided
+memmove 0x56FCD Undecided
+fclose 0x167BA Undecided
+fprintf 0x15743 Undecided
+fprintf 0x1BA39 Undecided
+fprintf 0xCF83 Undecided
+fputs 0x1B9B4 Undecided
+memmove 0x62C93 Undecided
+fclose 0x16894 Undecided
+fprintf 0x1575B Undecided
+fprintf 0x1C46D Undecided
+fputc 0x16125 Undecided
+fputs 0x1BA03 Undecided
+memmove 0x62D67 Undecided
+fclose 0x168B9 Undecided
+fprintf 0x15801 Undecided
+fprintf 0x1C7AA Undecided
+fputc 0x161A4 Undecided
+fputs 0x1BD30 Undecided
+memmove 0xA012A Undecided
+fclose 0x188C8 Undecided
+fprintf 0x158DD Undecided
+fprintf 0x1CCFC Undecided
+fputc 0x161C9 Undecided
+fputs 0x1C800 Undecided
+memmove 0xAAC07 Undecided
+fclose 0x1CBA9 Undecided
+fprintf 0x15A7F Undecided
+fprintf 0x1CEE0 Undecided
+fputc 0x161E8 Undecided
+fputs 0x1CB4A Undecided
+popen 0x1DEE2 Undecided
+fclose 0x1CBCC Undecided
+fprintf 0x15AE1 Undecided
+fprintf 0x1CFE5 Undecided
+fputc 0x16207 Undecided
+fputs 0x1D1D7 Undecided
+printf 0x116AB Undecided
+fgetc 0x10985 Undecided
+fprintf 0x160E6 Undecided
+fprintf 0x1D01B Undecided
+fputc 0x16223 Undecided
+fputs 0x1D517 Undecided
+printf 0x116BE Undecided
+fgetc 0x1500E Undecided
+fprintf 0x1613E Undecided
+fprintf 0x1D15A Undecided
+fputc 0x1623F Undecided
+fputs 0x1D527 Undecided
+printf 0x116D3 Undecided
+fgetc 0x15025 Undecided
+fprintf 0x16163 Undecided
+fprintf 0x1D17B Undecided
+fputc 0x162EB Undecided
+fputs 0x1D5EA Undecided
+printf 0x1595F Undecided
+fprintf 0x10979 Undecided
+fprintf 0x162DD Undecided
+fprintf 0x1D19C Undecided
+fputc 0x16322 Undecided
+fputs 0x1DBE6 Undecided
+printf 0x1E818 Undecided
+fprintf 0x10E8C Undecided
+fprintf 0x17A25 Undecided
+fprintf 0x1D1BD Undecided
+fputc 0x1809C Undecided
+fputs 0x1DE41 Undecided
+printf 0xC94F Undecided
+fprintf 0x10FC0 Undecided
+fprintf 0x17F55 Undecided
+fprintf 0x1D63E Undecided
+fputc 0x1F890 Undecided
+fputs 0x1F2E8 Undecided
+printf 0xCA81 Undecided
+fprintf 0x1164D Undecided
+fprintf 0x180CE Undecided
+fprintf 0x1EDAA Undecided
+fputs 0x10F32 Undecided
+fputs 0x1F8A4 Undecided
+putchar 0x22060 Undecided
+fprintf 0x1166E Undecided
+fprintf 0x18288 Undecided
+fprintf 0x1EE99 Undecided
+fputs 0x14E64 Undecided
+fputs 0xC7E1 Undecided
+puts 0x116DF Undecided
+fprintf 0x14782 Undecided
+fprintf 0x1830A Undecided
+fprintf 0x1F4EA Undecided
+fputs 0x153D4 Undecided
+fputs 0xCE82 Undecided
+puts 0xC9C1 Undecided
+fprintf 0x147B7 Undecided
+fprintf 0x1835E Undecided
+fprintf 0x1F786 Undecided
+fputs 0x154AB Undecided
+fsync 0x44205 Undecided
+strcmp 0x1BA68 Undecided
+fprintf 0x1480E Undecided
+fprintf 0x1839E Undecided
+fprintf 0x1FC81 Undecided
+fputs 0x154C0 Undecided
+fwrite 0x13311 Undecided
+strcmp 0xCB6A Undecided
+fprintf 0x14858 Undecided
+fprintf 0x184A6 Undecided
+fprintf 0x2042A Undecided
+fputs 0x155B2 Undecided
+fwrite 0x16765 Undecided
+strcmp 0xCBA0 Undecided
+fprintf 0x14892 Undecided
+fprintf 0x18566 Undecided
+fprintf 0x21AEB Undecided
+fputs 0x156DD Undecided
+getpid 0x5CFEF Undecided
+strncmp 0x18892 Undecided
+fprintf 0x14BB8 Undecided
+fprintf 0x18810 Undecided
+fprintf 0x21DEF Undecided
+fputs 0x1601B Undecided
+isatty 0x10933 Undecided
+symlink 0x1324A Undecided
+fprintf 0x14FAD Undecided
+fprintf 0x18A26 Undecided
+fprintf 0xC77C Undecided
+fputs 0x16054 Undecided
+memmove 0x1467B Undecided
+system 0x1563C Undecided
+fprintf 0x14FD4 Undecided
+fprintf 0x18AB1 Undecided
+fprintf 0xC991 Undecided
+fputs 0x16097 Undecided
+memmove 0x3D25A Undecided
+unlink 0x16955 Undecided
+fprintf 0x15168 Undecided
+fprintf 0x1B3FC Undecided
+fprintf 0xCA4A Undecided
+fputs 0x1630A Undecided
+memmove 0x46471 Undecided

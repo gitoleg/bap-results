@@ -3,148 +3,490 @@ Size: 3.0M
 Forbidden:
 Time: 00:00:33
 
-__errno_location abort ctime exit fclose feof fflush fgetc fgets fopen fputc fputs fscanf
-fwrite getenv localtime perror putchar puts raise rename rewind sscanf strftime time
+__errno_location Confirmed
+abort Confirmed
+ctime Confirmed
+exit Confirmed
+fclose Confirmed
+feof Confirmed
+fflush Confirmed
+fgetc Confirmed
+fgets Confirmed
+fopen Confirmed
+fputc Confirmed
+fputs Confirmed
+fscanf Confirmed
+fwrite Confirmed
+getenv Confirmed
+localtime Confirmed
+perror Confirmed
+putchar Confirmed
+puts Confirmed
+raise Confirmed
+rename Confirmed
+rewind Confirmed
+sscanf Confirmed
+strftime Confirmed
+time Confirmed
 
 Recursive:
  Time: 00:00:33
 
- BSDgetopt                                        mm_terminate                         sub_407b1
- Blowfish_expand0state                            mm_xmalloc                           sub_408e5
- _rs_stir                                         mmtree_RB_INSERT_COLOR               sub_40972
- a2tun                                            monitor_read                         sub_481d3
- addr_match_list                                  packet_set_connection                sub_49c7e
- atomicio                                         parse_server_config                  sub_4a36a
- auth2_challenge                                  process_do_stat                      sub_4ad50
- auth2_update_methods_lists                       read_mux                             sub_531ef
- auth_debug_add                                   send_attrib                          sub_58318
- auth_openfile                                    send_data_or_handle                  sub_5e05c
- auth_rhosts                                      send_msg                             sub_5f98d
- authorized_principals_file                       send_names                           sub_5fe7d
- barrett_reduce                                   send_status                          sub_603a3
- bcrypt_pbkdf                                     send_statvfs                         sub_606e0
- buffer_consume                                   server_loop2                         sub_606ed
- buffer_consume_end_ret                           session_destroy_all                  sub_615a7
- buffer_get_cstring_ret                           session_new                          sub_615b4
- buffer_get_string                                session_pty_cleanup                  sub_61920
- buffer_get_string_ptr_ret                        session_unused                       sub_6192d
- cert_free                                        sftp_server_main                     sub_61dd6
- channel_decode_socks4.isra.10                    ssh_digest_memory                    sub_61f56
- channel_decode_socks5.isra.11                    ssh_dispatch_run_fatal               sub_61f71
- channel_free                                     ssh_krl_revoke_cert_by_key_id        sub_61fcc
- channel_handle_efd                               ssh_krl_revoke_cert_by_serial_range  sub_624c4
- channel_new                                      ssh_krl_revoke_key_sha1              sub_624c7
- channel_setup_fwd_listener_streamlocal           ssh_packet_read_poll_seqnr           sub_62530
- child_set_env                                    ssh_packet_read_seqnr                sub_6d180
- cleanup_exit                                     ssh_packet_send2                     sub_9b20
- collect_children                                 sshbuf_free                          sub_9bdd
- compress_buffer.isra.4                           sshbuf_get_cstring                   sub_9c0a
- connect_next.isra.5                              sshbuf_get_string_direct             sub_9c55
- crypto_sign_ed25519_ref_fe25519_mul              sshbuf_put                           sub_9d66
- crypto_sign_ed25519_ref_fe25519_sub              sshbuf_put_cstring                   sub_9dc7
- crypto_sign_ed25519_ref_sc25519_from32bytes      sshbuf_put_ec                        sub_a1b1
- crypto_sign_ed25519_ref_sc25519_mul              sshbuf_putf                          sub_a4aa
- do_child                                         sshkey_check_revoked                 sub_b0cf
- do_cleanup                                       sshkey_fingerprint_raw               sub_b171
- do_exec_no_pty                                   sshkey_from_blob_internal            sub_b2a9
- do_exec_pty                                      sshkey_load_file                     sub_b424
- do_log                                           sshkey_load_private_cert             sub_bbf7
- do_motd.part.11                                  sshkey_parse_private2.isra.9         sub_bc05
- error                                            sshpkt_disconnect                    sub_d0c0
- fatal                                            sshpkt_send
- fatal_on_fatal_errors.part.0                     sshpkt_start
- get_handle                                       store_lastlog_message.isra.0
- get_socket_address                               subprocess.isra.1.part.2
- host_hash                                        userauth_finish
- hostbased_key_allowed                            xstrdup
- kex_derive_keys                                  sub_1b8e8
- key_to_blob                                      sub_1b9c8
- lastlog_get_entry                                sub_1ba06
- load_hostkeys                                    sub_20240
- logdie                                           sub_205d1
- login_alloc_entry                                sub_20950
- login_get_lastlog                                sub_20953
- login_write                                      sub_21438
- logit                                            sub_21bbd
- mac_compute                                      sub_224a3
- match_pattern                                    sub_22503
- mkstemp                                          sub_22ff8
- mm_auth2_read_banner                             sub_230cd
- mm_create                                        sub_2310b
- mm_free                                          sub_2334a
- mm_get_keystate                                  sub_2e9a0
- mm_getpwnamallow                                 sub_2e9c5
- mm_inform_authserv                               sub_31afb
- mm_key_allowed                                   sub_31b50
- mm_make_entry                                    sub_31b69
- mm_memvalid                                      sub_32504
- mm_request_receive_expect                        sub_32520
- mm_session_pty_cleanup2                          sub_3d268
+BSDgetopt Undecided
+mm_terminate Undecided
+sub_407b1 Undecided
+Blowfish_expand0state Undecided
+mm_xmalloc Undecided
+sub_408e5 Undecided
+_rs_stir Undecided
+mmtree_RB_INSERT_COLOR Undecided
+sub_40972 Undecided
+a2tun Undecided
+monitor_read Undecided
+sub_481d3 Undecided
+addr_match_list Undecided
+packet_set_connection Undecided
+sub_49c7e Undecided
+atomicio Undecided
+parse_server_config Undecided
+sub_4a36a Undecided
+auth2_challenge Undecided
+process_do_stat Undecided
+sub_4ad50 Undecided
+auth2_update_methods_lists Undecided
+read_mux Undecided
+sub_531ef Undecided
+auth_debug_add Undecided
+send_attrib Undecided
+sub_58318 Undecided
+auth_openfile Undecided
+send_data_or_handle Undecided
+sub_5e05c Undecided
+auth_rhosts Undecided
+send_msg Undecided
+sub_5f98d Undecided
+authorized_principals_file Undecided
+send_names Undecided
+sub_5fe7d Undecided
+barrett_reduce Undecided
+send_status Undecided
+sub_603a3 Undecided
+bcrypt_pbkdf Undecided
+send_statvfs Undecided
+sub_606e0 Undecided
+buffer_consume Undecided
+server_loop2 Undecided
+sub_606ed Undecided
+buffer_consume_end_ret Undecided
+session_destroy_all Undecided
+sub_615a7 Undecided
+buffer_get_cstring_ret Undecided
+session_new Undecided
+sub_615b4 Undecided
+buffer_get_string Undecided
+session_pty_cleanup Undecided
+sub_61920 Undecided
+buffer_get_string_ptr_ret Undecided
+session_unused Undecided
+sub_6192d Undecided
+cert_free Undecided
+sftp_server_main Undecided
+sub_61dd6 Undecided
+channel_decode_socks4.isra.10 Undecided
+ssh_digest_memory Undecided
+sub_61f56 Undecided
+channel_decode_socks5.isra.11 Undecided
+ssh_dispatch_run_fatal Undecided
+sub_61f71 Undecided
+channel_free Undecided
+ssh_krl_revoke_cert_by_key_id Undecided
+sub_61fcc Undecided
+channel_handle_efd Undecided
+ssh_krl_revoke_cert_by_serial_range Undecided
+sub_624c4 Undecided
+channel_new Undecided
+ssh_krl_revoke_key_sha1 Undecided
+sub_624c7 Undecided
+channel_setup_fwd_listener_streamlocal Undecided
+ssh_packet_read_poll_seqnr Undecided
+sub_62530 Undecided
+child_set_env Undecided
+ssh_packet_read_seqnr Undecided
+sub_6d180 Undecided
+cleanup_exit Undecided
+ssh_packet_send2 Undecided
+sub_9b20 Undecided
+collect_children Undecided
+sshbuf_free Undecided
+sub_9bdd Undecided
+compress_buffer.isra.4 Undecided
+sshbuf_get_cstring Undecided
+sub_9c0a Undecided
+connect_next.isra.5 Undecided
+sshbuf_get_string_direct Undecided
+sub_9c55 Undecided
+crypto_sign_ed25519_ref_fe25519_mul Undecided
+sshbuf_put Undecided
+sub_9d66 Undecided
+crypto_sign_ed25519_ref_fe25519_sub Undecided
+sshbuf_put_cstring Undecided
+sub_9dc7 Undecided
+crypto_sign_ed25519_ref_sc25519_from32bytes Undecided
+sshbuf_put_ec Undecided
+sub_a1b1 Undecided
+crypto_sign_ed25519_ref_sc25519_mul Undecided
+sshbuf_putf Undecided
+sub_a4aa Undecided
+do_child Undecided
+sshkey_check_revoked Undecided
+sub_b0cf Undecided
+do_cleanup Undecided
+sshkey_fingerprint_raw Undecided
+sub_b171 Undecided
+do_exec_no_pty Undecided
+sshkey_from_blob_internal Undecided
+sub_b2a9 Undecided
+do_exec_pty Undecided
+sshkey_load_file Undecided
+sub_b424 Undecided
+do_log Undecided
+sshkey_load_private_cert Undecided
+sub_bbf7 Undecided
+do_motd.part.11 Undecided
+sshkey_parse_private2.isra.9 Undecided
+sub_bc05 Undecided
+error Undecided
+sshpkt_disconnect Undecided
+sub_d0c0 Undecided
+fatal Undecided
+sshpkt_send Undecided
+fatal_on_fatal_errors.part.0 Undecided
+sshpkt_start Undecided
+get_handle Undecided
+store_lastlog_message.isra.0 Undecided
+get_socket_address Undecided
+subprocess.isra.1.part.2 Undecided
+host_hash Undecided
+userauth_finish Undecided
+hostbased_key_allowed Undecided
+xstrdup Undecided
+kex_derive_keys Undecided
+sub_1b8e8 Undecided
+key_to_blob Undecided
+sub_1b9c8 Undecided
+lastlog_get_entry Undecided
+sub_1ba06 Undecided
+load_hostkeys Undecided
+sub_20240 Undecided
+logdie Undecided
+sub_205d1 Undecided
+login_alloc_entry Undecided
+sub_20950 Undecided
+login_get_lastlog Undecided
+sub_20953 Undecided
+login_write Undecided
+sub_21438 Undecided
+logit Undecided
+sub_21bbd Undecided
+mac_compute Undecided
+sub_224a3 Undecided
+match_pattern Undecided
+sub_22503 Undecided
+mkstemp Undecided
+sub_22ff8 Undecided
+mm_auth2_read_banner Undecided
+sub_230cd Undecided
+mm_create Undecided
+sub_2310b Undecided
+mm_free Undecided
+sub_2334a Undecided
+mm_get_keystate Undecided
+sub_2e9a0 Undecided
+mm_getpwnamallow Undecided
+sub_2e9c5 Undecided
+mm_inform_authserv Undecided
+sub_31afb Undecided
+mm_key_allowed Undecided
+sub_31b50 Undecided
+mm_make_entry Undecided
+sub_31b69 Undecided
+mm_memvalid Undecided
+sub_32504 Undecided
+mm_request_receive_expect Undecided
+sub_32520 Undecided
+mm_session_pty_cleanup2 Undecided
+sub_3d268 Undecided
 
 
 Complex:
  Time: 00:00:48
 
-auth_parse_options copy_set_server_options fill_default_server_options hostkeys_foreach
-monitor_child_postauth session_input_channel_req sftp_server_main ssh_krl_from_blob
-sub_48db6 sub_60bcf sub_8e7f sub_a5bf
+auth_parse_options Undecided
+copy_set_server_options Undecided
+fill_default_server_options Undecided
+hostkeys_foreach Undecided
+monitor_child_postauth Undecided
+session_input_channel_req Undecided
+sftp_server_main Undecided
+ssh_krl_from_blob Undecided
+sub_48db6 Undecided
+sub_60bcf Undecided
+sub_8e7f Undecided
+sub_a5bf Undecided
 
 Non-structural:
  Time: 00:00:42
 
-grace_alarm_handler log_init monitor_child_postauth server_input_channel_open
-session_input_channel_req sub_497ec sub_5f830 sub_5fd20 userauth_pubkey
+grace_alarm_handler Undecided
+log_init Undecided
+monitor_child_postauth Undecided
+server_input_channel_open Undecided
+session_input_channel_req Undecided
+sub_497ec Undecided
+sub_5f830 Undecided
+sub_5fd20 Undecided
+userauth_pubkey Undecided
 
 Null:
  Time: 01:53:16
 
 False_pos: 3
-sshbuf_put_u8              0x3524C
-sshkey_try_load_public     0x371D0
-mktemp_internal            0x6C41E
-match_pattern_list         0x44CA2
+sshbuf_put_u8 0x3524C Undecided
+sshkey_try_load_public 0x371D0 Undecided
+mktemp_internal 0x6C41E Undecided
+match_pattern_list 0x44CA2 Undecided
 
 Unused:
 Time: 01:23:37
-alarm  0x9E2D   close  0x1CB07  close  0x40CD9  fclose     0x19EC7  getpid   0x27E5C  setsockopt 0x50202
-alarm  0xA4AC   close  0x1CB0F  close  0x43CB0  fclose     0x1A514  getpid   0x6972E  setsockopt 0x51FEB
-calloc 0x47E42  close  0x1CB18  close  0x46D41  fclose     0x1C588  getuid   0x19E17  shutdown   0x3D48F
-chown  0x29D56  close  0x1CB1F  close  0x46D49  fclose     0x20D50  link     0x28A9F  shutdown   0x46ECD
-close  0x13113  close  0x1CC48  close  0x636D9  fclose     0x20DF3  malloc   0x35A53  snprintf   0x16290
-close  0x14587  close  0x1CC4F  close  0x698D3  fclose     0x20E7F  memcmp   0x230A3  socket     0x364BB
-close  0x167FB  close  0x1CC57  close  0x69942  fclose     0x21091  memcmp   0x33AA0  strchr     0x17DFA
-close  0x174E3  close  0x1FF28  close  0x69C5B  fclose     0x3730D  memcmp   0x6295E  strcmp     0x240B0
-close  0x17525  close  0x1FFF7  close  0x6E20D  fclose     0x3732D  memcpy   0x2E0AC  strcmp     0x243E8
-close  0x195EC  close  0x20000  close  0x9D48   fclose     0x37E27  memcpy   0x3530E  strlen     0x178BD
-close  0x19627  close  0x2005B  close  0xA4CF   fclose     0x430B9  memcpy   0x3554A  strlen     0x18E6E
-close  0x1963A  close  0x2499B  close  0xB5F5   fclose     0x43B0E  memcpy   0x360FF  strlen     0x1A22C
-close  0x199DF  close  0x24C9E  close  0xB61C   fclose     0x43BAD  memcpy   0x412D4  strlen     0x1B6DD
-close  0x1C656  close  0x25086  close  0xB684   fclose     0x54303  memcpy   0x41DCA  strlen     0x1EAAD
-close  0x1C672  close  0x25501  close  0xB6CA   fclose     0x5436B  memcpy   0x41E3C  strlen     0x24138
-close  0x1C67B  close  0x25509  close  0xB876   fclose     0x54393  memcpy   0x5291F  strlen     0x35A33
-close  0x1C69A  close  0x25705  close  0xBA4E   fclose     0xCCCB   memcpy   0x533A9  strlen     0x4516D
-close  0x1C6A3  close  0x2570D  close  0xBAEF   fopen      0x1C311  memcpy   0x56013  strlen     0x451A7
-close  0x1C6C2  close  0x26A94  close  0xBBA0   fopen      0x43144  memcpy   0x57271  strncpy    0x277E8
-close  0x1C711  close  0x26A9C  close  0xBBAF   fputc      0x344E3  memcpy   0x57844  strncpy    0x27E1F
-close  0x1C71A  close  0x26BDB  close  0xBD35   fputc      0x3574B  memcpy   0x5E441  strncpy    0x27E74
-close  0x1C723  close  0x271FF  close  0xBD81   fputc      0x35760  memcpy   0x5EC74  strtol     0x389B0
-close  0x1C780  close  0x27624  close  0xC1D2   fputc      0x357A1  memcpy   0x5F2A4  strtol     0x51C88
-close  0x1C789  close  0x27660  close  0xCABB   fputc      0x357BB  memcpy   0x5F760  strtoll    0x6D632
-close  0x1C792  close  0x27B0C  close  0xD585   fputc      0x357E1  memcpy   0x696A9  truncate   0x29E80
-close  0x1C79B  close  0x27DF2  close  0xD5C0   fputc      0x42D35  memcpy   0x6DBE9  unlink     0x1B66A
-close  0x1C7A4  close  0x2AF7A  close  0xD602   fputs      0x19EAA  memmove  0x2CE09  unlink     0x28C92
-close  0x1C7AD  close  0x3744A  dup    0xBA3E   fputs      0x1C356  memmove  0x50332  unlink     0x28F55
-close  0x1C8C8  close  0x37466  dup2   0x9D87   ftruncate  0x29B96  memmove  0x533D2  unlink     0x3746E
-close  0x1C8D1  close  0x3781F  dup2   0x9D94   fwrite     0x1BEEA  memmove  0x53635  unlink     0x69C27
-close  0x1C908  close  0x39AC5  dup2   0xB5C0   fwrite     0x34497  memset   0x22574  write      0x13092
-close  0x1C911  close  0x39C59  dup2   0xB5CC   fwrite     0x344C3  memset   0x63925  write      0x3935F
-close  0x1C91A  close  0x3B4C7  dup2   0xB5EA   fwrite     0x3457C  memset   0x63B9A  write      0x444A7
-close  0x1C923  close  0x3B5CE  dup2   0xB610   fwrite     0x345D8  memset   0x63F16  write      0x482E1
-close  0x1C9D1  close  0x3C4B4  dup2   0xB6B2   fwrite     0x35739  memset   0x696B6
-close  0x1C9D9  close  0x4075F  dup2   0xB6BE   fwrite     0x9339   rmdir    0x199CB
-close  0x1C9FE  close  0x40787  dup2   0xBD93   geteuid    0x8C42   rmdir    0x1B676
-close  0x1CA54  close  0x4080E  fchown 0x29A84  geteuid    0x8F6C   rmdir    0x292E2
-close  0x1CA87  close  0x40CC8  fclose 0x11AE4  getgid     0x4FD6E  seteuid  0x4FC9B
+alarm 0x9E2D Undecided
+close 0x1CB07 Undecided
+close 0x40CD9 Undecided
+fclose 0x19EC7 Undecided
+getpid 0x27E5C Undecided
+setsockopt 0x50202 Undecided
+alarm 0xA4AC Undecided
+close 0x1CB0F Undecided
+close 0x43CB0 Undecided
+fclose 0x1A514 Undecided
+getpid 0x6972E Undecided
+setsockopt 0x51FEB Undecided
+calloc 0x47E42 Undecided
+close 0x1CB18 Undecided
+close 0x46D41 Undecided
+fclose 0x1C588 Undecided
+getuid 0x19E17 Undecided
+shutdown 0x3D48F Undecided
+chown 0x29D56 Undecided
+close 0x1CB1F Undecided
+close 0x46D49 Undecided
+fclose 0x20D50 Undecided
+link 0x28A9F Undecided
+shutdown 0x46ECD Undecided
+close 0x13113 Undecided
+close 0x1CC48 Undecided
+close 0x636D9 Undecided
+fclose 0x20DF3 Undecided
+malloc 0x35A53 Undecided
+snprintf 0x16290 Undecided
+close 0x14587 Undecided
+close 0x1CC4F Undecided
+close 0x698D3 Undecided
+fclose 0x20E7F Undecided
+memcmp 0x230A3 Undecided
+socket 0x364BB Undecided
+close 0x167FB Undecided
+close 0x1CC57 Undecided
+close 0x69942 Undecided
+fclose 0x21091 Undecided
+memcmp 0x33AA0 Undecided
+strchr 0x17DFA Undecided
+close 0x174E3 Undecided
+close 0x1FF28 Undecided
+close 0x69C5B Undecided
+fclose 0x3730D Undecided
+memcmp 0x6295E Undecided
+strcmp 0x240B0 Undecided
+close 0x17525 Undecided
+close 0x1FFF7 Undecided
+close 0x6E20D Undecided
+fclose 0x3732D Undecided
+memcpy 0x2E0AC Undecided
+strcmp 0x243E8 Undecided
+close 0x195EC Undecided
+close 0x20000 Undecided
+close 0x9D48 Undecided
+fclose 0x37E27 Undecided
+memcpy 0x3530E Undecided
+strlen 0x178BD Undecided
+close 0x19627 Undecided
+close 0x2005B Undecided
+close 0xA4CF Undecided
+fclose 0x430B9 Undecided
+memcpy 0x3554A Undecided
+strlen 0x18E6E Undecided
+close 0x1963A Undecided
+close 0x2499B Undecided
+close 0xB5F5 Undecided
+fclose 0x43B0E Undecided
+memcpy 0x360FF Undecided
+strlen 0x1A22C Undecided
+close 0x199DF Undecided
+close 0x24C9E Undecided
+close 0xB61C Undecided
+fclose 0x43BAD Undecided
+memcpy 0x412D4 Undecided
+strlen 0x1B6DD Undecided
+close 0x1C656 Undecided
+close 0x25086 Undecided
+close 0xB684 Undecided
+fclose 0x54303 Undecided
+memcpy 0x41DCA Undecided
+strlen 0x1EAAD Undecided
+close 0x1C672 Undecided
+close 0x25501 Undecided
+close 0xB6CA Undecided
+fclose 0x5436B Undecided
+memcpy 0x41E3C Undecided
+strlen 0x24138 Undecided
+close 0x1C67B Undecided
+close 0x25509 Undecided
+close 0xB876 Undecided
+fclose 0x54393 Undecided
+memcpy 0x5291F Undecided
+strlen 0x35A33 Undecided
+close 0x1C69A Undecided
+close 0x25705 Undecided
+close 0xBA4E Undecided
+fclose 0xCCCB Undecided
+memcpy 0x533A9 Undecided
+strlen 0x4516D Undecided
+close 0x1C6A3 Undecided
+close 0x2570D Undecided
+close 0xBAEF Undecided
+fopen 0x1C311 Undecided
+memcpy 0x56013 Undecided
+strlen 0x451A7 Undecided
+close 0x1C6C2 Undecided
+close 0x26A94 Undecided
+close 0xBBA0 Undecided
+fopen 0x43144 Undecided
+memcpy 0x57271 Undecided
+strncpy 0x277E8 Undecided
+close 0x1C711 Undecided
+close 0x26A9C Undecided
+close 0xBBAF Undecided
+fputc 0x344E3 Undecided
+memcpy 0x57844 Undecided
+strncpy 0x27E1F Undecided
+close 0x1C71A Undecided
+close 0x26BDB Undecided
+close 0xBD35 Undecided
+fputc 0x3574B Undecided
+memcpy 0x5E441 Undecided
+strncpy 0x27E74 Undecided
+close 0x1C723 Undecided
+close 0x271FF Undecided
+close 0xBD81 Undecided
+fputc 0x35760 Undecided
+memcpy 0x5EC74 Undecided
+strtol 0x389B0 Undecided
+close 0x1C780 Undecided
+close 0x27624 Undecided
+close 0xC1D2 Undecided
+fputc 0x357A1 Undecided
+memcpy 0x5F2A4 Undecided
+strtol 0x51C88 Undecided
+close 0x1C789 Undecided
+close 0x27660 Undecided
+close 0xCABB Undecided
+fputc 0x357BB Undecided
+memcpy 0x5F760 Undecided
+strtoll 0x6D632 Undecided
+close 0x1C792 Undecided
+close 0x27B0C Undecided
+close 0xD585 Undecided
+fputc 0x357E1 Undecided
+memcpy 0x696A9 Undecided
+truncate 0x29E80 Undecided
+close 0x1C79B Undecided
+close 0x27DF2 Undecided
+close 0xD5C0 Undecided
+fputc 0x42D35 Undecided
+memcpy 0x6DBE9 Undecided
+unlink 0x1B66A Undecided
+close 0x1C7A4 Undecided
+close 0x2AF7A Undecided
+close 0xD602 Undecided
+fputs 0x19EAA Undecided
+memmove 0x2CE09 Undecided
+unlink 0x28C92 Undecided
+close 0x1C7AD Undecided
+close 0x3744A Undecided
+dup 0xBA3E Undecided
+fputs 0x1C356 Undecided
+memmove 0x50332 Undecided
+unlink 0x28F55 Undecided
+close 0x1C8C8 Undecided
+close 0x37466 Undecided
+dup2 0x9D87 Undecided
+ftruncate 0x29B96 Undecided
+memmove 0x533D2 Undecided
+unlink 0x3746E Undecided
+close 0x1C8D1 Undecided
+close 0x3781F Undecided
+dup2 0x9D94 Undecided
+fwrite 0x1BEEA Undecided
+memmove 0x53635 Undecided
+unlink 0x69C27 Undecided
+close 0x1C908 Undecided
+close 0x39AC5 Undecided
+dup2 0xB5C0 Undecided
+fwrite 0x34497 Undecided
+memset 0x22574 Undecided
+write 0x13092 Undecided
+close 0x1C911 Undecided
+close 0x39C59 Undecided
+dup2 0xB5CC Undecided
+fwrite 0x344C3 Undecided
+memset 0x63925 Undecided
+write 0x3935F Undecided
+close 0x1C91A Undecided
+close 0x3B4C7 Undecided
+dup2 0xB5EA Undecided
+fwrite 0x3457C Undecided
+memset 0x63B9A Undecided
+write 0x444A7 Undecided
+close 0x1C923 Undecided
+close 0x3B5CE Undecided
+dup2 0xB610 Undecided
+fwrite 0x345D8 Undecided
+memset 0x63F16 Undecided
+write 0x482E1 Undecided
+close 0x1C9D1 Undecided
+close 0x3C4B4 Undecided
+dup2 0xB6B2 Undecided
+fwrite 0x35739 Undecided
+memset 0x696B6 Undecided
+close 0x1C9D9 Undecided
+close 0x4075F Undecided
+dup2 0xB6BE Undecided
+fwrite 0x9339 Undecided
+rmdir 0x199CB Undecided
+close 0x1C9FE Undecided
+close 0x40787 Undecided
+dup2 0xBD93 Undecided
+geteuid 0x8C42 Undecided
+rmdir 0x1B676 Undecided
+close 0x1CA54 Undecided
+close 0x4080E Undecided
+fchown 0x29A84 Undecided
+geteuid 0x8F6C Undecided
+rmdir 0x292E2 Undecided
+close 0x1CA87 Undecided
+close 0x40CC8 Undecided
+fclose 0x11AE4 Undecided
+getgid 0x4FD6E Undecided
+seteuid 0x4FC9B Undecided
 
 hardcoded-socket-address:
  Time: 01:16:19

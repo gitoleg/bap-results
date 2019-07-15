@@ -4,97 +4,235 @@ Size: 770K
  Forbidden:
 Time: 00:00:08
 
- __errno_location    fwrite       strftime
- abort               getenv       localtime
- exit                gmtime       mktime
- fprintf             puts         perror
- fputc               setlocale    time
- fputs               signal
+__errno_location Confirmed
+fwrite Confirmed
+strftime Confirmed
+abort Confirmed
+getenv Confirmed
+localtime Confirmed
+exit Confirmed
+gmtime Confirmed
+mktime Confirmed
+fprintf Confirmed
+puts Confirmed
+perror Confirmed
+fputc Confirmed
+setlocale Confirmed
+time Confirmed
+fputs Confirmed
+signal Confirmed
 
 
  Recursive:
  Time: 00:00:09
 
 
- array_init           sub_12091
- array_insert_uniq    sub_14d5
- data_string_init     sub_1eee0
- proc_open_b          sub_1eee7
- sub_1163c            sub_bf08
+array_init Undecided
+sub_12091 Undecided
+array_insert_uniq Undecided
+sub_14d5 Undecided
+data_string_init Undecided
+sub_1eee0 Undecided
+proc_open_b Undecided
+sub_1eee7 Undecided
+sub_1163c Undecided
+sub_bf08 Undecided
 
  Complex:
  Time: 00:00:12
 
- connection_handle_read_state
- sub_12091
- sub_121be
- sub_18774
- sub_74e9
- sub_97a2
+connection_handle_read_state Undecided
+sub_12091 Undecided
+sub_121be Undecided
+sub_18774 Undecided
+sub_74e9 Undecided
+sub_97a2 Undecided
 
  Non-structural:
  Time: 00:00:11
 
- fdevent_poll_event_get_revent
+fdevent_poll_event_get_revent Undecided
 
  Null:
  Time: 00:15:12
 
-stat_cache_tag_old_entries 0x1713D
-stat_cache_get_entry 0x17306
-stat_cache_trigger_cleanup 0x176FB
-array_init_array 0x192D1
-array_init_array 0x192F7
-array_init_array 0x19327
-network_write_chunkqueue_writev 0x1E95B
-network_write_chunkqueue_writev 0x1E991
-network_server_init 0xCF86
+stat_cache_tag_old_entries 0x1713D Undecided
+stat_cache_get_entry 0x17306 Undecided
+stat_cache_trigger_cleanup 0x176FB Undecided
+array_init_array 0x192D1 Undecided
+array_init_array 0x192F7 Undecided
+array_init_array 0x19327 Undecided
+network_write_chunkqueue_writev 0x1E95B Undecided
+network_write_chunkqueue_writev 0x1E991 Undecided
+network_server_init 0xCF86 Undecided
 
 
   Unused:
 Time: 00:09:33
-calloc  0x157BB   close    0x1BEEA   fprintf 0x116E4   fprintf 0x1C021   fwrite     0x19AF2
-calloc  0x159DA   close    0x1C186   fprintf 0x135B2   fprintf 0x1C042   fwrite     0x19B2F
-calloc  0x15B3A   close    0x1E113   fprintf 0x14C5B   fprintf 0x1C143   fwrite     0x19B77
-calloc  0x16B13   close    0x1E29E   fprintf 0x16CAE   fprintf 0x1C17B   fwrite     0x19BDF
-calloc  0xAAAB    close    0x1E6D5   fprintf 0x16EEC   fprintf 0x1C1B0   fwrite     0x1B5C0
-calloc  0xAAC7    close    0x74A6    fprintf 0x16F2C   fprintf 0x1C1E0   fwrite     0x1C253
-chdir   0xF7F1    close    0x74CB    fprintf 0x16F6C   fprintf 0x1C424   fwrite     0x1C2EB
-chdir   0xF867    close    0x78E7    fprintf 0x16FBB   fprintf 0x1C4C2   fwrite     0x1C3D5
-close   0x13756   close    0x78F9    fprintf 0x16FE1   fprintf 0x1C752   fwrite     0xFC38
-close   0x1375E   close    0x791E    fprintf 0x1702C   fprintf 0x1C79F   getcwd     0xF9C0
-close   0x13766   close    0xB2B7    fprintf 0x17052   fprintf 0x1C7ED   getpid     0xF974
-close   0x1376E   close    0xB2D5    fprintf 0x19A76   fprintf 0xEAF7    malloc     0x196BD
-close   0x13776   close    0xB7C1    fprintf 0x19B4B   fputc   0x19944   malloc     0x1C0FE
-close   0x1377E   close    0xD552    fprintf 0x19BB5   fputc   0x19AA4   memcpy     0x13F92
-close   0x13889   close    0xD776    fprintf 0x1B4AD   fputc   0x19B8C   memcpy     0x19327
-close   0x13896   dup2     0x154BB   fprintf 0x1B4CE   fputc   0x1C2C4   puts       0x8553
-close   0x138A4   dup2     0x78F1    fprintf 0x1B4FA   fputc   0x1C305   read       0x136EF
-close   0x139AC   dup2     0x792B    fprintf 0x1B51B   fputc   0x1C32B   read       0xBA52
-close   0x139B4   execl    0x13956   fprintf 0x1B5EF   fputc   0x1C379   read       0xC5E2
-close   0x139CC   fprintf  0x101B6   fprintf 0x1B77D   fputc   0x1C3AB   setsockopt 0xDB6D
-close   0x139D4   fprintf  0x10229   fprintf 0x1B79E   fputc   0x1C462   setsockopt 0xDC00
-close   0x139EC   fprintf  0x1028D   fprintf 0x1B9D5   fputc   0x1C484   strncpy    0x1DED6
-close   0x139F4   fprintf  0x102F7   fprintf 0x1BB45   fputc   0x78A7    strncpy    0x1DF4E
-close   0x154AF   fprintf  0x10313   fprintf 0x1BB66   fputs   0x1C2A5   strtol     0x11E92
-close   0x154C2   fprintf  0x1035B   fprintf 0x1BB8C   fwrite  0x10469   strtoul    0x12EE2
-close   0x155D8   fprintf  0x10677   fprintf 0x1BC37   fwrite  0x1372C   unlink     0x1663C
-close   0x15637   fprintf  0x10730   fprintf 0x1BC58   fwrite  0x19561   unlink     0xD296
-close   0x15693   fprintf  0x10899   fprintf 0x1BDCD   fwrite  0x1986F   write      0x15133
-close   0x16587   fprintf  0x10B32   fprintf 0x1BDEE   fwrite  0x199A8   write      0x1517B
-close   0x16AA8   fprintf  0x10B86   fprintf 0x1BF85   fwrite  0x199D5
-close   0x17633   fprintf  0x1168B   fprintf 0x1BFA6   fwrite  0x19AC6
+calloc 0x157BB Undecided
+close 0x1BEEA Undecided
+fprintf 0x116E4 Undecided
+fprintf 0x1C021 Undecided
+fwrite 0x19AF2 Undecided
+calloc 0x159DA Undecided
+close 0x1C186 Undecided
+fprintf 0x135B2 Undecided
+fprintf 0x1C042 Undecided
+fwrite 0x19B2F Undecided
+calloc 0x15B3A Undecided
+close 0x1E113 Undecided
+fprintf 0x14C5B Undecided
+fprintf 0x1C143 Undecided
+fwrite 0x19B77 Undecided
+calloc 0x16B13 Undecided
+close 0x1E29E Undecided
+fprintf 0x16CAE Undecided
+fprintf 0x1C17B Undecided
+fwrite 0x19BDF Undecided
+calloc 0xAAAB Undecided
+close 0x1E6D5 Undecided
+fprintf 0x16EEC Undecided
+fprintf 0x1C1B0 Undecided
+fwrite 0x1B5C0 Undecided
+calloc 0xAAC7 Undecided
+close 0x74A6 Undecided
+fprintf 0x16F2C Undecided
+fprintf 0x1C1E0 Undecided
+fwrite 0x1C253 Undecided
+chdir 0xF7F1 Undecided
+close 0x74CB Undecided
+fprintf 0x16F6C Undecided
+fprintf 0x1C424 Undecided
+fwrite 0x1C2EB Undecided
+chdir 0xF867 Undecided
+close 0x78E7 Undecided
+fprintf 0x16FBB Undecided
+fprintf 0x1C4C2 Undecided
+fwrite 0x1C3D5 Undecided
+close 0x13756 Undecided
+close 0x78F9 Undecided
+fprintf 0x16FE1 Undecided
+fprintf 0x1C752 Undecided
+fwrite 0xFC38 Undecided
+close 0x1375E Undecided
+close 0x791E Undecided
+fprintf 0x1702C Undecided
+fprintf 0x1C79F Undecided
+getcwd 0xF9C0 Undecided
+close 0x13766 Undecided
+close 0xB2B7 Undecided
+fprintf 0x17052 Undecided
+fprintf 0x1C7ED Undecided
+getpid 0xF974 Undecided
+close 0x1376E Undecided
+close 0xB2D5 Undecided
+fprintf 0x19A76 Undecided
+fprintf 0xEAF7 Undecided
+malloc 0x196BD Undecided
+close 0x13776 Undecided
+close 0xB7C1 Undecided
+fprintf 0x19B4B Undecided
+fputc 0x19944 Undecided
+malloc 0x1C0FE Undecided
+close 0x1377E Undecided
+close 0xD552 Undecided
+fprintf 0x19BB5 Undecided
+fputc 0x19AA4 Undecided
+memcpy 0x13F92 Undecided
+close 0x13889 Undecided
+close 0xD776 Undecided
+fprintf 0x1B4AD Undecided
+fputc 0x19B8C Undecided
+memcpy 0x19327 Undecided
+close 0x13896 Undecided
+dup2 0x154BB Undecided
+fprintf 0x1B4CE Undecided
+fputc 0x1C2C4 Undecided
+puts 0x8553 Undecided
+close 0x138A4 Undecided
+dup2 0x78F1 Undecided
+fprintf 0x1B4FA Undecided
+fputc 0x1C305 Undecided
+read 0x136EF Undecided
+close 0x139AC Undecided
+dup2 0x792B Undecided
+fprintf 0x1B51B Undecided
+fputc 0x1C32B Undecided
+read 0xBA52 Undecided
+close 0x139B4 Undecided
+execl 0x13956 Undecided
+fprintf 0x1B5EF Undecided
+fputc 0x1C379 Undecided
+read 0xC5E2 Undecided
+close 0x139CC Undecided
+fprintf 0x101B6 Undecided
+fprintf 0x1B77D Undecided
+fputc 0x1C3AB Undecided
+setsockopt 0xDB6D Undecided
+close 0x139D4 Undecided
+fprintf 0x10229 Undecided
+fprintf 0x1B79E Undecided
+fputc 0x1C462 Undecided
+setsockopt 0xDC00 Undecided
+close 0x139EC Undecided
+fprintf 0x1028D Undecided
+fprintf 0x1B9D5 Undecided
+fputc 0x1C484 Undecided
+strncpy 0x1DED6 Undecided
+close 0x139F4 Undecided
+fprintf 0x102F7 Undecided
+fprintf 0x1BB45 Undecided
+fputc 0x78A7 Undecided
+strncpy 0x1DF4E Undecided
+close 0x154AF Undecided
+fprintf 0x10313 Undecided
+fprintf 0x1BB66 Undecided
+fputs 0x1C2A5 Undecided
+strtol 0x11E92 Undecided
+close 0x154C2 Undecided
+fprintf 0x1035B Undecided
+fprintf 0x1BB8C Undecided
+fwrite 0x10469 Undecided
+strtoul 0x12EE2 Undecided
+close 0x155D8 Undecided
+fprintf 0x10677 Undecided
+fprintf 0x1BC37 Undecided
+fwrite 0x1372C Undecided
+unlink 0x1663C Undecided
+close 0x15637 Undecided
+fprintf 0x10730 Undecided
+fprintf 0x1BC58 Undecided
+fwrite 0x19561 Undecided
+unlink 0xD296 Undecided
+close 0x15693 Undecided
+fprintf 0x10899 Undecided
+fprintf 0x1BDCD Undecided
+fwrite 0x1986F Undecided
+write 0x15133 Undecided
+close 0x16587 Undecided
+fprintf 0x10B32 Undecided
+fprintf 0x1BDEE Undecided
+fwrite 0x199A8 Undecided
+write 0x1517B Undecided
+close 0x16AA8 Undecided
+fprintf 0x10B86 Undecided
+fprintf 0x1BF85 Undecided
+fwrite 0x199D5 Undecided
+close 0x17633 Undecided
+fprintf 0x1168B Undecided
+fprintf 0x1BFA6 Undecided
+fwrite 0x19AC6 Undecided
 
 
  Hardcoded-socket-address:
  Time: 03:03:45
- Total 2
+ Total: 2
 
  Memcheck-out-of-bound:
  Time: 03:03:45
  False_pos: 1
- Total 1
+ Total: 1
 
  Value-was-used-before-check:
  Time: 03:03:45
- Total 94
+ Total: 94

@@ -3,145 +3,571 @@ Size: 1.1M
 Forbidden:
 Time: 00:00:30
 
-__errno_location   fopen       ftell     puts
-ctime              fprintf     fwrite    rename
-exit               fputc       getenv    sprintf
-fclose             fputs       perror    time
-feof               fread       printf
-fflush             fseek       putchar
+__errno_location Confirmed
+fopen Confirmed
+ftell Confirmed
+puts Confirmed
+ctime Confirmed
+fprintf Confirmed
+fwrite Confirmed
+rename Confirmed
+exit Confirmed
+fputc Confirmed
+getenv Confirmed
+sprintf Confirmed
+fclose Confirmed
+fputs Confirmed
+perror Confirmed
+time Confirmed
+feof Confirmed
+fread Confirmed
+printf Confirmed
+fflush Confirmed
+fseek Confirmed
+putchar Confirmed
 
 Recursive:
  Time: 00:00:28
 
-_trie_dump                  free_lines       sub_6e5a4          swf_WriteTag
-_trie_put                   input            sub_72f95          use_asset
-args_callback_longoption    registry_find    sub_7583a          write_asset
-callcode                    registry_use     swf4_scan_bytes
-cut_last_push               sub_43254        swf4restart
-dump_asset                  sub_46594        swf5_scan_bytes
-dump_method                 sub_55177        swf5restart
-enumerateUsedIDs            sub_551a3        swf_ShapeSetLine
+_trie_dump Undecided
+free_lines Undecided
+sub_6e5a4 Undecided
+swf_WriteTag Undecided
+_trie_put Undecided
+input Undecided
+sub_72f95 Undecided
+use_asset Undecided
+args_callback_longoption Undecided
+registry_find Undecided
+sub_7583a Undecided
+write_asset Undecided
+callcode Undecided
+registry_use Undecided
+swf4_scan_bytes Undecided
+cut_last_push Undecided
+sub_43254 Undecided
+swf4restart Undecided
+dump_asset Undecided
+sub_46594 Undecided
+swf5_scan_bytes Undecided
+dump_method Undecided
+sub_55177 Undecided
+swf5restart Undecided
+enumerateUsedIDs Undecided
+sub_551a3 Undecided
+swf_ShapeSetLine Undecided
 
 Complex:
  Time: 00:00:44
 
-enumerateUsedIDs
-extractTag
-main
-png_load
-png_write_palette_based2
-writeABC
+enumerateUsedIDs Undecided
+extractTag Undecided
+main Undecided
+png_load Undecided
+png_write_palette_based2 Undecided
+writeABC Undecided
 
 Non-structural:
  Time: 00:00:34
 
-zlib_error
+zlib_error Undecided
+
 
 Null:
  Time: 01:30:19
-
-swf_FontReduce_swfc 0x437BF
-swf_Relocate 0x487A8
-swf_Optimize 0x48ED8
-swf_ReadABCfile 0x4BA0B
-swf_Shape2ToShape 0x528E1
-traits_free 0x53A83
-abc_file_free 0x55C06
-abc_file_free 0x55D02
-callcode 0x5A718
-callcode 0x5A959
-varinfo_register_onclass 0x5C69B
-add_dependencies 0x6D02C
-dict_put 0x7B7FB
-dict_free_all 0x7BF87
-png_read_header 0x7C8E9
-png_write_palette_based2 0x7F8CC
-png_write_palette_based2 0x7F90C
-png_write_palette_based2 0x7F952
-
+abc_file_free 0x55C06  Undecided
+abc_file_free 0x55D02  False_pos
+add_dependencies 0x6D02C   Undecided
+callcode 0x5A718   Undecided
+callcode 0x5A959   Undecided
+dict_free_all 0x7BF87   Undecided
+dict_put 0x7B7FB   False_pos
+png_read_header 0x7C8E9   Undecided
+png_write_palette_based2 0x7F8CC   Undecided
+png_write_palette_based2 0x7F90C   Undecided
+png_write_palette_based2 0x7F952   Undecided
+swf_FontReduce_swfc 0x437BF   Undecided
+swf_Optimize 0x48ED8   Confirmed
+swf_ReadABCfile 0x4BA0B   Confirmed
+swf_Relocate 0x487A8   False_pos
+swf_Shape2ToShape 0x528E1   Undecided
+traits_free 0x53A83   Confirmed
+varinfo_register_onclass 0x5C69B  False_pos
 
 
 Unused:
 Time: 00:33:24
-calloc   0x79E81  fprintf  0x54BF2  fprintf  0x7DD83  fwrite   0x4BFDD  memcpy   0x52241  printf   0x70D7D
-close    0x3EAC3  fprintf  0x54C69  fprintf  0x7DE3C  fwrite   0x4CFED  memcpy   0x52267  printf   0x7AAF5
-close    0x40BE9  fprintf  0x54C83  fprintf  0x7FDDA  fwrite   0x4E0F2  memcpy   0x526E1  printf   0x7D5E9
-close    0x40DCF  fprintf  0x54C9A  fprintf  0x801E8  fwrite   0x4F170  memcpy   0x5270D  printf   0x7D607
-close    0x44EC1  fprintf  0x54CE0  fprintf  0x80EBB  fwrite   0x4FC46  memcpy   0x546C9  printf   0x7D93B
-close    0x44F1C  fprintf  0x54D2D  fprintf  0x80F3A  fwrite   0x4FC8F  memcpy   0x72F4E  printf   0x7D9CA
-close    0x4B972  fprintf  0x54D4D  fprintf  0x8235D  fwrite   0x5056A  memcpy   0x79D26  printf   0x7E6FC
-close    0x4C095  fprintf  0x54E1F  fprintf  0x826A3  fwrite   0x507D1  memcpy   0x7A375  putchar  0x3E517
-close    0x80961  fprintf  0x54E56  fprintf  0x82730  fwrite   0x50CE0  memcpy   0x7A3A0  putchar  0x3F1B5
-close    0x80BD8  fprintf  0x54FE2  fprintf  0x82798  fwrite   0x52992  memcpy   0x7A460  putchar  0x41FB9
-close    0x80D14  fprintf  0x55012  fprintf  0x827E4  fwrite   0x529BD  memcpy   0x7A497  putchar  0x4D986
-fclose   0x3F586  fprintf  0x55062  fputc    0x49705  fwrite   0x53441  memcpy   0x7A4AF  putchar  0x4DA3F
-fclose   0x3F646  fprintf  0x5508F  fputc    0x4F41C  fwrite   0x54DBB  memcpy   0x7ACC0  putchar  0x5D2D8
-fclose   0x3F687  fprintf  0x550B0  fputc    0x4F42B  fwrite   0x54DD9  memcpy   0x7B1DC  putchar  0x6EECB
-fclose   0x408B8  fprintf  0x551EF  fputc    0x551D6  fwrite   0x54DF7  memcpy   0x7B282  putchar  0x70D61
-fclose   0x412B6  fprintf  0x5527A  fputc    0x58731  fwrite   0x5725F  memcpy   0x7B296  puts     0x3E459
-fclose   0x7D555  fprintf  0x5597F  fputc    0x5BAB4  fwrite   0x57294  memcpy   0x7CFB4  puts     0x3E465
-fclose   0x7D617  fprintf  0x568E3  fputc    0x5BC86  fwrite   0x58724  memcpy   0x7D7A9  puts     0x3E471
-fclose   0x7D900  fprintf  0x56B0D  fputc    0x7A822  fwrite   0x58C8D  memcpy   0x7E45B  puts     0x3E47D
-fclose   0x80A5C  fprintf  0x57704  fputs    0x5B942  fwrite   0x58DFC  memcpy   0x7E717  puts     0x3E489
-fclose   0x80A64  fprintf  0x57826  fputs    0x5B965  fwrite   0x5BEB6  memcpy   0x7E822  puts     0x3E495
-fclose   0x80AFB  fprintf  0x579FE  fread    0x7C806  fwrite   0x5C128  memcpy   0x80DA1  puts     0x3E4A1
-fclose   0x82062  fprintf  0x57B65  fwrite   0x3DB53  fwrite   0x7AB98  memcpy   0x80E39  puts     0x3E4AD
-fclose   0x820E8  fprintf  0x57BA9  fwrite   0x3DB83  fwrite   0x7CDBF  memmove  0x3F797  puts     0x3E4B9
-fopen    0x82093  fprintf  0x57BF1  fwrite   0x3DBC5  fwrite   0x7CE01  memset   0x41352  puts     0x3E4C5
-fprintf  0x3E37C  fprintf  0x57C4B  fwrite   0x3DC07  fwrite   0x7CE63  memset   0x41366  puts     0x3E4D1
-fprintf  0x3E409  fprintf  0x57CA1  fwrite   0x3DC45  fwrite   0x7CEA5  memset   0x4860B  puts     0x3E4DD
-fprintf  0x3E57D  fprintf  0x57D0D  fwrite   0x3DCED  fwrite   0x7CEE7  memset   0x7DDE2  puts     0x3E4E9
-fprintf  0x3F335  fprintf  0x57D5B  fwrite   0x3DD13  fwrite   0x7CF25  memset   0x80B68  puts     0x3E4F5
-fprintf  0x3F7B9  fprintf  0x57EB1  fwrite   0x3DD55  fwrite   0x7CFD6  memset   0x81875  puts     0x3E501
-fprintf  0x3F7E9  fprintf  0x585A4  fwrite   0x3DD97  fwrite   0x7CFFC  printf   0x3DE88  puts     0x3E50D
-fprintf  0x3F8E3  fprintf  0x585C0  fwrite   0x3DDD9  fwrite   0x7D03E  printf   0x3E2F6  puts     0x3E523
-fprintf  0x4083D  fprintf  0x58617  fwrite   0x3DEC6  fwrite   0x7D080  printf   0x3E44D  puts     0x3E52F
-fprintf  0x40958  fprintf  0x58633  fwrite   0x3DF2B  fwrite   0x7D0C2  printf   0x3EFCF  puts     0x3E53B
-fprintf  0x40DC8  fprintf  0x58697  fwrite   0x3DFE1  fwrite   0x7F7FC  printf   0x3F057  puts     0x3E547
-fprintf  0x41A4C  fprintf  0x586B3  fwrite   0x3E049  fwrite   0x7FB69  printf   0x3F0D6  puts     0x3EB61
-fprintf  0x423AC  fprintf  0x5870F  fwrite   0x3E0B1  fwrite   0x7FBB1  printf   0x3F104  puts     0x3F203
-fprintf  0x4258E  fprintf  0x5874D  fwrite   0x3E119  fwrite   0x7FC44  printf   0x3F14C  puts     0x3F228
-fprintf  0x4315A  fprintf  0x587B4  fwrite   0x3E181  fwrite   0x7FC82  printf   0x3F165  puts     0x4DA88
-fprintf  0x431E0  fprintf  0x58837  fwrite   0x3E1E9  fwrite   0x7FCC0  printf   0x3F1AB  puts     0x4F522
-fprintf  0x44BAA  fprintf  0x588B7  fwrite   0x3ED39  fwrite   0x7FCFE  printf   0x3F2DB  puts     0x4F547
-fprintf  0x44BDF  fprintf  0x58C19  fwrite   0x3F563  fwrite   0x7FDFB  printf   0x41131  puts     0x82388
-fprintf  0x44F15  fprintf  0x5A254  fwrite   0x3F57E  fwrite   0x7FE8D  printf   0x4D2D3  puts     0x826D6
-fprintf  0x45526  fprintf  0x5A665  fwrite   0x3F618  fwrite   0x7FECE  printf   0x4DA24  snprintf 0x3E5C4
-fprintf  0x46E2C  fprintf  0x5A6DF  fwrite   0x3F63E  fwrite   0x7FF0F  printf   0x4DA77  sprintf  0x46554
-fprintf  0x47205  fprintf  0x5A74B  fwrite   0x3F67F  fwrite   0x7FF92  printf   0x4DB02  sprintf  0x4C19A
-fprintf  0x4766F  fprintf  0x5A776  fwrite   0x405EE  fwrite   0x80249  printf   0x4DB47  sprintf  0x4C373
-fprintf  0x48889  fprintf  0x5A86F  fwrite   0x408B0  fwrite   0x80518  printf   0x4F44D  sprintf  0x4C392
-fprintf  0x49114  fprintf  0x5A9BA  fwrite   0x40B34  fwrite   0x80546  printf   0x4F462  sprintf  0x4C3B1
-fprintf  0x49201  fprintf  0x5AAE9  fwrite   0x40D59  fwrite   0x80574  printf   0x4F477  sprintf  0x54F88
-fprintf  0x4924F  fprintf  0x5ABD7  fwrite   0x40D83  fwrite   0x805A2  printf   0x4F48B  sprintf  0x55170
-fprintf  0x492C0  fprintf  0x5AC1A  fwrite   0x4171C  fwrite   0x805D0  printf   0x4F49F  sprintf  0x56B97
-fprintf  0x4933C  fprintf  0x5AC50  fwrite   0x43C86  fwrite   0x8060A  printf   0x4F4C7  sprintf  0x57617
-fprintf  0x4958D  fprintf  0x5ADCC  fwrite   0x442CF  fwrite   0x80A3B  printf   0x4F4E4  sprintf  0x57640
-fprintf  0x496A3  fprintf  0x5B865  fwrite   0x451B6  fwrite   0x80DCE  printf   0x4F4FD  sprintf  0x57663
-fprintf  0x496E8  fprintf  0x5B8AA  fwrite   0x453C2  fwrite   0x80E69  printf   0x4F516  sprintf  0x8086B
-fprintf  0x4B090  fprintf  0x5B8E1  fwrite   0x46B6F  fwrite   0x810CB  printf   0x4F53B  sprintf  0x808B2
-fprintf  0x4BFB7  fprintf  0x5B90B  fwrite   0x48655  fwrite   0x810ED  printf   0x4F55C  sprintf  0x822D0
-fprintf  0x4C0CC  fprintf  0x5B9B7  fwrite   0x48788  fwrite   0x81150  printf   0x4F571  sprintf  0x82616
-fprintf  0x4F1A1  fprintf  0x5B9F3  fwrite   0x48903  fwrite   0x81182  printf   0x4F586  strcat   0x56C94
-fprintf  0x4F1CC  fprintf  0x5BAD8  fwrite   0x48AB5  fwrite   0x8122A  printf   0x4F5FC  strcat   0x56F54
-fprintf  0x4F1F2  fprintf  0x5BBB4  fwrite   0x48B0F  fwrite   0x81955  printf   0x4F63A  strcat   0x56F73
-fprintf  0x4F210  fprintf  0x5BC16  fwrite   0x49B87  fwrite   0x8199A  printf   0x4F69D  strcat   0x56FA8
-fprintf  0x4F228  fprintf  0x5BC65  fwrite   0x49D69  fwrite   0x81A08  printf   0x4FC6D  strcat   0x5712D
-fprintf  0x4F29B  fprintf  0x5BCB1  fwrite   0x49DB6  fwrite   0x81A2A  printf   0x52DA3  strcat   0x5715A
-fprintf  0x4F2E6  fprintf  0x5BDAC  fwrite   0x4A2F7  fwrite   0x81AE2  printf   0x5A5A1  strcat   0x571D1
-fprintf  0x4F300  fprintf  0x5C8CE  fwrite   0x4A912  fwrite   0x81B2C  printf   0x5ACED  strcat   0x6D74B
-fprintf  0x4F342  fprintf  0x5CA3B  fwrite   0x4A954  fwrite   0x81B51  printf   0x5AD0D  strcat   0x807A0
-fprintf  0x4F38C  fprintf  0x6D08D  fwrite   0x4A97F  lseek    0x80BEF  printf   0x5B17F  strcpy   0x4EBB2
-fprintf  0x4F402  fprintf  0x6D0EA  fwrite   0x4ADCD  malloc   0x3E9BD  printf   0x5B35F  strcpy   0x4ED73
-fprintf  0x4FCE7  fprintf  0x6D46D  fwrite   0x4AE2B  memcpy   0x3DCD6  printf   0x5B373  strcpy   0x6EE1D
-fprintf  0x5028F  fprintf  0x70D31  fwrite   0x4B1A7  memcpy   0x3E9D0  printf   0x5B387  strcpy   0x806F7
-fprintf  0x50309  fprintf  0x79FCC  fwrite   0x4B1D1  memcpy   0x47D34  printf   0x5BA1C  strcpy   0x821BC
-fprintf  0x5042D  fprintf  0x7B470  fwrite   0x4B1FB  memcpy   0x49386  printf   0x5CA78  strcpy   0x82501
-fprintf  0x51522  fprintf  0x7B8C6  fwrite   0x4B458  memcpy   0x493CF  printf   0x5CAF5  unlink   0x80A6C
-fprintf  0x5187D  fprintf  0x7C2C5  fwrite   0x4B536  memcpy   0x4DDE7  printf   0x5D2C9  write    0x4C1CF
-fprintf  0x51AC8  fprintf  0x7C30F  fwrite   0x4B607  memcpy   0x4DE10  printf   0x5D346
-fprintf  0x52DC1  fprintf  0x7C966  fwrite   0x4B6CF  memcpy   0x52102  printf   0x5D35E
-fprintf  0x52EF8  fprintf  0x7D537  fwrite   0x4BB57  memcpy   0x52129  printf   0x6EEDE
+calloc 0x79E81 Undecided
+fprintf 0x54BF2 Undecided
+fprintf 0x7DD83 Undecided
+fwrite 0x4BFDD Undecided
+memcpy 0x52241 Undecided
+printf 0x70D7D Undecided
+close 0x3EAC3 Undecided
+fprintf 0x54C69 Undecided
+fprintf 0x7DE3C Undecided
+fwrite 0x4CFED Undecided
+memcpy 0x52267 Undecided
+printf 0x7AAF5 Undecided
+close 0x40BE9 Undecided
+fprintf 0x54C83 Undecided
+fprintf 0x7FDDA Undecided
+fwrite 0x4E0F2 Undecided
+memcpy 0x526E1 Undecided
+printf 0x7D5E9 Undecided
+close 0x40DCF Undecided
+fprintf 0x54C9A Undecided
+fprintf 0x801E8 Undecided
+fwrite 0x4F170 Undecided
+memcpy 0x5270D Undecided
+printf 0x7D607 Undecided
+close 0x44EC1 Undecided
+fprintf 0x54CE0 Undecided
+fprintf 0x80EBB Undecided
+fwrite 0x4FC46 Undecided
+memcpy 0x546C9 Undecided
+printf 0x7D93B Undecided
+close 0x44F1C Undecided
+fprintf 0x54D2D Undecided
+fprintf 0x80F3A Undecided
+fwrite 0x4FC8F Undecided
+memcpy 0x72F4E Undecided
+printf 0x7D9CA Undecided
+close 0x4B972 Undecided
+fprintf 0x54D4D Undecided
+fprintf 0x8235D Undecided
+fwrite 0x5056A Undecided
+memcpy 0x79D26 Undecided
+printf 0x7E6FC Undecided
+close 0x4C095 Undecided
+fprintf 0x54E1F Undecided
+fprintf 0x826A3 Undecided
+fwrite 0x507D1 Undecided
+memcpy 0x7A375 Undecided
+putchar 0x3E517 Undecided
+close 0x80961 Undecided
+fprintf 0x54E56 Undecided
+fprintf 0x82730 Undecided
+fwrite 0x50CE0 Undecided
+memcpy 0x7A3A0 Undecided
+putchar 0x3F1B5 Undecided
+close 0x80BD8 Undecided
+fprintf 0x54FE2 Undecided
+fprintf 0x82798 Undecided
+fwrite 0x52992 Undecided
+memcpy 0x7A460 Undecided
+putchar 0x41FB9 Undecided
+close 0x80D14 Undecided
+fprintf 0x55012 Undecided
+fprintf 0x827E4 Undecided
+fwrite 0x529BD Undecided
+memcpy 0x7A497 Undecided
+putchar 0x4D986 Undecided
+fclose 0x3F586 Undecided
+fprintf 0x55062 Undecided
+fputc 0x49705 Undecided
+fwrite 0x53441 Undecided
+memcpy 0x7A4AF Undecided
+putchar 0x4DA3F Undecided
+fclose 0x3F646 Undecided
+fprintf 0x5508F Undecided
+fputc 0x4F41C Undecided
+fwrite 0x54DBB Undecided
+memcpy 0x7ACC0 Undecided
+putchar 0x5D2D8 Undecided
+fclose 0x3F687 Undecided
+fprintf 0x550B0 Undecided
+fputc 0x4F42B Undecided
+fwrite 0x54DD9 Undecided
+memcpy 0x7B1DC Undecided
+putchar 0x6EECB Undecided
+fclose 0x408B8 Undecided
+fprintf 0x551EF Undecided
+fputc 0x551D6 Undecided
+fwrite 0x54DF7 Undecided
+memcpy 0x7B282 Undecided
+putchar 0x70D61 Undecided
+fclose 0x412B6 Undecided
+fprintf 0x5527A Undecided
+fputc 0x58731 Undecided
+fwrite 0x5725F Undecided
+memcpy 0x7B296 Undecided
+puts 0x3E459 Undecided
+fclose 0x7D555 Undecided
+fprintf 0x5597F Undecided
+fputc 0x5BAB4 Undecided
+fwrite 0x57294 Undecided
+memcpy 0x7CFB4 Undecided
+puts 0x3E465 Undecided
+fclose 0x7D617 Undecided
+fprintf 0x568E3 Undecided
+fputc 0x5BC86 Undecided
+fwrite 0x58724 Undecided
+memcpy 0x7D7A9 Undecided
+puts 0x3E471 Undecided
+fclose 0x7D900 Undecided
+fprintf 0x56B0D Undecided
+fputc 0x7A822 Undecided
+fwrite 0x58C8D Undecided
+memcpy 0x7E45B Undecided
+puts 0x3E47D Undecided
+fclose 0x80A5C Undecided
+fprintf 0x57704 Undecided
+fputs 0x5B942 Undecided
+fwrite 0x58DFC Undecided
+memcpy 0x7E717 Undecided
+puts 0x3E489 Undecided
+fclose 0x80A64 Undecided
+fprintf 0x57826 Undecided
+fputs 0x5B965 Undecided
+fwrite 0x5BEB6 Undecided
+memcpy 0x7E822 Undecided
+puts 0x3E495 Undecided
+fclose 0x80AFB Undecided
+fprintf 0x579FE Undecided
+fread 0x7C806 Undecided
+fwrite 0x5C128 Undecided
+memcpy 0x80DA1 Undecided
+puts 0x3E4A1 Undecided
+fclose 0x82062 Undecided
+fprintf 0x57B65 Undecided
+fwrite 0x3DB53 Undecided
+fwrite 0x7AB98 Undecided
+memcpy 0x80E39 Undecided
+puts 0x3E4AD Undecided
+fclose 0x820E8 Undecided
+fprintf 0x57BA9 Undecided
+fwrite 0x3DB83 Undecided
+fwrite 0x7CDBF Undecided
+memmove 0x3F797 Undecided
+puts 0x3E4B9 Undecided
+fopen 0x82093 Undecided
+fprintf 0x57BF1 Undecided
+fwrite 0x3DBC5 Undecided
+fwrite 0x7CE01 Undecided
+memset 0x41352 Undecided
+puts 0x3E4C5 Undecided
+fprintf 0x3E37C Undecided
+fprintf 0x57C4B Undecided
+fwrite 0x3DC07 Undecided
+fwrite 0x7CE63 Undecided
+memset 0x41366 Undecided
+puts 0x3E4D1 Undecided
+fprintf 0x3E409 Undecided
+fprintf 0x57CA1 Undecided
+fwrite 0x3DC45 Undecided
+fwrite 0x7CEA5 Undecided
+memset 0x4860B Undecided
+puts 0x3E4DD Undecided
+fprintf 0x3E57D Undecided
+fprintf 0x57D0D Undecided
+fwrite 0x3DCED Undecided
+fwrite 0x7CEE7 Undecided
+memset 0x7DDE2 Undecided
+puts 0x3E4E9 Undecided
+fprintf 0x3F335 Undecided
+fprintf 0x57D5B Undecided
+fwrite 0x3DD13 Undecided
+fwrite 0x7CF25 Undecided
+memset 0x80B68 Undecided
+puts 0x3E4F5 Undecided
+fprintf 0x3F7B9 Undecided
+fprintf 0x57EB1 Undecided
+fwrite 0x3DD55 Undecided
+fwrite 0x7CFD6 Undecided
+memset 0x81875 Undecided
+puts 0x3E501 Undecided
+fprintf 0x3F7E9 Undecided
+fprintf 0x585A4 Undecided
+fwrite 0x3DD97 Undecided
+fwrite 0x7CFFC Undecided
+printf 0x3DE88 Undecided
+puts 0x3E50D Undecided
+fprintf 0x3F8E3 Undecided
+fprintf 0x585C0 Undecided
+fwrite 0x3DDD9 Undecided
+fwrite 0x7D03E Undecided
+printf 0x3E2F6 Undecided
+puts 0x3E523 Undecided
+fprintf 0x4083D Undecided
+fprintf 0x58617 Undecided
+fwrite 0x3DEC6 Undecided
+fwrite 0x7D080 Undecided
+printf 0x3E44D Undecided
+puts 0x3E52F Undecided
+fprintf 0x40958 Undecided
+fprintf 0x58633 Undecided
+fwrite 0x3DF2B Undecided
+fwrite 0x7D0C2 Undecided
+printf 0x3EFCF Undecided
+puts 0x3E53B Undecided
+fprintf 0x40DC8 Undecided
+fprintf 0x58697 Undecided
+fwrite 0x3DFE1 Undecided
+fwrite 0x7F7FC Undecided
+printf 0x3F057 Undecided
+puts 0x3E547 Undecided
+fprintf 0x41A4C Undecided
+fprintf 0x586B3 Undecided
+fwrite 0x3E049 Undecided
+fwrite 0x7FB69 Undecided
+printf 0x3F0D6 Undecided
+puts 0x3EB61 Undecided
+fprintf 0x423AC Undecided
+fprintf 0x5870F Undecided
+fwrite 0x3E0B1 Undecided
+fwrite 0x7FBB1 Undecided
+printf 0x3F104 Undecided
+puts 0x3F203 Undecided
+fprintf 0x4258E Undecided
+fprintf 0x5874D Undecided
+fwrite 0x3E119 Undecided
+fwrite 0x7FC44 Undecided
+printf 0x3F14C Undecided
+puts 0x3F228 Undecided
+fprintf 0x4315A Undecided
+fprintf 0x587B4 Undecided
+fwrite 0x3E181 Undecided
+fwrite 0x7FC82 Undecided
+printf 0x3F165 Undecided
+puts 0x4DA88 Undecided
+fprintf 0x431E0 Undecided
+fprintf 0x58837 Undecided
+fwrite 0x3E1E9 Undecided
+fwrite 0x7FCC0 Undecided
+printf 0x3F1AB Undecided
+puts 0x4F522 Undecided
+fprintf 0x44BAA Undecided
+fprintf 0x588B7 Undecided
+fwrite 0x3ED39 Undecided
+fwrite 0x7FCFE Undecided
+printf 0x3F2DB Undecided
+puts 0x4F547 Undecided
+fprintf 0x44BDF Undecided
+fprintf 0x58C19 Undecided
+fwrite 0x3F563 Undecided
+fwrite 0x7FDFB Undecided
+printf 0x41131 Undecided
+puts 0x82388 Undecided
+fprintf 0x44F15 Undecided
+fprintf 0x5A254 Undecided
+fwrite 0x3F57E Undecided
+fwrite 0x7FE8D Undecided
+printf 0x4D2D3 Undecided
+puts 0x826D6 Undecided
+fprintf 0x45526 Undecided
+fprintf 0x5A665 Undecided
+fwrite 0x3F618 Undecided
+fwrite 0x7FECE Undecided
+printf 0x4DA24 Undecided
+snprintf 0x3E5C4 Undecided
+fprintf 0x46E2C Undecided
+fprintf 0x5A6DF Undecided
+fwrite 0x3F63E Undecided
+fwrite 0x7FF0F Undecided
+printf 0x4DA77 Undecided
+sprintf 0x46554 Undecided
+fprintf 0x47205 Undecided
+fprintf 0x5A74B Undecided
+fwrite 0x3F67F Undecided
+fwrite 0x7FF92 Undecided
+printf 0x4DB02 Undecided
+sprintf 0x4C19A Undecided
+fprintf 0x4766F Undecided
+fprintf 0x5A776 Undecided
+fwrite 0x405EE Undecided
+fwrite 0x80249 Undecided
+printf 0x4DB47 Undecided
+sprintf 0x4C373 Undecided
+fprintf 0x48889 Undecided
+fprintf 0x5A86F Undecided
+fwrite 0x408B0 Undecided
+fwrite 0x80518 Undecided
+printf 0x4F44D Undecided
+sprintf 0x4C392 Undecided
+fprintf 0x49114 Undecided
+fprintf 0x5A9BA Undecided
+fwrite 0x40B34 Undecided
+fwrite 0x80546 Undecided
+printf 0x4F462 Undecided
+sprintf 0x4C3B1 Undecided
+fprintf 0x49201 Undecided
+fprintf 0x5AAE9 Undecided
+fwrite 0x40D59 Undecided
+fwrite 0x80574 Undecided
+printf 0x4F477 Undecided
+sprintf 0x54F88 Undecided
+fprintf 0x4924F Undecided
+fprintf 0x5ABD7 Undecided
+fwrite 0x40D83 Undecided
+fwrite 0x805A2 Undecided
+printf 0x4F48B Undecided
+sprintf 0x55170 Undecided
+fprintf 0x492C0 Undecided
+fprintf 0x5AC1A Undecided
+fwrite 0x4171C Undecided
+fwrite 0x805D0 Undecided
+printf 0x4F49F Undecided
+sprintf 0x56B97 Undecided
+fprintf 0x4933C Undecided
+fprintf 0x5AC50 Undecided
+fwrite 0x43C86 Undecided
+fwrite 0x8060A Undecided
+printf 0x4F4C7 Undecided
+sprintf 0x57617 Undecided
+fprintf 0x4958D Undecided
+fprintf 0x5ADCC Undecided
+fwrite 0x442CF Undecided
+fwrite 0x80A3B Undecided
+printf 0x4F4E4 Undecided
+sprintf 0x57640 Undecided
+fprintf 0x496A3 Undecided
+fprintf 0x5B865 Undecided
+fwrite 0x451B6 Undecided
+fwrite 0x80DCE Undecided
+printf 0x4F4FD Undecided
+sprintf 0x57663 Undecided
+fprintf 0x496E8 Undecided
+fprintf 0x5B8AA Undecided
+fwrite 0x453C2 Undecided
+fwrite 0x80E69 Undecided
+printf 0x4F516 Undecided
+sprintf 0x8086B Undecided
+fprintf 0x4B090 Undecided
+fprintf 0x5B8E1 Undecided
+fwrite 0x46B6F Undecided
+fwrite 0x810CB Undecided
+printf 0x4F53B Undecided
+sprintf 0x808B2 Undecided
+fprintf 0x4BFB7 Undecided
+fprintf 0x5B90B Undecided
+fwrite 0x48655 Undecided
+fwrite 0x810ED Undecided
+printf 0x4F55C Undecided
+sprintf 0x822D0 Undecided
+fprintf 0x4C0CC Undecided
+fprintf 0x5B9B7 Undecided
+fwrite 0x48788 Undecided
+fwrite 0x81150 Undecided
+printf 0x4F571 Undecided
+sprintf 0x82616 Undecided
+fprintf 0x4F1A1 Undecided
+fprintf 0x5B9F3 Undecided
+fwrite 0x48903 Undecided
+fwrite 0x81182 Undecided
+printf 0x4F586 Undecided
+strcat 0x56C94 Undecided
+fprintf 0x4F1CC Undecided
+fprintf 0x5BAD8 Undecided
+fwrite 0x48AB5 Undecided
+fwrite 0x8122A Undecided
+printf 0x4F5FC Undecided
+strcat 0x56F54 Undecided
+fprintf 0x4F1F2 Undecided
+fprintf 0x5BBB4 Undecided
+fwrite 0x48B0F Undecided
+fwrite 0x81955 Undecided
+printf 0x4F63A Undecided
+strcat 0x56F73 Undecided
+fprintf 0x4F210 Undecided
+fprintf 0x5BC16 Undecided
+fwrite 0x49B87 Undecided
+fwrite 0x8199A Undecided
+printf 0x4F69D Undecided
+strcat 0x56FA8 Undecided
+fprintf 0x4F228 Undecided
+fprintf 0x5BC65 Undecided
+fwrite 0x49D69 Undecided
+fwrite 0x81A08 Undecided
+printf 0x4FC6D Undecided
+strcat 0x5712D Undecided
+fprintf 0x4F29B Undecided
+fprintf 0x5BCB1 Undecided
+fwrite 0x49DB6 Undecided
+fwrite 0x81A2A Undecided
+printf 0x52DA3 Undecided
+strcat 0x5715A Undecided
+fprintf 0x4F2E6 Undecided
+fprintf 0x5BDAC Undecided
+fwrite 0x4A2F7 Undecided
+fwrite 0x81AE2 Undecided
+printf 0x5A5A1 Undecided
+strcat 0x571D1 Undecided
+fprintf 0x4F300 Undecided
+fprintf 0x5C8CE Undecided
+fwrite 0x4A912 Undecided
+fwrite 0x81B2C Undecided
+printf 0x5ACED Undecided
+strcat 0x6D74B Undecided
+fprintf 0x4F342 Undecided
+fprintf 0x5CA3B Undecided
+fwrite 0x4A954 Undecided
+fwrite 0x81B51 Undecided
+printf 0x5AD0D Undecided
+strcat 0x807A0 Undecided
+fprintf 0x4F38C Undecided
+fprintf 0x6D08D Undecided
+fwrite 0x4A97F Undecided
+lseek 0x80BEF Undecided
+printf 0x5B17F Undecided
+strcpy 0x4EBB2 Undecided
+fprintf 0x4F402 Undecided
+fprintf 0x6D0EA Undecided
+fwrite 0x4ADCD Undecided
+malloc 0x3E9BD Undecided
+printf 0x5B35F Undecided
+strcpy 0x4ED73 Undecided
+fprintf 0x4FCE7 Undecided
+fprintf 0x6D46D Undecided
+fwrite 0x4AE2B Undecided
+memcpy 0x3DCD6 Undecided
+printf 0x5B373 Undecided
+strcpy 0x6EE1D Undecided
+fprintf 0x5028F Undecided
+fprintf 0x70D31 Undecided
+fwrite 0x4B1A7 Undecided
+memcpy 0x3E9D0 Undecided
+printf 0x5B387 Undecided
+strcpy 0x806F7 Undecided
+fprintf 0x50309 Undecided
+fprintf 0x79FCC Undecided
+fwrite 0x4B1D1 Undecided
+memcpy 0x47D34 Undecided
+printf 0x5BA1C Undecided
+strcpy 0x821BC Undecided
+fprintf 0x5042D Undecided
+fprintf 0x7B470 Undecided
+fwrite 0x4B1FB Undecided
+memcpy 0x49386 Undecided
+printf 0x5CA78 Undecided
+strcpy 0x82501 Undecided
+fprintf 0x51522 Undecided
+fprintf 0x7B8C6 Undecided
+fwrite 0x4B458 Undecided
+memcpy 0x493CF Undecided
+printf 0x5CAF5 Undecided
+unlink 0x80A6C Undecided
+fprintf 0x5187D Undecided
+fprintf 0x7C2C5 Undecided
+fwrite 0x4B536 Undecided
+memcpy 0x4DDE7 Undecided
+printf 0x5D2C9 Undecided
+write 0x4C1CF Undecided
+fprintf 0x51AC8 Undecided
+fprintf 0x7C30F Undecided
+fwrite 0x4B607 Undecided
+memcpy 0x4DE10 Undecided
+printf 0x5D346 Undecided
+fprintf 0x52DC1 Undecided
+fprintf 0x7C966 Undecided
+fwrite 0x4B6CF Undecided
+memcpy 0x52102 Undecided
+printf 0x5D35E Undecided
+fprintf 0x52EF8 Undecided
+fprintf 0x7D537 Undecided
+fwrite 0x4BB57 Undecided
+memcpy 0x52129 Undecided
+printf 0x6EEDE Undecided
 
 
  memcheck-out-of-bound:

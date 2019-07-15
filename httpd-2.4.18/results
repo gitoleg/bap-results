@@ -3,41 +3,67 @@ Size: 873K
  Forbidden:
  Time: 00:00:30
 
-  __errno_location  freopen
-  abort             getenv
-  atoi              printf
-  atol              putchar
-  exit              puts
-  fprintf           sscanf
+  __errno_location Confirmed
+  abort  Confirmed
+  atoi  Confirmed
+  atol  Confirmed
+  exit  Confirmed
+  fprintf  Confirmed
+  freopen  Confirmed
+  getenv  Confirmed
+  printf  Confirmed
+  putchar  Confirmed
+  puts  Confirmed
+  sscanf  Confirmed
 
  Recursive:
  Time: 00:00:33
 
-  ap_abort_on_oom           parse_errorlog_item
-  ap_add_module_commands    process_resource_config_fnmatch
-  ap_die                    process_resource_config_nofnmatch
-  ap_rgetline_core          sub_43e8ec
-  ap_rxplus_exec            sub_4404b0
-  ap_soak_end_container     sub_45aa86
-  ap_strcasecmp_match       sub_45da01
-  ap_strcmp_match           sub_478d3d
-  child_main                sub_48384a
-  clean_child_exit          sub_483ce2
-  count_directives_sub      sub_486162
+  ap_abort_on_oom Undecided
+  ap_add_module_commands  Undecided
+  ap_die  Undecided
+  ap_rgetline_core  Undecided
+  ap_rxplus_exec  Undecided
+  ap_soak_end_container  Undecided
+  ap_strcasecmp_match  Undecided
+  ap_strcmp_match  Undecided
+  child_main  Undecided
+  clean_child_exit  Undecided
+  count_directives_sub  Undecided
+  parse_errorlog_item  Undecided
+  process_resource_config_fnmatch  Undecided
+  process_resource_config_nofnmatch  Undecided
+  sub_43e8ec  Undecided
+  sub_4404b0  Undecided
+  sub_45aa86  Undecided
+  sub_45da01  Undecided
+  sub_478d3d  Undecided
+  sub_48384a  Undecided
+  sub_483ce2  Undecided
+  sub_486162  Undecided
 
- Complex:
+Complex:
  Time: 00:00:49
 
-  ap_core_output_filter                  ap_select_protocol
-  ap_directory_walk                      ap_set_byterange
-  ap_get_mime_headers_core               ap_setup_client_block
-  ap_http_filter                         basic_http_header
-  ap_process_async_request               default_handler event_check_config
-  ap_process_request_internal            log_error_core
-  ap_read_request                        sub_483ce2
-  ap_scan_script_header_err_core_ex
+  ap_core_output_filter  Undecided
+  ap_directory_walk   Undecided
+  ap_get_mime_headers_core  Undecided
+  ap_http_filter  Undecided
+  ap_process_async_request  Undecided
+  ap_process_request_internal  Undecided
+  ap_read_request  Undecided
+  ap_scan_script_header_err_core_ex  Undecided
+  ap_setup_client_block  Undecided
+  basic_http_header  Undecided
+  event_check_config  Undecided
+  log_error_core  Undecided
+  sub_483ce2  Undecided
+  ap_select_protocol  Undecided
+  ap_set_byterange  Undecided
+  default_handler  Undecided
 
- Non-structural:
+
+Non-structural:
  Time: 00:00:51
 
   not found
@@ -45,65 +71,178 @@ Size: 873K
  Null:
  Time: 01:36:00
 
-regsub_core 0x42FB09
-regsub_core 0x42FCD4
-ap_make_dirstr_parent 0x4303AA
-ap_getword_conf 0x430851
-ap_cfg_getline_core 0x430F6F
-ap_varbuf_cfg_getline 0x431192
-ap_get_sload 0x434D51
-ap_core_child_status 0x436933
-ap_reopen_scoreboard 0x43954A
-ap_copy_scoreboard_worker 0x439FEF
-ap_get_server_protocol 0x4468DF
-prep_walk_cache 0x44E371
-ap_expr_eval_word 0x45511F
-ap_expr_eval 0x4566BE
-find_accf_name 0x468A05
-ap_reclaim_child_processes 0x46B0CF
-ap_relieve_child_processes 0x46B238
-ap_rxplus_compile 0x46DF26
-ap_expr_yylex 0x46FC25
-ap_expr_yylex 0x46FD1E
-ap_expr_yy_load_buffer_state 0x471983
-ap_http_filter 0x479AD4
-send_all_header_fields 0x47BCF4
-basic_http_header 0x47C437
-ap_byterange_filter 0x48053D
+regsub_core 0x42FB09 Undecided
+regsub_core 0x42FCD4 Undecided
+ap_make_dirstr_parent 0x4303AA  Undecided
+ap_getword_conf 0x430851  Undecided
+ap_cfg_getline_core 0x430F6F  Undecided
+ap_varbuf_cfg_getline 0x431192  Undecided
+ap_get_sload 0x434D51  Undecided
+ap_core_child_status 0x436933  Undecided
+ap_reopen_scoreboard 0x43954A  Undecided
+ap_copy_scoreboard_worker 0x439FEF  Undecided
+ap_get_server_protocol 0x4468DF  Undecided
+prep_walk_cache 0x44E371  Undecided
+ap_expr_eval_word 0x45511F  Undecided
+ap_expr_eval 0x4566BE  Undecided
+find_accf_name 0x468A05  Undecided
+ap_reclaim_child_processes 0x46B0CF  Undecided
+ap_relieve_child_processes 0x46B238  Undecided
+ap_rxplus_compile 0x46DF26  Undecided
+ap_expr_yylex 0x46FC25  Undecided
+ap_expr_yylex 0x46FD1E  Undecided
+ap_expr_yy_load_buffer_state 0x471983  Undecided
+ap_http_filter 0x479AD4  Undecided
+send_all_header_fields 0x47BCF4  Undecided
+basic_http_header 0x47C437  Undecided
+ap_byterange_filter 0x48053D  Undecided
 
 
 Unused:
  Time: 00:54:43
-  atoi    0x4360B9  memcpy  0x4348FB  memset  0x4491C6  printf  0x45F2DD  puts    0x42BD3A
-  atoi    0x436157  memcpy  0x436DB7  memset  0x44E4CE  printf  0x45F307  puts    0x45F4DA
-  atoi    0x436353  memcpy  0x439FEF  memset  0x45CE3F  printf  0x45F316  puts    0x46BF4B
-  atoi    0x4364F5  memcpy  0x43A744  memset  0x462448  printf  0x45F340  puts    0x46BF7F
-  atoi    0x4734E2  memcpy  0x43A786  memset  0x471F30  printf  0x45F34F  puts    0x46BFC2
-  atoi    0x48958D  memcpy  0x43AA49  memset  0x47269E  printf  0x45F379  puts    0x46C00D
-  atoi    0x4895DC  memcpy  0x43AA71  memset  0x47275E  printf  0x45F388  puts    0x46C057
-  atoi    0x48962B  memcpy  0x43BF9E  memset  0x48235C  printf  0x45F3B2  strcat  0x46289B
-  atoi    0x489789  memcpy  0x43BFC8  memset  0x4853DB  printf  0x45F3C1  strchr  0x46D836
-  atoi    0x4897D8  memcpy  0x44E5D7  memset  0x488104  printf  0x45F439  strchr  0x46D858
-  atoi    0x489827  memcpy  0x44E6D4  memset  0x488319  printf  0x45F460  strcmp  0x43F506
-  atoi    0x489876  memcpy  0x44F4A2  printf  0x42BB1B  printf  0x45F510  strcmp  0x45D5BD
-  fprintf 0x42BE42  memcpy  0x44FA4C  printf  0x42BB44  putchar 0x45F3CB  strcpy  0x46E4C2
-  fprintf 0x4723E5  memcpy  0x44FABD  printf  0x42BB9F  puts    0x42BB76  strlen  0x43A3E4
-  getenv  0x457424  memcpy  0x4520F9  printf  0x42BBF3  puts    0x42BC81  strlen  0x447001
-  getenv  0x457446  memcpy  0x463F50  printf  0x42BC0A  puts    0x42BC8B  strlen  0x45605B
-  getpid  0x44B118  memcpy  0x463FAA  printf  0x42BC23  puts    0x42BC95  strlen  0x46BC5C
-  getpid  0x46C386  memcpy  0x4671F4  printf  0x42BC45  puts    0x42BCAE  strlen  0x47C437
-  getpid  0x485A2D  memcpy  0x46725A  printf  0x42BC5E  puts    0x42BCB8  strlen  0x47C467
-  memcpy  0x42FE8C  memcpy  0x4672C2  printf  0x42BC72  puts    0x42BCC2  strncpy 0x466987
-  memcpy  0x432B17  memcpy  0x46E478  printf  0x42BCA4  puts    0x42BCCC  strrchr 0x46D87A
-  memcpy  0x432B53  memcpy  0x46E49D  printf  0x42BCF4  puts    0x42BCD6  strrchr 0x46D89C
-  memcpy  0x432B8F  memcpy  0x471318  printf  0x45A8EE  puts    0x42BCE0  strstr  0x46D8C1
-  memcpy  0x432BCB  memcpy  0x487950  printf  0x45F1BA  puts    0x42BCFE  strstr  0x46D8E6
-  memcpy  0x432C43  memmove 0x431108  printf  0x45F227  puts    0x42BD08  strtod  0x4898CC
-  memcpy  0x433263  memset  0x42D734  printf  0x45F251  puts    0x42BD12
-  memcpy  0x4332AB  memset  0x439630  printf  0x45F272  puts    0x42BD1C
-  memcpy  0x434632  memset  0x439677  printf  0x45F2A4  puts    0x42BD26
-  memcpy  0x434868  memset  0x4396F6  printf  0x45F2CE  puts    0x42BD30
+  atoi    0x4360B9 Undecided
+  atoi    0x436157 Undecided
+  atoi    0x436353 Undecided
+  atoi    0x4364F5 Undecided
+  atoi    0x4734E2 Undecided
+  atoi    0x48958D Undecided
+  atoi    0x4895DC Undecided
+  atoi    0x48962B Undecided
+  atoi    0x489789 Undecided
+  atoi    0x4897D8 Undecided
+  atoi    0x489827 Undecided
+  atoi    0x489876 Undecided
+  fprintf 0x42BE42 Confirmed
+  fprintf 0x4723E5 Confirmed
+  getenv  0x457424 Undecided
+  getenv  0x457446 Undecided
+  getpid  0x44B118 Undecided
+  getpid  0x46C386 Undecided
+  getpid  0x485A2D Undecided
+  memcpy  0x42FE8C Confirmed
+  memcpy  0x432B17 Confirmed
+  memcpy  0x432B53 Confirmed
+  memcpy  0x432B8F Confirmed
+  memcpy  0x432BCB Confirmed
+  memcpy  0x432C43 Confirmed
+  memcpy  0x433263 Confirmed
+  memcpy  0x4332AB Confirmed
+  memcpy  0x434632 Confirmed
+  memcpy  0x434868 Confirmed
+  memcpy  0x4348FB Confirmed
+  memcpy  0x436DB7 Confirmed
+  memcpy  0x439FEF Confirmed
+  memcpy  0x43A744 Confirmed
+  memcpy  0x43A786 Confirmed
+  memcpy  0x43AA49 Confirmed
+  memcpy  0x43AA71 Confirmed
+  memcpy  0x43BF9E Confirmed
+  memcpy  0x43BFC8 Confirmed
+  memcpy  0x44E5D7 Confirmed
+  memcpy  0x44E6D4 Confirmed
+  memcpy  0x44F4A2 Confirmed
+  memcpy  0x44FA4C Confirmed
+  memcpy  0x44FABD Confirmed
+  memcpy  0x4520F9 Confirmed
+  memcpy  0x463F50 Confirmed
+  memcpy  0x463FAA Confirmed
+  memcpy  0x4671F4 Confirmed
+  memcpy  0x46725A Confirmed
+  memcpy  0x4672C2 Confirmed
+  memcpy  0x46E478 Confirmed
+  memcpy  0x46E49D Confirmed
+  memcpy  0x471318 Confirmed
+  memcpy  0x487950 Confirmed
+  memmove 0x431108 Undecided
+  memset  0x42D734 Confirmed
+  memset  0x439630 Confirmed
+  memset  0x439677 Confirmed
+  memset  0x4396F6 Confirmed
+  memset  0x4491C6 Confirmed
+  memset  0x44E4CE Confirmed
+  memset  0x45CE3F Confirmed
+  memset  0x462448 Confirmed
+  memset  0x471F30 Confirmed
+  memset  0x47269E Confirmed
+  memset  0x47275E Confirmed
+  memset  0x48235C Confirmed
+  memset  0x4853DB Confirmed
+  memset  0x488104 Confirmed
+  memset  0x488319 Confirmed
+  printf  0x42BB1B Confirmed
+  printf  0x42BB44 Confirmed
+  printf  0x42BB9F Confirmed
+  printf  0x42BBF3 Confirmed
+  printf  0x42BC0A Confirmed
+  printf  0x42BC23 Confirmed
+  printf  0x42BC45 Confirmed
+  printf  0x42BC5E Confirmed
+  printf  0x42BC72 Confirmed
+  printf  0x42BCA4 Confirmed
+  printf  0x42BCF4 Confirmed
+  printf  0x45A8EE Confirmed
+  printf  0x45F1BA Confirmed
+  printf  0x45F227 Confirmed
+  printf  0x45F251 Confirmed
+  printf  0x45F272 Confirmed
+  printf  0x45F2A4 Confirmed
+  printf  0x45F2CE Confirmed
+  printf  0x45F2DD Confirmed
+  printf  0x45F307 Confirmed
+  printf  0x45F316 Confirmed
+  printf  0x45F340 Confirmed
+  printf  0x45F34F Confirmed
+  printf  0x45F379 Confirmed
+  printf  0x45F388 Confirmed
+  printf  0x45F3B2 Confirmed
+  printf  0x45F3C1 Confirmed
+  printf  0x45F439 Confirmed
+  printf  0x45F460 Confirmed
+  printf  0x45F510 Confirmed
+  putchar 0x45F3CB Confirmed
+  puts    0x42BB76 Confirmed
+  puts    0x42BC81 Confirmed
+  puts    0x42BC8B Confirmed
+  puts    0x42BC95 Confirmed
+  puts    0x42BCAE Confirmed
+  puts    0x42BCB8 Confirmed
+  puts    0x42BCC2 Confirmed
+  puts    0x42BCCC Confirmed
+  puts    0x42BCD6 Confirmed
+  puts    0x42BCE0 Confirmed
+  puts    0x42BCFE Confirmed
+  puts    0x42BD08 Confirmed
+  puts    0x42BD12 Confirmed
+  puts    0x42BD1C Confirmed
+  puts    0x42BD26 Confirmed
+  puts    0x42BD30 Confirmed
+  puts    0x42BD3A Confirmed
+  puts    0x45F4DA Confirmed
+  puts    0x46BF4B Confirmed
+  puts    0x46BF7F Confirmed
+  puts    0x46BFC2 Confirmed
+  puts    0x46C00D Confirmed
+  puts    0x46C057 Confirmed
+  strcat  0x46289B Undecided
+  strchr  0x46D836 Undecided
+  strchr  0x46D858 Undecided
+  strcmp  0x43F506 Undecided
+  strcmp  0x45D5BD Undecided
+  strcpy  0x46E4C2 Undecided
+  strlen  0x43A3E4 Undecided
+  strlen  0x447001 Undecided
+  strlen  0x45605B Undecided
+  strlen  0x46BC5C Undecided
+  strlen  0x47C437 Undecided
+  strlen  0x47C467 Undecided
+  strncpy 0x466987 Undecided
+  strrchr 0x46D87A Undecided
+  strrchr 0x46D89C Undecided
+  strstr  0x46D8C1 Undecided
+  strstr  0x46D8E6 Undecided
+  strtod  0x4898CC Undecided
+
 
  Value-was-used-before-check:
  Time: 01:04:41
- Total: 15
+ Total: 17

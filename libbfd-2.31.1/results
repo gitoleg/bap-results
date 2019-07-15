@@ -3,217 +3,786 @@ Size: 6.0M
 Forbidden:
 Time: 00:00:55
 
-__errno_location  fflush       getenv
-abort             fprintf      printf
-ctime             fputc        sprintf
-exit              fputs        sscanf
-fclose            fread        time
-ferror            fwrite       vfprintf
-
+__errno_location  Confirmed
+abort  Confirmed
+ctime  Confirmed
+exit  Confirmed
+fclose  Confirmed
+ferror  Confirmed
+fflush  Confirmed
+fprintf  Confirmed
+fputc  Confirmed
+fputs  Confirmed
+fread  Confirmed
+fwrite  Confirmed
+getenv  Confirmed
+printf  Confirmed
+sprintf  Confirmed
+sscanf  Confirmed
+time  Confirmed
+vfprintf  Confirmed
 
 Recursive:
  Time: 00:00:56
 
-  _bfd_archive_64_bit_slurp_armap          elf_gc_propagate_vtable_entries_used     sub_9f530
-  _bfd_coff_final_link                     elf_i386_finish_dynamic_symbol           sub_ac1f8
-  _bfd_coff_gc_mark.part.11.constprop.14   elf_x86_64_finish_dynamic_symbol         sub_ac220
-  _bfd_elf_adjust_dynamic_symbol           eval_symbol                              sub_ad7b6
-  _bfd_elf_compute_section_file_positions  find_abstract_instance.isra.29           sub_afb62
-  _bfd_elf_gc_mark                         higher_prime_index                       sub_b14eb
-  _bfd_elf_get_property                    internal_cplus_demangle                  sub_b3ac0
-  _bfd_elf_make_section_from_shdr          on_needed_list                           sub_b4000
-  _bfd_elf_write_object_contents           qualifier_string read_attribute_value    sub_b473f
-  _bfd_get_elt_at_filepos                  rsrc_compute_region_sizes                sub_b49b8
-  bfd_cache_lookup_worker                  rsrc_count_directory                     sub_b4b35
-  bfd_compress_section_contents            rsrc_parse_directory                     sub_b545e
-  bfd_elf_string_from_elf_section          rsrc_print_resource_directory            sub_b9fe7
-  bfd_errmsg                               rsrc_sort_entries.part.8                 sub_bc4d6
-  bfd_section_from_shdr                    rsrc_write_directory                     sub_c4618
-  bfd_set_error                            string_need                              sub_c4640
-  cplus_demangle                           sub_4c446                                sub_c5bd6
-  cplus_demangle_mangled_name              sub_577b0                                sub_c7f22
-  cplus_demangle_type                      sub_5b7a1                                sub_c987b
-  d_bare_function_type                     sub_5cb38                                sub_d1cd8
-  d_encoding                               sub_5f9a0                                sub_e9bb1
-  d_expression_1                           sub_73e65
-  d_exprlist                               sub_73fc3
-  d_find_pack                              sub_758d0
-  d_name                                   sub_7b6e8
-  d_print_array_type.isra.10               sub_7b718
-  d_print_mod_list                         sub_81dcb
-  d_template_args_1                        sub_81e0a
-  demangle_qualified                       sub_92288
-  demangle_template_template_parm          sub_96fd0
-  demangle_template_value_parm             sub_97009
-  dlang_identifier                         sub_970a0
-  dlang_parse_mangle                       sub_970e9
-  dlang_parse_qualified                    sub_9bd4b
+  _bfd_archive_64_bit_slurp_armap Undecided
+  _bfd_coff_final_link Undecided
+  _bfd_coff_gc_mark.part.11.constprop.14 Undecided
+  _bfd_elf_adjust_dynamic_symbol Undecided
+  _bfd_elf_compute_section_file_positions Undecided
+  _bfd_elf_gc_mark Undecided
+  _bfd_elf_get_property Undecided
+  _bfd_elf_make_section_from_shdr Undecided
+  _bfd_elf_write_object_contents Undecided
+  _bfd_get_elt_at_filepos Undecided
+  bfd_cache_lookup_worker Undecided
+  bfd_compress_section_contents Undecided
+  bfd_elf_string_from_elf_section Undecided
+  bfd_errmsg Undecided
+  bfd_section_from_shdr Undecided
+  bfd_set_error Undecided
+  cplus_demangle Undecided
+  cplus_demangle_mangled_name Undecided
+  cplus_demangle_type Undecided
+  d_bare_function_type Undecided
+  d_encoding Undecided
+  d_expression_1 Undecided
+  d_exprlist Undecided
+  d_find_pack Undecided
+  d_name Undecided
+  d_print_array_type.isra.10 Undecided
+  d_print_mod_list Undecided
+  d_template_args_1 Undecided
+  demangle_qualified Undecided
+  demangle_template_template_parm Undecided
+  demangle_template_value_parm Undecided
+  dlang_identifier Undecided
+  dlang_parse_mangle Undecided
+  dlang_parse_qualified Undecided
+  sub_9f530 Undecided
+  sub_ac1f8 Undecided
+  sub_ac220 Undecided
+  sub_ad7b6 Undecided
+  sub_afb62 Undecided
+  sub_b14eb Undecided
+  sub_b3ac0 Undecided
+  sub_b4000 Undecided
+  sub_b473f Undecided
+  sub_b49b8 Undecided
+  sub_b4b35 Undecided
+  sub_b545e Undecided
+  sub_b9fe7 Undecided
+  sub_bc4d6 Undecided
+  sub_c4618 Undecided
+  sub_c4640 Undecided
+  sub_c5bd6 Undecided
+  sub_c7f22 Undecided
+  sub_c987b Undecided
+  sub_d1cd8 Undecided
+  sub_e9bb1 Undecided
+  sub_4c446 Undecided
+  sub_577b0 Undecided
+  sub_5b7a1 Undecided
+  sub_5cb38 Undecided
+  sub_5f9a0 Undecided
+  sub_73e65 Undecided
+  sub_73fc3 Undecided
+  sub_758d0 Undecided
+  sub_7b6e8 Undecided
+  sub_7b718 Undecided
+  sub_81dcb Undecided
+  sub_81e0a Undecided
+  sub_92288 Undecided
+  sub_96fd0 Undecided
+  sub_97009 Undecided
+  sub_970a0 Undecided
+  sub_970e9 Undecided
+  sub_9bd4b Undecided
+  elf_gc_propagate_vtable_entries_used  Undecided
+  elf_i386_finish_dynamic_symbol  Undecided
+  elf_x86_64_finish_dynamic_symbol Undecided
+  eval_symbol Undecided
+  find_abstract_instance.isra.29 Undecided
+  higher_prime_index Undecided
+  internal_cplus_demangle Undecided
+  on_needed_list Undecided
+  qualifier_string  Undecided
+  read_attribute_value Undecided
+  rsrc_compute_region_sizes Undecided
+  rsrc_count_directory Undecided
+  rsrc_parse_directory Undecided
+  rsrc_print_resource_directory Undecided
+  rsrc_sort_entries.part.8 Undecided
+  rsrc_write_directory Undecided
+  string_need Undecided
 
 Complex:
  Time: 00:01:24
 
-  _bfd_dwarf2_find_nearest_line              sub_42252      sub_a52c9
-  _bfd_elf_discard_section_eh_frame          sub_5aa32      sub_a60d9
-  _bfd_elf_map_sections_to_segments          sub_5cb38      sub_a7ab2
-  _bfd_elf_merge_symbol                      sub_5f9a0      sub_a9de9
-  _bfd_elf_slurp_version_tables              sub_6175a      sub_aa792
-  _bfd_generic_link_output_symbols           sub_631cc      sub_ac4d0
-  _bfd_link_section_stabs                    sub_67479      sub_b0b07
-  _bfd_merge_sections                        sub_682b9      sub_b272d
-  _bfd_stab_section_find_nearest_line        sub_6b212      sub_b5baf
-  _bfd_x86_elf_finish_dynamic_sections       sub_6c157      sub_b6dc9
-  _bfd_x86_elf_link_setup_gnu_properties     sub_6d6fb      sub_bb34a
-  bfd_elf_final_link                         sub_6f331      sub_bcb04
-  bfd_elf_link_add_symbols                   sub_6fcb9      sub_be4c2
-  bfd_elf_size_dynamic_sections              sub_70e55      sub_c21d9
-  coff_slurp_symbol_table.part.12            sub_72d7b      sub_c2b82
-  coff_slurp_symbol_table.part.6             sub_740da      sub_c48f0
-  d_expression_1                             sub_775d2      sub_caadd
-  d_exprlist                                 sub_79efa      sub_cd959
-  decode_line_info                           sub_81fe3      sub_d1682
-  demangle_arm_hp_template                   sub_8549b      sub_dc4a6
-  demangle_template                          sub_86bf6      sub_e4b5b
-  elf_i386_check_relocs                      sub_8870a
-  error_handler_internal                     sub_90fd6
-  eval_symbol                                sub_923e1
-  gnu_special                                sub_94948
-  internal_cplus_demangle                    sub_9a8fa
-  pex64_bfd_print_pdata_section              sub_9bd4b
-  read_attribute_value                       sub_9d5d2
-  scan_unit_for_symbols                      sub_9f530
+  _bfd_dwarf2_find_nearest_line Undecided
+  _bfd_elf_discard_section_eh_frame Undecided
+  _bfd_elf_map_sections_to_segments Undecided
+  _bfd_elf_merge_symbol Undecided
+  _bfd_elf_slurp_version_tables Undecided
+  _bfd_generic_link_output_symbols Undecided
+  _bfd_link_section_stabs Undecided
+  _bfd_merge_sections Undecided
+  _bfd_stab_section_find_nearest_line Undecided
+  _bfd_x86_elf_finish_dynamic_sections Undecided
+  _bfd_x86_elf_link_setup_gnu_properties Undecided
+  bfd_elf_final_link Undecided
+  bfd_elf_link_add_symbols Undecided
+  bfd_elf_size_dynamic_sections Undecided
+  coff_slurp_symbol_table.part.12 Undecided
+  coff_slurp_symbol_table.part.6 Undecided
+  d_expression_1 Undecided
+  d_exprlist Undecided
+  decode_line_info Undecided
+  demangle_arm_hp_template Undecided
+  demangle_template Undecided
+  elf_i386_check_relocs Undecided
+  error_handler_internal Undecided
+  eval_symbol Undecided
+  gnu_special Undecided
+  internal_cplus_demangle Undecided
+  pex64_bfd_print_pdata_section Undecided
+  read_attribute_value Undecided
+  scan_unit_for_symbols Undecided
+  sub_42252 Undecided
+  sub_5aa32 Undecided
+  sub_5cb38 Undecided
+  sub_5f9a0 Undecided
+  sub_6175a Undecided
+  sub_631cc Undecided
+  sub_67479 Undecided
+  sub_682b9 Undecided
+  sub_6b212 Undecided
+  sub_6c157 Undecided
+  sub_6d6fb Undecided
+  sub_6f331 Undecided
+  sub_6fcb9 Undecided
+  sub_70e55 Undecided
+  sub_72d7b Undecided
+  sub_740da Undecided
+  sub_775d2 Undecided
+  sub_79efa Undecided
+  sub_81fe3 Undecided
+  sub_8549b Undecided
+  sub_86bf6 Undecided
+  sub_8870a Undecided
+  sub_90fd6 Undecided
+  sub_923e1 Undecided
+  sub_94948 Undecided
+  sub_9a8fa Undecided
+  sub_9bd4b Undecided
+  sub_9d5d2 Undecided
+  sub_9f530 Undecided
+  sub_a52c9 Undecided
+  sub_a60d9 Undecided
+  sub_a7ab2 Undecided
+  sub_a9de9 Undecided
+  sub_aa792 Undecided
+  sub_ac4d0 Undecided
+  sub_b0b07 Undecided
+  sub_b272d Undecided
+  sub_b5baf Undecided
+  sub_b6dc9 Undecided
+  sub_bb34a Undecided
+  sub_bcb04 Undecided
+  sub_be4c2 Undecided
+  sub_c21d9 Undecided
+  sub_c2b82 Undecided
+  sub_c48f0 Undecided
+  sub_caadd Undecided
+  sub_cd959 Undecided
+  sub_d1682 Undecided
+  sub_dc4a6 Undecided
+  sub_e4b5b Undecided
 
 Non-structural:
  Time: 00:01:17
 
-_bfd_abort
-sub_bbcc1
-sub_e2b51
+_bfd_abort Undecided
+sub_bbcc1 Undecided
+sub_e2b51 Undecided
 
 Null:
  Time: 03:02:02
 
-_bfd_construct_extended_name_table 0x422CC
-bfd_elf_link_add_symbols 0x82440
-dlang_parse_qualified 0xDF4B4
-do_type 0xCF4A8
-elf_i386_finish_dynamic_symbol 0x9DB30
-elf_link_input_bfd 0x8889C
-elf_link_input_bfd 0x88CD3
-elf_merge_gnu_properties 0x90B40
-elf_x86_64_finish_dynamic_symbol 0x5AFF8
-nacl_modify_segment_map 0x6546A
-sec_merge_hash_lookup 0x4DFA2
+_bfd_construct_extended_name_table 0x422CC Undecided
+bfd_elf_link_add_symbols 0x82440 Undecided
+dlang_parse_qualified 0xDF4B4 Undecided
+do_type 0xCF4A8 Undecided
+elf_i386_finish_dynamic_symbol 0x9DB30 Undecided
+elf_link_input_bfd 0x8889C Undecided
+elf_link_input_bfd 0x88CD3 Undecided
+elf_merge_gnu_properties 0x90B40 Undecided
+elf_x86_64_finish_dynamic_symbol 0x5AFF8 Undecided
+nacl_modify_segment_map 0x6546A Undecided
+sec_merge_hash_lookup 0x4DFA2 Undecided
 
 
 Unused:
  Time: 03:51:55
-  close    0x4F8A7  fprintf  0xB1B87  fprintf  0xC945C  fwrite   0xC0CBA  memset   0x4906E
-  close    0x4F8EF  fprintf  0xB1C80  fprintf  0xC94A1  fwrite   0xC5A54  memset   0x508D9
-  close    0x4F9BD  fprintf  0xB1CE7  fprintf  0xC9547  fwrite   0xC888B  memset   0x52970
-  close    0xCBF74  fprintf  0xB1E78  fprintf  0xC95C0  fwrite   0xC88B6  memset   0x532FD
-  fclose   0x4F222  fprintf  0xB1EF3  fprintf  0xC95F1  fwrite   0xC88E1  memset   0x6CACE
-  fclose   0x5050E  fprintf  0xB1F95  fprintf  0xC9616  fwrite   0xC890C  memset   0x6CB90
-  fclose   0x5087E  fprintf  0xB215B  fprintf  0xC96B9  fwrite   0xC8937  memset   0x6CC00
-  fprintf  0x44AA5  fprintf  0xB21BF  fprintf  0xC974C  fwrite   0xC8CE1  memset   0x86CE5
-  fprintf  0x44AE6  fprintf  0xB21FE  fprintf  0xC979B  fwrite   0xC8D09  memset   0x875E7
-  fprintf  0x451EC  fprintf  0xB2255  fprintf  0xC97CC  fwrite   0xC8D31  memset   0x9D39C
-  fprintf  0x4A4AC  fprintf  0xB2287  fprintf  0xC97F1  fwrite   0xC8D59  memset   0xBB1DC
-  fprintf  0x5427E  fprintf  0xBBCE3  fprintf  0xC993B  fwrite   0xC8DAB  memset   0xE0D9D
-  fprintf  0x6B01A  fprintf  0xBBD0E  fprintf  0xC999C  getgid   0x4344F  memset   0xE3499
-  fprintf  0x70A05  fprintf  0xBBDDD  fprintf  0xC99E0  getuid   0x43446  memset   0xE483F
-  fprintf  0x70A33  fprintf  0xBBE65  fprintf  0xC9CBB  memcpy   0x4110D  printf   0xCBB9B
-  fprintf  0x75621  fprintf  0xBBE88  fprintf  0xC9D4A  memcpy   0x45E51  snprintf 0x40FF8
-  fprintf  0x7568D  fprintf  0xBBFA5  fprintf  0xC9DE8  memcpy   0x4618C  snprintf 0x410B2
-  fprintf  0x7570C  fprintf  0xBBFD7  fprintf  0xC9E0D  memcpy   0x461A3  snprintf 0x70E47
-  fprintf  0x757A8  fprintf  0xBC037  fprintf  0xC9F37  memcpy   0x46A2F  sprintf  0x40F1B
-  fprintf  0x757C7  fprintf  0xBC081  fprintf  0xCA030  memcpy   0x49905  sprintf  0x4F3C0
-  fprintf  0x75813  fprintf  0xBF8B9  fprintf  0xCA097  memcpy   0x4EBCB  sprintf  0x4F450
-  fprintf  0x7595C  fprintf  0xBF8DE  fprintf  0xCA0CF  memcpy   0x4ECA8  sprintf  0x4F493
-  fprintf  0x75A4F  fprintf  0xBF96C  fprintf  0xCA230  memcpy   0x4FFB3  sprintf  0x4F4C5
-  fprintf  0x75AA6  fprintf  0xBF9C2  fprintf  0xCA2AA  memcpy   0x52853  sprintf  0x5239D
-  fprintf  0x75ADC  fprintf  0xBFA0E  fprintf  0xCA34A  memcpy   0x547EC  sprintf  0x55A5C
-  fprintf  0x75C7A  fprintf  0xBFB7E  fprintf  0xCA50B  memcpy   0x54800  sprintf  0x564A3
-  fprintf  0x75CC5  fprintf  0xBFBAF  fprintf  0xCA56F  memcpy   0x56D95  sprintf  0x57D63
-  fprintf  0x75D10  fprintf  0xBFBD4  fprintf  0xCA5AE  memcpy   0x576FF  sprintf  0x57EB1
-  fprintf  0x75EE6  fprintf  0xBFBF9  fprintf  0xCA604  memcpy   0x59274  sprintf  0x6988F
-  fprintf  0xAD5CA  fprintf  0xBFC3B  fprintf  0xCA635  memcpy   0x59BF3  sprintf  0x699E4
-  fprintf  0xAD60C  fprintf  0xBFEAF  fprintf  0xCA6B4  memcpy   0x5A8AA  sprintf  0x6D1D1
-  fprintf  0xAD6D0  fprintf  0xBFED0  fprintf  0xE07D6  memcpy   0x5A984  sprintf  0x6D323
-  fprintf  0xAD86F  fprintf  0xBFF05  fprintf  0xE2BA4  memcpy   0x5AB95  sprintf  0x70BE0
-  fprintf  0xAD8FD  fprintf  0xBFFC3  fputc    0x45271  memcpy   0x5AF36  sprintf  0x71CCB
-  fprintf  0xAD94F  fprintf  0xC000B  fputc    0x457C8  memcpy   0x5B15A  sprintf  0x759C2
-  fprintf  0xAD98B  fprintf  0xC0258  fputc    0x7565C  memcpy   0x61E23  sprintf  0x75EA1
-  fprintf  0xADA17  fprintf  0xC02EF  fputc    0x75995  memcpy   0x61E78  sprintf  0x768A4
-  fprintf  0xADA47  fprintf  0xC101A  fputc    0x75CE2  memcpy   0x61ECD  sprintf  0x76AD9
-  fprintf  0xADA7B  fprintf  0xC59EA  fputc    0x75D27  memcpy   0x64001  sprintf  0x77EFE
-  fprintf  0xADB12  fprintf  0xC5A2C  fputc    0xAFFD0  memcpy   0x640BD  sprintf  0x77FC4
-  fprintf  0xADB94  fprintf  0xC5AF0  fputc    0xB0033  memcpy   0x68A2A  sprintf  0x7BE0E
-  fprintf  0xAFA3E  fprintf  0xC5C8F  fputc    0xB0052  memcpy   0x696A3  sprintf  0xA7941
-  fprintf  0xAFA9C  fprintf  0xC5D1D  fputc    0xB006F  memcpy   0x697C2  sprintf  0xA7D38
-  fprintf  0xAFAD9  fprintf  0xC5D6F  fputc    0xB008B  memcpy   0x76579  sprintf  0xACB3A
-  fprintf  0xAFBCE  fprintf  0xC5DAB  fputc    0xB00B0  memcpy   0x781A6  sprintf  0xACBB7
-  fprintf  0xAFCDE  fprintf  0xC5E37  fputc    0xB14E1  memcpy   0x793BD  sprintf  0xACC6D
-  fprintf  0xAFD16  fprintf  0xC5E67  fputc    0xB1AB8  memcpy   0x79438  sprintf  0xACCD2
-  fprintf  0xAFD43  fprintf  0xC5E9B  fputc    0xB1ADC  memcpy   0x817CC  sprintf  0xAFC56
-  fprintf  0xAFD76  fprintf  0xC5F32  fputc    0xB1AF9  memcpy   0x81D1D  sprintf  0xBE351
-  fprintf  0xAFF36  fprintf  0xC5FB4  fputc    0xB1B16  memcpy   0x8279C  sprintf  0xBE748
-  fprintf  0xAFF5B  fprintf  0xC7DFE  fputc    0xB1B38  memcpy   0x839D5  sprintf  0xC4F5A
-  fprintf  0xB00D5  fprintf  0xC7E5C  fputc    0xB1B55  memcpy   0x83A95  sprintf  0xC4FD7
-  fprintf  0xB0186  fprintf  0xC7E99  fputc    0xB1F06  memcpy   0x84340  sprintf  0xC508D
-  fprintf  0xB019B  fprintf  0xC7F8E  fputc    0xBBD52  memcpy   0x846B8  sprintf  0xC50F2
-  fprintf  0xB0221  fprintf  0xC809E  fputc    0xBFB65  memcpy   0x847D6  sprintf  0xC8016
-  fprintf  0xB025A  fprintf  0xC80D6  fputc    0xBFBBC  memcpy   0x85761  sprintf  0xCD287
-  fprintf  0xB0366  fprintf  0xC8103  fputc    0xBFBE1  memcpy   0x85774  sprintf  0xCDA73
-  fprintf  0xB0401  fprintf  0xC8136  fputc    0xBFC06  memcpy   0x857B2  sprintf  0xD3E63
-  fprintf  0xB043A  fprintf  0xC82F6  fputc    0xBFF12  memcpy   0x892E2  sprintf  0xD8E68
-  fprintf  0xB0452  fprintf  0xC831B  fputc    0xBFFA5  memcpy   0x8F208  sprintf  0xE2D30
-  fprintf  0xB046A  fprintf  0xC8495  fputc    0xC0018  memcpy   0x9315B  strcat   0x4F527
-  fprintf  0xB0482  fprintf  0xC8546  fputc    0xC8390  memcpy   0x9D370  strcat   0x4F532
-  fprintf  0xB049A  fprintf  0xC855B  fputc    0xC83F3  memcpy   0x9D732  strcat   0xE1B95
-  fprintf  0xB04B2  fprintf  0xC85E1  fputc    0xC8412  memcpy   0xA9847  strcat   0xE1C55
-  fprintf  0xB05CC  fprintf  0xC861A  fputc    0xC842F  memcpy   0xAB1F6  strcat   0xE1E27
-  fprintf  0xB05E4  fprintf  0xC8726  fputc    0xC844B  memcpy   0xAB54D  strcpy   0x40F76
-  fprintf  0xB05FC  fprintf  0xC87C1  fputc    0xC8470  memcpy   0xABA04  strcpy   0x4173A
-  fprintf  0xB0614  fprintf  0xC87FA  fputc    0xC93F5  memcpy   0xABFB2  strcpy   0x4AC48
-  fprintf  0xB062C  fprintf  0xC8812  fputc    0xC9437  memcpy   0xBAFF2  strcpy   0x58222
-  fprintf  0xB0644  fprintf  0xC882A  fputc    0xC9479  memcpy   0xC3551  strcpy   0x96AC4
-  fprintf  0xB065C  fprintf  0xC8842  fputc    0xC9871  memcpy   0xC37FE  strcpy   0xCDD43
-  fprintf  0xB0674  fprintf  0xC885A  fputc    0xC9BBE  memcpy   0xC392E  strcpy   0xCDEDD
-  fprintf  0xB068C  fprintf  0xC8872  fputc    0xC9E68  memcpy   0xC3E24  strcpy   0xD0EC7
-  fprintf  0xB06A4  fprintf  0xC8961  fputc    0xC9E8C  memcpy   0xC43D2  strlen   0x63D00
-  fprintf  0xB06E3  fprintf  0xC8979  fputc    0xC9EA9  memcpy   0xCD19E  strncat  0xD0CD3
-  fprintf  0xB071B  fprintf  0xC8991  fputc    0xC9EC6  memcpy   0xCD1F1  strncpy  0x5A2CF
-  fprintf  0xB073B  fprintf  0xC89A9  fputc    0xC9EE8  memcpy   0xCD25C  strncpy  0x5A2E0
-  fprintf  0xB0763  fprintf  0xC89C1  fputc    0xC9F05  memcpy   0xCD39D  strncpy  0x5A475
-  fprintf  0xB078B  fprintf  0xC89D9  fputc    0xC9F44  memcpy   0xCEC2C  strncpy  0x5A486
-  fprintf  0xB07B3  fprintf  0xC89F1  fputc    0xCA2BC  memcpy   0xCEDDC  strncpy  0x7827A
-  fprintf  0xB07DB  fprintf  0xC8A09  fputs    0x6AFCC  memcpy   0xD3D9E  strncpy  0x7828C
-  fprintf  0xB0803  fprintf  0xC8A21  fputs    0x75F0A  memcpy   0xDE0EC  strncpy  0x782E3
-  fprintf  0xB082B  fprintf  0xC8A39  fwrite   0x6AFF4  memcpy   0xDE442  strncpy  0x782F5
-  fprintf  0xB0853  fprintf  0xC8A7B  fwrite   0x756B6  memcpy   0xE33D0  strncpy  0x783D9
-  fprintf  0xB087B  fprintf  0xC8AB3  fwrite   0x756DF  memcpy   0xE4109  strncpy  0x783EC
-  fprintf  0xB08A3  fprintf  0xC8AD3  fwrite   0x75725  memcpy   0xE41A2  strncpy  0x7849F
-  fprintf  0xB0930  fprintf  0xC8AFB  fwrite   0x7574E  memcpy   0xE438D  strncpy  0x784B2
-  fprintf  0xB09E5  fprintf  0xC8B23  fwrite   0x75975  memcpy   0xE43B4  strncpy  0x7859C
-  fprintf  0xB09FA  fprintf  0xC8B4B  fwrite   0xAD634  memcpy   0xE43F1  strncpy  0x785AF
-  fprintf  0xB0A3B  fprintf  0xC8B73  fwrite   0xB04CB  memcpy   0xE4721  strncpy  0x7865F
-  fprintf  0xB0A5F  fprintf  0xC8B9B  fwrite   0xB04F6  memcpy   0xE51EE  strncpy  0x78672
-  fprintf  0xB0A73  fprintf  0xC8BC3  fwrite   0xB0521  memcpy   0xE5241  strncpy  0xA7CE5
-  fprintf  0xB0B02  fprintf  0xC8BEB  fwrite   0xB054C  memcpy   0xE640D  strncpy  0xA7D4A
-  fprintf  0xB0B83  fprintf  0xC8C13  fwrite   0xB0577  memcpy   0xE6421  strncpy  0xB8D16
-  fprintf  0xB0CBB  fprintf  0xC8C3B  fwrite   0xB05A2  memcpy   0xE6438  strncpy  0xB8E59
-  fprintf  0xB0D2E  fprintf  0xC8CC8  fwrite   0xB0949  memcpy   0xE6449  strncpy  0xB8EE1
-  fprintf  0xB0E5A  fprintf  0xC8D7D  fwrite   0xB0971  memcpy   0xE659C  strncpy  0xBB76A
-  fprintf  0xB0E84  fprintf  0xC8D92  fwrite   0xB0999  memcpy   0xE65FE  strncpy  0xBE6F5
-  fprintf  0xB0EAE  fprintf  0xC8DD3  fwrite   0xB09C1  memcpy   0xE6645  strncpy  0xBE75A
-  fprintf  0xB0EDD  fprintf  0xC8DF7  fwrite   0xB0A13  memcpy   0xE86BD  strtol   0x42AA2
-  fprintf  0xB0F02  fprintf  0xC8E0B  fwrite   0xBBFFC  memmove  0x4087E  strtol   0x42AC1
-  fprintf  0xB1405  fprintf  0xC8E9D  fwrite   0xBFB97  memmove  0x408AB  strtol   0x42ADF
-  fprintf  0xB143A  fprintf  0xC8F23  fwrite   0xBFCA4  memmove  0x480D0  strtol   0x42AFD
-  fprintf  0xB145F  fprintf  0xC905B  fwrite   0xBFCD4  memmove  0x52933  strtol   0x76E28
-  fprintf  0xB1515  fprintf  0xC90CC  fwrite   0xBFCFC  memmove  0x65767  strtoul  0x7BF7E
-  fprintf  0xB15AC  fprintf  0xC9361  fwrite   0xBFEE9  memmove  0x94A28
-  fprintf  0xB160D  fprintf  0xC938B  fwrite   0xBFFED  memmove  0x94AC3
-  fprintf  0xB1651  fprintf  0xC93B0  fwrite   0xC03B1  memmove  0x94CAE
-  fprintf  0xB1A39  fprintf  0xC93D5  fwrite   0xC03F7  memmove  0x94CC3
-  fprintf  0xB1A5E  fprintf  0xC941A  fwrite   0xC0410  memset   0x469BB
+  close    0x4F8A7 Confirmed
+  close    0x4F8EF Confirmed
+  close    0x4F9BD Confirmed
+  close    0xCBF74 Confirmed
+  fclose   0x4F222 Confirmed
+  fclose   0x5050E Confirmed
+  fclose   0x5087E Confirmed
+  fprintf  0x44AA5 Confirmed
+  fprintf  0x44AE6 Confirmed
+  fprintf  0x451EC Confirmed
+  fprintf  0x4A4AC Confirmed
+  fprintf  0x5427E Confirmed
+  fprintf  0x6B01A Confirmed
+  fprintf  0x70A05 Confirmed
+  fprintf  0x70A33 Confirmed
+  fprintf  0x75621 Confirmed
+  fprintf  0x7568D Confirmed
+  fprintf  0x7570C Confirmed
+  fprintf  0x757A8 Confirmed
+  fprintf  0x757C7 Confirmed
+  fprintf  0x75813 Confirmed
+  fprintf  0x7595C Confirmed
+  fprintf  0x75A4F Confirmed
+  fprintf  0x75AA6 Confirmed
+  fprintf  0x75ADC Confirmed
+  fprintf  0x75C7A Confirmed
+  fprintf  0x75CC5 Confirmed
+  fprintf  0x75D10 Confirmed
+  fprintf  0x75EE6 Confirmed
+  fprintf  0xAD5CA Confirmed
+  fprintf  0xAD60C Confirmed
+  fprintf  0xAD6D0 Confirmed
+  fprintf  0xAD86F Confirmed
+  fprintf  0xAD8FD Confirmed
+  fprintf  0xAD94F Confirmed
+  fprintf  0xAD98B Confirmed
+  fprintf  0xADA17 Confirmed
+  fprintf  0xADA47 Confirmed
+  fprintf  0xADA7B Confirmed
+  fprintf  0xADB12 Confirmed
+  fprintf  0xADB94 Confirmed
+  fprintf  0xAFA3E Confirmed
+  fprintf  0xAFA9C Confirmed
+  fprintf  0xAFAD9 Confirmed
+  fprintf  0xAFBCE Confirmed
+  fprintf  0xAFCDE Confirmed
+  fprintf  0xAFD16 Confirmed
+  fprintf  0xAFD43 Confirmed
+  fprintf  0xAFD76 Confirmed
+  fprintf  0xAFF36 Confirmed
+  fprintf  0xAFF5B Confirmed
+  fprintf  0xB00D5 Confirmed
+  fprintf  0xB0186 Confirmed
+  fprintf  0xB019B Confirmed
+  fprintf  0xB0221 Confirmed
+  fprintf  0xB025A Confirmed
+  fprintf  0xB0366 Confirmed
+  fprintf  0xB0401 Confirmed
+  fprintf  0xB043A Confirmed
+  fprintf  0xB0452 Confirmed
+  fprintf  0xB046A Confirmed
+  fprintf  0xB0482 Confirmed
+  fprintf  0xB049A Confirmed
+  fprintf  0xB04B2 Confirmed
+  fprintf  0xB05CC Confirmed
+  fprintf  0xB05E4 Confirmed
+  fprintf  0xB05FC Confirmed
+  fprintf  0xB0614 Confirmed
+  fprintf  0xB062C Confirmed
+  fprintf  0xB0644 Confirmed
+  fprintf  0xB065C Confirmed
+  fprintf  0xB0674 Confirmed
+  fprintf  0xB068C Confirmed
+  fprintf  0xB06A4 Confirmed
+  fprintf  0xB06E3 Confirmed
+  fprintf  0xB071B Confirmed
+  fprintf  0xB073B Confirmed
+  fprintf  0xB0763 Confirmed
+  fprintf  0xB078B Confirmed
+  fprintf  0xB07B3 Confirmed
+  fprintf  0xB07DB Confirmed
+  fprintf  0xB0803 Confirmed
+  fprintf  0xB082B Confirmed
+  fprintf  0xB0853 Confirmed
+  fprintf  0xB087B Confirmed
+  fprintf  0xB08A3 Confirmed
+  fprintf  0xB0930 Confirmed
+  fprintf  0xB09E5 Confirmed
+  fprintf  0xB09FA Confirmed
+  fprintf  0xB0A3B Confirmed
+  fprintf  0xB0A5F Confirmed
+  fprintf  0xB0A73 Confirmed
+  fprintf  0xB0B02 Confirmed
+  fprintf  0xB0B83 Confirmed
+  fprintf  0xB0CBB Confirmed
+  fprintf  0xB0D2E Confirmed
+  fprintf  0xB0E5A Confirmed
+  fprintf  0xB0E84 Confirmed
+  fprintf  0xB0EAE Confirmed
+  fprintf  0xB0EDD Confirmed
+  fprintf  0xB0F02 Confirmed
+  fprintf  0xB1405 Confirmed
+  fprintf  0xB143A Confirmed
+  fprintf  0xB145F Confirmed
+  fprintf  0xB1515 Confirmed
+  fprintf  0xB15AC Confirmed
+  fprintf  0xB160D Confirmed
+  fprintf  0xB1651 Confirmed
+  fprintf  0xB1A39 Confirmed
+  fprintf  0xB1A5E Confirmed
+  fprintf  0xB1B87 Confirmed
+  fprintf  0xB1C80 Confirmed
+  fprintf  0xB1CE7 Confirmed
+  fprintf  0xB1E78 Confirmed
+  fprintf  0xB1EF3 Confirmed
+  fprintf  0xB1F95 Confirmed
+  fprintf  0xB215B Confirmed
+  fprintf  0xB21BF Confirmed
+  fprintf  0xB21FE Confirmed
+  fprintf  0xB2255 Confirmed
+  fprintf  0xB2287 Confirmed
+  fprintf  0xBBCE3 Confirmed
+  fprintf  0xBBD0E Confirmed
+  fprintf  0xBBDDD Confirmed
+  fprintf  0xBBE65 Confirmed
+  fprintf  0xBBE88 Confirmed
+  fprintf  0xBBFA5 Confirmed
+  fprintf  0xBBFD7 Confirmed
+  fprintf  0xBC037 Confirmed
+  fprintf  0xBC081 Confirmed
+  fprintf  0xBF8B9 Confirmed
+  fprintf  0xBF8DE Confirmed
+  fprintf  0xBF96C Confirmed
+  fprintf  0xBF9C2 Confirmed
+  fprintf  0xBFA0E Confirmed
+  fprintf  0xBFB7E Confirmed
+  fprintf  0xBFBAF Confirmed
+  fprintf  0xBFBD4 Confirmed
+  fprintf  0xBFBF9 Confirmed
+  fprintf  0xBFC3B Confirmed
+  fprintf  0xBFEAF Confirmed
+  fprintf  0xBFED0 Confirmed
+  fprintf  0xBFF05 Confirmed
+  fprintf  0xBFFC3 Confirmed
+  fprintf  0xC000B Confirmed
+  fprintf  0xC0258 Confirmed
+  fprintf  0xC02EF Confirmed
+  fprintf  0xC101A Confirmed
+  fprintf  0xC59EA Confirmed
+  fprintf  0xC5A2C Confirmed
+  fprintf  0xC5AF0 Confirmed
+  fprintf  0xC5C8F Confirmed
+  fprintf  0xC5D1D Confirmed
+  fprintf  0xC5D6F Confirmed
+  fprintf  0xC5DAB Confirmed
+  fprintf  0xC5E37 Confirmed
+  fprintf  0xC5E67 Confirmed
+  fprintf  0xC5E9B Confirmed
+  fprintf  0xC5F32 Confirmed
+  fprintf  0xC5FB4 Confirmed
+  fprintf  0xC7DFE Confirmed
+  fprintf  0xC7E5C Confirmed
+  fprintf  0xC7E99 Confirmed
+  fprintf  0xC7F8E Confirmed
+  fprintf  0xC809E Confirmed
+  fprintf  0xC80D6 Confirmed
+  fprintf  0xC8103 Confirmed
+  fprintf  0xC8136 Confirmed
+  fprintf  0xC82F6 Confirmed
+  fprintf  0xC831B Confirmed
+  fprintf  0xC8495 Confirmed
+  fprintf  0xC8546 Confirmed
+  fprintf  0xC855B Confirmed
+  fprintf  0xC85E1 Confirmed
+  fprintf  0xC861A Confirmed
+  fprintf  0xC8726 Confirmed
+  fprintf  0xC87C1 Confirmed
+  fprintf  0xC87FA Confirmed
+  fprintf  0xC8812 Confirmed
+  fprintf  0xC882A Confirmed
+  fprintf  0xC8842 Confirmed
+  fprintf  0xC885A Confirmed
+  fprintf  0xC8872 Confirmed
+  fprintf  0xC8961 Confirmed
+  fprintf  0xC8979 Confirmed
+  fprintf  0xC8991 Confirmed
+  fprintf  0xC89A9 Confirmed
+  fprintf  0xC89C1 Confirmed
+  fprintf  0xC89D9 Confirmed
+  fprintf  0xC89F1 Confirmed
+  fprintf  0xC8A09 Confirmed
+  fprintf  0xC8A21 Confirmed
+  fprintf  0xC8A39 Confirmed
+  fprintf  0xC8A7B Confirmed
+  fprintf  0xC8AB3 Confirmed
+  fprintf  0xC8AD3 Confirmed
+  fprintf  0xC8AFB Confirmed
+  fprintf  0xC8B23 Confirmed
+  fprintf  0xC8B4B Confirmed
+  fprintf  0xC8B73 Confirmed
+  fprintf  0xC8B9B Confirmed
+  fprintf  0xC8BC3 Confirmed
+  fprintf  0xC8BEB Confirmed
+  fprintf  0xC8C13 Confirmed
+  fprintf  0xC8C3B Confirmed
+  fprintf  0xC8CC8 Confirmed
+  fprintf  0xC8D7D Confirmed
+  fprintf  0xC8D92 Confirmed
+  fprintf  0xC8DD3 Confirmed
+  fprintf  0xC8DF7 Confirmed
+  fprintf  0xC8E0B Confirmed
+  fprintf  0xC8E9D Confirmed
+  fprintf  0xC8F23 Confirmed
+  fprintf  0xC905B Confirmed
+  fprintf  0xC90CC Confirmed
+  fprintf  0xC9361 Confirmed
+  fprintf  0xC938B Confirmed
+  fprintf  0xC93B0 Confirmed
+  fprintf  0xC93D5 Confirmed
+  fprintf  0xC941A Confirmed
+  fprintf  0xC945C Confirmed
+  fprintf  0xC94A1 Confirmed
+  fprintf  0xC9547 Confirmed
+  fprintf  0xC95C0 Confirmed
+  fprintf  0xC95F1 Confirmed
+  fprintf  0xC9616 Confirmed
+  fprintf  0xC96B9 Confirmed
+  fprintf  0xC974C Confirmed
+  fprintf  0xC979B Confirmed
+  fprintf  0xC97CC Confirmed
+  fprintf  0xC97F1 Confirmed
+  fprintf  0xC993B Confirmed
+  fprintf  0xC999C Confirmed
+  fprintf  0xC99E0 Confirmed
+  fprintf  0xC9CBB Confirmed
+  fprintf  0xC9D4A Confirmed
+  fprintf  0xC9DE8 Confirmed
+  fprintf  0xC9E0D Confirmed
+  fprintf  0xC9F37 Confirmed
+  fprintf  0xCA030 Confirmed
+  fprintf  0xCA097 Confirmed
+  fprintf  0xCA0CF Confirmed
+  fprintf  0xCA230 Confirmed
+  fprintf  0xCA2AA Confirmed
+  fprintf  0xCA34A Confirmed
+  fprintf  0xCA50B Confirmed
+  fprintf  0xCA56F Confirmed
+  fprintf  0xCA5AE Confirmed
+  fprintf  0xCA604 Confirmed
+  fprintf  0xCA635 Confirmed
+  fprintf  0xCA6B4 Confirmed
+  fprintf  0xE07D6 Confirmed
+  fprintf  0xE2BA4 Confirmed
+  fputc    0x45271 Confirmed
+  fputc    0x457C8 Confirmed
+  fputc    0x7565C Confirmed
+  fputc    0x75995 Confirmed
+  fputc    0x75CE2 Confirmed
+  fputc    0x75D27 Confirmed
+  fputc    0xAFFD0 Confirmed
+  fputc    0xB0033 Confirmed
+  fputc    0xB0052 Confirmed
+  fputc    0xB006F Confirmed
+  fputc    0xB008B Confirmed
+  fputc    0xB00B0 Confirmed
+  fputc    0xB14E1 Confirmed
+  fputc    0xB1AB8 Confirmed
+  fputc    0xB1ADC Confirmed
+  fputc    0xB1AF9 Confirmed
+  fputc    0xB1B16 Confirmed
+  fputc    0xB1B38 Confirmed
+  fputc    0xB1B55 Confirmed
+  fputc    0xB1F06 Confirmed
+  fputc    0xBBD52 Confirmed
+  fputc    0xBFB65 Confirmed
+  fputc    0xBFBBC Confirmed
+  fputc    0xBFBE1 Confirmed
+  fputc    0xBFC06 Confirmed
+  fputc    0xBFF12 Confirmed
+  fputc    0xBFFA5 Confirmed
+  fputc    0xC0018 Confirmed
+  fputc    0xC8390 Confirmed
+  fputc    0xC83F3 Confirmed
+  fputc    0xC8412 Confirmed
+  fputc    0xC842F Confirmed
+  fputc    0xC844B Confirmed
+  fputc    0xC8470 Confirmed
+  fputc    0xC93F5 Confirmed
+  fputc    0xC9437 Confirmed
+  fputc    0xC9479 Confirmed
+  fputc    0xC9871 Confirmed
+  fputc    0xC9BBE Confirmed
+  fputc    0xC9E68 Confirmed
+  fputc    0xC9E8C Confirmed
+  fputc    0xC9EA9 Confirmed
+  fputc    0xC9EC6 Confirmed
+  fputc    0xC9EE8 Confirmed
+  fputc    0xC9F05 Confirmed
+  fputc    0xC9F44 Confirmed
+  fputc    0xCA2BC Confirmed
+  fputs    0x6AFCC Confirmed
+  fputs    0x75F0A Confirmed
+  fwrite   0x6AFF4 Confirmed
+  fwrite   0x756B6 Confirmed
+  fwrite   0x756DF Confirmed
+  fwrite   0x75725 Confirmed
+  fwrite   0x7574E Confirmed
+  fwrite   0x75975 Confirmed
+  fwrite   0xAD634 Confirmed
+  fwrite   0xB04CB Confirmed
+  fwrite   0xB04F6 Confirmed
+  fwrite   0xB0521 Confirmed
+  fwrite   0xB054C Confirmed
+  fwrite   0xB0577 Confirmed
+  fwrite   0xB05A2 Confirmed
+  fwrite   0xB0949 Confirmed
+  fwrite   0xB0971 Confirmed
+  fwrite   0xB0999 Confirmed
+  fwrite   0xB09C1 Confirmed
+  fwrite   0xB0A13 Confirmed
+  fwrite   0xBBFFC Confirmed
+  fwrite   0xBFB97 Confirmed
+  fwrite   0xBFCA4 Confirmed
+  fwrite   0xBFCD4 Confirmed
+  fwrite   0xBFCFC Confirmed
+  fwrite   0xBFEE9 Confirmed
+  fwrite   0xBFFED Confirmed
+  fwrite   0xC03B1 Confirmed
+  fwrite   0xC03F7 Confirmed
+  fwrite   0xC0410 Confirmed
+  fwrite   0xC0CBA Confirmed
+  fwrite   0xC5A54 Confirmed
+  fwrite   0xC888B Confirmed
+  fwrite   0xC88B6 Confirmed
+  fwrite   0xC88E1 Confirmed
+  fwrite   0xC890C Confirmed
+  fwrite   0xC8937 Confirmed
+  fwrite   0xC8CE1 Confirmed
+  fwrite   0xC8D09 Confirmed
+  fwrite   0xC8D31 Confirmed
+  fwrite   0xC8D59 Confirmed
+  fwrite   0xC8DAB Confirmed
+  getgid   0x4344F Undecided
+  getuid   0x43446 Undecided
+  memcpy   0x4110D Confirmed
+  memcpy   0x45E51 Confirmed
+  memcpy   0x4618C Confirmed
+  memcpy   0x461A3 Confirmed
+  memcpy   0x46A2F Confirmed
+  memcpy   0x49905 Confirmed
+  memcpy   0x4EBCB Confirmed
+  memcpy   0x4ECA8 Confirmed
+  memcpy   0x4FFB3 Confirmed
+  memcpy   0x52853 Confirmed
+  memcpy   0x547EC Confirmed
+  memcpy   0x54800 Confirmed
+  memcpy   0x56D95 Confirmed
+  memcpy   0x576FF Confirmed
+  memcpy   0x59274 Confirmed
+  memcpy   0x59BF3 Confirmed
+  memcpy   0x5A8AA Confirmed
+  memcpy   0x5A984 Confirmed
+  memcpy   0x5AB95 Confirmed
+  memcpy   0x5AF36 Confirmed
+  memcpy   0x5B15A Confirmed
+  memcpy   0x61E23 Confirmed
+  memcpy   0x61E78 Confirmed
+  memcpy   0x61ECD Confirmed
+  memcpy   0x64001 Confirmed
+  memcpy   0x640BD Confirmed
+  memcpy   0x68A2A Confirmed
+  memcpy   0x696A3 Confirmed
+  memcpy   0x697C2 Confirmed
+  memcpy   0x76579 Confirmed
+  memcpy   0x781A6 Confirmed
+  memcpy   0x793BD Confirmed
+  memcpy   0x79438 Confirmed
+  memcpy   0x817CC Confirmed
+  memcpy   0x81D1D Confirmed
+  memcpy   0x8279C Confirmed
+  memcpy   0x839D5 Confirmed
+  memcpy   0x83A95 Confirmed
+  memcpy   0x84340 Confirmed
+  memcpy   0x846B8 Confirmed
+  memcpy   0x847D6 Confirmed
+  memcpy   0x85761 Confirmed
+  memcpy   0x85774 Confirmed
+  memcpy   0x857B2 Confirmed
+  memcpy   0x892E2 Confirmed
+  memcpy   0x8F208 Confirmed
+  memcpy   0x9315B Confirmed
+  memcpy   0x9D370 Confirmed
+  memcpy   0x9D732 Confirmed
+  memcpy   0xA9847 Confirmed
+  memcpy   0xAB1F6 Confirmed
+  memcpy   0xAB54D Confirmed
+  memcpy   0xABA04 Confirmed
+  memcpy   0xABFB2 Confirmed
+  memcpy   0xBAFF2 Confirmed
+  memcpy   0xC3551 Confirmed
+  memcpy   0xC37FE Confirmed
+  memcpy   0xC392E Confirmed
+  memcpy   0xC3E24 Confirmed
+  memcpy   0xC43D2 Confirmed
+  memcpy   0xCD19E Confirmed
+  memcpy   0xCD1F1 Confirmed
+  memcpy   0xCD25C Confirmed
+  memcpy   0xCD39D Confirmed
+  memcpy   0xCEC2C Confirmed
+  memcpy   0xCEDDC Confirmed
+  memcpy   0xD3D9E Confirmed
+  memcpy   0xDE0EC Confirmed
+  memcpy   0xDE442 Confirmed
+  memcpy   0xE33D0 Confirmed
+  memcpy   0xE4109 Confirmed
+  memcpy   0xE41A2 Confirmed
+  memcpy   0xE438D Confirmed
+  memcpy   0xE43B4 Confirmed
+  memcpy   0xE43F1 Confirmed
+  memcpy   0xE4721 Confirmed
+  memcpy   0xE51EE Confirmed
+  memcpy   0xE5241 Confirmed
+  memcpy   0xE640D Confirmed
+  memcpy   0xE6421 Confirmed
+  memcpy   0xE6438 Confirmed
+  memcpy   0xE6449 Confirmed
+  memcpy   0xE659C Confirmed
+  memcpy   0xE65FE Confirmed
+  memcpy   0xE6645 Confirmed
+  memcpy   0xE86BD Confirmed
+  memmove  0x4087E Undecided
+  memmove  0x408AB Undecided
+  memmove  0x480D0 Undecided
+  memmove  0x52933 Undecided
+  memmove  0x65767 Undecided
+  memmove  0x94A28 Undecided
+  memmove  0x94AC3 Undecided
+  memmove  0x94CAE Undecided
+  memmove  0x94CC3 Undecided
+  memset   0x469BB Confirmed
+  memset   0x4906E Confirmed
+  memset   0x508D9 Confirmed
+  memset   0x52970 Confirmed
+  memset   0x532FD Confirmed
+  memset   0x6CACE Confirmed
+  memset   0x6CB90 Confirmed
+  memset   0x6CC00 Confirmed
+  memset   0x86CE5 Confirmed
+  memset   0x875E7 Confirmed
+  memset   0x9D39C Confirmed
+  memset   0xBB1DC Confirmed
+  memset   0xE0D9D Confirmed
+  memset   0xE3499 Confirmed
+  memset   0xE483F Confirmed
+  printf   0xCBB9B Confirmed
+  snprintf 0x40FF8 Confirmed
+  snprintf 0x410B2 Confirmed
+  snprintf 0x70E47 Confirmed
+  sprintf  0x40F1B Confirmed
+  sprintf  0x4F3C0 Confirmed
+  sprintf  0x4F450 Confirmed
+  sprintf  0x4F493 Confirmed
+  sprintf  0x4F4C5 Confirmed
+  sprintf  0x5239D Confirmed
+  sprintf  0x55A5C Confirmed
+  sprintf  0x564A3 Confirmed
+  sprintf  0x57D63 Confirmed
+  sprintf  0x57EB1 Confirmed
+  sprintf  0x6988F Confirmed
+  sprintf  0x699E4 Confirmed
+  sprintf  0x6D1D1 Confirmed
+  sprintf  0x6D323 Confirmed
+  sprintf  0x70BE0 Confirmed
+  sprintf  0x71CCB Confirmed
+  sprintf  0x759C2 Confirmed
+  sprintf  0x75EA1 Confirmed
+  sprintf  0x768A4 Confirmed
+  sprintf  0x76AD9 Confirmed
+  sprintf  0x77EFE Confirmed
+  sprintf  0x77FC4 Confirmed
+  sprintf  0x7BE0E Confirmed
+  sprintf  0xA7941 Confirmed
+  sprintf  0xA7D38 Confirmed
+  sprintf  0xACB3A Confirmed
+  sprintf  0xACBB7 Confirmed
+  sprintf  0xACC6D Confirmed
+  sprintf  0xACCD2 Confirmed
+  sprintf  0xAFC56 Confirmed
+  sprintf  0xBE351 Confirmed
+  sprintf  0xBE748 Confirmed
+  sprintf  0xC4F5A Confirmed
+  sprintf  0xC4FD7 Confirmed
+  sprintf  0xC508D Confirmed
+  sprintf  0xC50F2 Confirmed
+  sprintf  0xC8016 Confirmed
+  sprintf  0xCD287 Confirmed
+  sprintf  0xCDA73 Confirmed
+  sprintf  0xD3E63 Confirmed
+  sprintf  0xD8E68 Confirmed
+  sprintf  0xE2D30 Confirmed
+  strcat   0x4F527 Undecided
+  strcat   0x4F532 Undecided
+  strcat   0xE1B95 Undecided
+  strcat   0xE1C55 Undecided
+  strcat   0xE1E27 Undecided
+  strcpy   0x40F76 Undecided
+  strcpy   0x4173A Undecided
+  strcpy   0x4AC48 Undecided
+  strcpy   0x58222 Undecided
+  strcpy   0x96AC4 Undecided
+  strcpy   0xCDD43 Undecided
+  strcpy   0xCDEDD Undecided
+  strcpy   0xD0EC7 Undecided
+  strlen   0x63D00 Undecided
+  strncat  0xD0CD3 Confirmed
+  strncpy  0x5A2CF Confirmed
+  strncpy  0x5A2E0 Confirmed
+  strncpy  0x5A475 Confirmed
+  strncpy  0x5A486 Confirmed
+  strncpy  0x7827A Confirmed
+  strncpy  0x7828C Confirmed
+  strncpy  0x782E3 Confirmed
+  strncpy  0x782F5 Confirmed
+  strncpy  0x783D9 Confirmed
+  strncpy  0x783EC Confirmed
+  strncpy  0x7849F Confirmed
+  strncpy  0x784B2 Confirmed
+  strncpy  0x7859C Confirmed
+  strncpy  0x785AF Confirmed
+  strncpy  0x7865F Confirmed
+  strncpy  0x78672 Confirmed
+  strncpy  0xA7CE5 Confirmed
+  strncpy  0xA7D4A Confirmed
+  strncpy  0xB8D16 Confirmed
+  strncpy  0xB8E59 Confirmed
+  strncpy  0xB8EE1 Confirmed
+  strncpy  0xBB76A Confirmed
+  strncpy  0xBE6F5 Confirmed
+  strncpy  0xBE75A Confirmed
+  strtol   0x42AA2 Undecided
+  strtol   0x42AC1 Undecided
+  strtol   0x42ADF Undecided
+  strtol   0x42AFD Undecided
+  strtol   0x76E28 Undecided
+  strtoul  0x7BF7E Undecided
+
+
+Memcheck-double-release:
+Time: 04:38:52
+Total:2
+
+Memcheck-out-of-bound:
+Time: 04:38:52
+Total: 4
+
+Memcheck-use-after-release:
+Time: 04:38:52
+Total:  30
+
+Value-was-used-before-check:
+Time: 04:38:52
+Total: 152

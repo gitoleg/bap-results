@@ -3,104 +3,413 @@ Size: 1.6M
  Forbidden:
 Time: 00:00:12
 
- __errno_location   fopen      putchar
- exit               fputc      puts
- fclose             fputs      rename
- ferror             fwrite     setlocale
- fflush             getenv     ungetc
+__errno_location Confirmed
+fopen Confirmed
+putchar Confirmed
+exit Confirmed
+fputc Confirmed
+puts Confirmed
+fclose Confirmed
+fputs Confirmed
+rename Confirmed
+ferror Confirmed
+fwrite Confirmed
+setlocale Confirmed
+fflush Confirmed
+getenv Confirmed
+ungetc Confirmed
 
  Recursive:
  Time: 00:00:12
 
- copy_filter_list  sub_11d83    sub_20eea
- flow_exit         sub_154b0    sub_27930
- iostat_init       sub_2086e    sub_28f00
- phs_draw          sub_20e3b    sub_29bd0
- sub_101da         sub_20ec9    tree_traverse_pre_order.constprop.0
- sub_119b7         sub_20edc
+copy_filter_list Undecided
+sub_11d83 Undecided
+sub_20eea Undecided
+flow_exit Undecided
+sub_154b0 Undecided
+sub_27930 Undecided
+iostat_init Undecided
+sub_2086e Undecided
+sub_28f00 Undecided
+phs_draw Undecided
+sub_20e3b Undecided
+sub_29bd0 Undecided
+sub_101da Undecided
+sub_20ec9 Undecided
+tree_traverse_pre_order.constprop.0 Undecided
+sub_119b7 Undecided
+sub_20edc Undecided
 
  Complex:
  Time: 00:00:16
 
- iostat_draw
- main
- sub_101fd
- sub_2e750
+iostat_draw Undecided
+main Undecided
+sub_101fd Undecided
+sub_2e750 Undecided
 
  Non-structural:
  Time: 00:00:15
 
- not found
+not found
 
  Null:
  Time: 00:32:20
 
  False_pos: 1
 
-protohierstat_packet 0x2955B
-display_dissector_table_names 0x2FB0C
+protohierstat_packet 0x2955B Undecided
+display_dissector_table_names 0x2FB0C Undecided
 
 
  Unused:
 Time: 00:12:48
-close   0x14E43  fputs   0xEC39   fwrite  0x18DEA  fwrite  0x1A53E  putchar 0x29BB1  puts    0x24C1C
-close   0x151A0  fputs   0xEC48   fwrite  0x18E03  fwrite  0x1F360  putchar 0x29CE3  puts    0x24C28
-close   0x1B96F  fwrite  0x10E0A  fwrite  0x18E1C  fwrite  0x1F37D  putchar 0x2A4F9  puts    0x24D99
-close   0x1B978  fwrite  0x12677  fwrite  0x18E35  fwrite  0x21FF0  putchar 0x2AE09  puts    0x24E1A
-close   0x1BA08  fwrite  0x18845  fwrite  0x18E4E  fwrite  0x24FFD  putchar 0x2B2D9  puts    0x24E26
-close   0x1BA11  fwrite  0x1886B  fwrite  0x18E67  fwrite  0x2556D  putchar 0x2B748  puts    0x2518C
-close   0x1BA44  fwrite  0x18884  fwrite  0x18E80  fwrite  0x2654A  putchar 0x2B89E  puts    0x25198
-close   0x1BA4C  fwrite  0x1889D  fwrite  0x18E99  fwrite  0x268B9  putchar 0x2B96F  puts    0x25309
-close   0x1BA6D  fwrite  0x188B6  fwrite  0x18EB2  fwrite  0x26980  puts    0x16127  puts    0x2538A
-close   0x1BA76  fwrite  0x188CF  fwrite  0x18ECB  fwrite  0x269A7  puts    0x16209  puts    0x25396
-close   0x1BA8C  fwrite  0x188E8  fwrite  0x18EE4  fwrite  0x290C5  puts    0x16985  puts    0x27520
-close   0x1BA95  fwrite  0x1891C  fwrite  0x18EFD  fwrite  0x292B5  puts    0x1699E  puts    0x2766B
-close   0x1C382  fwrite  0x18935  fwrite  0x18F16  fwrite  0x296D5  puts    0x169C0  puts    0x28D6D
-close   0x1C3E4  fwrite  0x1894E  fwrite  0x18F2F  fwrite  0x2B37B  puts    0x16BFA  puts    0x28D79
-close   0x1C451  fwrite  0x18967  fwrite  0x18F48  fwrite  0x2B398  puts    0x16C37  puts    0x28DA0
-close   0x1CBE9  fwrite  0x18980  fwrite  0x18F61  fwrite  0x2B3B5  puts    0x16C57  puts    0x28DAC
-close   0x1CF61  fwrite  0x189A6  fwrite  0x18F7A  fwrite  0x2B3D2  puts    0x16C77  puts    0x28EBC
-close   0x1CF98  fwrite  0x189BF  fwrite  0x18F93  fwrite  0x2B3EF  puts    0x180E7  puts    0x29425
-close   0x1D53A  fwrite  0x189D8  fwrite  0x18FAC  fwrite  0x2E732  puts    0x1EAD7  puts    0x29431
-close   0x1D54B  fwrite  0x189F1  fwrite  0x18FC5  fwrite  0x2F35D  puts    0x1ECEE  puts    0x29AFB
-close   0x1D5CF  fwrite  0x18A0A  fwrite  0x18FDE  fwrite  0xFA60   puts    0x1F636  puts    0x29B07
-close   0x1D61C  fwrite  0x18A23  fwrite  0x18FF7  getgid  0x1C6ED  puts    0x1FE3E  puts    0x29B80
-close   0x1D624  fwrite  0x18A3C  fwrite  0x19010  getuid  0x1C6E5  puts    0x1FE91  puts    0x29CEF
-close   0x1DB48  fwrite  0x18A55  fwrite  0x19029  memcpy  0x2E197  puts    0x2011B  puts    0x29CFB
-close   0x1E377  fwrite  0x18A6E  fwrite  0x19042  memcpy  0x2F848  puts    0x203E4  puts    0x29D07
-close   0x1E420  fwrite  0x18A87  fwrite  0x1905B  memset  0x21273  puts    0x204A2  puts    0x29E52
-close   0x1F1AE  fwrite  0x18AA0  fwrite  0x19074  memset  0x287AB  puts    0x2058B  puts    0x2A1F5
-dup2    0x1BA64  fwrite  0x18AB9  fwrite  0x1908D  putchar 0x18088  puts    0x209DC  puts    0x2A427
-dup2    0x1BA84  fwrite  0x18ADF  fwrite  0x190A6  putchar 0x18118  puts    0x20BA7  puts    0x2A505
-dup2    0x1CF8F  fwrite  0x18AF8  fwrite  0x190BF  putchar 0x181C0  puts    0x20BB3  puts    0x2A52C
-fclose  0x2D88C  fwrite  0x18B11  fwrite  0x190D8  putchar 0x1FE32  puts    0x20BBF  puts    0x2A54F
-fclose  0x2DBDB  fwrite  0x18B2A  fwrite  0x190F1  putchar 0x203D8  puts    0x20BCB  puts    0x2A587
-fputc   0x12488  fwrite  0x18B43  fwrite  0x1910A  putchar 0x20470  puts    0x20D99  puts    0x2A89F
-fputc   0x1882C  fwrite  0x18B5C  fwrite  0x19123  putchar 0x2054E  puts    0x217DC  puts    0x2A8C1
-fputc   0x18852  fwrite  0x18B75  fwrite  0x1913C  putchar 0x209D0  puts    0x217E8  puts    0x2A8CD
-fputc   0x1898D  fwrite  0x18B8E  fwrite  0x19155  putchar 0x20A3E  puts    0x217F4  puts    0x2A8D9
-fputc   0x18AC6  fwrite  0x18BA7  fwrite  0x1916E  putchar 0x20B9B  puts    0x22ECB  puts    0x2AE15
-fputc   0x1922A  fwrite  0x18BDD  fwrite  0x19187  putchar 0x20DEB  puts    0x22ED7  puts    0x2AE6C
-fputc   0x192FF  fwrite  0x18BF6  fwrite  0x191A0  putchar 0x20E28  puts    0x234E9  puts    0x2AE8F
-fputc   0x1A96C  fwrite  0x18C0F  fwrite  0x191B9  putchar 0x21031  puts    0x23E2E  puts    0x2AEDF
-fputc   0xEB3E   fwrite  0x18C28  fwrite  0x191D2  putchar 0x217D0  puts    0x23E3A  puts    0x2B2E5
-fputc   0xEB5A   fwrite  0x18C41  fwrite  0x191EB  putchar 0x22A91  puts    0x23E46  puts    0x2B2F1
-fputc   0xEC0C   fwrite  0x18C5A  fwrite  0x19204  putchar 0x23E22  puts    0x23EDD  puts    0x2B8AA
-fputc   0xF558   fwrite  0x18C73  fwrite  0x1921D  putchar 0x2458B  puts    0x23F61  puts    0x2B8B6
-fputs   0xEB4D   fwrite  0x18C8C  fwrite  0x19243  putchar 0x24849  puts    0x23FE9  puts    0x2B987
-fputs   0xEB69   fwrite  0x18CA5  fwrite  0x1925C  putchar 0x24C10  puts    0x24071  puts    0x2B993
-fputs   0xEB78   fwrite  0x18CBE  fwrite  0x19275  putchar 0x25180  puts    0x240F9  strtol  0x2BF7D
-fputs   0xEB87   fwrite  0x18CD7  fwrite  0x1928E  putchar 0x26F57  puts    0x24181  ungetc  0x2D507
-fputs   0xEB96   fwrite  0x18CF0  fwrite  0x192A7  putchar 0x26F6F  puts    0x24209  unlink  0x14D14
-fputs   0xEBA5   fwrite  0x18D09  fwrite  0x192C0  putchar 0x27510  puts    0x24291  unlink  0x14D34
-fputs   0xEBB4   fwrite  0x18D22  fwrite  0x192D9  putchar 0x277E8  puts    0x242FF  unlink  0x14D54
-fputs   0xEBC3   fwrite  0x18D3B  fwrite  0x192F2  putchar 0x277F6  puts    0x2430B  unlink  0x14EC5
-fputs   0xEBD2   fwrite  0x18D54  fwrite  0x19318  putchar 0x27B02  puts    0x2455B  unlink  0x1AA24
-fputs   0xEBE1   fwrite  0x18D6D  fwrite  0x19331  putchar 0x27B40  puts    0x24567  unlink  0x2D894
-fputs   0xEBF0   fwrite  0x18D86  fwrite  0x1934A  putchar 0x27B4E  puts    0x24855  unlink  0x2D8E7
-fputs   0xEBFF   fwrite  0x18D9F  fwrite  0x19394  putchar 0x2852A  puts    0x2487C  unlink  0x2D976
-fputs   0xEC1B   fwrite  0x18DB8  fwrite  0x19424  putchar 0x28EF1  puts    0x2489F
-fputs   0xEC2A   fwrite  0x18DD1  fwrite  0x194B1  putchar 0x29419  puts    0x248D7
+close 0x14E43 Undecided
+fputs 0xEC39 Undecided
+fwrite 0x18DEA Undecided
+fwrite 0x1A53E Undecided
+putchar 0x29BB1 Undecided
+puts 0x24C1C Undecided
+close 0x151A0 Undecided
+fputs 0xEC48 Undecided
+fwrite 0x18E03 Undecided
+fwrite 0x1F360 Undecided
+putchar 0x29CE3 Undecided
+puts 0x24C28 Undecided
+close 0x1B96F Undecided
+fwrite 0x10E0A Undecided
+fwrite 0x18E1C Undecided
+fwrite 0x1F37D Undecided
+putchar 0x2A4F9 Undecided
+puts 0x24D99 Undecided
+close 0x1B978 Undecided
+fwrite 0x12677 Undecided
+fwrite 0x18E35 Undecided
+fwrite 0x21FF0 Undecided
+putchar 0x2AE09 Undecided
+puts 0x24E1A Undecided
+close 0x1BA08 Undecided
+fwrite 0x18845 Undecided
+fwrite 0x18E4E Undecided
+fwrite 0x24FFD Undecided
+putchar 0x2B2D9 Undecided
+puts 0x24E26 Undecided
+close 0x1BA11 Undecided
+fwrite 0x1886B Undecided
+fwrite 0x18E67 Undecided
+fwrite 0x2556D Undecided
+putchar 0x2B748 Undecided
+puts 0x2518C Undecided
+close 0x1BA44 Undecided
+fwrite 0x18884 Undecided
+fwrite 0x18E80 Undecided
+fwrite 0x2654A Undecided
+putchar 0x2B89E Undecided
+puts 0x25198 Undecided
+close 0x1BA4C Undecided
+fwrite 0x1889D Undecided
+fwrite 0x18E99 Undecided
+fwrite 0x268B9 Undecided
+putchar 0x2B96F Undecided
+puts 0x25309 Undecided
+close 0x1BA6D Undecided
+fwrite 0x188B6 Undecided
+fwrite 0x18EB2 Undecided
+fwrite 0x26980 Undecided
+puts 0x16127 Undecided
+puts 0x2538A Undecided
+close 0x1BA76 Undecided
+fwrite 0x188CF Undecided
+fwrite 0x18ECB Undecided
+fwrite 0x269A7 Undecided
+puts 0x16209 Undecided
+puts 0x25396 Undecided
+close 0x1BA8C Undecided
+fwrite 0x188E8 Undecided
+fwrite 0x18EE4 Undecided
+fwrite 0x290C5 Undecided
+puts 0x16985 Undecided
+puts 0x27520 Undecided
+close 0x1BA95 Undecided
+fwrite 0x1891C Undecided
+fwrite 0x18EFD Undecided
+fwrite 0x292B5 Undecided
+puts 0x1699E Undecided
+puts 0x2766B Undecided
+close 0x1C382 Undecided
+fwrite 0x18935 Undecided
+fwrite 0x18F16 Undecided
+fwrite 0x296D5 Undecided
+puts 0x169C0 Undecided
+puts 0x28D6D Undecided
+close 0x1C3E4 Undecided
+fwrite 0x1894E Undecided
+fwrite 0x18F2F Undecided
+fwrite 0x2B37B Undecided
+puts 0x16BFA Undecided
+puts 0x28D79 Undecided
+close 0x1C451 Undecided
+fwrite 0x18967 Undecided
+fwrite 0x18F48 Undecided
+fwrite 0x2B398 Undecided
+puts 0x16C37 Undecided
+puts 0x28DA0 Undecided
+close 0x1CBE9 Undecided
+fwrite 0x18980 Undecided
+fwrite 0x18F61 Undecided
+fwrite 0x2B3B5 Undecided
+puts 0x16C57 Undecided
+puts 0x28DAC Undecided
+close 0x1CF61 Undecided
+fwrite 0x189A6 Undecided
+fwrite 0x18F7A Undecided
+fwrite 0x2B3D2 Undecided
+puts 0x16C77 Undecided
+puts 0x28EBC Undecided
+close 0x1CF98 Undecided
+fwrite 0x189BF Undecided
+fwrite 0x18F93 Undecided
+fwrite 0x2B3EF Undecided
+puts 0x180E7 Undecided
+puts 0x29425 Undecided
+close 0x1D53A Undecided
+fwrite 0x189D8 Undecided
+fwrite 0x18FAC Undecided
+fwrite 0x2E732 Undecided
+puts 0x1EAD7 Undecided
+puts 0x29431 Undecided
+close 0x1D54B Undecided
+fwrite 0x189F1 Undecided
+fwrite 0x18FC5 Undecided
+fwrite 0x2F35D Undecided
+puts 0x1ECEE Undecided
+puts 0x29AFB Undecided
+close 0x1D5CF Undecided
+fwrite 0x18A0A Undecided
+fwrite 0x18FDE Undecided
+fwrite 0xFA60 Undecided
+puts 0x1F636 Undecided
+puts 0x29B07 Undecided
+close 0x1D61C Undecided
+fwrite 0x18A23 Undecided
+fwrite 0x18FF7 Undecided
+getgid 0x1C6ED Undecided
+puts 0x1FE3E Undecided
+puts 0x29B80 Undecided
+close 0x1D624 Undecided
+fwrite 0x18A3C Undecided
+fwrite 0x19010 Undecided
+getuid 0x1C6E5 Undecided
+puts 0x1FE91 Undecided
+puts 0x29CEF Undecided
+close 0x1DB48 Undecided
+fwrite 0x18A55 Undecided
+fwrite 0x19029 Undecided
+memcpy 0x2E197 Undecided
+puts 0x2011B Undecided
+puts 0x29CFB Undecided
+close 0x1E377 Undecided
+fwrite 0x18A6E Undecided
+fwrite 0x19042 Undecided
+memcpy 0x2F848 Undecided
+puts 0x203E4 Undecided
+puts 0x29D07 Undecided
+close 0x1E420 Undecided
+fwrite 0x18A87 Undecided
+fwrite 0x1905B Undecided
+memset 0x21273 Undecided
+puts 0x204A2 Undecided
+puts 0x29E52 Undecided
+close 0x1F1AE Undecided
+fwrite 0x18AA0 Undecided
+fwrite 0x19074 Undecided
+memset 0x287AB Undecided
+puts 0x2058B Undecided
+puts 0x2A1F5 Undecided
+dup2 0x1BA64 Undecided
+fwrite 0x18AB9 Undecided
+fwrite 0x1908D Undecided
+putchar 0x18088 Undecided
+puts 0x209DC Undecided
+puts 0x2A427 Undecided
+dup2 0x1BA84 Undecided
+fwrite 0x18ADF Undecided
+fwrite 0x190A6 Undecided
+putchar 0x18118 Undecided
+puts 0x20BA7 Undecided
+puts 0x2A505 Undecided
+dup2 0x1CF8F Undecided
+fwrite 0x18AF8 Undecided
+fwrite 0x190BF Undecided
+putchar 0x181C0 Undecided
+puts 0x20BB3 Undecided
+puts 0x2A52C Undecided
+fclose 0x2D88C Undecided
+fwrite 0x18B11 Undecided
+fwrite 0x190D8 Undecided
+putchar 0x1FE32 Undecided
+puts 0x20BBF Undecided
+puts 0x2A54F Undecided
+fclose 0x2DBDB Undecided
+fwrite 0x18B2A Undecided
+fwrite 0x190F1 Undecided
+putchar 0x203D8 Undecided
+puts 0x20BCB Undecided
+puts 0x2A587 Undecided
+fputc 0x12488 Undecided
+fwrite 0x18B43 Undecided
+fwrite 0x1910A Undecided
+putchar 0x20470 Undecided
+puts 0x20D99 Undecided
+puts 0x2A89F Undecided
+fputc 0x1882C Undecided
+fwrite 0x18B5C Undecided
+fwrite 0x19123 Undecided
+putchar 0x2054E Undecided
+puts 0x217DC Undecided
+puts 0x2A8C1 Undecided
+fputc 0x18852 Undecided
+fwrite 0x18B75 Undecided
+fwrite 0x1913C Undecided
+putchar 0x209D0 Undecided
+puts 0x217E8 Undecided
+puts 0x2A8CD Undecided
+fputc 0x1898D Undecided
+fwrite 0x18B8E Undecided
+fwrite 0x19155 Undecided
+putchar 0x20A3E Undecided
+puts 0x217F4 Undecided
+puts 0x2A8D9 Undecided
+fputc 0x18AC6 Undecided
+fwrite 0x18BA7 Undecided
+fwrite 0x1916E Undecided
+putchar 0x20B9B Undecided
+puts 0x22ECB Undecided
+puts 0x2AE15 Undecided
+fputc 0x1922A Undecided
+fwrite 0x18BDD Undecided
+fwrite 0x19187 Undecided
+putchar 0x20DEB Undecided
+puts 0x22ED7 Undecided
+puts 0x2AE6C Undecided
+fputc 0x192FF Undecided
+fwrite 0x18BF6 Undecided
+fwrite 0x191A0 Undecided
+putchar 0x20E28 Undecided
+puts 0x234E9 Undecided
+puts 0x2AE8F Undecided
+fputc 0x1A96C Undecided
+fwrite 0x18C0F Undecided
+fwrite 0x191B9 Undecided
+putchar 0x21031 Undecided
+puts 0x23E2E Undecided
+puts 0x2AEDF Undecided
+fputc 0xEB3E Undecided
+fwrite 0x18C28 Undecided
+fwrite 0x191D2 Undecided
+putchar 0x217D0 Undecided
+puts 0x23E3A Undecided
+puts 0x2B2E5 Undecided
+fputc 0xEB5A Undecided
+fwrite 0x18C41 Undecided
+fwrite 0x191EB Undecided
+putchar 0x22A91 Undecided
+puts 0x23E46 Undecided
+puts 0x2B2F1 Undecided
+fputc 0xEC0C Undecided
+fwrite 0x18C5A Undecided
+fwrite 0x19204 Undecided
+putchar 0x23E22 Undecided
+puts 0x23EDD Undecided
+puts 0x2B8AA Undecided
+fputc 0xF558 Undecided
+fwrite 0x18C73 Undecided
+fwrite 0x1921D Undecided
+putchar 0x2458B Undecided
+puts 0x23F61 Undecided
+puts 0x2B8B6 Undecided
+fputs 0xEB4D Undecided
+fwrite 0x18C8C Undecided
+fwrite 0x19243 Undecided
+putchar 0x24849 Undecided
+puts 0x23FE9 Undecided
+puts 0x2B987 Undecided
+fputs 0xEB69 Undecided
+fwrite 0x18CA5 Undecided
+fwrite 0x1925C Undecided
+putchar 0x24C10 Undecided
+puts 0x24071 Undecided
+puts 0x2B993 Undecided
+fputs 0xEB78 Undecided
+fwrite 0x18CBE Undecided
+fwrite 0x19275 Undecided
+putchar 0x25180 Undecided
+puts 0x240F9 Undecided
+strtol 0x2BF7D Undecided
+fputs 0xEB87 Undecided
+fwrite 0x18CD7 Undecided
+fwrite 0x1928E Undecided
+putchar 0x26F57 Undecided
+puts 0x24181 Undecided
+ungetc 0x2D507 Undecided
+fputs 0xEB96 Undecided
+fwrite 0x18CF0 Undecided
+fwrite 0x192A7 Undecided
+putchar 0x26F6F Undecided
+puts 0x24209 Undecided
+unlink 0x14D14 Undecided
+fputs 0xEBA5 Undecided
+fwrite 0x18D09 Undecided
+fwrite 0x192C0 Undecided
+putchar 0x27510 Undecided
+puts 0x24291 Undecided
+unlink 0x14D34 Undecided
+fputs 0xEBB4 Undecided
+fwrite 0x18D22 Undecided
+fwrite 0x192D9 Undecided
+putchar 0x277E8 Undecided
+puts 0x242FF Undecided
+unlink 0x14D54 Undecided
+fputs 0xEBC3 Undecided
+fwrite 0x18D3B Undecided
+fwrite 0x192F2 Undecided
+putchar 0x277F6 Undecided
+puts 0x2430B Undecided
+unlink 0x14EC5 Undecided
+fputs 0xEBD2 Undecided
+fwrite 0x18D54 Undecided
+fwrite 0x19318 Undecided
+putchar 0x27B02 Undecided
+puts 0x2455B Undecided
+unlink 0x1AA24 Undecided
+fputs 0xEBE1 Undecided
+fwrite 0x18D6D Undecided
+fwrite 0x19331 Undecided
+putchar 0x27B40 Undecided
+puts 0x24567 Undecided
+unlink 0x2D894 Undecided
+fputs 0xEBF0 Undecided
+fwrite 0x18D86 Undecided
+fwrite 0x1934A Undecided
+putchar 0x27B4E Undecided
+puts 0x24855 Undecided
+unlink 0x2D8E7 Undecided
+fputs 0xEBFF Undecided
+fwrite 0x18D9F Undecided
+fwrite 0x19394 Undecided
+putchar 0x2852A Undecided
+puts 0x2487C Undecided
+unlink 0x2D976 Undecided
+fputs 0xEC1B Undecided
+fwrite 0x18DB8 Undecided
+fwrite 0x19424 Undecided
+putchar 0x28EF1 Undecided
+puts 0x2489F Undecided
+fputs 0xEC2A Undecided
+fwrite 0x18DD1 Undecided
+fwrite 0x194B1 Undecided
+putchar 0x29419 Undecided
+puts 0x248D7 Undecided
 
 
  value-was-used-before-check:
