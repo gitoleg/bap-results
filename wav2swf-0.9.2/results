@@ -284,12 +284,12 @@ puts 0x182E7 Confirmed
 
  memcheck-out-of-bound:
  Time: 00:11:03
- Stat: 4/0/0/0
+ Stat: 2/0/0/0
 
  memcheck-use-after-release:
  Time: 00:11:03
- Stat: 4/0/0/0
+ Stat: 2/0/0/0
 
  value-was-used-before-check:
  Time: 00:11:03
- Stat: 65/0/0/0
+ Stat: 79/0/0/0

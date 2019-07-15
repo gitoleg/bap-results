@@ -576,8 +576,8 @@ printf 0x6EEDE Confirmed
 
  memcheck-use-after-release:
  Time: 00:33:14
- Stat: 32/0/0/0
+ Stat: 33/0/0/0
 
  value-was-used-before-check:
  Time: 00:33:14
- Stat: 224/0/0/0
+ Stat: 307/0/0/0

@@ -452,18 +452,15 @@ memset 0x33456 Confirmed
 snprintf 0x12B75 Confirmed
 snprintf 0x3C733 Confirmed
 
-memcheck-double-release:
- Time: 04:26:32
- Stat: 1/0/0/0
 
  memcheck-out-of-bound:
  Time: 04:26:32
- Stat: 1/0/0/0
+ Stat: 2/0/0/0
 
  memcheck-use-after-release:
  Time: 04:26:32
- Stat: 14/0/0/0
+ Stat: 4/0/0/0
 
  value-was-used-before-check:
  Time: 04:26:32
- Stat: 82/0/0/0
+ Stat: 114/0/0/0

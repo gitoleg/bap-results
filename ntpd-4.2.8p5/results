@@ -1096,14 +1096,14 @@ hardcoded-socket-address:
  Time: 01:34:15
  Stat: 3/0/0/0
 
- memcheck-out-of-bound:
- Time: 01:34:15
- Stat: 1/0/0/0
-
  value-was-used-before-check:
  Time: 01:34:15
- Stat: 92/0/0/0
+ Stat: 61/0/0/0
 
  memcheck-use-after-release:
  Time: 01:34:15
  Stat: 2/0/0/0
+
+memcheck-double-release:
+Time: 01:34:15
+Stat: 1/0/0/0

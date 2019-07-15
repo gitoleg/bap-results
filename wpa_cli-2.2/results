@@ -197,12 +197,12 @@ puts 0x917B Confirmed
 
 hardcoded-socket-address:
 Time: 00:20:33
-Stat: 2/0/0/0
+Stat: 1/0/0/0
 
 memcheck-use-after-release:
 Time: 00:20:33
-Stat: 5/0/0/0
+Stat: 3/0/0/0
 
 value-was-used-before-check:
 Time: 00:20:33
-Stat: 60/0/0/0
+Stat: 35/0/0/0

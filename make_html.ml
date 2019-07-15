@@ -13,6 +13,7 @@ type check =
   | Memcheck_out_of_bound
   | Memcheck_use_after_release
   | Value_was_used_before_check
+  | Untrusted_argument
 [@@deriving bin_io, compare, sexp]
 
 type name = string [@@deriving sexp]
@@ -351,6 +352,7 @@ module Template = struct
     | Memcheck_out_of_bound -> "Memory check: out of bound"
     | Memcheck_use_after_release -> "Use after free"
     | Value_was_used_before_check -> "Value was used before check"
+    | Untrusted_argument -> "Untrusted argument"
 
   let ref_to_top = {|<p><a href="#top">Top</a></p>|}
 
@@ -402,7 +404,7 @@ module Template = struct
     let text = String.concat text ~sep:"\n" in
     sprintf "<pre>\n%s\n</pre>" text
 
-  let render_table data =
+  let render_table ?(max_cols = 6) data =
     match data with
     | [] -> ""
     | data ->
@@ -416,11 +418,10 @@ module Template = struct
       | n when n < 10 -> 1
       | n when n < 30 -> 2
       | n when n < 60 -> 3
-      | n when n < 400 -> 5
-      | _ -> 7 in
+      | _  -> max_cols in
     let rows = len / cols  in
     let rows = if len - rows * cols = 1 then len / (cols + 1)
-               else rows in
+                else rows in
     let acc, tab, _ =
       List.fold data ~init:(["<div class=\"start-line\">"],empty_tab,0) ~f:(fun (acc,tab,i) ws ->
           let tab = add_row tab ws in
@@ -429,7 +430,7 @@ module Template = struct
     let acc = "</div>" :: close_tab tab :: acc in
     List.rev acc |> String.concat
 
-  let render_data stat data =
+  let render_data ?max_cols stat data =
     if is_no_incidents stat then
       "<table><tr><td>no incidents found</td></tr></table>"
     else
@@ -439,8 +440,8 @@ module Template = struct
             | Function f,s -> (f,s) :: funcs, locs, text
             | Location (x,a),s -> funcs, (x,a,s) :: locs, text
             | Text t,s -> funcs, locs, t :: text)  in
-      let t1 = render_functions funcs |> render_table in
-      let t2 = render_locations locs  |> render_table in
+      let t1 = render_functions funcs |> render_table ?max_cols in
+      let t2 = render_locations locs  |> render_table ?max_cols in
       let text = render_text text in
       t1 ^ t2 ^ text
 
@@ -458,10 +459,10 @@ module Template = struct
   let render_check arti check stat infos =
     let doc =
       List.fold infos ~init:["<div>"] ~f:(fun doc info ->
-          match info with
-          | Time time -> sprintf "<pre>Time: %s</pre>" time :: doc
-          | Data d ->
-             render_data stat d :: doc
+          match info, check with
+          | Time time, _ -> sprintf "<pre>Time: %s</pre>" time :: doc
+          | Data d, Test _  -> render_data ~max_cols:4 stat d :: doc
+          | Data d, _ -> render_data stat d :: doc
           | _ -> doc) in
     "</div>"  ::
     render_checkname arti check :: render_stat infos stat :: List.rev doc

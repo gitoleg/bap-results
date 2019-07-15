@@ -633,20 +633,14 @@ fwrite 0x65DF8 Confirmed
 malloc 0x46471 Undecided
 printf 0x72D6E Confirmed
 
-
-
-memcheck-double-release:
-Time: 01:04:34
-Stat: 2/0/0/0
-
 memcheck-out-of-bound:
 Time: 01:04:34
 Stat: 10/0/0/0
 
 memcheck-use-after-release:
 Time: 01:04:34
-Stat: 24/0/0/0
+Stat: 32/0/0/0
 
 value-was-used-before-check:
 Time: 01:04:34
-Stat: 276/0/0/0
+Stat: 321/0/0/0

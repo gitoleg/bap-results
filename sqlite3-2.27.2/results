@@ -449,3 +449,12 @@ fprintf 0x1B3FC Confirmed
 fprintf 0xCA4A Confirmed
 fputs 0x1630A Confirmed
 memmove 0x46471 Undecided
+
+
+untrusted-argument:
+Time: 05:04:08
+Stat: 1/0/0/0
+
+value-was-used-before-check:
+Time: 05:04:08
+Stat: 13/0/0/0
