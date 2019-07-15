@@ -729,14 +729,14 @@ Unused:
   strcat   0xE1B95 Undecided
   strcat   0xE1C55 Undecided
   strcat   0xE1E27 Undecided
-  strcpy   0x40F76 Undecided
-  strcpy   0x4173A Undecided
-  strcpy   0x4AC48 Undecided
-  strcpy   0x58222 Undecided
-  strcpy   0x96AC4 Undecided
-  strcpy   0xCDD43 Undecided
-  strcpy   0xCDEDD Undecided
-  strcpy   0xD0EC7 Undecided
+strcpy 0x40F76 Confirmed
+strcpy 0x4173A Confirmed
+strcpy 0x4AC48 Confirmed
+strcpy 0x58222 Confirmed
+strcpy 0x96AC4 Confirmed
+strcpy 0xCDD43 Confirmed
+strcpy 0xCDEDD Confirmed
+strcpy 0xD0EC7 Confirmed
   strlen   0x63D00 Undecided
   strncat  0xD0CD3 Confirmed
   strncpy  0x5A2CF Confirmed

@@ -228,14 +228,14 @@ Unused:
   strchr  0x46D858 Undecided
   strcmp  0x43F506 Undecided
   strcmp  0x45D5BD Undecided
-  strcpy  0x46E4C2 Undecided
+strcpy 0x46E4C2 Confirmed
   strlen  0x43A3E4 Undecided
   strlen  0x447001 Undecided
   strlen  0x45605B Undecided
   strlen  0x46BC5C Undecided
   strlen  0x47C437 Undecided
   strlen  0x47C467 Undecided
-  strncpy 0x466987 Undecided
+strncpy 0x466987 Confirmed
   strrchr 0x46D87A Undecided
   strrchr 0x46D89C Undecided
   strstr  0x46D8C1 Undecided
@@ -245,4 +245,4 @@ Unused:
 
  Value-was-used-before-check:
  Time: 01:04:41
- Total: 17
+ Stat: 17/0/0

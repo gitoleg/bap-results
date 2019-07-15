@@ -30,22 +30,19 @@ not found
 
 Null:
 Time: 00:00:40
-False_pos: 2
-binary_smbd_main 0x4DD0 Undecided
-binary_smbd_main 0x4D6D Undecided
+not found
 
 Unused:
  Time: 00:00:40
- Confirmed: 9
-fprintf 0x380D Undecided
-fprintf 0x4919 Undecided
-fwrite 0x499B Undecided
-printf 0x361F Undecided
-printf 0x44DB Undecided
-printf 0x44FF Undecided
-printf 0x455C Undecided
-puts 0x44E7 Undecided
-puts 0x450B Undecided
+fprintf 0x380D Confirmed
+fprintf 0x4919 Confirmed
+fwrite 0x499B Confirmed
+printf 0x361F Confirmed
+printf 0x44DB Confirmed
+printf 0x44FF Confirmed
+printf 0x455C Confirmed
+puts 0x44E7 Confirmed
+puts 0x450B Confirmed
 
 
 Hardcoded-socket-address:

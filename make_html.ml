@@ -35,6 +35,7 @@ type info =
   | Size of string
   | Time of string
   | Data of (check_record * status) list
+  | Total of int
 [@@deriving sexp]
 
 type stat = {
@@ -347,9 +348,8 @@ module Template = struct
 
   let render_locations data =
     let render_cell maxlen (name,addr,s) =
-      let spaces = String.init (maxlen - String.length name)  ~f:(fun _ -> ' ') in
-      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s%s%s&nbsp</td></tr>"
-        (color_of_status s) name spaces addr in
+      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s&nbsp</td><td align=\"right\" bgcolor=\"%s\">&nbsp%s&nbsp</td></tr>"
+           (color_of_status s) name (color_of_status s) addr in
     let data = List.sort data
         ~compare:(fun (x,xa,_) (y,ya,_) ->
             match String.compare x y with
@@ -396,21 +396,6 @@ module Template = struct
           else close_tab tab :: acc, empty_tab, 0) in
     let acc = "</div>" :: close_tab tab :: acc in
     List.rev acc |> String.concat
-
-
-  let print_info arti check info =
-    let pr = function
-      | Function name, _ -> printf "func %s\n" name
-      | Location (name,addr),_ -> printf "func %s at %s\n" name addr
-      | Text text,_ ->
-         printf "text:\n";
-         List.iter text ~f:(printf " %s\n") in
-    printf "%s-%s:\n" arti (Sexp.to_string (sexp_of_check check));
-    List.iter info ~f:(function
-        | Time s -> printf "Time %s\n" s
-        | Data d -> List.iter d ~f:pr;
-        | Size s -> printf "Size %s\n" s);
-    printf "\n\n"
 
   let render_data stat data =
     if is_no_incidents stat then
