@@ -489,12 +489,12 @@ seteuid 0x4FC9B Undecided
 
 hardcoded-socket-address:
  Time: 01:16:19
- Stat: 1/0/0
+ Stat: 1/0/0/0
 
 memcheck-use-after-release:
  Time: 01:16:19
- Stat: 3/3/0
+ Stat: 3/0/3/0
 
 value-was-used-before-check:
  Time: 01:16:19
- Stat: 174/0/0
+ Stat: 174/0/0/0

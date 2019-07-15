@@ -454,16 +454,16 @@ snprintf 0x3C733 Confirmed
 
 memcheck-double-release:
  Time: 04:26:32
- Stat: 1/0/0
+ Stat: 1/0/0/0
 
  memcheck-out-of-bound:
  Time: 04:26:32
- Total: 1
+ Stat: 1/0/0/0
 
  memcheck-use-after-release:
  Time: 04:26:32
- Total:  14
+ Stat: 14/0/0/0
 
  value-was-used-before-check:
  Time: 04:26:32
- Total: 82
+ Stat: 82/0/0/0

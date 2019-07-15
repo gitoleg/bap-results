@@ -1094,16 +1094,16 @@ write 0x60899 Confirmed
 
 hardcoded-socket-address:
  Time: 01:34:15
- Total: 3
+ Stat: 3/0/0/0
 
  memcheck-out-of-bound:
  Time: 01:34:15
- Total: 1
+ Stat: 1/0/0/0
 
  value-was-used-before-check:
  Time: 01:34:15
- Total: 92
+ Stat: 92/0/0/0
 
  memcheck-use-after-release:
  Time: 01:34:15
- Total: 2
+ Stat: 2/0/0/0

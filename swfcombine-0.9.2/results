@@ -244,12 +244,12 @@ puts 0x290A Confirmed
 
 memcheck-out-of-bound:
 Time: 00:08:21
-Total: 3
+Stat: 3/0/0/0
 
 memcheck-use-after-release:
 Time: 00:08:21
-Total: 27
+Stat: 27/0/0/0
 
 value-was-used-before-check:
 Time: 00:08:21
-Total: 59
+Stat: 59/0/0/0

@@ -572,12 +572,12 @@ printf 0x6EEDE Confirmed
 
  memcheck-out-of-bound:
  Time: 00:33:14
- Total: 10
+ Stat: 10/0/0/0
 
  memcheck-use-after-release:
  Time: 00:33:14
- Total: 32
+ Stat: 32/0/0/0
 
  value-was-used-before-check:
  Time: 00:33:14
- Total: 224
+ Stat: 224/0/0/0

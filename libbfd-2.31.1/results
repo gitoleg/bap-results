@@ -773,16 +773,16 @@ strcpy 0xD0EC7 Confirmed
 
 Memcheck-double-release:
 Time: 04:38:52
-Total:2
+Stat: 2/0/0/0
 
 Memcheck-out-of-bound:
 Time: 04:38:52
-Total: 4
+Stat: 4/0/0/0
 
 Memcheck-use-after-release:
 Time: 04:38:52
-Total:  30
+Stat: 30/0/0/0
 
 Value-was-used-before-check:
 Time: 04:38:52
-Total: 152
+Stat: 152/0/0/0

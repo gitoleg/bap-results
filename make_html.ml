@@ -35,7 +35,7 @@ type info =
   | Size of string
   | Time of string
   | Data of (check_record * status) list
-  | Total of int
+  | Stat of int * int * int * int (* total/confirned/false_pos/false_neg *)
 [@@deriving sexp]
 
 type stat = {
@@ -171,12 +171,30 @@ module Parse = struct
     | name :: data -> parse_check name (String.(strip (concat data)))
     | _ -> None
 
+
+  let int_of_str x =
+    try
+      Some (int_of_string (String.strip x))
+    with _ -> None
+
+  let parse_stat str =
+    match String.split str ~on:'/' with
+    | [total;confirmed;false_pos;false_neg] ->
+       Option.(
+        int_of_str total >>= fun total ->
+        int_of_str confirmed >>= fun confirmed ->
+        int_of_str false_pos >>= fun false_pos ->
+        int_of_str false_neg >>= fun false_neg ->
+        Some (Stat (total,confirmed,false_pos,false_neg)))
+    | _ -> None
+
   let info_of_string s =
     match String.split ~on:':' s with
     | "Time" :: xs ->
        let tm = String.concat xs ~sep:":" |> String.strip in
        Some (Time tm)
     | "Size" :: s :: _ -> Some (Size s)
+    | "Stat" :: data -> parse_stat (String.concat data)
     | _ -> None
 
   let parse_plain_line line =
@@ -222,6 +240,11 @@ module Parse = struct
       time;
     }
 
+  let find_stat data =
+    List.find_map data ~f:(function
+        | Stat (a,b,c,d) -> Some (a,b,c,d)
+        | _ -> None)
+
   let normalize_data data =
     let data, text =
     List.fold data ~init:([],[]) ~f:(fun (acc,text) -> function
@@ -237,8 +260,17 @@ module Parse = struct
         List.find_map info ~f:(function
            | Data d -> Some (create_stat time d)
            | _ -> None) with
-        | None  -> check, stub_stat time, info
-        | Some s -> check, s, info)
+        | Some s -> check, s, info
+        | None  ->
+           match find_stat info with
+           | None -> check, stub_stat time, info
+           | Some (total, confirmed, false_pos, false_neg) ->
+              let stat = {
+                total; false_pos; false_neg;
+                confirmed;
+                undecided = total - confirmed - false_pos - false_neg;
+                time;} in
+              check,stat,info)
 
   let process file : string option * result list =
     let lines = In_channel.with_file file ~f:In_channel.input_lines in

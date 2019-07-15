@@ -637,16 +637,16 @@ printf 0x72D6E Confirmed
 
 memcheck-double-release:
 Time: 01:04:34
-Total: 2
+Stat: 2/0/0/0
 
 memcheck-out-of-bound:
 Time: 01:04:34
-Total: 10
+Stat: 10/0/0/0
 
 memcheck-use-after-release:
 Time: 01:04:34
-Total: 24
+Stat: 24/0/0/0
 
 value-was-used-before-check:
 Time: 01:04:34
-Total: 276
+Stat: 276/0/0/0

@@ -226,12 +226,12 @@ fwrite 0x19AC6 Confirmed
 
  Hardcoded-socket-address:
  Time: 03:03:45
- Stat: 2/0/0
+ Stat: 2/0/0/0
 
  Memcheck-out-of-bound:
  Time: 03:03:45
- Stat: 1/1/0
+ Stat: 1/0/1/0
 
  Value-was-used-before-check:
  Time: 03:03:45
- Stat: 94/0/0
+ Stat: 94/0/0/0

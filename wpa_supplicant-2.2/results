@@ -637,16 +637,16 @@ memset 0x7DF55 Confirmed
 
  hardcoded-socket-address:
  Time: 01:28:51
- Total: 4
+ Stat: 4/0/0/0
 
  memcheck-out-of-bound:
  Time: 01:28:51
- Total: 5
+ Stat: 5/0/0/0
 
  memcheck-use-after-release:
  Time: 01:28:51
- Total: 25
+ Stat: 25/0/0/0
 
  value-was-used-before-check:
  Time: 01:28:51
- Total: 138
+ Stat: 138/0/0/0

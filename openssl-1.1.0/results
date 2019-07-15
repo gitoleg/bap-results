@@ -292,4 +292,4 @@ puts 0x73751 Confirmed
 
 Value-was-used-before-check:
 Time: 00:27:22
-Stat: 10/0/0
+Stat: 10/0/0/0

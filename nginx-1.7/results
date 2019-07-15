@@ -251,12 +251,12 @@ memset 0x41A86D Confirmed
 
 Memcheck-out-of-bound:
 Time: 03:27:01
-Total: 4
+Stat: 4/0/0/0
 
 Memcheck-use-after-release:
 Time: 03:27:01
-Total: 6
+Stat: 6/0/0/0
 
 Value-was-used-before-check:
 Time: 03:27:01
-Total: 51
+Stat: 51/0/0/0

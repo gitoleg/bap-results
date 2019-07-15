@@ -245,4 +245,4 @@ strncpy 0x466987 Confirmed
 
  Value-was-used-before-check:
  Time: 01:04:41
- Stat: 17/0/0
+ Stat: 17/0/0/0
