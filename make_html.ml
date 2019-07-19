@@ -19,12 +19,6 @@ type check =
 type name = string [@@deriving sexp]
 type addr = string [@@deriving sexp]
 
-type check_record =
-  | Function of name
-  | Location of (name * addr)
-  | Text of string list
-[@@deriving sexp]
-
 type status =
   | Confirmed
   | False_pos
@@ -35,7 +29,7 @@ type status =
 type info =
   | Size of string
   | Time of string
-  | Data of (check_record * status) list
+  | Data of (string list * status) list
   | Stat of int * int * int * int (* total/confirned/false_pos/false_neg *)
 [@@deriving sexp]
 
@@ -88,33 +82,6 @@ let html_header =  {|
      display: table-cell;
    }
 
-   .tooltip {
-     position: relative;
-     display: inline-block;
-     border-bottom: 1px dotted black;
-     transition: 0s background-color;
-   }
-
-   .tooltip .tooltiptext {
-     visibility: hidden;
-     background-color: black;
-     color: #fff;
-     border-radius: 10px;
-     padding: 5px 0;
-
-     position: absolute;
-     z-index: 1;
-     top: -5px;
-     left: 110%;
-     margin-left: -60px;
-   }
-
-   .tooltip:hover .tooltiptext {
-     visibility: visible;
-     transition-delay: 1s;
-   }
-
-
   </style>
   </head>
   <body>
@@ -138,12 +105,15 @@ let descr_of_check = function
   | Forbidden -> `Link "https://raw.githubusercontent.com/BinaryAnalysisPlatform/bap-toolkit/master/forbidden-symbol/descr"
   | _ -> `Absent
 
-
-
 let get_descr check =
   match descr_of_check check with
   | `Absent -> ""
   | `Link s -> s
+
+
+let words_of_line x =
+  String.split ~on:' ' x |>
+  List.filter ~f:(fun y -> y <> "")
 
 
 module Parse = struct
@@ -199,16 +169,14 @@ module Parse = struct
     | _ -> None
 
   let parse_plain_line line =
-    try
-      let words = String.split ~on:' ' line in
-      match List.filter words ~f:(fun s -> s <> "")  with
-      | [name; status] ->
-         Function name, status_of_sexp (Sexp.of_string status)
-      | [name; addr; status] ->
-         Location (name, addr), status_of_sexp (Sexp.of_string status)
-      |  _ -> Text [line], Undecided
-    with _ -> Text [line], Undecided
-
+    let words = words_of_line line in
+    match List.rev words with
+    | [] -> [], Undecided
+    | hd :: words' ->
+       try
+         let s = status_of_sexp (Sexp.of_string hd) in
+         List.rev words', s
+       with _ -> words, Undecided
 
   let find_time infos =
     let rec loop = function
@@ -231,7 +199,7 @@ module Parse = struct
 
   let create_stat time data =
     match data with
-    | [ Text ["not found"],_ ] -> stub_stat time
+    | [ ["not found"],_; ] -> stub_stat time
     | _ -> {
       total = List.length data;
       false_pos = List.count data ~f:is_false_pos;
@@ -246,16 +214,14 @@ module Parse = struct
         | Stat (a,b,c,d) -> Some (a,b,c,d)
         | _ -> None)
 
-  let normalize_data data =
-    let data, text =
-    List.fold data ~init:([],[]) ~f:(fun (acc,text) -> function
-        | Text [t] -> acc, t :: text
-        | x -> x :: acc, text) in
-    Text text :: data
+  let normalize_info info =
+    List.rev_map info ~f:(function
+        | Data d -> Data (List.rev d)
+        | x -> x)
 
   let normalize xs =
     List.rev_map xs ~f:(fun (check, info) ->
-        let info = List.rev info in
+        let info = normalize_info info in
         let time = find_time info in
         match
         List.find_map info ~f:(function
@@ -372,78 +338,76 @@ module Template = struct
       | _ :: infos -> loop infos in
     loop infos
 
-  let render_functions data =
-    let data =
-      List.sort data ~compare:(fun x y -> String.compare (fst x) (fst y)) in
-    let render_cell (name,s) =
-      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s&nbsp</td></tr>"
-        (color_of_status s) name in
-    List.map data ~f:render_cell
-
-  let render_locations data =
-    let render_cell maxlen (name,addr,s) =
-      sprintf "<tr><td bgcolor=\"%s\">&nbsp%s&nbsp</td><td align=\"right\" bgcolor=\"%s\">&nbsp%s&nbsp</td></tr>"
-           (color_of_status s) name (color_of_status s) addr in
-    let data = List.sort data
-        ~compare:(fun (x,xa,_) (y,ya,_) ->
-            match String.compare x y with
-            | 0 -> String.compare xa ya
-            | x -> x) in
-    let data = List.sort data ~compare in
-    let max_len = List.max_elt data ~compare:(fun (x,_,_) (y,_,_) ->
-        Int.compare (String.length x) (String.length y)) in
-    match max_len with
-    | None -> []
-    | Some (s,_,_) ->
-       List.map data ~f:(render_cell (String.length s + 1))
-
   let render_text text = match text with
     | [] -> ""
     | text ->
-    let text = List.concat text in
-    let text = String.concat text ~sep:"\n" in
-    sprintf "<pre>\n%s\n</pre>" text
+       let text = List.map text ~f:fst in
+       let text = List.concat text in
+       let text = String.concat text ~sep:"\n" in
+       sprintf "<pre>\n%s\n</pre>" text
+
+  let compare_strings (data,_) (data',_) =
+    let rec compare xs ys =
+      match xs, ys with
+      | [],[] -> 0
+      | x :: xs, y :: ys ->
+         let r = String.compare x y in
+         if r = 0 then compare xs ys
+         else r
+      | _ -> assert false in
+    compare data data'
 
   let render_table ?(max_cols = 6) data =
+    let make_cell ?align color word =
+      let align = match align with
+        | None -> ""
+        | Some align -> sprintf " align=\"%s\"" align  in
+      sprintf "<td%s bgcolor=\"%s\">&nbsp%s&nbsp</td>" align color word in
+    let render_row (words,status) =
+      match words with
+      | [] -> ""
+      | fst :: others ->
+         let color = color_of_status status in
+         let row =
+           List.fold others ~init:([make_cell color fst; "<tr>"])
+             ~f:(fun acc w -> make_cell ~align:"right" color w :: acc) in
+         let row = List.rev ("</tr>" :: row) in
+         String.concat row in
     match data with
     | [] -> ""
-    | data ->
-    let empty_tab = ["<table id=\"data\">"; "<div class=\"line-elt\">"] in
-    let space_elt = "<div class=\"line-elt\">&nbsp&nbsp</div>" in
-    let close_tab tab =
-      List.rev (space_elt :: "</div>" :: "</table>" :: tab) |> String.concat in
-    let add_row tab row = row :: tab in
-    let len = List.length data in
-    let cols = match len with
-      | n when n < 10 -> 1
-      | n when n < 30 -> 2
-      | n when n < 60 -> 3
-      | _  -> max_cols in
-    let rows = len / cols  in
-    let rows = if len - rows * cols = 1 then len / (cols + 1)
-                else rows in
-    let acc, tab, _ =
-      List.fold data ~init:(["<div class=\"start-line\">"],empty_tab,0) ~f:(fun (acc,tab,i) ws ->
-          let tab = add_row tab ws in
-          if i + 1 < rows then acc, tab, i + 1
-          else close_tab tab :: acc, empty_tab, 0) in
-    let acc = "</div>" :: close_tab tab :: acc in
-    List.rev acc |> String.concat
+    | (fst,s) :: _  ->
+       let cols = List.length fst in
+       if not @@ List.for_all data  ~f:(fun (x,_) -> List.length x = cols) then
+         render_text data
+       else
+         let data = List.sort data ~compare:compare_strings in
+         let data = List.map data ~f:render_row in
+         let empty_tab = ["<table id=\"data\">"; "<div class=\"line-elt\">"] in
+         let space_elt = "<div class=\"line-elt\">&nbsp&nbsp</div>" in
+         let close_tab tab =
+           List.rev (space_elt :: "</div>" :: "</table>" :: tab) |> String.concat in
+         let add_row tab row = row :: tab in
+         let len = List.length data in
+         let cols = match len with
+           | n when n < 10 -> 1
+           | n when n < 30 -> 2
+           | n when n < 60 -> 3
+           | _  -> max_cols in
+         let rows = len / cols  in
+         let rows = if len - rows * cols = 1 then len / (cols + 1)
+                    else rows in
+         let acc, tab, _ =
+           List.fold data ~init:(["<div class=\"start-line\">"],empty_tab,0) ~f:(fun (acc,tab,i) ws ->
+               let tab = add_row tab ws in
+               if i + 1 < rows then acc, tab, i + 1
+               else close_tab tab :: acc, empty_tab, 0) in
+         let acc = "</div>" :: close_tab tab :: acc in
+         List.rev acc |> String.concat
 
   let render_data ?max_cols stat data =
     if is_no_incidents stat then
       "<table><tr><td>no incidents found</td></tr></table>"
-    else
-      let funcs,locs,text =
-        List.fold data ~init:([],[],[])
-          ~f:(fun (funcs,locs,text) -> function
-            | Function f,s -> (f,s) :: funcs, locs, text
-            | Location (x,a),s -> funcs, (x,a,s) :: locs, text
-            | Text t,s -> funcs, locs, t :: text)  in
-      let t1 = render_functions funcs |> render_table ?max_cols in
-      let t2 = render_locations locs  |> render_table ?max_cols in
-      let text = render_text text in
-      t1 ^ t2 ^ text
+    else render_table ?max_cols data
 
   let render_stat infos stat =
     let render =
@@ -461,8 +425,8 @@ module Template = struct
       List.fold infos ~init:["<div>"] ~f:(fun doc info ->
           match info, check with
           | Time time, _ -> sprintf "<pre>Time: %s</pre>" time :: doc
-          | Data d, Test _  -> render_data ~max_cols:4 stat d :: doc
-          | Data d, _ -> render_data stat d :: doc
+          | Data d, Test _ -> render_data ~max_cols:4 stat d :: doc
+          | Data d, _  -> render_data stat d :: doc
           | _ -> doc) in
     "</div>"  ::
     render_checkname arti check :: render_stat infos stat :: List.rev doc
@@ -544,6 +508,7 @@ let file_exists file =
 let start_table = {|
      <table id="Results" style="width:100%" frame=void rules=rows >
 |}
+
 
 let () =
   let files = FileUtil.ls "." in
