@@ -223,9 +223,8 @@ let render_data ?(max_cols=6) data =
       List.rev (close_all :: close_tab last :: doc) |> String.concat
 
 let render_checkname arti check =
-  let check = Sexp.to_string (sexp_of_check check) in
-  let id = sprintf "%s+%s" arti check in
-  sprintf "<b id=\"%s\">%s</b>" id check
+  let id = sprintf "%s+%s" arti (Sexp.to_string (sexp_of_check check)) in
+  sprintf "<b id=\"%s\">%s</b>" id (string_of_check check)
 
 let total_of_stat s = s.confirmed + s.false_pos + s.false_neg + s.undecided
 

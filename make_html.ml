@@ -183,7 +183,7 @@ let () =
             sum :: tests, artis
           else tests, sum::artis
         else tests, artis) in
-  let all = tests @ artis in
+  let all = List.rev tests @ List.rev artis in
   let doc = Template.render all in
   Out_channel.with_file "results.html"
     ~f:(fun ch -> Out_channel.output_string ch doc)
