@@ -297,85 +297,85 @@ snprintf 0x1DF8D Confirmed
 strcasecmp 0x18CCD Undecided
 close 0x39234 Confirmed
 fclose 0x3F3F0 Confirmed
-memmove 0x1492F Undecided
+memmove 0x1492F Confirmed
 memset 0x495B8 Confirmed
 snprintf 0x1E121 Confirmed
 strchr 0x4112B Undecided
 close 0x3923D Confirmed
 fclose 0x3F415 Confirmed
-memmove 0x14B12 Undecided
+memmove 0x14B12 Confirmed
 memset 0x4AFB0 Confirmed
 snprintf 0x1E6DE Confirmed
 strcmp 0xE38D Undecided
 close 0x3942C Confirmed
 fclose 0x3FE11 Confirmed
-memmove 0x1AFCC Undecided
+memmove 0x1AFCC Confirmed
 memset 0x4B0A4 Confirmed
 snprintf 0x1E70D Confirmed
 strcmp 0xE3FA Undecided
 close 0x39435 Confirmed
 fclose 0x42676 Confirmed
-memmove 0x1C79B Undecided
+memmove 0x1C79B Confirmed
 memset 0x9153 Confirmed
 snprintf 0x1E75C Confirmed
 strlen 0x3BDFD Undecided
 close 0x3943D Confirmed
 fclose 0x42921 Confirmed
-memmove 0x24F44 Undecided
+memmove 0x24F44 Confirmed
 memset 0xDCF9 Confirmed
 snprintf 0x2241A Confirmed
 strncasecmp 0x3DB6D Undecided
 close 0x394D5 Confirmed
 fclose 0x42B5C Confirmed
-memmove 0x377AF Undecided
+memmove 0x377AF Confirmed
 memset 0xE979 Confirmed
 snprintf 0x2268F Confirmed
 strncasecmp 0x3DBEE Undecided
 close 0x3974A Confirmed
 fclose 0x4488F Confirmed
-memmove 0x41E75 Undecided
+memmove 0x41E75 Confirmed
 memset 0xF9FE Confirmed
 snprintf 0x22733 Confirmed
 strtoll 0x4BE32 Undecided
 close 0x39785 Confirmed
 fclose 0x44AE0 Confirmed
-memmove 0x43D46 Undecided
+memmove 0x43D46 Confirmed
 open 0x2E8F7 Undecided
 snprintf 0x2283F Confirmed
 strtoull 0x3D454 Undecided
 close 0x419BD Confirmed
 fclose 0x4B538 Confirmed
-memmove 0x44E36 Undecided
+memmove 0x44E36 Confirmed
 open 0x40EE1 Undecided
 snprintf 0x22AE7 Confirmed
 strtoull 0x3D4C4 Undecided
 close 0x41A18 Confirmed
 fclose 0x4B570 Confirmed
-memmove 0x4ABD6 Undecided
+memmove 0x4ABD6 Confirmed
 printf 0x151C4 Confirmed
 snprintf 0x22BF0 Confirmed
 unlink 0x2E428 Undecided
 close 0x41A47 Confirmed
 fclose 0x8EFC Confirmed
-memmove 0xCA56 Undecided
+memmove 0xCA56 Confirmed
 printf 0x1521C Confirmed
 snprintf 0x22DB2 Confirmed
 unlink 0x2E539 Undecided
 close 0x42A01 Confirmed
 fclose 0x9A16 Confirmed
-memmove 0xCAD6 Undecided
+memmove 0xCAD6 Confirmed
 printf 0x15263 Confirmed
 snprintf 0x23B9D Confirmed
 unlink 0x2E65A Undecided
 close 0x448C5 Confirmed
 fclose 0xA55F Confirmed
-memmove 0xCB59 Undecided
+memmove 0xCB59 Confirmed
 printf 0x152A5 Confirmed
 snprintf 0x24936 Confirmed
 unlink 0x37A6C Undecided
 close 0x44934 Confirmed
 fclose 0xA84A Confirmed
-memmove 0xE861 Undecided
+memmove 0xE861 Confirmed
 printf 0x15777 Confirmed
 snprintf 0x2879D Confirmed
 unlink 0x37DFC Undecided
@@ -453,13 +453,18 @@ snprintf 0x12B75 Confirmed
 snprintf 0x3C733 Confirmed
 
 
- memcheck-out-of-bound:
+memcheck-out-of-bound:
  Time: 04:26:32
  Stat: 2/0/0/0
 
- memcheck-use-after-release:
+memcheck-use-after-release:
  Time: 04:26:32
  Stat: 4/0/0/0
+# alloc/free/use: 35736/35a7f/14634 - False_pos
+# alloc/free/use: 35736/35a7f/1465a - False_pos
+# alloc/free/use: 35736/35a7f/14660 - False_pos
+# alloc/free/use: 35736/35a7f/14665 - False_pos
+
 
  value-was-used-before-check:
  Time: 04:26:32

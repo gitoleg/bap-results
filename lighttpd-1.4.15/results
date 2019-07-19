@@ -230,4 +230,4 @@ fwrite 0x19AC6 Confirmed
 
  Value-was-used-before-check:
  Time: 03:03:45
- Stat: 23/0/0/0
+  Stat: 23/0/0/0

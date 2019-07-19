@@ -364,13 +364,13 @@ fprintf 0x5105F Confirmed
 fprintf 0x6D60A Confirmed
 fputc 0x71559 Confirmed
 fwrite 0xACCFF Confirmed
-memmove 0x522AE Undecided
+memmove 0x522AE Confirmed
 sprintf 0x6AA2D Confirmed
 fprintf 0x51172 Confirmed
 fprintf 0x6D64E Confirmed
 fputc 0x7172B Confirmed
 fwrite 0xACD91 Confirmed
-memmove 0x522D4 Undecided
+memmove 0x522D4 Confirmed
 sprintf 0x6D0BC Confirmed
 fprintf 0x57268 Confirmed
 fprintf 0x6D696 Confirmed
@@ -551,31 +551,31 @@ fprintf 0x7130A Confirmed
 fwrite 0x5F16C Confirmed
 fwrite 0xAF9D8 Confirmed
 printf 0x58E22 Confirmed
-strtod 0x4AFE0 Undecided
+strtod 0x4AFE0 Confirmed
 fprintf 0x5BAF2 Confirmed
 fprintf 0x7134F Confirmed
 fwrite 0x5F7B5 Confirmed
 fwrite 0xAF9FD Confirmed
 printf 0x58E85 Confirmed
-strtod 0x4E36F Undecided
+strtod 0x4E36F Confirmed
 fprintf 0x5BD3D Confirmed
 fprintf 0x71386 Confirmed
 fwrite 0x6069C Confirmed
 getcwd 0x94EEF Undecided
 printf 0x59455 Confirmed
-strtod 0x4E619 Undecided
+strtod 0x4E619 Confirmed
 fprintf 0x5D892 Confirmed
 fprintf 0x713B0 Confirmed
 fwrite 0x608A8 Confirmed
 lseek 0xAEA9B Undecided
 printf 0x68848 Confirmed
-strtod 0x4F0D5 Undecided
+strtod 0x4F0D5 Confirmed
 fprintf 0x5DA74 Confirmed
 fprintf 0x7145C Confirmed
 fwrite 0x62055 Confirmed
 malloc 0x462D1 Undecided
 printf 0x70046 Confirmed
-strtod 0x67958 Undecided
+strtod 0x67958 Confirmed
 fprintf 0x5E640 Confirmed
 fprintf 0x71498 Confirmed
 fwrite 0x63B3B Confirmed
@@ -640,6 +640,19 @@ Stat: 10/0/0/0
 memcheck-use-after-release:
 Time: 01:04:34
 Stat: 32/0/0/0
+
+# alloc/free/use: b05b8/b05a1/6489e - False_pos
+# alloc/free/use: b05b8/b05a1/648d4 - False_pos
+# alloc/free/use: b05b8/b05a1/648d4 - False_pos
+# alloc/free/use: b05b8/b05a1/648e0 - False_pos
+# alloc/free/use: b05b8/b05a1/648e4 - False_pos
+# alloc/free/use: b05b8/b05a1/648a8 - False_pos
+# alloc/free/use: b05b8/b05a1/648ab - False_pos
+# alloc/free/use: b05b8/b05a1/648ba - False_pos
+# alloc/free/use: b05b8/b05a1/64909 - False_pos
+# alloc/free/use: b05b8/b05a1/64919 - False_pos
+# alloc/free/use: b05b8/b05a1/64891 - False_pos
+# alloc/free/use: b05b8/b05a1/6489e - False_pos
 
 value-was-used-before-check:
 Time: 01:04:34

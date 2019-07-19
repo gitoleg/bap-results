@@ -183,7 +183,7 @@ memset 0x8C137 Confirmed
 close 0x710BD Confirmed
 fprintf 0x1B60B Confirmed
 memcpy 0x4A5B3 Confirmed
-memmove 0x3D950 Undecided
+memmove 0x3D950 Confirmed
 memset 0x6F4A6 Confirmed
 memset 0x8C85F Confirmed
 close 0x7139F Confirmed

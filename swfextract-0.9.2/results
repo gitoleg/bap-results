@@ -239,7 +239,7 @@ fclose 0x820E8 Confirmed
 fprintf 0x57BA9 Confirmed
 fwrite 0x3DB83 Confirmed
 fwrite 0x7CDBF Confirmed
-memmove 0x3F797 Undecided
+memmove 0x3F797 Confirmed
 puts 0x3E4B9 Confirmed
 fopen 0x82093 Undecided
 fprintf 0x57BF1 Confirmed

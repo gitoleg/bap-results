@@ -100,25 +100,25 @@ ap_byterange_filter 0x48053D  Undecided
 
 Unused:
  Time: 00:54:43
-  atoi    0x4360B9 Undecided
-  atoi    0x436157 Undecided
-  atoi    0x436353 Undecided
-  atoi    0x4364F5 Undecided
-  atoi    0x4734E2 Undecided
-  atoi    0x48958D Undecided
-  atoi    0x4895DC Undecided
-  atoi    0x48962B Undecided
-  atoi    0x489789 Undecided
-  atoi    0x4897D8 Undecided
-  atoi    0x489827 Undecided
-  atoi    0x489876 Undecided
+  atoi    0x4360B9 False_pos
+  atoi    0x436157 False_pos
+  atoi    0x436353 False_pos
+  atoi    0x4364F5 False_pos
+  atoi    0x4734E2 False_pos
+  atoi    0x48958D False_pos
+  atoi    0x4895DC False_pos
+  atoi    0x48962B False_pos
+  atoi    0x489789 False_pos
+  atoi    0x4897D8 False_pos
+  atoi    0x489827 False_pos
+  atoi    0x489876 False_pos
   fprintf 0x42BE42 Confirmed
   fprintf 0x4723E5 Confirmed
-  getenv  0x457424 Undecided
-  getenv  0x457446 Undecided
-  getpid  0x44B118 Undecided
-  getpid  0x46C386 Undecided
-  getpid  0x485A2D Undecided
+  getenv  0x457424 False_pos
+  getenv  0x457446 False_pos
+  getpid  0x44B118 False_pos
+  getpid  0x46C386 False_pos
+  getpid  0x485A2D False_pos
   memcpy  0x42FE8C Confirmed
   memcpy  0x432B17 Confirmed
   memcpy  0x432B53 Confirmed
@@ -153,7 +153,7 @@ Unused:
   memcpy  0x46E49D Confirmed
   memcpy  0x471318 Confirmed
   memcpy  0x487950 Confirmed
-  memmove 0x431108 Undecided
+  memmove 0x431108 Confirmed
   memset  0x42D734 Confirmed
   memset  0x439630 Confirmed
   memset  0x439677 Confirmed
@@ -223,24 +223,24 @@ Unused:
   puts    0x46BFC2 Confirmed
   puts    0x46C00D Confirmed
   puts    0x46C057 Confirmed
-  strcat  0x46289B Undecided
+  strcat  0x46289B Confirmed
   strchr  0x46D836 Undecided
   strchr  0x46D858 Undecided
-  strcmp  0x43F506 Undecided
+  strcmp  0x43F506 False_pos
   strcmp  0x45D5BD Undecided
-strcpy 0x46E4C2 Confirmed
-  strlen  0x43A3E4 Undecided
-  strlen  0x447001 Undecided
-  strlen  0x45605B Undecided
-  strlen  0x46BC5C Undecided
-  strlen  0x47C437 Undecided
-  strlen  0x47C467 Undecided
-strncpy 0x466987 Confirmed
+  strcpy  0x46E4C2 Confirmed
+  strlen  0x43A3E4 False_pos
+  strlen  0x447001 False_pos
+  strlen  0x45605B False_pos
+  strlen  0x46BC5C False_pos
+  strlen  0x47C437 False_pos
+  strlen  0x47C467 False_pos
+  strncpy 0x466987 Confirmed
   strrchr 0x46D87A Undecided
   strrchr 0x46D89C Undecided
   strstr  0x46D8C1 Undecided
   strstr  0x46D8E6 Undecided
-  strtod  0x4898CC Undecided
+  strtod  0x4898CC Confirmed
 
 
  Value-was-used-before-check:

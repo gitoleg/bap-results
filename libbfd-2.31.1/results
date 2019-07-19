@@ -654,15 +654,15 @@ Unused:
   memcpy   0xE65FE Confirmed
   memcpy   0xE6645 Confirmed
   memcpy   0xE86BD Confirmed
-  memmove  0x4087E Undecided
-  memmove  0x408AB Undecided
-  memmove  0x480D0 Undecided
-  memmove  0x52933 Undecided
-  memmove  0x65767 Undecided
-  memmove  0x94A28 Undecided
-  memmove  0x94AC3 Undecided
-  memmove  0x94CAE Undecided
-  memmove  0x94CC3 Undecided
+memmove 0x4087E Confirmed
+memmove 0x408AB Confirmed
+memmove 0x480D0 Confirmed
+memmove 0x52933 Confirmed
+memmove 0x65767 Confirmed
+memmove 0x94A28 Confirmed
+memmove 0x94AC3 Confirmed
+memmove 0x94CAE Confirmed
+memmove 0x94CC3 Confirmed
   memset   0x469BB Confirmed
   memset   0x4906E Confirmed
   memset   0x508D9 Confirmed

@@ -580,7 +580,7 @@ memcpy 0x70C2F Confirmed
 memcpy 0x721BB Confirmed
 memcpy 0x729EC Confirmed
 memcpy 0x72AA0 Confirmed
-memmove 0x267EF Undecided
+memmove 0x267EF Confirmed
 memset 0x59AEB Confirmed
 memset 0x59CCE Confirmed
 memset 0x59F86 Confirmed
@@ -1070,8 +1070,8 @@ strncpy 0x27D10 Confirmed
 strncpy 0x4419B Confirmed
 strncpy 0x6181C Confirmed
 strncpy 0x73B55 Confirmed
-strtod 0x1D71D Undecided
-strtod 0x3CAD3 Undecided
+strtod 0x1D71D Confirmed
+strtod 0x3CAD3 Confirmed
 strtok 0x5323C Undecided
 strtol 0x55AF2 Undecided
 strtol 0x61EE0 Undecided
